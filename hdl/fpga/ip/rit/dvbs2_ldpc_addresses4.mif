@@ -1,0 +1,30 @@
+-- Data memory file for LDPC Encoder parity address lookup memory #1
+-- 2^8 = 256 for the 126 addresses
+-- Only need 13 bit width for memory since max value is 6479 (decimal), which is 0x194F
+
+WIDTH = 13;
+DEPTH = 256;
+
+ADDRESS_RADIX = DEC;
+DATA_RADIX = HEX;
+
+CONTENT BEGIN
+0	:	0b54;
+1	:	12cd;
+2	:	0051;
+3	:	10a9;
+4	:	1606;
+5	:	0cf3;
+6	:	08c6;
+7	:	0d39;
+8	:	14d6;
+9	:	0f06;
+10	:	0c46;
+11	:	1518;
+12	:	0c6b;
+13	:	17af;
+14	:	1516;
+15	:	1111;
+16	:	1043;
+17	:	0104;
+END;

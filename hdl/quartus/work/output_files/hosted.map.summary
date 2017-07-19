@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Wed Jul 19 17:10:16 2017
+Quartus Prime Version : 17.0.0 Build 595 04/25/2017 SJ Lite Edition
+Revision Name : hosted
+Top-level Entity Name : bladerf
+Family : Cyclone IV E
+Total logic elements : 12,397
+    Total combinational functions : 9,675
+    Dedicated logic registers : 6,728
+Total registers : 6728
+Total pins : 139
+Total virtual pins : 0
+Total memory bits : 852,352
+Embedded Multiplier 9-bit elements : 6
+Total PLLs : 2

@@ -1,0 +1,48 @@
+	component nios_system is
+		port (
+			clk_clk                         : in  std_logic                     := 'X';             -- clk
+			command_serial_in               : in  std_logic                     := 'X';             -- serial_in
+			command_serial_out              : out std_logic;                                        -- serial_out
+			correction_rx_phase_gain_export : out std_logic_vector(31 downto 0);                    -- export
+			correction_tx_phase_gain_export : out std_logic_vector(31 downto 0);                    -- export
+			dac_MISO                        : in  std_logic                     := 'X';             -- MISO
+			dac_MOSI                        : out std_logic;                                        -- MOSI
+			dac_SCLK                        : out std_logic;                                        -- SCLK
+			dac_SS_n                        : out std_logic_vector(1 downto 0);                     -- SS_n
+			gpio_export                     : out std_logic_vector(31 downto 0);                    -- export
+			vctcxo_tamer_tune_ref           : in  std_logic                     := 'X';             -- tune_ref
+			vctcxo_tamer_vctcxo_clock       : in  std_logic                     := 'X';             -- vctcxo_clock
+			oc_i2c_scl_pad_o                : out std_logic;                                        -- scl_pad_o
+			oc_i2c_scl_padoen_o             : out std_logic;                                        -- scl_padoen_o
+			oc_i2c_sda_pad_i                : in  std_logic                     := 'X';             -- sda_pad_i
+			oc_i2c_sda_pad_o                : out std_logic;                                        -- sda_pad_o
+			oc_i2c_sda_padoen_o             : out std_logic;                                        -- sda_padoen_o
+			oc_i2c_arst_i                   : in  std_logic                     := 'X';             -- arst_i
+			oc_i2c_scl_pad_i                : in  std_logic                     := 'X';             -- scl_pad_i
+			reset_reset_n                   : in  std_logic                     := 'X';             -- reset_n
+			rx_tamer_ts_sync_in             : in  std_logic                     := 'X';             -- ts_sync_in
+			rx_tamer_ts_sync_out            : out std_logic;                                        -- ts_sync_out
+			rx_tamer_ts_pps                 : in  std_logic                     := 'X';             -- ts_pps
+			rx_tamer_ts_clock               : in  std_logic                     := 'X';             -- ts_clock
+			rx_tamer_ts_reset               : in  std_logic                     := 'X';             -- ts_reset
+			rx_tamer_ts_time                : out std_logic_vector(63 downto 0);                    -- ts_time
+			rx_trigger_ctl_in_port          : in  std_logic_vector(7 downto 0)  := (others => 'X'); -- in_port
+			rx_trigger_ctl_out_port         : out std_logic_vector(7 downto 0);                     -- out_port
+			spi_sclk                        : out std_logic;                                        -- sclk
+			spi_miso                        : in  std_logic                     := 'X';             -- miso
+			spi_mosi                        : out std_logic;                                        -- mosi
+			spi_ss_n                        : out std_logic;                                        -- ss_n
+			tx_tamer_ts_sync_in             : in  std_logic                     := 'X';             -- ts_sync_in
+			tx_tamer_ts_sync_out            : out std_logic;                                        -- ts_sync_out
+			tx_tamer_ts_pps                 : in  std_logic                     := 'X';             -- ts_pps
+			tx_tamer_ts_clock               : in  std_logic                     := 'X';             -- ts_clock
+			tx_tamer_ts_reset               : in  std_logic                     := 'X';             -- ts_reset
+			tx_tamer_ts_time                : out std_logic_vector(63 downto 0);                    -- ts_time
+			tx_trigger_ctl_in_port          : in  std_logic_vector(7 downto 0)  := (others => 'X'); -- in_port
+			tx_trigger_ctl_out_port         : out std_logic_vector(7 downto 0);                     -- out_port
+			xb_gpio_in_port                 : in  std_logic_vector(31 downto 0) := (others => 'X'); -- in_port
+			xb_gpio_out_port                : out std_logic_vector(31 downto 0);                    -- out_port
+			xb_gpio_dir_export              : out std_logic_vector(31 downto 0)                     -- export
+		);
+	end component nios_system;
+

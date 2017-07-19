@@ -1,0 +1,555 @@
+ -- Copyright (C) 2017  Intel Corporation. All rights reserved.
+ -- Your use of Intel Corporation's design tools, logic functions 
+ -- and other software and tools, and its AMPP partner logic 
+ -- functions, and any output files from any of the foregoing 
+ -- (including device programming or simulation files), and any 
+ -- associated documentation or information are expressly subject 
+ -- to the terms and conditions of the Intel Program License 
+ -- Subscription Agreement, the Intel Quartus Prime License Agreement,
+ -- the Intel MegaCore Function License Agreement, or other 
+ -- applicable license agreement, including, without limitation, 
+ -- that your use is for the sole purpose of programming logic 
+ -- devices manufactured by Intel and sold by Intel or its 
+ -- authorized distributors.  Please refer to the applicable 
+ -- agreement for further details.
+ -- 
+ -- This is a Quartus Prime output file. It is for reporting purposes only, and is
+ -- not intended for use as a Quartus Prime input file. This file cannot be used
+ -- to make Quartus Prime pin assignments - for instructions on how to make pin
+ -- assignments, please see Quartus Prime help.
+ ---------------------------------------------------------------------------------
+
+
+
+ ---------------------------------------------------------------------------------
+ -- NC            : No Connect. This pin has no internal connection to the device.
+ -- DNU           : Do Not Use. This pin MUST NOT be connected.
+ -- VCCINT        : Dedicated power pin, which MUST be connected to VCC  (1.2V).
+ -- VCCIO         : Dedicated power pin, which MUST be connected to VCC
+ --                 of its bank.
+ --                  Bank 1:       1.8V
+ --                  Bank 2:       1.8V
+ --                  Bank 3:       1.8V
+ --                  Bank 4:       1.8V
+ --                  Bank 5:       1.8V
+ --                  Bank 6:       1.8V
+ --                  Bank 7:       1.8V
+ --                  Bank 8:       1.8V
+ -- GND           : Dedicated ground pin. Dedicated GND pins MUST be connected to GND.
+ --                  It can also be used to report unused dedicated pins. The connection
+ --                  on the board for unused dedicated pins depends on whether this will
+ --                  be used in a future design. One example is device migration. When
+ --                  using device migration, refer to the device pin-tables. If it is a
+ --                  GND pin in the pin table or if it will not be used in a future design
+ --                  for another purpose the it MUST be connected to GND. If it is an unused
+ --                  dedicated pin, then it can be connected to a valid signal on the board
+ --                  (low, high, or toggling) if that signal is required for a different
+ --                  revision of the design.
+ -- GND+          : Unused input pin. It can also be used to report unused dual-purpose pins.
+ --                  This pin should be connected to GND. It may also be connected  to a
+ --                  valid signal  on the board  (low, high, or toggling)  if that signal
+ --                  is required for a different revision of the design.
+ -- GND*          : Unused  I/O  pin. Connect each pin marked GND* directly to GND
+ --                  or leave it unconnected.
+ -- RESERVED      : Unused I/O pin, which MUST be left unconnected.
+ -- RESERVED_INPUT    : Pin is tri-stated and should be connected to the board.
+ -- RESERVED_INPUT_WITH_WEAK_PULLUP    : Pin is tri-stated with internal weak pull-up resistor.
+ -- RESERVED_INPUT_WITH_BUS_HOLD       : Pin is tri-stated with bus-hold circuitry.
+ -- RESERVED_OUTPUT_DRIVEN_HIGH        : Pin is output driven high.
+ ---------------------------------------------------------------------------------
+
+
+
+ ---------------------------------------------------------------------------------
+ -- Pin directions (input, output or bidir) are based on device operating in user mode.
+ ---------------------------------------------------------------------------------
+
+Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
+CHIP  "hosted"  ASSIGNED TO AN: EP4CE40F23C8
+
+Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage : I/O Bank  : User Assignment
+-------------------------------------------------------------------------------------------------------------
+GND                          : A1        : gnd    :                   :         :           :                
+VCCIO8                       : A2        : power  :                   : 1.8V    : 8         :                
+fx3_gpif[5]                  : A3        : bidir  : 1.8 V             :         : 8         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : A4        :        :                   :         : 8         :                
+fx3_gpif[3]                  : A5        : bidir  : 1.8 V             :         : 8         : Y              
+si_scl                       : A6        : bidir  : 1.8 V             :         : 8         : Y              
+si_sda                       : A7        : bidir  : 1.8 V             :         : 8         : Y              
+fx3_gpif[6]                  : A8        : bidir  : 1.8 V             :         : 8         : Y              
+dac_sdo                      : A9        : input  : 1.8 V             :         : 8         : Y              
+dac_sdi                      : A10       : output : 1.8 V             :         : 8         : Y              
+c4_clock                     : A11       : input  : 1.8 V             :         : 8         : Y              
+exp_clock_in                 : A12       : input  : 1.8 V             :         : 7         : Y              
+exp_gpio[16]                 : A13       : bidir  : 1.8 V             :         : 7         : Y              
+exp_gpio[25]                 : A14       : bidir  : 1.8 V             :         : 7         : Y              
+exp_gpio[26]                 : A15       : bidir  : 1.8 V             :         : 7         : Y              
+exp_gpio[27]                 : A16       : bidir  : 1.8 V             :         : 7         : Y              
+exp_gpio[28]                 : A17       : bidir  : 1.8 V             :         : 7         : Y              
+exp_gpio[32]                 : A18       : bidir  : 1.8 V             :         : 7         : Y              
+exp_gpio[31]                 : A19       : bidir  : 1.8 V             :         : 7         : Y              
+exp_gpio[30]                 : A20       : bidir  : 1.8 V             :         : 7         : Y              
+VCCIO7                       : A21       : power  :                   : 1.8V    : 7         :                
+GND                          : A22       : gnd    :                   :         :           :                
+fx3_gpif[31]                 : AA1       : bidir  : 1.8 V             :         : 2         : Y              
+GND                          : AA2       : gnd    :                   :         :           :                
+fx3_uart_txd                 : AA3       : input  : 1.8 V             :         : 3         : Y              
+fx3_uart_cts                 : AA4       : output : 1.8 V             :         : 3         : Y              
+fx3_uart_rxd                 : AA5       : output : 1.8 V             :         : 3         : Y              
+VCCIO3                       : AA6       : power  :                   : 1.8V    : 3         :                
+led[1]                       : AA7       : output : 1.8 V             :         : 3         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AA8       :        :                   :         : 3         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AA9       :        :                   :         : 3         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AA10      :        :                   :         : 3         :                
+GND+                         : AA11      :        :                   :         : 3         :                
+GND+                         : AA12      :        :                   :         : 4         :                
+lms_reset                    : AA13      : output : 1.8 V             :         : 4         : Y              
+lms_rx_enable                : AA14      : output : 1.8 V             :         : 4         : Y              
+lms_sclk                     : AA15      : output : 1.8 V             :         : 4         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AA16      :        :                   :         : 4         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AA17      :        :                   :         : 4         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AA18      :        :                   :         : 4         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AA19      :        :                   :         : 4         :                
+lms_tx_v[2]                  : AA20      : output : 1.8 V             :         : 4         : Y              
+lms_tx_v[1]                  : AA21      : output : 1.8 V             :         : 5         : Y              
+GND                          : AA22      : gnd    :                   :         :           :                
+GND                          : AB1       : gnd    :                   :         :           :                
+VCCIO3                       : AB2       : power  :                   : 1.8V    : 3         :                
+fx3_gpif[29]                 : AB3       : bidir  : 1.8 V             :         : 3         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AB4       :        :                   :         : 3         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AB5       :        :                   :         : 3         :                
+GND                          : AB6       : gnd    :                   :         :           :                
+led[2]                       : AB7       : output : 1.8 V             :         : 3         : Y              
+mini_exp1                    : AB8       : bidir  : 1.8 V             :         : 3         : Y              
+mini_exp2                    : AB9       : bidir  : 1.8 V             :         : 3         : Y              
+led[3]                       : AB10      : output : 1.8 V             :         : 3         : Y              
+ref_vctcxo_tune              : AB11      : input  : 1.8 V             :         : 3         : Y              
+ref_sma_clock                : AB12      : input  : 1.8 V             :         : 4         : Y              
+lms_sdio                     : AB13      : output : 1.8 V             :         : 4         : Y              
+lms_sdo                      : AB14      : input  : 1.8 V             :         : 4         : Y              
+lms_tx_enable                : AB15      : output : 1.8 V             :         : 4         : Y              
+lms_sen                      : AB16      : output : 1.8 V             :         : 4         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AB17      :        :                   :         : 4         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AB18      :        :                   :         : 4         :                
+lms_rx_v[2]                  : AB19      : output : 1.8 V             :         : 4         : Y              
+lms_rx_v[1]                  : AB20      : output : 1.8 V             :         : 4         : Y              
+VCCIO4                       : AB21      : power  :                   : 1.8V    : 4         :                
+GND                          : AB22      : gnd    :                   :         :           :                
+fx3_ctl[5]                   : B1        : bidir  : 1.8 V             :         : 1         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : B2        :        :                   :         : 1         :                
+fx3_gpif[10]                 : B3        : bidir  : 1.8 V             :         : 8         : Y              
+fx3_gpif[8]                  : B4        : bidir  : 1.8 V             :         : 8         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : B5        :        :                   :         : 8         :                
+fx3_gpif[0]                  : B6        : bidir  : 1.8 V             :         : 8         : Y              
+fx3_gpif[1]                  : B7        : bidir  : 1.8 V             :         : 8         : Y              
+fx3_gpif[2]                  : B8        : bidir  : 1.8 V             :         : 8         : Y              
+dac_sclk                     : B9        : output : 1.8 V             :         : 8         : Y              
+dac_csx                      : B10       : output : 1.8 V             :         : 8         : Y              
+GND+                         : B11       :        :                   :         : 8         :                
+GND+                         : B12       :        :                   :         : 7         :                
+exp_spi_miso                 : B13       : input  : 1.8 V             :         : 7         : Y              
+exp_gpio[17]                 : B14       : bidir  : 1.8 V             :         : 7         : Y              
+exp_gpio[18]                 : B15       : bidir  : 1.8 V             :         : 7         : Y              
+exp_gpio[20]                 : B16       : bidir  : 1.8 V             :         : 7         : Y              
+exp_gpio[21]                 : B17       : bidir  : 1.8 V             :         : 7         : Y              
+exp_gpio[23]                 : B18       : bidir  : 1.8 V             :         : 7         : Y              
+exp_gpio[24]                 : B19       : bidir  : 1.8 V             :         : 7         : Y              
+exp_gpio[29]                 : B20       : bidir  : 1.8 V             :         : 7         : Y              
+lms_rx_data[10]              : B21       : input  : 1.8 V             :         : 6         : Y              
+lms_rx_data[11]              : B22       : input  : 1.8 V             :         : 6         : Y              
+fx3_ctl[4]                   : C1        : bidir  : 1.8 V             :         : 1         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : C2        :        :                   :         : 1         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : C3        :        :                   :         : 8         :                
+fx3_gpif[12]                 : C4        : bidir  : 1.8 V             :         : 8         : Y              
+GND                          : C5        : gnd    :                   :         :           :                
+fx3_gpif[11]                 : C6        : bidir  : 1.8 V             :         : 8         : Y              
+fx3_gpif[13]                 : C7        : bidir  : 1.8 V             :         : 8         : Y              
+fx3_gpif[14]                 : C8        : bidir  : 1.8 V             :         : 8         : Y              
+GND                          : C9        : gnd    :                   :         :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : C10       :        :                   :         : 8         :                
+GND                          : C11       : gnd    :                   :         :           :                
+GND                          : C12       : gnd    :                   :         :           :                
+exp_present                  : C13       : input  : 1.8 V             :         : 7         : Y              
+GND                          : C14       : gnd    :                   :         :           :                
+exp_gpio[19]                 : C15       : bidir  : 1.8 V             :         : 7         : Y              
+GND                          : C16       : gnd    :                   :         :           :                
+exp_gpio[22]                 : C17       : bidir  : 1.8 V             :         : 7         : Y              
+GND                          : C18       : gnd    :                   :         :           :                
+exp_gpio[9]                  : C19       : bidir  : 1.8 V             :         : 7         : Y              
+exp_gpio[11]                 : C20       : bidir  : 1.8 V             :         : 6         : Y              
+lms_rx_data[8]               : C21       : input  : 1.8 V             :         : 6         : Y              
+lms_rx_data[9]               : C22       : input  : 1.8 V             :         : 6         : Y              
+fx3_gpif[15]                 : D1        : bidir  : 1.8 V             :         : 1         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : D2        :        :                   :         : 1         :                
+GND                          : D3        : gnd    :                   :         :           :                
+VCCIO1                       : D4        : power  :                   : 1.8V    : 1         :                
+VCCIO8                       : D5        : power  :                   : 1.8V    : 8         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : D6        :        :                   :         : 8         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : D7        :        :                   :         : 8         :                
+GND                          : D8        : gnd    :                   :         :           :                
+VCCIO8                       : D9        : power  :                   : 1.8V    : 8         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : D10       :        :                   :         : 8         :                
+VCCIO8                       : D11       : power  :                   : 1.8V    : 8         :                
+VCCIO7                       : D12       : power  :                   : 1.8V    : 7         :                
+exp_gpio[2]                  : D13       : bidir  : 1.8 V             :         : 7         : Y              
+VCCIO7                       : D14       : power  :                   : 1.8V    : 7         :                
+exp_gpio[15]                 : D15       : bidir  : 1.8 V             :         : 7         : Y              
+VCCIO7                       : D16       : power  :                   : 1.8V    : 7         :                
+exp_gpio[7]                  : D17       : bidir  : 1.8 V             :         : 7         : Y              
+VCCIO7                       : D18       : power  :                   : 1.8V    : 7         :                
+exp_gpio[8]                  : D19       : bidir  : 1.8 V             :         : 7         : Y              
+exp_gpio[10]                 : D20       : bidir  : 1.8 V             :         : 6         : Y              
+lms_rx_data[5]               : D21       : input  : 1.8 V             :         : 6         : Y              
+lms_rx_data[7]               : D22       : input  : 1.8 V             :         : 6         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : E1        :        :                   :         : 1         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : E2        :        :                   :         : 1         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : E3        :        :                   :         : 1         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : E4        :        :                   :         : 1         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : E5        :        :                   :         : 8         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : E6        :        :                   :         : 8         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : E7        :        :                   :         : 8         :                
+VCCIO8                       : E8        : power  :                   : 1.8V    : 8         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : E9        :        :                   :         : 8         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : E10       :        :                   :         : 8         :                
+exp_spi_clock                : E11       : output : 1.8 V             :         : 7         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : E12       :        :                   :         : 7         :                
+exp_gpio[3]                  : E13       : bidir  : 1.8 V             :         : 7         : Y              
+exp_gpio[4]                  : E14       : bidir  : 1.8 V             :         : 7         : Y              
+exp_gpio[5]                  : E15       : bidir  : 1.8 V             :         : 7         : Y              
+exp_gpio[6]                  : E16       : bidir  : 1.8 V             :         : 7         : Y              
+VCCD_PLL2                    : E17       : power  :                   : 1.2V    :           :                
+GNDA2                        : E18       : gnd    :                   :         :           :                
+VCCIO6                       : E19       : power  :                   : 1.8V    : 6         :                
+GND                          : E20       : gnd    :                   :         :           :                
+lms_rx_data[6]               : E21       : input  : 1.8 V             :         : 6         : Y              
+lms_rx_data[3]               : E22       : input  : 1.8 V             :         : 6         : Y              
+fx3_ctl[0]                   : F1        : bidir  : 1.8 V             :         : 1         : Y              
+fx3_ctl[1]                   : F2        : bidir  : 1.8 V             :         : 1         : Y              
+GND                          : F3        : gnd    :                   :         :           :                
+VCCIO1                       : F4        : power  :                   : 1.8V    : 1         :                
+GNDA3                        : F5        : gnd    :                   :         :           :                
+VCCD_PLL3                    : F6        : power  :                   : 1.2V    :           :                
+fx3_ctl[6]                   : F7        : bidir  : 1.8 V             :         : 8         : Y              
+fx3_gpif[4]                  : F8        : bidir  : 1.8 V             :         : 8         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : F9        :        :                   :         : 8         :                
+fx3_gpif[9]                  : F10       : bidir  : 1.8 V             :         : 8         : Y              
+exp_spi_mosi                 : F11       : output : 1.8 V             :         : 7         : Y              
+GND                          : F12       : gnd    :                   :         :           :                
+exp_gpio[12]                 : F13       : bidir  : 1.8 V             :         : 7         : Y              
+exp_gpio[13]                 : F14       : bidir  : 1.8 V             :         : 7         : Y              
+exp_gpio[14]                 : F15       : bidir  : 1.8 V             :         : 7         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : F16       :        :                   :         : 7         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : F17       :        :                   :         : 6         :                
+VCCA2                        : F18       : power  :                   : 2.5V    :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : F19       :        :                   :         : 6         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : F20       :        :                   :         : 6         :                
+lms_rx_data[4]               : F21       : input  : 1.8 V             :         : 6         : Y              
+lms_rx_data[1]               : F22       : input  : 1.8 V             :         : 6         : Y              
+fx3_pclk                     : G1        : input  : 1.8 V             :         : 1         : Y              
+GND                          : G2        : gnd    :                   :         :           :                
+fx3_ctl[7]                   : G3        : bidir  : 1.8 V             :         : 1         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : G4        :        :                   :         : 1         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : G5        :        :                   :         : 1         :                
+VCCA3                        : G6        : power  :                   : 2.5V    :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : G7        :        :                   :         : 8         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : G8        :        :                   :         : 8         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : G9        :        :                   :         : 8         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : G10       :        :                   :         : 8         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : G11       :        :                   :         : 8         :                
+VCCINT                       : G12       : power  :                   : 1.2V    :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : G13       :        :                   :         : 7         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : G14       :        :                   :         : 7         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : G15       :        :                   :         : 7         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : G16       :        :                   :         : 7         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : G17       :        :                   :         : 6         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : G18       :        :                   :         : 6         :                
+VCCIO6                       : G19       : power  :                   : 1.8V    : 6         :                
+GND                          : G20       : gnd    :                   :         :           :                
+GND+                         : G21       :        :                   :         : 6         :                
+c4_tx_clock                  : G22       : input  : 1.8 V             :         : 6         : Y              
+fx3_ctl[3]                   : H1        : bidir  : 1.8 V             :         : 1         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : H2        :        :                   :         : 1         :                
+GND                          : H3        : gnd    :                   :         :           :                
+VCCIO1                       : H4        : power  :                   : 1.8V    : 1         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : H5        :        :                   :         : 1         :                
+fx3_ctl[2]                   : H6        : bidir  : 1.8 V             :         : 1         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : H7        :        :                   :         : 1         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : H8        :        :                   :         : 1         :                
+VCCINT                       : H9        : power  :                   : 1.2V    :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : H10       :        :                   :         : 8         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : H11       :        :                   :         : 8         :                
+GND                          : H12       : gnd    :                   :         :           :                
+GND                          : H13       : gnd    :                   :         :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : H14       :        :                   :         : 7         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : H15       :        :                   :         : 7         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : H16       :        :                   :         : 6         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : H17       :        :                   :         : 6         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : H18       :        :                   :         : 6         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : H19       :        :                   :         : 6         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : H20       :        :                   :         : 6         :                
+lms_rx_data[2]               : H21       : input  : 1.8 V             :         : 6         : Y              
+lms_rx_iq_select             : H22       : input  : 1.8 V             :         : 6         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : J1        :        :                   :         : 1         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : J2        :        :                   :         : 1         :                
+fx3_ctl[9]                   : J3        : bidir  : 1.8 V             :         : 1         : Y              
+fx3_ctl[11]                  : J4        : bidir  : 1.8 V             :         : 1         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : J5        :        :                   :         : 1         :                
+fx3_ctl[10]                  : J6        : bidir  : 1.8 V             :         : 1         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : J7        :        :                   :         : 1         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : J8        :        :                   :         : 1         :                
+GND                          : J9        : gnd    :                   :         :           :                
+VCCINT                       : J10       : power  :                   : 1.2V    :           :                
+VCCINT                       : J11       : power  :                   : 1.2V    :           :                
+VCCINT                       : J12       : power  :                   : 1.2V    :           :                
+VCCINT                       : J13       : power  :                   : 1.2V    :           :                
+VCCINT                       : J14       : power  :                   : 1.2V    :           :                
+GND                          : J15       : gnd    :                   :         :           :                
+VCCINT                       : J16       : power  :                   : 1.2V    :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : J17       :        :                   :         : 6         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : J18       :        :                   :         : 6         :                
+GND                          : J19       : gnd    :                   :         :           :                
+VCCIO6                       : J20       : power  :                   : 1.8V    : 6         :                
+lms_rx_data[0]               : J21       : input  : 1.8 V             :         : 6         : Y              
+lms_tx_iq_select             : J22       : output : 1.8 V             :         : 6         : Y              
+fx3_gpif[7]                  : K1        : bidir  : 1.8 V             :         : 1         : Y              
+~ALTERA_DCLK~ / RESERVED_INPUT : K2        : input  : 1.8 V             :         : 1         : N              
+GND                          : K3        : gnd    :                   :         :           :                
+VCCIO1                       : K4        : power  :                   : 1.8V    : 1         :                
+nCONFIG                      : K5        :        :                   :         : 1         :                
+nSTATUS                      : K6        :        :                   :         : 1         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : K7        :        :                   :         : 1         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : K8        :        :                   :         : 1         :                
+VCCINT                       : K9        : power  :                   : 1.2V    :           :                
+GND                          : K10       : gnd    :                   :         :           :                
+GND                          : K11       : gnd    :                   :         :           :                
+GND                          : K12       : gnd    :                   :         :           :                
+GND                          : K13       : gnd    :                   :         :           :                
+VCCINT                       : K14       : power  :                   : 1.2V    :           :                
+VCCINT                       : K15       : power  :                   : 1.2V    :           :                
+GND                          : K16       : gnd    :                   :         :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : K17       :        :                   :         : 6         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : K18       :        :                   :         : 6         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : K19       :        :                   :         : 6         :                
+MSEL3                        : K20       :        :                   :         : 6         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : K21       :        :                   :         : 6         :                
+lms_tx_data[1]               : K22       : output : 1.8 V             :         : 6         : Y              
+altera_reserved_tms          : L1        : input  : 1.8 V             :         : 1         : N              
+altera_reserved_tck          : L2        : input  : 1.8 V             :         : 1         : N              
+nCE                          : L3        :        :                   :         : 1         :                
+altera_reserved_tdo          : L4        : output : 1.8 V             :         : 1         : N              
+altera_reserved_tdi          : L5        : input  : 1.8 V             :         : 1         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : L6        :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : L7        :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : L8        :        :                   :         : 1         :                
+VCCINT                       : L9        : power  :                   : 1.2V    :           :                
+GND                          : L10       : gnd    :                   :         :           :                
+GND                          : L11       : gnd    :                   :         :           :                
+GND                          : L12       : gnd    :                   :         :           :                
+GND                          : L13       : gnd    :                   :         :           :                
+VCCINT                       : L14       : power  :                   : 1.2V    :           :                
+GND                          : L15       : gnd    :                   :         :           :                
+VCCINT                       : L16       : power  :                   : 1.2V    :           :                
+MSEL2                        : L17       :        :                   :         : 6         :                
+MSEL1                        : L18       :        :                   :         : 6         :                
+VCCIO6                       : L19       : power  :                   : 1.8V    : 6         :                
+GND                          : L20       : gnd    :                   :         :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : L21       :        :                   :         : 6         :                
+lms_tx_data[3]               : L22       : output : 1.8 V             :         : 6         : Y              
+fx3_ctl[12]                  : M1        : bidir  : 1.8 V             :         : 2         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : M2        :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : M3        :        :                   :         : 2         :                
+fx3_gpif[20]                 : M4        : bidir  : 1.8 V             :         : 2         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : M5        :        :                   :         : 2         :                
+fx3_gpif[17]                 : M6        : bidir  : 1.8 V             :         : 2         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : M7        :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : M8        :        :                   :         : 2         :                
+VCCINT                       : M9        : power  :                   : 1.2V    :           :                
+GND                          : M10       : gnd    :                   :         :           :                
+GND                          : M11       : gnd    :                   :         :           :                
+GND                          : M12       : gnd    :                   :         :           :                
+GND                          : M13       : gnd    :                   :         :           :                
+VCCINT                       : M14       : power  :                   : 1.2V    :           :                
+VCCINT                       : M15       : power  :                   : 1.2V    :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : M16       :        :                   :         : 5         :                
+MSEL0                        : M17       :        :                   :         : 6         :                
+CONF_DONE                    : M18       :        :                   :         : 6         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : M19       :        :                   :         : 5         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : M20       :        :                   :         : 5         :                
+lms_tx_data[0]               : M21       : output : 1.8 V             :         : 5         : Y              
+lms_tx_data[5]               : M22       : output : 1.8 V             :         : 5         : Y              
+fx3_ctl[8]                   : N1        : bidir  : 1.8 V             :         : 2         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : N2        :        :                   :         : 2         :                
+GND                          : N3        : gnd    :                   :         :           :                
+VCCIO2                       : N4        : power  :                   : 1.8V    : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : N5        :        :                   :         : 2         :                
+fx3_gpif[16]                 : N6        : bidir  : 1.8 V             :         : 2         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : N7        :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : N8        :        :                   :         : 2         :                
+VCCINT                       : N9        : power  :                   : 1.2V    :           :                
+GND                          : N10       : gnd    :                   :         :           :                
+GND                          : N11       : gnd    :                   :         :           :                
+GND                          : N12       : gnd    :                   :         :           :                
+GND                          : N13       : gnd    :                   :         :           :                
+VCCINT                       : N14       : power  :                   : 1.2V    :           :                
+GND                          : N15       : gnd    :                   :         :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : N16       :        :                   :         : 5         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : N17       :        :                   :         : 5         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : N18       :        :                   :         : 5         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : N19       :        :                   :         : 5         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : N20       :        :                   :         : 5         :                
+lms_tx_data[2]               : N21       : output : 1.8 V             :         : 5         : Y              
+lms_tx_data[7]               : N22       : output : 1.8 V             :         : 5         : Y              
+fx3_gpif[28]                 : P1        : bidir  : 1.8 V             :         : 2         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : P2        :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : P3        :        :                   :         : 2         :                
+fx3_gpif[18]                 : P4        : bidir  : 1.8 V             :         : 2         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : P5        :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : P6        :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : P7        :        :                   :         : 2         :                
+GND                          : P8        : gnd    :                   :         :           :                
+VCCINT                       : P9        : power  :                   : 1.2V    :           :                
+VCCINT                       : P10       : power  :                   : 1.2V    :           :                
+VCCINT                       : P11       : power  :                   : 1.2V    :           :                
+VCCINT                       : P12       : power  :                   : 1.2V    :           :                
+VCCINT                       : P13       : power  :                   : 1.2V    :           :                
+VCCINT                       : P14       : power  :                   : 1.2V    :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : P15       :        :                   :         : 5         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : P16       :        :                   :         : 5         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : P17       :        :                   :         : 5         :                
+VCCIO5                       : P18       : power  :                   : 1.8V    : 5         :                
+GND                          : P19       : gnd    :                   :         :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : P20       :        :                   :         : 5         :                
+lms_tx_data[4]               : P21       : output : 1.8 V             :         : 5         : Y              
+lms_tx_data[10]              : P22       : output : 1.8 V             :         : 5         : Y              
+fx3_gpif[23]                 : R1        : bidir  : 1.8 V             :         : 2         : Y              
+fx3_gpif[26]                 : R2        : bidir  : 1.8 V             :         : 2         : Y              
+GND                          : R3        : gnd    :                   :         :           :                
+VCCIO2                       : R4        : power  :                   : 1.8V    : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : R5        :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : R6        :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : R7        :        :                   :         : 2         :                
+VCCINT                       : R8        : power  :                   : 1.2V    :           :                
+GND                          : R9        : gnd    :                   :         :           :                
+VCCINT                       : R10       : power  :                   : 1.2V    :           :                
+GND                          : R11       : gnd    :                   :         :           :                
+VCCINT                       : R12       : power  :                   : 1.2V    :           :                
+GND                          : R13       : gnd    :                   :         :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : R14       :        :                   :         : 4         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : R15       :        :                   :         : 4         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : R16       :        :                   :         : 4         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : R17       :        :                   :         : 5         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : R18       :        :                   :         : 5         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : R19       :        :                   :         : 5         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : R20       :        :                   :         : 5         :                
+lms_tx_data[8]               : R21       : output : 1.8 V             :         : 5         : Y              
+lms_tx_data[6]               : R22       : output : 1.8 V             :         : 5         : Y              
+GND+                         : T1        :        :                   :         : 2         :                
+GND+                         : T2        :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : T3        :        :                   :         : 2         :                
+fx3_gpif[21]                 : T4        : bidir  : 1.8 V             :         : 2         : Y              
+fx3_gpif[19]                 : T5        : bidir  : 1.8 V             :         : 2         : Y              
+VCCA1                        : T6        : power  :                   : 2.5V    :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : T7        :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : T8        :        :                   :         : 3         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : T9        :        :                   :         : 3         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : T10       :        :                   :         : 3         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : T11       :        :                   :         : 3         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : T12       :        :                   :         : 4         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : T13       :        :                   :         : 4         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : T14       :        :                   :         : 4         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : T15       :        :                   :         : 4         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : T16       :        :                   :         : 4         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : T17       :        :                   :         : 5         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : T18       :        :                   :         : 5         :                
+VCCIO5                       : T19       : power  :                   : 1.8V    : 5         :                
+GND                          : T20       : gnd    :                   :         :           :                
+lms_pll_out                  : T21       : input  : 1.8 V             :         : 5         : Y              
+lms_rx_clock_out             : T22       : input  : 1.8 V             :         : 5         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : U1        :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : U2        :        :                   :         : 2         :                
+GND                          : U3        : gnd    :                   :         :           :                
+VCCIO2                       : U4        : power  :                   : 1.8V    : 2         :                
+GNDA1                        : U5        : gnd    :                   :         :           :                
+VCCD_PLL1                    : U6        : power  :                   : 1.2V    :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : U7        :        :                   :         : 3         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : U8        :        :                   :         : 3         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : U9        :        :                   :         : 3         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : U10       :        :                   :         : 3         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : U11       :        :                   :         : 3         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : U12       :        :                   :         : 4         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : U13       :        :                   :         : 4         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : U14       :        :                   :         : 4         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : U15       :        :                   :         : 4         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : U16       :        :                   :         : 4         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : U17       :        :                   :         : 4         :                
+VCCA4                        : U18       : power  :                   : 2.5V    :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : U19       :        :                   :         : 5         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : U20       :        :                   :         : 5         :                
+lms_tx_data[11]              : U21       : output : 1.8 V             :         : 5         : Y              
+lms_tx_data[9]               : U22       : output : 1.8 V             :         : 5         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : V1        :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : V2        :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : V3        :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : V4        :        :                   :         : 2         :                
+fx3_gpif[22]                 : V5        : bidir  : 1.8 V             :         : 3         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : V6        :        :                   :         : 3         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : V7        :        :                   :         : 3         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : V8        :        :                   :         : 3         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : V9        :        :                   :         : 3         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : V10       :        :                   :         : 3         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : V11       :        :                   :         : 3         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : V12       :        :                   :         : 4         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : V13       :        :                   :         : 4         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : V14       :        :                   :         : 4         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : V15       :        :                   :         : 4         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : V16       :        :                   :         : 4         :                
+VCCD_PLL4                    : V17       : power  :                   : 1.2V    :           :                
+GNDA4                        : V18       : gnd    :                   :         :           :                
+VCCIO5                       : V19       : power  :                   : 1.8V    : 5         :                
+GND                          : V20       : gnd    :                   :         :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : V21       :        :                   :         : 5         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : V22       :        :                   :         : 5         :                
+fx3_gpif[24]                 : W1        : bidir  : 1.8 V             :         : 2         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : W2        :        :                   :         : 2         :                
+GND                          : W3        : gnd    :                   :         :           :                
+VCCIO2                       : W4        : power  :                   : 1.8V    : 2         :                
+VCCIO3                       : W5        : power  :                   : 1.8V    : 3         :                
+fx3_gpif[25]                 : W6        : bidir  : 1.8 V             :         : 3         : Y              
+fx3_gpif[27]                 : W7        : bidir  : 1.8 V             :         : 3         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : W8        :        :                   :         : 3         :                
+VCCIO3                       : W9        : power  :                   : 1.8V    : 3         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : W10       :        :                   :         : 3         :                
+VCCIO3                       : W11       : power  :                   : 1.8V    : 3         :                
+VCCIO4                       : W12       : power  :                   : 1.8V    : 4         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : W13       :        :                   :         : 4         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : W14       :        :                   :         : 4         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : W15       :        :                   :         : 4         :                
+VCCIO4                       : W16       : power  :                   : 1.8V    : 4         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : W17       :        :                   :         : 4         :                
+VCCIO4                       : W18       : power  :                   : 1.8V    : 4         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : W19       :        :                   :         : 5         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : W20       :        :                   :         : 5         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : W21       :        :                   :         : 5         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : W22       :        :                   :         : 5         :                
+fx3_gpif[30]                 : Y1        : bidir  : 1.8 V             :         : 2         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : Y2        :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : Y3        :        :                   :         : 3         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : Y4        :        :                   :         : 3         :                
+GND                          : Y5        : gnd    :                   :         :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : Y6        :        :                   :         : 3         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : Y7        :        :                   :         : 3         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : Y8        :        :                   :         : 3         :                
+GND                          : Y9        : gnd    :                   :         :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : Y10       :        :                   :         : 3         :                
+GND                          : Y11       : gnd    :                   :         :           :                
+GND                          : Y12       : gnd    :                   :         :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : Y13       :        :                   :         : 4         :                
+VCCIO4                       : Y14       : power  :                   : 1.8V    : 4         :                
+GND                          : Y15       : gnd    :                   :         :           :                
+GND                          : Y16       : gnd    :                   :         :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : Y17       :        :                   :         : 4         :                
+GND                          : Y18       : gnd    :                   :         :           :                
+VCCIO5                       : Y19       : power  :                   : 1.8V    : 5         :                
+GND                          : Y20       : gnd    :                   :         :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : Y21       :        :                   :         : 5         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : Y22       :        :                   :         : 5         :                

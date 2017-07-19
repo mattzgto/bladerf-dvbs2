@@ -1,0 +1,869 @@
+Archive member included to satisfy reference by file (symbol)
+
+/home/spex/intelFPGA_lite/17.0/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/mno-hw-mul/libgcc.a(_lshrdi3.o)
+                              obj/default/src/pkt_legacy.o (__lshrdi3)
+/home/spex/intelFPGA_lite/17.0/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/mno-hw-mul/libgcc.a(lib2-divmod.o)
+                              obj/default/src/bladeRF_nios.o (__divsi3)
+/home/spex/intelFPGA_lite/17.0/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/mno-hw-mul/libgcc.a(lib2-mul.o)
+                              obj/default/src/bladeRF_nios.o (__mulsi3)
+/home/spex/intelFPGA_lite/17.0/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-memcpy.o)
+                              obj/default/src/pkt_retune.o (memcpy)
+/home/spex/intelFPGA_lite/17.0/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-memset.o)
+                              obj/default/src/bladeRF_nios.o (memset)
+../bladeRF_nios_bsp//libhal_bsp.a(alt_iic.o)
+                              obj/default/src/devices.o (alt_ic_isr_register)
+../bladeRF_nios_bsp//libhal_bsp.a(alt_iic_isr_register.o)
+                              ../bladeRF_nios_bsp//libhal_bsp.a(alt_iic.o) (alt_iic_isr_register)
+../bladeRF_nios_bsp//libhal_bsp.a(alt_irq_entry.o)
+                              ../bladeRF_nios_bsp//libhal_bsp.a(alt_iic_isr_register.o) (alt_irq_entry)
+../bladeRF_nios_bsp//libhal_bsp.a(alt_irq_handler.o)
+                              ../bladeRF_nios_bsp//libhal_bsp.a(alt_iic_isr_register.o) (alt_irq_handler)
+../bladeRF_nios_bsp//libhal_bsp.a(alt_irq_vars.o)
+                              ../bladeRF_nios_bsp//libhal_bsp.a(alt_iic.o) (alt_irq_active)
+../bladeRF_nios_bsp//libhal_bsp.a(alt_load.o)
+                              ../bladeRF_nios_bsp//obj/HAL/src/crt0.o (alt_load)
+../bladeRF_nios_bsp//libhal_bsp.a(alt_main.o)
+                              ../bladeRF_nios_bsp//obj/HAL/src/crt0.o (alt_main)
+../bladeRF_nios_bsp//libhal_bsp.a(alt_usleep.o)
+                              obj/default/lms.o (usleep)
+../bladeRF_nios_bsp//libhal_bsp.a(alt_sys_init.o)
+                              ../bladeRF_nios_bsp//libhal_bsp.a(alt_main.o) (alt_irq_init)
+../bladeRF_nios_bsp//libhal_bsp.a(altera_avalon_spi.o)
+                              obj/default/src/devices.o (alt_avalon_spi_command)
+../bladeRF_nios_bsp//libhal_bsp.a(alt_busy_sleep.o)
+                              ../bladeRF_nios_bsp//libhal_bsp.a(alt_usleep.o) (alt_busy_sleep)
+../bladeRF_nios_bsp//libhal_bsp.a(alt_dcache_flush_all.o)
+                              ../bladeRF_nios_bsp//libhal_bsp.a(alt_load.o) (alt_dcache_flush_all)
+../bladeRF_nios_bsp//libhal_bsp.a(alt_exception_entry.o)
+                              ../bladeRF_nios_bsp//libhal_bsp.a(alt_irq_entry.o) (alt_exception)
+../bladeRF_nios_bsp//libhal_bsp.a(alt_icache_flush_all.o)
+                              ../bladeRF_nios_bsp//libhal_bsp.a(alt_load.o) (alt_icache_flush_all)
+../bladeRF_nios_bsp//libhal_bsp.a(altera_nios2_gen2_irq.o)
+                              ../bladeRF_nios_bsp//libhal_bsp.a(alt_sys_init.o) (altera_nios2_gen2_irq_init)
+
+Allocating common symbols
+Common symbol       size              file
+
+alt_irq             0x100             ../bladeRF_nios_bsp//libhal_bsp.a(alt_irq_handler.o)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+reset            0x0000000000004000 0x0000000000000020
+ram              0x0000000000004020 0x0000000000003fe0
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+LOAD ../bladeRF_nios_bsp//obj/HAL/src/crt0.o
+LOAD obj/default/src/bladeRF_nios.o
+LOAD obj/default/src/devices.o
+LOAD obj/default/src/devices_sim.o
+LOAD obj/default/src/pkt_32x32.o
+LOAD obj/default/src/pkt_8x16.o
+LOAD obj/default/src/pkt_8x32.o
+LOAD obj/default/src/pkt_8x64.o
+LOAD obj/default/src/pkt_8x8.o
+LOAD obj/default/src/pkt_legacy.o
+LOAD obj/default/src/pkt_retune.o
+LOAD obj/default/band_select.o
+LOAD obj/default/lms.o
+LOAD /home/spex/intelFPGA_lite/17.0/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libstdc++.a
+LOAD /home/spex/intelFPGA_lite/17.0/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libm.a
+LOAD /home/spex/intelFPGA_lite/17.0/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/mno-hw-mul/libgcc.a
+START GROUP
+LOAD /home/spex/intelFPGA_lite/17.0/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a
+LOAD /home/spex/intelFPGA_lite/17.0/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/mno-hw-mul/libgcc.a
+LOAD ../bladeRF_nios_bsp//libhal_bsp.a
+END GROUP
+LOAD /home/spex/intelFPGA_lite/17.0/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/mno-hw-mul/libgcc.a
+                0x0000000000004000                __alt_mem_ram = 0x4000
+
+.entry          0x0000000000004000       0x20
+ *(.entry)
+ .entry         0x0000000000004000       0x20 ../bladeRF_nios_bsp//obj/HAL/src/crt0.o
+                0x0000000000004000                __reset
+                0x000000000000400c                _exit
+
+.exceptions     0x0000000000004020      0x12c
+                0x0000000000004020                PROVIDE (__ram_exceptions_start, ABSOLUTE (.))
+                0x0000000000004020                . = ALIGN (0x20)
+ *(.irq)
+ *(.exceptions.entry.label)
+ .exceptions.entry.label
+                0x0000000000004020        0x0 ../bladeRF_nios_bsp//libhal_bsp.a(alt_irq_entry.o)
+                0x0000000000004020                alt_irq_entry
+ .exceptions.entry.label
+                0x0000000000004020        0x0 ../bladeRF_nios_bsp//libhal_bsp.a(alt_exception_entry.o)
+                0x0000000000004020                alt_exception
+ *(.exceptions.entry.user)
+ *(.exceptions.entry.ecc_fatal)
+ *(.exceptions.entry)
+ .exceptions.entry
+                0x0000000000004020       0x54 ../bladeRF_nios_bsp//libhal_bsp.a(alt_exception_entry.o)
+ *(.exceptions.irqtest.user)
+ *(.exceptions.irqtest)
+ .exceptions.irqtest
+                0x0000000000004074       0x10 ../bladeRF_nios_bsp//libhal_bsp.a(alt_irq_entry.o)
+ *(.exceptions.irqhandler.user)
+ *(.exceptions.irqhandler)
+ .exceptions.irqhandler
+                0x0000000000004084        0x4 ../bladeRF_nios_bsp//libhal_bsp.a(alt_irq_entry.o)
+ *(.exceptions.irqreturn.user)
+ *(.exceptions.irqreturn)
+ .exceptions.irqreturn
+                0x0000000000004088        0x4 ../bladeRF_nios_bsp//libhal_bsp.a(alt_irq_entry.o)
+ *(.exceptions.notirq.label)
+ .exceptions.notirq.label
+                0x000000000000408c        0x0 ../bladeRF_nios_bsp//libhal_bsp.a(alt_irq_entry.o)
+ *(.exceptions.notirq.user)
+ *(.exceptions.notirq)
+ .exceptions.notirq
+                0x000000000000408c        0x8 ../bladeRF_nios_bsp//libhal_bsp.a(alt_exception_entry.o)
+ *(.exceptions.soft.user)
+ *(.exceptions.soft)
+ *(.exceptions.unknown.user)
+ *(.exceptions.unknown)
+ .exceptions.unknown
+                0x0000000000004094        0x4 ../bladeRF_nios_bsp//libhal_bsp.a(alt_exception_entry.o)
+ *(.exceptions.exit.label)
+ .exceptions.exit.label
+                0x0000000000004098        0x0 ../bladeRF_nios_bsp//libhal_bsp.a(alt_irq_entry.o)
+ .exceptions.exit.label
+                0x0000000000004098        0x0 ../bladeRF_nios_bsp//libhal_bsp.a(alt_exception_entry.o)
+ *(.exceptions.exit.user)
+ *(.exceptions.exit)
+ .exceptions.exit
+                0x0000000000004098       0x54 ../bladeRF_nios_bsp//libhal_bsp.a(alt_exception_entry.o)
+ *(.exceptions)
+ .exceptions    0x00000000000040ec       0x60 ../bladeRF_nios_bsp//libhal_bsp.a(alt_irq_handler.o)
+                0x00000000000040ec                alt_irq_handler
+                0x000000000000414c                PROVIDE (__ram_exceptions_end, ABSOLUTE (.))
+                0x0000000000004020                PROVIDE (__flash_exceptions_start, LOADADDR (.exceptions))
+
+.text           0x000000000000414c     0x2dc4
+                [!provide]                        PROVIDE (stext, ABSOLUTE (.))
+ *(.interp)
+ *(.hash)
+ *(.dynsym)
+ *(.dynstr)
+ *(.gnu.version)
+ *(.gnu.version_d)
+ *(.gnu.version_r)
+ *(.rel.init)
+ *(.rela.init)
+ *(.rel.text .rel.text.* .rel.gnu.linkonce.t.*)
+ *(.rela.text .rela.text.* .rela.gnu.linkonce.t.*)
+ *(.rel.fini)
+ *(.rela.fini)
+ *(.rel.rodata .rel.rodata.* .rel.gnu.linkonce.r.*)
+ *(.rela.rodata .rela.rodata.* .rela.gnu.linkonce.r.*)
+ *(.rel.data .rel.data.* .rel.gnu.linkonce.d.*)
+ *(.rela.data .rela.data.* .rela.gnu.linkonce.d.*)
+ *(.rel.tdata .rel.tdata.* .rel.gnu.linkonce.td.*)
+ *(.rela.tdata .rela.tdata.* .rela.gnu.linkonce.td.*)
+ *(.rel.tbss .rel.tbss.* .rel.gnu.linkonce.tb.*)
+ *(.rela.tbss .rela.tbss.* .rela.gnu.linkonce.tb.*)
+ *(.rel.ctors)
+ *(.rela.ctors)
+ *(.rel.dtors)
+ *(.rela.dtors)
+ *(.rel.got)
+ *(.rela.got)
+ *(.rel.sdata .rel.sdata.* .rel.gnu.linkonce.s.*)
+ *(.rela.sdata .rela.sdata.* .rela.gnu.linkonce.s.*)
+ *(.rel.sbss .rel.sbss.* .rel.gnu.linkonce.sb.*)
+ *(.rela.sbss .rela.sbss.* .rela.gnu.linkonce.sb.*)
+ *(.rel.sdata2 .rel.sdata2.* .rel.gnu.linkonce.s2.*)
+ *(.rela.sdata2 .rela.sdata2.* .rela.gnu.linkonce.s2.*)
+ *(.rel.sbss2 .rel.sbss2.* .rel.gnu.linkonce.sb2.*)
+ *(.rela.sbss2 .rela.sbss2.* .rela.gnu.linkonce.sb2.*)
+ *(.rel.bss .rel.bss.* .rel.gnu.linkonce.b.*)
+ *(.rela.bss .rela.bss.* .rela.gnu.linkonce.b.*)
+ *(.rel.plt)
+ *(.rela.plt)
+ *(.rel.dyn)
+ *(.init)
+ *(.plt)
+ *(.text .stub .text.* .gnu.linkonce.t.*)
+ .text          0x000000000000414c       0x3c ../bladeRF_nios_bsp//obj/HAL/src/crt0.o
+                0x000000000000414c                _start
+ .text          0x0000000000004188        0x0 obj/default/src/bladeRF_nios.o
+ .text.startup  0x0000000000004188      0x2c4 obj/default/src/bladeRF_nios.o
+                0x0000000000004188                main
+ .text          0x000000000000444c      0x78c obj/default/src/devices.o
+                0x00000000000044bc                vctcxo_tamer_enable_isr
+                0x00000000000044e8                vctcxo_tamer_clear_isr
+                0x00000000000044fc                vctcxo_tamer_reset_counters
+                0x00000000000045b0                vctcxo_tamer_set_tune_mode
+                0x00000000000045c0                vctcxo_tamer_get_tune_mode
+                0x00000000000045e0                vctcxo_tamer_read_count
+                0x00000000000046e0                vctcxo_tamer_read
+                0x00000000000046f4                vctcxo_tamer_write
+                0x0000000000004708                tamer_schedule
+                0x0000000000004758                bladerf_nios_init
+                0x0000000000004824                lms6_read
+                0x0000000000004838                lms6_write
+                0x000000000000484c                si5338_read
+                0x00000000000048ec                si5338_write
+                0x0000000000004978                vctcxo_trim_dac_write
+                0x00000000000049c0                vctcxo_trim_dac_read
+                0x0000000000004a4c                adf4351_write
+                0x0000000000004aa0                iqbal_get_gain
+                0x0000000000004ab8                iqbal_set_gain
+                0x0000000000004ae0                iqbal_get_phase
+                0x0000000000004afc                iqbal_set_phase
+                0x0000000000004b24                tx_trigger_ctl_write
+                0x0000000000004b34                tx_trigger_ctl_read
+                0x0000000000004b40                rx_trigger_ctl_write
+                0x0000000000004b50                rx_trigger_ctl_read
+                0x0000000000004b5c                time_tamer_read
+ .text          0x0000000000004bd8        0x0 obj/default/src/devices_sim.o
+ .text          0x0000000000004bd8      0x184 obj/default/src/pkt_32x32.o
+                0x0000000000004bd8                pkt_32x32
+ .text          0x0000000000004d5c      0x1d4 obj/default/src/pkt_8x16.o
+                0x0000000000004d5c                pkt_8x16
+ .text          0x0000000000004f30      0x15c obj/default/src/pkt_8x32.o
+                0x0000000000004f30                pkt_8x32
+ .text          0x000000000000508c      0x158 obj/default/src/pkt_8x64.o
+                0x000000000000508c                pkt_8x64
+ .text          0x00000000000051e4      0x1cc obj/default/src/pkt_8x8.o
+                0x00000000000051e4                pkt_8x8
+ .text          0x00000000000053b0      0x4fc obj/default/src/pkt_legacy.o
+                0x00000000000053fc                pkt_legacy
+ .text          0x00000000000058ac      0x684 obj/default/src/pkt_retune.o
+                0x0000000000005afc                pkt_retune_init
+                0x0000000000005b60                pkt_retune_work
+                0x0000000000005b90                pkt_retune
+ .text          0x0000000000005f30       0x78 obj/default/band_select.o
+                0x0000000000005f30                band_select
+ .text          0x0000000000005fa8      0x96c obj/default/lms.o
+                0x0000000000006254                lms_select_lna
+                0x00000000000062a4                lms_select_pa
+                0x0000000000006328                lms_get_loopback_mode
+                0x0000000000006408                lms_select_band
+                0x00000000000064a0                lms_set_precalculated_frequency
+ .text          0x0000000000006914       0x40 /home/spex/intelFPGA_lite/17.0/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/mno-hw-mul/libgcc.a(_lshrdi3.o)
+                0x0000000000006914                __lshrdi3
+ .text          0x0000000000006954      0x1b4 /home/spex/intelFPGA_lite/17.0/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/mno-hw-mul/libgcc.a(lib2-divmod.o)
+                0x0000000000006954                __divsi3
+                0x00000000000069d8                __modsi3
+                0x0000000000006a4c                __udivsi3
+                0x0000000000006ab0                __umodsi3
+ .text          0x0000000000006b08       0x28 /home/spex/intelFPGA_lite/17.0/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/mno-hw-mul/libgcc.a(lib2-mul.o)
+                0x0000000000006b08                __mulsi3
+ .text          0x0000000000006b30        0x0 /home/spex/intelFPGA_lite/17.0/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-memcpy.o)
+ .text.memcpy   0x0000000000006b30       0x28 /home/spex/intelFPGA_lite/17.0/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-memcpy.o)
+                0x0000000000006b30                memcpy
+ .text          0x0000000000006b58        0x0 /home/spex/intelFPGA_lite/17.0/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-memset.o)
+ .text.memset   0x0000000000006b58       0x20 /home/spex/intelFPGA_lite/17.0/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-memset.o)
+                0x0000000000006b58                memset
+ .text          0x0000000000006b78       0x8c ../bladeRF_nios_bsp//libhal_bsp.a(alt_iic.o)
+                0x0000000000006b78                alt_ic_isr_register
+                0x0000000000006b7c                alt_ic_irq_enable
+                0x0000000000006bb4                alt_ic_irq_disable
+                0x0000000000006bec                alt_ic_irq_enabled
+ .text          0x0000000000006c04       0x68 ../bladeRF_nios_bsp//libhal_bsp.a(alt_iic_isr_register.o)
+                0x0000000000006c04                alt_iic_isr_register
+ .text          0x0000000000006c6c        0x0 ../bladeRF_nios_bsp//libhal_bsp.a(alt_irq_entry.o)
+ .text          0x0000000000006c6c        0x0 ../bladeRF_nios_bsp//libhal_bsp.a(alt_irq_handler.o)
+ .text          0x0000000000006c6c        0x0 ../bladeRF_nios_bsp//libhal_bsp.a(alt_irq_vars.o)
+ .text          0x0000000000006c6c       0xe0 ../bladeRF_nios_bsp//libhal_bsp.a(alt_load.o)
+                0x0000000000006c6c                alt_load
+ .text          0x0000000000006d4c       0x2c ../bladeRF_nios_bsp//libhal_bsp.a(alt_main.o)
+                0x0000000000006d4c                alt_main
+ .text          0x0000000000006d78        0x4 ../bladeRF_nios_bsp//libhal_bsp.a(alt_usleep.o)
+                0x0000000000006d78                usleep
+ .text          0x0000000000006d7c       0x24 ../bladeRF_nios_bsp//libhal_bsp.a(alt_sys_init.o)
+                0x0000000000006d7c                alt_irq_init
+                0x0000000000006d9c                alt_sys_init
+ .text          0x0000000000006da0       0xe8 ../bladeRF_nios_bsp//libhal_bsp.a(altera_avalon_spi.o)
+                0x0000000000006da0                alt_avalon_spi_command
+ .text          0x0000000000006e88       0x78 ../bladeRF_nios_bsp//libhal_bsp.a(alt_busy_sleep.o)
+                0x0000000000006e88                alt_busy_sleep
+ .text          0x0000000000006f00        0x4 ../bladeRF_nios_bsp//libhal_bsp.a(alt_dcache_flush_all.o)
+                0x0000000000006f00                alt_dcache_flush_all
+ .text          0x0000000000006f04        0x0 ../bladeRF_nios_bsp//libhal_bsp.a(alt_exception_entry.o)
+ .text          0x0000000000006f04        0x4 ../bladeRF_nios_bsp//libhal_bsp.a(alt_icache_flush_all.o)
+                0x0000000000006f04                alt_icache_flush_all
+ .text          0x0000000000006f08        0x8 ../bladeRF_nios_bsp//libhal_bsp.a(altera_nios2_gen2_irq.o)
+                0x0000000000006f08                altera_nios2_gen2_irq_init
+ *(.gnu.warning.*)
+ *(.fini)
+                [!provide]                        PROVIDE (__etext, ABSOLUTE (.))
+                [!provide]                        PROVIDE (_etext, ABSOLUTE (.))
+                [!provide]                        PROVIDE (etext, ABSOLUTE (.))
+ *(.eh_frame_hdr)
+                0x0000000000006f10                . = ALIGN (0x4)
+                [!provide]                        PROVIDE (__preinit_array_start, ABSOLUTE (.))
+ *(.preinit_array)
+                [!provide]                        PROVIDE (__preinit_array_end, ABSOLUTE (.))
+                [!provide]                        PROVIDE (__init_array_start, ABSOLUTE (.))
+ *(.init_array)
+                [!provide]                        PROVIDE (__init_array_end, ABSOLUTE (.))
+                [!provide]                        PROVIDE (__fini_array_start, ABSOLUTE (.))
+ *(.fini_array)
+                [!provide]                        PROVIDE (__fini_array_end, ABSOLUTE (.))
+ *(.eh_frame)
+ *(.gcc_except_table .gcc_except_table.*)
+ *(.dynamic)
+                [!provide]                        PROVIDE (__CTOR_LIST__, ABSOLUTE (.))
+ *(.ctors)
+ *(SORT(.ctors.*))
+                [!provide]                        PROVIDE (__CTOR_END__, ABSOLUTE (.))
+                [!provide]                        PROVIDE (__DTOR_LIST__, ABSOLUTE (.))
+ *(.dtors)
+ *(SORT(.dtors.*))
+                [!provide]                        PROVIDE (__DTOR_END__, ABSOLUTE (.))
+ *(.jcr)
+                0x0000000000006f10                . = ALIGN (0x4)
+
+.rodata         0x0000000000006f10       0x8c
+                0x0000000000006f10                PROVIDE (__ram_rodata_start, ABSOLUTE (.))
+                0x0000000000006f10                . = ALIGN (0x4)
+ *(.rodata .rodata.* .gnu.linkonce.r.*)
+ .rodata        0x0000000000006f10       0x70 obj/default/src/bladeRF_nios.o
+ .rodata        0x0000000000006f80       0x1a obj/default/src/pkt_legacy.o
+ *(.rodata1)
+                0x0000000000006f9c                . = ALIGN (0x4)
+ *fill*         0x0000000000006f9a        0x2 
+                0x0000000000006f9c                PROVIDE (__ram_rodata_end, ABSOLUTE (.))
+                0x0000000000006f10                PROVIDE (__flash_rodata_start, LOADADDR (.rodata))
+
+.rwdata         0x0000000000006f9c       0x1c load address 0x0000000000006fb8
+                0x0000000000006f9c                PROVIDE (__ram_rwdata_start, ABSOLUTE (.))
+                0x0000000000006f9c                . = ALIGN (0x4)
+ *(.got.plt)
+ *(.got)
+ *(.data1)
+ *(.data .data.* .gnu.linkonce.d.*)
+ .data          0x0000000000006f9c        0x0 ../bladeRF_nios_bsp//obj/HAL/src/crt0.o
+ .data          0x0000000000006f9c        0x0 obj/default/src/bladeRF_nios.o
+ .data          0x0000000000006f9c        0x0 obj/default/src/devices.o
+ .data          0x0000000000006f9c        0x0 obj/default/src/devices_sim.o
+ .data          0x0000000000006f9c        0x0 obj/default/src/pkt_32x32.o
+ .data          0x0000000000006f9c        0x0 obj/default/src/pkt_8x16.o
+ .data          0x0000000000006f9c        0x0 obj/default/src/pkt_8x32.o
+ .data          0x0000000000006f9c        0x0 obj/default/src/pkt_8x64.o
+ .data          0x0000000000006f9c        0x0 obj/default/src/pkt_8x8.o
+ .data          0x0000000000006f9c        0x0 obj/default/src/pkt_legacy.o
+ .data          0x0000000000006f9c        0x0 obj/default/src/pkt_retune.o
+ .data          0x0000000000006f9c        0x0 obj/default/band_select.o
+ .data          0x0000000000006f9c        0x0 obj/default/lms.o
+ .data          0x0000000000006f9c        0x0 /home/spex/intelFPGA_lite/17.0/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/mno-hw-mul/libgcc.a(_lshrdi3.o)
+ .data          0x0000000000006f9c        0x0 /home/spex/intelFPGA_lite/17.0/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/mno-hw-mul/libgcc.a(lib2-divmod.o)
+ .data          0x0000000000006f9c        0x0 /home/spex/intelFPGA_lite/17.0/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/mno-hw-mul/libgcc.a(lib2-mul.o)
+ .data          0x0000000000006f9c        0x0 /home/spex/intelFPGA_lite/17.0/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-memcpy.o)
+ .data          0x0000000000006f9c        0x0 /home/spex/intelFPGA_lite/17.0/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-memset.o)
+ .data          0x0000000000006f9c        0x0 ../bladeRF_nios_bsp//libhal_bsp.a(alt_iic.o)
+ .data          0x0000000000006f9c        0x0 ../bladeRF_nios_bsp//libhal_bsp.a(alt_iic_isr_register.o)
+ .data          0x0000000000006f9c        0x0 ../bladeRF_nios_bsp//libhal_bsp.a(alt_irq_entry.o)
+ .data          0x0000000000006f9c        0x0 ../bladeRF_nios_bsp//libhal_bsp.a(alt_irq_handler.o)
+ .data          0x0000000000006f9c        0x0 ../bladeRF_nios_bsp//libhal_bsp.a(alt_irq_vars.o)
+ .data          0x0000000000006f9c        0x0 ../bladeRF_nios_bsp//libhal_bsp.a(alt_load.o)
+ .data          0x0000000000006f9c        0x0 ../bladeRF_nios_bsp//libhal_bsp.a(alt_main.o)
+ .data          0x0000000000006f9c        0x0 ../bladeRF_nios_bsp//libhal_bsp.a(alt_usleep.o)
+ .data          0x0000000000006f9c        0x0 ../bladeRF_nios_bsp//libhal_bsp.a(alt_sys_init.o)
+ .data          0x0000000000006f9c        0x0 ../bladeRF_nios_bsp//libhal_bsp.a(altera_avalon_spi.o)
+ .data          0x0000000000006f9c        0x0 ../bladeRF_nios_bsp//libhal_bsp.a(alt_busy_sleep.o)
+ .data          0x0000000000006f9c        0x0 ../bladeRF_nios_bsp//libhal_bsp.a(alt_dcache_flush_all.o)
+ .data          0x0000000000006f9c        0x0 ../bladeRF_nios_bsp//libhal_bsp.a(alt_exception_entry.o)
+ .data          0x0000000000006f9c        0x0 ../bladeRF_nios_bsp//libhal_bsp.a(alt_icache_flush_all.o)
+ .data          0x0000000000006f9c        0x0 ../bladeRF_nios_bsp//libhal_bsp.a(altera_nios2_gen2_irq.o)
+                0x000000000000ef9c                _gp = ABSOLUTE ((. + 0x8000))
+                [!provide]                        PROVIDE (gp, _gp)
+ *(.rwdata .rwdata.*)
+ *(.sdata .sdata.* .gnu.linkonce.s.*)
+ .sdata         0x0000000000006f9c        0x2 obj/default/src/devices.o
+                0x0000000000006f9c                vctcxo_trim_dac_value
+ *fill*         0x0000000000006f9e        0x2 
+ .sdata         0x0000000000006fa0       0x10 obj/default/src/pkt_legacy.o
+ .sdata         0x0000000000006fb0        0x4 ../bladeRF_nios_bsp//libhal_bsp.a(alt_irq_vars.o)
+                0x0000000000006fb0                alt_priority_mask
+ .sdata         0x0000000000006fb4        0x4 ../bladeRF_nios_bsp//libhal_bsp.a(alt_sys_init.o)
+                0x0000000000006fb4                jtag_uart
+ *(.sdata2 .sdata2.* .gnu.linkonce.s2.*)
+                0x0000000000006fb8                . = ALIGN (0x4)
+                0x0000000000006fb8                _edata = ABSOLUTE (.)
+                [!provide]                        PROVIDE (edata, ABSOLUTE (.))
+                0x0000000000006fb8                PROVIDE (__ram_rwdata_end, ABSOLUTE (.))
+                0x0000000000006fb8                PROVIDE (__flash_rwdata_start, LOADADDR (.rwdata))
+
+.bss            0x0000000000006fd4      0x434
+                0x0000000000006fd4                __bss_start = ABSOLUTE (.)
+                [!provide]                        PROVIDE (__sbss_start, ABSOLUTE (.))
+                [!provide]                        PROVIDE (___sbss_start, ABSOLUTE (.))
+ *(.dynsbss)
+ *(.sbss .sbss.* .gnu.linkonce.sb.*)
+ .sbss          0x0000000000006fd4        0x1 obj/default/src/devices.o
+                0x0000000000006fd4                vctcxo_tamer_ctrl_reg
+ *fill*         0x0000000000006fd5        0x3 
+ .sbss          0x0000000000006fd8       0x15 obj/default/src/pkt_legacy.o
+ *fill*         0x0000000000006fed        0x3 
+ .sbss          0x0000000000006ff0        0x4 ../bladeRF_nios_bsp//libhal_bsp.a(alt_irq_vars.o)
+                0x0000000000006ff0                alt_irq_active
+ .sbss          0x0000000000006ff4        0xc ../bladeRF_nios_bsp//libhal_bsp.a(alt_main.o)
+                0x0000000000006ff4                alt_envp
+                0x0000000000006ff8                alt_argv
+                0x0000000000006ffc                alt_argc
+ *(.sbss2 .sbss2.* .gnu.linkonce.sb2.*)
+ *(.scommon)
+                [!provide]                        PROVIDE (__sbss_end, ABSOLUTE (.))
+                [!provide]                        PROVIDE (___sbss_end, ABSOLUTE (.))
+ *(.dynbss)
+ *(.bss .bss.* .gnu.linkonce.b.*)
+ .bss           0x0000000000007000        0x0 ../bladeRF_nios_bsp//obj/HAL/src/crt0.o
+ .bss           0x0000000000007000        0x0 obj/default/src/bladeRF_nios.o
+ .bss           0x0000000000007000        0x0 obj/default/src/devices.o
+ .bss           0x0000000000007000        0x0 obj/default/src/devices_sim.o
+ .bss           0x0000000000007000        0x0 obj/default/src/pkt_32x32.o
+ .bss           0x0000000000007000        0x0 obj/default/src/pkt_8x16.o
+ .bss           0x0000000000007000        0x0 obj/default/src/pkt_8x32.o
+ .bss           0x0000000000007000        0x0 obj/default/src/pkt_8x64.o
+ .bss           0x0000000000007000        0x0 obj/default/src/pkt_8x8.o
+ .bss           0x0000000000007000        0x0 obj/default/src/pkt_legacy.o
+ .bss           0x0000000000007000      0x308 obj/default/src/pkt_retune.o
+ .bss           0x0000000000007308        0x0 obj/default/band_select.o
+ .bss           0x0000000000007308        0x0 obj/default/lms.o
+ .bss           0x0000000000007308        0x0 /home/spex/intelFPGA_lite/17.0/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/mno-hw-mul/libgcc.a(_lshrdi3.o)
+ .bss           0x0000000000007308        0x0 /home/spex/intelFPGA_lite/17.0/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/mno-hw-mul/libgcc.a(lib2-divmod.o)
+ .bss           0x0000000000007308        0x0 /home/spex/intelFPGA_lite/17.0/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/mno-hw-mul/libgcc.a(lib2-mul.o)
+ .bss           0x0000000000007308        0x0 /home/spex/intelFPGA_lite/17.0/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-memcpy.o)
+ .bss           0x0000000000007308        0x0 /home/spex/intelFPGA_lite/17.0/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-memset.o)
+ .bss           0x0000000000007308        0x0 ../bladeRF_nios_bsp//libhal_bsp.a(alt_iic.o)
+ .bss           0x0000000000007308        0x0 ../bladeRF_nios_bsp//libhal_bsp.a(alt_iic_isr_register.o)
+ .bss           0x0000000000007308        0x0 ../bladeRF_nios_bsp//libhal_bsp.a(alt_irq_entry.o)
+ .bss           0x0000000000007308        0x0 ../bladeRF_nios_bsp//libhal_bsp.a(alt_irq_handler.o)
+ .bss           0x0000000000007308        0x0 ../bladeRF_nios_bsp//libhal_bsp.a(alt_irq_vars.o)
+ .bss           0x0000000000007308        0x0 ../bladeRF_nios_bsp//libhal_bsp.a(alt_load.o)
+ .bss           0x0000000000007308        0x0 ../bladeRF_nios_bsp//libhal_bsp.a(alt_main.o)
+ .bss           0x0000000000007308        0x0 ../bladeRF_nios_bsp//libhal_bsp.a(alt_usleep.o)
+ .bss           0x0000000000007308        0x0 ../bladeRF_nios_bsp//libhal_bsp.a(alt_sys_init.o)
+ .bss           0x0000000000007308        0x0 ../bladeRF_nios_bsp//libhal_bsp.a(altera_avalon_spi.o)
+ .bss           0x0000000000007308        0x0 ../bladeRF_nios_bsp//libhal_bsp.a(alt_busy_sleep.o)
+ .bss           0x0000000000007308        0x0 ../bladeRF_nios_bsp//libhal_bsp.a(alt_dcache_flush_all.o)
+ .bss           0x0000000000007308        0x0 ../bladeRF_nios_bsp//libhal_bsp.a(alt_exception_entry.o)
+ .bss           0x0000000000007308        0x0 ../bladeRF_nios_bsp//libhal_bsp.a(alt_icache_flush_all.o)
+ .bss           0x0000000000007308        0x0 ../bladeRF_nios_bsp//libhal_bsp.a(altera_nios2_gen2_irq.o)
+ *(COMMON)
+ COMMON         0x0000000000007308      0x100 ../bladeRF_nios_bsp//libhal_bsp.a(alt_irq_handler.o)
+                0x0000000000007308                alt_irq
+                0x0000000000007408                . = ALIGN (0x4)
+                0x0000000000007408                __bss_end = ABSOLUTE (.)
+
+.ram            0x0000000000007408        0x0
+                [!provide]                        PROVIDE (_alt_partition_ram_start, ABSOLUTE (.))
+ *(.ram .ram. ram.*)
+                0x0000000000007408                . = ALIGN (0x4)
+                [!provide]                        PROVIDE (_alt_partition_ram_end, ABSOLUTE (.))
+                0x0000000000007408                _end = ABSOLUTE (.)
+                0x0000000000007408                end = ABSOLUTE (.)
+                0x0000000000007408                __alt_stack_base = ABSOLUTE (.)
+                [!provide]                        PROVIDE (_alt_partition_ram_load_addr, LOADADDR (.ram))
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment        0x0000000000000000       0x23
+ *(.comment)
+ .comment       0x0000000000000000       0x23 obj/default/src/bladeRF_nios.o
+                                         0x24 (size before relaxing)
+ .comment       0x0000000000000023       0x24 obj/default/src/devices.o
+ .comment       0x0000000000000023       0x24 obj/default/src/devices_sim.o
+ .comment       0x0000000000000023       0x24 obj/default/src/pkt_32x32.o
+ .comment       0x0000000000000023       0x24 obj/default/src/pkt_8x16.o
+ .comment       0x0000000000000023       0x24 obj/default/src/pkt_8x32.o
+ .comment       0x0000000000000023       0x24 obj/default/src/pkt_8x64.o
+ .comment       0x0000000000000023       0x24 obj/default/src/pkt_8x8.o
+ .comment       0x0000000000000023       0x24 obj/default/src/pkt_legacy.o
+ .comment       0x0000000000000023       0x24 obj/default/src/pkt_retune.o
+ .comment       0x0000000000000023       0x24 obj/default/band_select.o
+ .comment       0x0000000000000023       0x24 obj/default/lms.o
+ .comment       0x0000000000000023       0x24 /home/spex/intelFPGA_lite/17.0/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/mno-hw-mul/libgcc.a(_lshrdi3.o)
+ .comment       0x0000000000000023       0x24 /home/spex/intelFPGA_lite/17.0/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/mno-hw-mul/libgcc.a(lib2-divmod.o)
+ .comment       0x0000000000000023       0x24 /home/spex/intelFPGA_lite/17.0/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/mno-hw-mul/libgcc.a(lib2-mul.o)
+ .comment       0x0000000000000023       0x24 /home/spex/intelFPGA_lite/17.0/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-memcpy.o)
+ .comment       0x0000000000000023       0x24 /home/spex/intelFPGA_lite/17.0/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-memset.o)
+ .comment       0x0000000000000023       0x24 ../bladeRF_nios_bsp//libhal_bsp.a(alt_iic.o)
+ .comment       0x0000000000000023       0x24 ../bladeRF_nios_bsp//libhal_bsp.a(alt_iic_isr_register.o)
+ .comment       0x0000000000000023       0x24 ../bladeRF_nios_bsp//libhal_bsp.a(alt_irq_handler.o)
+ .comment       0x0000000000000023       0x24 ../bladeRF_nios_bsp//libhal_bsp.a(alt_irq_vars.o)
+ .comment       0x0000000000000023       0x24 ../bladeRF_nios_bsp//libhal_bsp.a(alt_load.o)
+ .comment       0x0000000000000023       0x24 ../bladeRF_nios_bsp//libhal_bsp.a(alt_main.o)
+ .comment       0x0000000000000023       0x24 ../bladeRF_nios_bsp//libhal_bsp.a(alt_usleep.o)
+ .comment       0x0000000000000023       0x24 ../bladeRF_nios_bsp//libhal_bsp.a(alt_sys_init.o)
+ .comment       0x0000000000000023       0x24 ../bladeRF_nios_bsp//libhal_bsp.a(altera_avalon_spi.o)
+ .comment       0x0000000000000023       0x24 ../bladeRF_nios_bsp//libhal_bsp.a(alt_busy_sleep.o)
+ .comment       0x0000000000000023       0x24 ../bladeRF_nios_bsp//libhal_bsp.a(alt_dcache_flush_all.o)
+ .comment       0x0000000000000023       0x24 ../bladeRF_nios_bsp//libhal_bsp.a(alt_icache_flush_all.o)
+ .comment       0x0000000000000023       0x24 ../bladeRF_nios_bsp//libhal_bsp.a(altera_nios2_gen2_irq.o)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x0000000000000000      0x428
+ *(.debug_aranges)
+ .debug_aranges
+                0x0000000000000000       0x28 ../bladeRF_nios_bsp//obj/HAL/src/crt0.o
+ .debug_aranges
+                0x0000000000000028       0x20 obj/default/src/bladeRF_nios.o
+ .debug_aranges
+                0x0000000000000048       0x20 obj/default/src/devices.o
+ .debug_aranges
+                0x0000000000000068       0x20 obj/default/src/pkt_32x32.o
+ .debug_aranges
+                0x0000000000000088       0x20 obj/default/src/pkt_8x16.o
+ .debug_aranges
+                0x00000000000000a8       0x20 obj/default/src/pkt_8x32.o
+ .debug_aranges
+                0x00000000000000c8       0x20 obj/default/src/pkt_8x64.o
+ .debug_aranges
+                0x00000000000000e8       0x20 obj/default/src/pkt_8x8.o
+ .debug_aranges
+                0x0000000000000108       0x20 obj/default/src/pkt_legacy.o
+ .debug_aranges
+                0x0000000000000128       0x20 obj/default/src/pkt_retune.o
+ .debug_aranges
+                0x0000000000000148       0x20 obj/default/band_select.o
+ .debug_aranges
+                0x0000000000000168       0x20 obj/default/lms.o
+ .debug_aranges
+                0x0000000000000188       0x20 /home/spex/intelFPGA_lite/17.0/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/mno-hw-mul/libgcc.a(_lshrdi3.o)
+ .debug_aranges
+                0x00000000000001a8       0x20 /home/spex/intelFPGA_lite/17.0/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/mno-hw-mul/libgcc.a(lib2-divmod.o)
+ .debug_aranges
+                0x00000000000001c8       0x20 /home/spex/intelFPGA_lite/17.0/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/mno-hw-mul/libgcc.a(lib2-mul.o)
+ .debug_aranges
+                0x00000000000001e8       0x20 /home/spex/intelFPGA_lite/17.0/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-memcpy.o)
+ .debug_aranges
+                0x0000000000000208       0x20 /home/spex/intelFPGA_lite/17.0/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-memset.o)
+ .debug_aranges
+                0x0000000000000228       0x20 ../bladeRF_nios_bsp//libhal_bsp.a(alt_iic.o)
+ .debug_aranges
+                0x0000000000000248       0x20 ../bladeRF_nios_bsp//libhal_bsp.a(alt_iic_isr_register.o)
+ .debug_aranges
+                0x0000000000000268       0x30 ../bladeRF_nios_bsp//libhal_bsp.a(alt_irq_entry.o)
+ .debug_aranges
+                0x0000000000000298       0x20 ../bladeRF_nios_bsp//libhal_bsp.a(alt_irq_handler.o)
+ .debug_aranges
+                0x00000000000002b8       0x18 ../bladeRF_nios_bsp//libhal_bsp.a(alt_irq_vars.o)
+ .debug_aranges
+                0x00000000000002d0       0x20 ../bladeRF_nios_bsp//libhal_bsp.a(alt_load.o)
+ .debug_aranges
+                0x00000000000002f0       0x20 ../bladeRF_nios_bsp//libhal_bsp.a(alt_main.o)
+ .debug_aranges
+                0x0000000000000310       0x20 ../bladeRF_nios_bsp//libhal_bsp.a(alt_usleep.o)
+ .debug_aranges
+                0x0000000000000330       0x20 ../bladeRF_nios_bsp//libhal_bsp.a(alt_sys_init.o)
+ .debug_aranges
+                0x0000000000000350       0x20 ../bladeRF_nios_bsp//libhal_bsp.a(altera_avalon_spi.o)
+ .debug_aranges
+                0x0000000000000370       0x20 ../bladeRF_nios_bsp//libhal_bsp.a(alt_busy_sleep.o)
+ .debug_aranges
+                0x0000000000000390       0x20 ../bladeRF_nios_bsp//libhal_bsp.a(alt_dcache_flush_all.o)
+ .debug_aranges
+                0x00000000000003b0       0x38 ../bladeRF_nios_bsp//libhal_bsp.a(alt_exception_entry.o)
+ .debug_aranges
+                0x00000000000003e8       0x20 ../bladeRF_nios_bsp//libhal_bsp.a(alt_icache_flush_all.o)
+ .debug_aranges
+                0x0000000000000408       0x20 ../bladeRF_nios_bsp//libhal_bsp.a(altera_nios2_gen2_irq.o)
+
+.debug_pubnames
+ *(.debug_pubnames)
+
+.debug_info     0x0000000000000000     0x6f4a
+ *(.debug_info .gnu.linkonce.wi.*)
+ .debug_info    0x0000000000000000       0xad ../bladeRF_nios_bsp//obj/HAL/src/crt0.o
+ .debug_info    0x00000000000000ad      0x506 obj/default/src/bladeRF_nios.o
+ .debug_info    0x00000000000005b3      0xdba obj/default/src/devices.o
+ .debug_info    0x000000000000136d      0x525 obj/default/src/pkt_32x32.o
+ .debug_info    0x0000000000001892      0x573 obj/default/src/pkt_8x16.o
+ .debug_info    0x0000000000001e05      0x451 obj/default/src/pkt_8x32.o
+ .debug_info    0x0000000000002256      0x439 obj/default/src/pkt_8x64.o
+ .debug_info    0x000000000000268f      0x520 obj/default/src/pkt_8x8.o
+ .debug_info    0x0000000000002baf      0x85e obj/default/src/pkt_legacy.o
+ .debug_info    0x000000000000340d      0xa25 obj/default/src/pkt_retune.o
+ .debug_info    0x0000000000003e32      0x1d6 obj/default/band_select.o
+ .debug_info    0x0000000000004008     0x156d obj/default/lms.o
+ .debug_info    0x0000000000005575      0x182 /home/spex/intelFPGA_lite/17.0/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/mno-hw-mul/libgcc.a(_lshrdi3.o)
+ .debug_info    0x00000000000056f7      0x2c6 /home/spex/intelFPGA_lite/17.0/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/mno-hw-mul/libgcc.a(lib2-divmod.o)
+ .debug_info    0x00000000000059bd       0xb4 /home/spex/intelFPGA_lite/17.0/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/mno-hw-mul/libgcc.a(lib2-mul.o)
+ .debug_info    0x0000000000005a71      0x119 /home/spex/intelFPGA_lite/17.0/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-memcpy.o)
+ .debug_info    0x0000000000005b8a       0xdc /home/spex/intelFPGA_lite/17.0/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-memset.o)
+ .debug_info    0x0000000000005c66      0x38a ../bladeRF_nios_bsp//libhal_bsp.a(alt_iic.o)
+ .debug_info    0x0000000000005ff0      0x232 ../bladeRF_nios_bsp//libhal_bsp.a(alt_iic_isr_register.o)
+ .debug_info    0x0000000000006222       0xb6 ../bladeRF_nios_bsp//libhal_bsp.a(alt_irq_entry.o)
+ .debug_info    0x00000000000062d8      0x184 ../bladeRF_nios_bsp//libhal_bsp.a(alt_irq_handler.o)
+ .debug_info    0x000000000000645c       0x88 ../bladeRF_nios_bsp//libhal_bsp.a(alt_irq_vars.o)
+ .debug_info    0x00000000000064e4      0x1c9 ../bladeRF_nios_bsp//libhal_bsp.a(alt_load.o)
+ .debug_info    0x00000000000066ad      0x169 ../bladeRF_nios_bsp//libhal_bsp.a(alt_main.o)
+ .debug_info    0x0000000000006816       0xd1 ../bladeRF_nios_bsp//libhal_bsp.a(alt_usleep.o)
+ .debug_info    0x00000000000068e7      0x185 ../bladeRF_nios_bsp//libhal_bsp.a(alt_sys_init.o)
+ .debug_info    0x0000000000006a6c      0x194 ../bladeRF_nios_bsp//libhal_bsp.a(altera_avalon_spi.o)
+ .debug_info    0x0000000000006c00       0xd8 ../bladeRF_nios_bsp//libhal_bsp.a(alt_busy_sleep.o)
+ .debug_info    0x0000000000006cd8       0x92 ../bladeRF_nios_bsp//libhal_bsp.a(alt_dcache_flush_all.o)
+ .debug_info    0x0000000000006d6a       0xbc ../bladeRF_nios_bsp//libhal_bsp.a(alt_exception_entry.o)
+ .debug_info    0x0000000000006e26       0x92 ../bladeRF_nios_bsp//libhal_bsp.a(alt_icache_flush_all.o)
+ .debug_info    0x0000000000006eb8       0x92 ../bladeRF_nios_bsp//libhal_bsp.a(altera_nios2_gen2_irq.o)
+
+.debug_abbrev   0x0000000000000000     0x26b6
+ *(.debug_abbrev)
+ .debug_abbrev  0x0000000000000000       0x12 ../bladeRF_nios_bsp//obj/HAL/src/crt0.o
+ .debug_abbrev  0x0000000000000012      0x1fb obj/default/src/bladeRF_nios.o
+ .debug_abbrev  0x000000000000020d      0x41b obj/default/src/devices.o
+ .debug_abbrev  0x0000000000000628      0x1a4 obj/default/src/pkt_32x32.o
+ .debug_abbrev  0x00000000000007cc      0x1e0 obj/default/src/pkt_8x16.o
+ .debug_abbrev  0x00000000000009ac      0x1aa obj/default/src/pkt_8x32.o
+ .debug_abbrev  0x0000000000000b56      0x1ba obj/default/src/pkt_8x64.o
+ .debug_abbrev  0x0000000000000d10      0x1df obj/default/src/pkt_8x8.o
+ .debug_abbrev  0x0000000000000eef      0x2f3 obj/default/src/pkt_legacy.o
+ .debug_abbrev  0x00000000000011e2      0x34b obj/default/src/pkt_retune.o
+ .debug_abbrev  0x000000000000152d      0x147 obj/default/band_select.o
+ .debug_abbrev  0x0000000000001674      0x286 obj/default/lms.o
+ .debug_abbrev  0x00000000000018fa      0x100 /home/spex/intelFPGA_lite/17.0/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/mno-hw-mul/libgcc.a(_lshrdi3.o)
+ .debug_abbrev  0x00000000000019fa      0x10e /home/spex/intelFPGA_lite/17.0/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/mno-hw-mul/libgcc.a(lib2-divmod.o)
+ .debug_abbrev  0x0000000000001b08       0x6f /home/spex/intelFPGA_lite/17.0/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/mno-hw-mul/libgcc.a(lib2-mul.o)
+ .debug_abbrev  0x0000000000001b77       0x9c /home/spex/intelFPGA_lite/17.0/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-memcpy.o)
+ .debug_abbrev  0x0000000000001c13       0x8e /home/spex/intelFPGA_lite/17.0/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-memset.o)
+ .debug_abbrev  0x0000000000001ca1      0x1a0 ../bladeRF_nios_bsp//libhal_bsp.a(alt_iic.o)
+ .debug_abbrev  0x0000000000001e41      0x19c ../bladeRF_nios_bsp//libhal_bsp.a(alt_iic_isr_register.o)
+ .debug_abbrev  0x0000000000001fdd       0x12 ../bladeRF_nios_bsp//libhal_bsp.a(alt_irq_entry.o)
+ .debug_abbrev  0x0000000000001fef      0x120 ../bladeRF_nios_bsp//libhal_bsp.a(alt_irq_handler.o)
+ .debug_abbrev  0x000000000000210f       0x40 ../bladeRF_nios_bsp//libhal_bsp.a(alt_irq_vars.o)
+ .debug_abbrev  0x000000000000214f       0xd8 ../bladeRF_nios_bsp//libhal_bsp.a(alt_load.o)
+ .debug_abbrev  0x0000000000002227       0xee ../bladeRF_nios_bsp//libhal_bsp.a(alt_main.o)
+ .debug_abbrev  0x0000000000002315       0x8d ../bladeRF_nios_bsp//libhal_bsp.a(alt_usleep.o)
+ .debug_abbrev  0x00000000000023a2      0x107 ../bladeRF_nios_bsp//libhal_bsp.a(alt_sys_init.o)
+ .debug_abbrev  0x00000000000024a9       0xa8 ../bladeRF_nios_bsp//libhal_bsp.a(altera_avalon_spi.o)
+ .debug_abbrev  0x0000000000002551       0x8d ../bladeRF_nios_bsp//libhal_bsp.a(alt_busy_sleep.o)
+ .debug_abbrev  0x00000000000025de       0x42 ../bladeRF_nios_bsp//libhal_bsp.a(alt_dcache_flush_all.o)
+ .debug_abbrev  0x0000000000002620       0x12 ../bladeRF_nios_bsp//libhal_bsp.a(alt_exception_entry.o)
+ .debug_abbrev  0x0000000000002632       0x42 ../bladeRF_nios_bsp//libhal_bsp.a(alt_icache_flush_all.o)
+ .debug_abbrev  0x0000000000002674       0x42 ../bladeRF_nios_bsp//libhal_bsp.a(altera_nios2_gen2_irq.o)
+
+.debug_line     0x0000000000000000     0x2c35
+ *(.debug_line)
+ .debug_line    0x0000000000000000       0x66 ../bladeRF_nios_bsp//obj/HAL/src/crt0.o
+ .debug_line    0x0000000000000066      0x205 obj/default/src/bladeRF_nios.o
+ .debug_line    0x000000000000026b      0x3c3 obj/default/src/devices.o
+ .debug_line    0x000000000000062e        0x0 obj/default/src/devices_sim.o
+ .debug_line    0x000000000000062e      0x209 obj/default/src/pkt_32x32.o
+ .debug_line    0x0000000000000837      0x22b obj/default/src/pkt_8x16.o
+ .debug_line    0x0000000000000a62      0x218 obj/default/src/pkt_8x32.o
+ .debug_line    0x0000000000000c7a      0x210 obj/default/src/pkt_8x64.o
+ .debug_line    0x0000000000000e8a      0x21a obj/default/src/pkt_8x8.o
+ .debug_line    0x00000000000010a4      0x2c7 obj/default/src/pkt_legacy.o
+ .debug_line    0x000000000000136b      0x3a7 obj/default/src/pkt_retune.o
+ .debug_line    0x0000000000001712      0x22b obj/default/band_select.o
+ .debug_line    0x000000000000193d      0x4c8 obj/default/lms.o
+ .debug_line    0x0000000000001e05       0x7a /home/spex/intelFPGA_lite/17.0/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/mno-hw-mul/libgcc.a(_lshrdi3.o)
+ .debug_line    0x0000000000001e7f      0x105 /home/spex/intelFPGA_lite/17.0/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/mno-hw-mul/libgcc.a(lib2-divmod.o)
+ .debug_line    0x0000000000001f84       0x80 /home/spex/intelFPGA_lite/17.0/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/mno-hw-mul/libgcc.a(lib2-mul.o)
+ .debug_line    0x0000000000002004      0x15e /home/spex/intelFPGA_lite/17.0/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-memcpy.o)
+ .debug_line    0x0000000000002162      0x15d /home/spex/intelFPGA_lite/17.0/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-memset.o)
+ .debug_line    0x00000000000022bf       0xf1 ../bladeRF_nios_bsp//libhal_bsp.a(alt_iic.o)
+ .debug_line    0x00000000000023b0       0xd6 ../bladeRF_nios_bsp//libhal_bsp.a(alt_iic_isr_register.o)
+ .debug_line    0x0000000000002486       0x6b ../bladeRF_nios_bsp//libhal_bsp.a(alt_irq_entry.o)
+ .debug_line    0x00000000000024f1       0xa5 ../bladeRF_nios_bsp//libhal_bsp.a(alt_irq_handler.o)
+ .debug_line    0x0000000000002596       0x50 ../bladeRF_nios_bsp//libhal_bsp.a(alt_irq_vars.o)
+ .debug_line    0x00000000000025e6       0xa4 ../bladeRF_nios_bsp//libhal_bsp.a(alt_load.o)
+ .debug_line    0x000000000000268a       0xbd ../bladeRF_nios_bsp//libhal_bsp.a(alt_main.o)
+ .debug_line    0x0000000000002747       0xdc ../bladeRF_nios_bsp//libhal_bsp.a(alt_usleep.o)
+ .debug_line    0x0000000000002823      0x101 ../bladeRF_nios_bsp//libhal_bsp.a(alt_sys_init.o)
+ .debug_line    0x0000000000002924       0xc5 ../bladeRF_nios_bsp//libhal_bsp.a(altera_avalon_spi.o)
+ .debug_line    0x00000000000029e9       0xb3 ../bladeRF_nios_bsp//libhal_bsp.a(alt_busy_sleep.o)
+ .debug_line    0x0000000000002a9c       0x4e ../bladeRF_nios_bsp//libhal_bsp.a(alt_dcache_flush_all.o)
+ .debug_line    0x0000000000002aea       0xad ../bladeRF_nios_bsp//libhal_bsp.a(alt_exception_entry.o)
+ .debug_line    0x0000000000002b97       0x4e ../bladeRF_nios_bsp//libhal_bsp.a(alt_icache_flush_all.o)
+ .debug_line    0x0000000000002be5       0x50 ../bladeRF_nios_bsp//libhal_bsp.a(altera_nios2_gen2_irq.o)
+
+.debug_frame    0x0000000000000000      0xa9c
+ *(.debug_frame)
+ .debug_frame   0x0000000000000000       0x38 obj/default/src/bladeRF_nios.o
+ .debug_frame   0x0000000000000038      0x2b0 obj/default/src/devices.o
+ .debug_frame   0x00000000000002e8       0x20 obj/default/src/pkt_32x32.o
+ .debug_frame   0x0000000000000308       0x48 obj/default/src/pkt_8x16.o
+ .debug_frame   0x0000000000000350       0x48 obj/default/src/pkt_8x32.o
+ .debug_frame   0x0000000000000398       0x44 obj/default/src/pkt_8x64.o
+ .debug_frame   0x00000000000003dc       0x44 obj/default/src/pkt_8x8.o
+ .debug_frame   0x0000000000000420       0x64 obj/default/src/pkt_legacy.o
+ .debug_frame   0x0000000000000484      0x14c obj/default/src/pkt_retune.o
+ .debug_frame   0x00000000000005d0       0x34 obj/default/band_select.o
+ .debug_frame   0x0000000000000604      0x1ac obj/default/lms.o
+ .debug_frame   0x00000000000007b0       0x20 /home/spex/intelFPGA_lite/17.0/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/mno-hw-mul/libgcc.a(_lshrdi3.o)
+ .debug_frame   0x00000000000007d0       0x50 /home/spex/intelFPGA_lite/17.0/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/mno-hw-mul/libgcc.a(lib2-divmod.o)
+ .debug_frame   0x0000000000000820       0x20 /home/spex/intelFPGA_lite/17.0/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/mno-hw-mul/libgcc.a(lib2-mul.o)
+ .debug_frame   0x0000000000000840       0x20 /home/spex/intelFPGA_lite/17.0/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-memcpy.o)
+ .debug_frame   0x0000000000000860       0x20 /home/spex/intelFPGA_lite/17.0/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-memset.o)
+ .debug_frame   0x0000000000000880       0x50 ../bladeRF_nios_bsp//libhal_bsp.a(alt_iic.o)
+ .debug_frame   0x00000000000008d0       0x30 ../bladeRF_nios_bsp//libhal_bsp.a(alt_iic_isr_register.o)
+ .debug_frame   0x0000000000000900       0x34 ../bladeRF_nios_bsp//libhal_bsp.a(alt_irq_handler.o)
+ .debug_frame   0x0000000000000934       0x30 ../bladeRF_nios_bsp//libhal_bsp.a(alt_load.o)
+ .debug_frame   0x0000000000000964       0x2c ../bladeRF_nios_bsp//libhal_bsp.a(alt_main.o)
+ .debug_frame   0x0000000000000990       0x20 ../bladeRF_nios_bsp//libhal_bsp.a(alt_usleep.o)
+ .debug_frame   0x00000000000009b0       0x3c ../bladeRF_nios_bsp//libhal_bsp.a(alt_sys_init.o)
+ .debug_frame   0x00000000000009ec       0x20 ../bladeRF_nios_bsp//libhal_bsp.a(altera_avalon_spi.o)
+ .debug_frame   0x0000000000000a0c       0x30 ../bladeRF_nios_bsp//libhal_bsp.a(alt_busy_sleep.o)
+ .debug_frame   0x0000000000000a3c       0x20 ../bladeRF_nios_bsp//libhal_bsp.a(alt_dcache_flush_all.o)
+ .debug_frame   0x0000000000000a5c       0x20 ../bladeRF_nios_bsp//libhal_bsp.a(alt_icache_flush_all.o)
+ .debug_frame   0x0000000000000a7c       0x20 ../bladeRF_nios_bsp//libhal_bsp.a(altera_nios2_gen2_irq.o)
+
+.debug_str      0x0000000000000000     0x1a9c
+ *(.debug_str)
+ .debug_str     0x0000000000000000      0x378 obj/default/src/bladeRF_nios.o
+                                        0x3f8 (size before relaxing)
+ .debug_str     0x0000000000000378      0x385 obj/default/src/devices.o
+                                        0x680 (size before relaxing)
+ .debug_str     0x00000000000006fd       0x12 obj/default/src/devices_sim.o
+                                         0xd0 (size before relaxing)
+ .debug_str     0x000000000000070f       0xf3 obj/default/src/pkt_32x32.o
+                                        0x2ab (size before relaxing)
+ .debug_str     0x0000000000000802       0x73 obj/default/src/pkt_8x16.o
+                                        0x2f5 (size before relaxing)
+ .debug_str     0x0000000000000875       0x88 obj/default/src/pkt_8x32.o
+                                        0x281 (size before relaxing)
+ .debug_str     0x00000000000008fd       0x67 obj/default/src/pkt_8x64.o
+                                        0x290 (size before relaxing)
+ .debug_str     0x0000000000000964       0x53 obj/default/src/pkt_8x8.o
+                                        0x35f (size before relaxing)
+ .debug_str     0x00000000000009b7      0x210 obj/default/src/pkt_legacy.o
+                                        0x57d (size before relaxing)
+ .debug_str     0x0000000000000bc7      0x21d obj/default/src/pkt_retune.o
+                                        0x4a2 (size before relaxing)
+ .debug_str     0x0000000000000de4       0x50 obj/default/band_select.o
+                                        0x268 (size before relaxing)
+ .debug_str     0x0000000000000e34      0x305 obj/default/lms.o
+                                        0x5c9 (size before relaxing)
+ .debug_str     0x0000000000001139      0x18a /home/spex/intelFPGA_lite/17.0/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/mno-hw-mul/libgcc.a(_lshrdi3.o)
+                                        0x218 (size before relaxing)
+ .debug_str     0x00000000000012c3       0x7f /home/spex/intelFPGA_lite/17.0/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/mno-hw-mul/libgcc.a(lib2-divmod.o)
+                                        0x1d3 (size before relaxing)
+ .debug_str     0x0000000000001342       0x40 /home/spex/intelFPGA_lite/17.0/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/mno-hw-mul/libgcc.a(lib2-mul.o)
+                                        0x194 (size before relaxing)
+ .debug_str     0x0000000000001382      0x14f /home/spex/intelFPGA_lite/17.0/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-memcpy.o)
+                                        0x1f4 (size before relaxing)
+ .debug_str     0x00000000000014d1       0x3d /home/spex/intelFPGA_lite/17.0/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-memset.o)
+                                        0x1e0 (size before relaxing)
+ .debug_str     0x000000000000150e      0x164 ../bladeRF_nios_bsp//libhal_bsp.a(alt_iic.o)
+                                        0x292 (size before relaxing)
+ .debug_str     0x0000000000001672       0x37 ../bladeRF_nios_bsp//libhal_bsp.a(alt_iic_isr_register.o)
+                                        0x24c (size before relaxing)
+ .debug_str     0x00000000000016a9       0x3a ../bladeRF_nios_bsp//libhal_bsp.a(alt_irq_handler.o)
+                                        0x1d6 (size before relaxing)
+ .debug_str     0x00000000000016e3       0x17 ../bladeRF_nios_bsp//libhal_bsp.a(alt_irq_vars.o)
+                                        0x179 (size before relaxing)
+ .debug_str     0x00000000000016fa      0x113 ../bladeRF_nios_bsp//libhal_bsp.a(alt_load.o)
+                                        0x27b (size before relaxing)
+ .debug_str     0x000000000000180d       0x8f ../bladeRF_nios_bsp//libhal_bsp.a(alt_main.o)
+                                        0x1f4 (size before relaxing)
+ .debug_str     0x000000000000189c       0x2f ../bladeRF_nios_bsp//libhal_bsp.a(alt_usleep.o)
+                                        0x196 (size before relaxing)
+ .debug_str     0x00000000000018cb       0xab ../bladeRF_nios_bsp//libhal_bsp.a(alt_sys_init.o)
+                                        0x263 (size before relaxing)
+ .debug_str     0x0000000000001976       0x95 ../bladeRF_nios_bsp//libhal_bsp.a(altera_avalon_spi.o)
+                                        0x21f (size before relaxing)
+ .debug_str     0x0000000000001a0b       0x33 ../bladeRF_nios_bsp//libhal_bsp.a(alt_busy_sleep.o)
+                                        0x1aa (size before relaxing)
+ .debug_str     0x0000000000001a3e       0x1f ../bladeRF_nios_bsp//libhal_bsp.a(alt_dcache_flush_all.o)
+                                        0x194 (size before relaxing)
+ .debug_str     0x0000000000001a5d       0x1f ../bladeRF_nios_bsp//libhal_bsp.a(alt_icache_flush_all.o)
+                                        0x194 (size before relaxing)
+ .debug_str     0x0000000000001a7c       0x20 ../bladeRF_nios_bsp//libhal_bsp.a(altera_nios2_gen2_irq.o)
+                                        0x19b (size before relaxing)
+
+.debug_loc      0x0000000000000000     0x49d5
+ *(.debug_loc)
+ .debug_loc     0x0000000000000000      0x352 obj/default/src/bladeRF_nios.o
+ .debug_loc     0x0000000000000352      0x773 obj/default/src/devices.o
+ .debug_loc     0x0000000000000ac5      0x3e2 obj/default/src/pkt_32x32.o
+ .debug_loc     0x0000000000000ea7      0x4ed obj/default/src/pkt_8x16.o
+ .debug_loc     0x0000000000001394      0x2af obj/default/src/pkt_8x32.o
+ .debug_loc     0x0000000000001643      0x26e obj/default/src/pkt_8x64.o
+ .debug_loc     0x00000000000018b1      0x588 obj/default/src/pkt_8x8.o
+ .debug_loc     0x0000000000001e39      0x800 obj/default/src/pkt_legacy.o
+ .debug_loc     0x0000000000002639      0x67b obj/default/src/pkt_retune.o
+ .debug_loc     0x0000000000002cb4      0x111 obj/default/band_select.o
+ .debug_loc     0x0000000000002dc5      0xe8a obj/default/lms.o
+ .debug_loc     0x0000000000003c4f       0x97 /home/spex/intelFPGA_lite/17.0/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/mno-hw-mul/libgcc.a(_lshrdi3.o)
+ .debug_loc     0x0000000000003ce6      0x4ce /home/spex/intelFPGA_lite/17.0/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/mno-hw-mul/libgcc.a(lib2-divmod.o)
+ .debug_loc     0x00000000000041b4       0x93 /home/spex/intelFPGA_lite/17.0/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/mno-hw-mul/libgcc.a(lib2-mul.o)
+ .debug_loc     0x0000000000004247      0x135 /home/spex/intelFPGA_lite/17.0/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-memcpy.o)
+ .debug_loc     0x000000000000437c       0xa5 /home/spex/intelFPGA_lite/17.0/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-memset.o)
+ .debug_loc     0x0000000000004421      0x170 ../bladeRF_nios_bsp//libhal_bsp.a(alt_iic.o)
+ .debug_loc     0x0000000000004591      0x193 ../bladeRF_nios_bsp//libhal_bsp.a(alt_iic_isr_register.o)
+ .debug_loc     0x0000000000004724       0x72 ../bladeRF_nios_bsp//libhal_bsp.a(alt_irq_handler.o)
+ .debug_loc     0x0000000000004796       0x21 ../bladeRF_nios_bsp//libhal_bsp.a(alt_usleep.o)
+ .debug_loc     0x00000000000047b7       0x21 ../bladeRF_nios_bsp//libhal_bsp.a(alt_sys_init.o)
+ .debug_loc     0x00000000000047d8      0x188 ../bladeRF_nios_bsp//libhal_bsp.a(altera_avalon_spi.o)
+ .debug_loc     0x0000000000004960       0x75 ../bladeRF_nios_bsp//libhal_bsp.a(alt_busy_sleep.o)
+
+.debug_macinfo
+ *(.debug_macinfo)
+
+.debug_weaknames
+ *(.debug_weaknames)
+
+.debug_funcnames
+ *(.debug_funcnames)
+
+.debug_typenames
+ *(.debug_typenames)
+
+.debug_varnames
+ *(.debug_varnames)
+
+.debug_alt_sim_info
+                0x0000000000000000       0x40
+ *(.debug_alt_sim_info)
+ .debug_alt_sim_info
+                0x0000000000000000       0x10 ../bladeRF_nios_bsp//obj/HAL/src/crt0.o
+ .debug_alt_sim_info
+                0x0000000000000010       0x30 ../bladeRF_nios_bsp//libhal_bsp.a(alt_busy_sleep.o)
+                0x0000000000008000                __alt_data_end = 0x8000
+                0x0000000000008000                PROVIDE (__alt_stack_pointer, __alt_data_end)
+                [!provide]                        PROVIDE (__alt_stack_limit, __alt_stack_base)
+                [!provide]                        PROVIDE (__alt_heap_start, end)
+                [!provide]                        PROVIDE (__alt_heap_limit, 0x8000)
+OUTPUT(bladeRF_nios.elf elf32-littlenios2)
+
+.debug_ranges   0x0000000000000000      0x548
+ .debug_ranges  0x0000000000000000       0x20 ../bladeRF_nios_bsp//obj/HAL/src/crt0.o
+ .debug_ranges  0x0000000000000020       0x38 obj/default/src/bladeRF_nios.o
+ .debug_ranges  0x0000000000000058       0x50 obj/default/src/pkt_8x16.o
+ .debug_ranges  0x00000000000000a8       0x48 obj/default/src/pkt_8x32.o
+ .debug_ranges  0x00000000000000f0       0x18 obj/default/src/pkt_8x64.o
+ .debug_ranges  0x0000000000000108       0x20 obj/default/src/pkt_8x8.o
+ .debug_ranges  0x0000000000000128       0xa0 obj/default/src/pkt_legacy.o
+ .debug_ranges  0x00000000000001c8       0xa8 obj/default/src/pkt_retune.o
+ .debug_ranges  0x0000000000000270      0x1a8 obj/default/lms.o
+ .debug_ranges  0x0000000000000418       0x60 /home/spex/intelFPGA_lite/17.0/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/mno-hw-mul/libgcc.a(lib2-divmod.o)
+ .debug_ranges  0x0000000000000478       0x10 /home/spex/intelFPGA_lite/17.0/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-memcpy.o)
+ .debug_ranges  0x0000000000000488       0x10 /home/spex/intelFPGA_lite/17.0/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-memset.o)
+ .debug_ranges  0x0000000000000498       0x28 ../bladeRF_nios_bsp//libhal_bsp.a(alt_irq_entry.o)
+ .debug_ranges  0x00000000000004c0       0x10 ../bladeRF_nios_bsp//libhal_bsp.a(alt_irq_handler.o)
+ .debug_ranges  0x00000000000004d0       0x48 ../bladeRF_nios_bsp//libhal_bsp.a(alt_load.o)
+ .debug_ranges  0x0000000000000518       0x30 ../bladeRF_nios_bsp//libhal_bsp.a(alt_exception_entry.o)

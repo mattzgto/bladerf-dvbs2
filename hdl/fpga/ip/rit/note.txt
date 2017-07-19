@@ -1,0 +1,4 @@
+need to go assignments>settings>compiler settings>
+advanced settings (synthesis)
+
+and change "Iteration limit for constant Verilog loops" from 5000 to like 7000

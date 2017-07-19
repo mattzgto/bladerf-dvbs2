@@ -1,0 +1,481 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "dac_sclk",
+					"strict" : false
+				},
+				{
+					"name" : "dac_sdi",
+					"strict" : false
+				},
+				{
+					"name" : "dac_csx",
+					"strict" : false
+				},
+				{
+					"name" : "led[1]",
+					"strict" : false
+				},
+				{
+					"name" : "led[2]",
+					"strict" : false
+				},
+				{
+					"name" : "lms_rx_enable",
+					"strict" : false
+				},
+				{
+					"name" : "lms_rx_v[1]",
+					"strict" : false
+				},
+				{
+					"name" : "lms_rx_v[2]",
+					"strict" : false
+				},
+				{
+					"name" : "lms_tx_data[0]",
+					"strict" : false
+				},
+				{
+					"name" : "lms_tx_data[1]",
+					"strict" : false
+				},
+				{
+					"name" : "lms_tx_data[2]",
+					"strict" : false
+				},
+				{
+					"name" : "lms_tx_data[3]",
+					"strict" : false
+				},
+				{
+					"name" : "lms_tx_data[4]",
+					"strict" : false
+				},
+				{
+					"name" : "lms_tx_data[5]",
+					"strict" : false
+				},
+				{
+					"name" : "lms_tx_data[6]",
+					"strict" : false
+				},
+				{
+					"name" : "lms_tx_data[7]",
+					"strict" : false
+				},
+				{
+					"name" : "lms_tx_data[8]",
+					"strict" : false
+				},
+				{
+					"name" : "lms_tx_data[9]",
+					"strict" : false
+				},
+				{
+					"name" : "lms_tx_data[10]",
+					"strict" : false
+				},
+				{
+					"name" : "lms_tx_data[11]",
+					"strict" : false
+				},
+				{
+					"name" : "lms_tx_enable",
+					"strict" : false
+				},
+				{
+					"name" : "lms_tx_iq_select",
+					"strict" : false
+				},
+				{
+					"name" : "lms_tx_v[1]",
+					"strict" : false
+				},
+				{
+					"name" : "lms_tx_v[2]",
+					"strict" : false
+				},
+				{
+					"name" : "lms_sclk",
+					"strict" : false
+				},
+				{
+					"name" : "lms_sen",
+					"strict" : false
+				},
+				{
+					"name" : "lms_sdio",
+					"strict" : false
+				},
+				{
+					"name" : "lms_reset",
+					"strict" : false
+				},
+				{
+					"name" : "fx3_uart_rxd",
+					"strict" : false
+				},
+				{
+					"name" : "fx3_uart_cts",
+					"strict" : false
+				},
+				{
+					"name" : "exp_spi_clock",
+					"strict" : false
+				},
+				{
+					"name" : "exp_spi_mosi",
+					"strict" : false
+				},
+				{
+					"name" : "si_scl",
+					"strict" : false
+				},
+				{
+					"name" : "si_sda",
+					"strict" : false
+				},
+				{
+					"name" : "fx3_gpif[0]",
+					"strict" : false
+				},
+				{
+					"name" : "fx3_gpif[1]",
+					"strict" : false
+				},
+				{
+					"name" : "fx3_gpif[2]",
+					"strict" : false
+				},
+				{
+					"name" : "fx3_gpif[3]",
+					"strict" : false
+				},
+				{
+					"name" : "fx3_gpif[4]",
+					"strict" : false
+				},
+				{
+					"name" : "fx3_gpif[5]",
+					"strict" : false
+				},
+				{
+					"name" : "fx3_gpif[6]",
+					"strict" : false
+				},
+				{
+					"name" : "fx3_gpif[7]",
+					"strict" : false
+				},
+				{
+					"name" : "fx3_gpif[8]",
+					"strict" : false
+				},
+				{
+					"name" : "fx3_gpif[9]",
+					"strict" : false
+				},
+				{
+					"name" : "fx3_gpif[10]",
+					"strict" : false
+				},
+				{
+					"name" : "fx3_gpif[11]",
+					"strict" : false
+				},
+				{
+					"name" : "fx3_gpif[12]",
+					"strict" : false
+				},
+				{
+					"name" : "fx3_gpif[13]",
+					"strict" : false
+				},
+				{
+					"name" : "fx3_gpif[14]",
+					"strict" : false
+				},
+				{
+					"name" : "fx3_gpif[15]",
+					"strict" : false
+				},
+				{
+					"name" : "fx3_gpif[16]",
+					"strict" : false
+				},
+				{
+					"name" : "fx3_gpif[17]",
+					"strict" : false
+				},
+				{
+					"name" : "fx3_gpif[18]",
+					"strict" : false
+				},
+				{
+					"name" : "fx3_gpif[19]",
+					"strict" : false
+				},
+				{
+					"name" : "fx3_gpif[20]",
+					"strict" : false
+				},
+				{
+					"name" : "fx3_gpif[21]",
+					"strict" : false
+				},
+				{
+					"name" : "fx3_gpif[22]",
+					"strict" : false
+				},
+				{
+					"name" : "fx3_gpif[23]",
+					"strict" : false
+				},
+				{
+					"name" : "fx3_gpif[24]",
+					"strict" : false
+				},
+				{
+					"name" : "fx3_gpif[25]",
+					"strict" : false
+				},
+				{
+					"name" : "fx3_gpif[26]",
+					"strict" : false
+				},
+				{
+					"name" : "fx3_gpif[27]",
+					"strict" : false
+				},
+				{
+					"name" : "fx3_gpif[28]",
+					"strict" : false
+				},
+				{
+					"name" : "fx3_gpif[29]",
+					"strict" : false
+				},
+				{
+					"name" : "fx3_gpif[30]",
+					"strict" : false
+				},
+				{
+					"name" : "fx3_gpif[31]",
+					"strict" : false
+				},
+				{
+					"name" : "fx3_ctl[0]",
+					"strict" : false
+				},
+				{
+					"name" : "fx3_ctl[3]",
+					"strict" : false
+				},
+				{
+					"name" : "fx3_ctl[5]",
+					"strict" : false
+				},
+				{
+					"name" : "fx3_ctl[6]",
+					"strict" : false
+				},
+				{
+					"name" : "fx3_ctl[7]",
+					"strict" : false
+				},
+				{
+					"name" : "fx3_ctl[10]",
+					"strict" : false
+				},
+				{
+					"name" : "fx3_ctl[11]",
+					"strict" : false
+				},
+				{
+					"name" : "mini_exp1",
+					"strict" : false
+				},
+				{
+					"name" : "mini_exp2",
+					"strict" : false
+				},
+				{
+					"name" : "exp_gpio[2]",
+					"strict" : false
+				},
+				{
+					"name" : "exp_gpio[3]",
+					"strict" : false
+				},
+				{
+					"name" : "exp_gpio[4]",
+					"strict" : false
+				},
+				{
+					"name" : "exp_gpio[5]",
+					"strict" : false
+				},
+				{
+					"name" : "exp_gpio[6]",
+					"strict" : false
+				},
+				{
+					"name" : "exp_gpio[7]",
+					"strict" : false
+				},
+				{
+					"name" : "exp_gpio[8]",
+					"strict" : false
+				},
+				{
+					"name" : "exp_gpio[9]",
+					"strict" : false
+				},
+				{
+					"name" : "exp_gpio[10]",
+					"strict" : false
+				},
+				{
+					"name" : "exp_gpio[11]",
+					"strict" : false
+				},
+				{
+					"name" : "exp_gpio[12]",
+					"strict" : false
+				},
+				{
+					"name" : "exp_gpio[13]",
+					"strict" : false
+				},
+				{
+					"name" : "exp_gpio[14]",
+					"strict" : false
+				},
+				{
+					"name" : "exp_gpio[15]",
+					"strict" : false
+				},
+				{
+					"name" : "exp_gpio[16]",
+					"strict" : false
+				},
+				{
+					"name" : "exp_gpio[17]",
+					"strict" : false
+				},
+				{
+					"name" : "exp_gpio[18]",
+					"strict" : false
+				},
+				{
+					"name" : "exp_gpio[19]",
+					"strict" : false
+				},
+				{
+					"name" : "exp_gpio[20]",
+					"strict" : false
+				},
+				{
+					"name" : "exp_gpio[21]",
+					"strict" : false
+				},
+				{
+					"name" : "exp_gpio[22]",
+					"strict" : false
+				},
+				{
+					"name" : "exp_gpio[23]",
+					"strict" : false
+				},
+				{
+					"name" : "exp_gpio[24]",
+					"strict" : false
+				},
+				{
+					"name" : "exp_gpio[25]",
+					"strict" : false
+				},
+				{
+					"name" : "exp_gpio[26]",
+					"strict" : false
+				},
+				{
+					"name" : "exp_gpio[27]",
+					"strict" : false
+				},
+				{
+					"name" : "exp_gpio[28]",
+					"strict" : false
+				},
+				{
+					"name" : "exp_gpio[29]",
+					"strict" : false
+				},
+				{
+					"name" : "exp_gpio[30]",
+					"strict" : false
+				},
+				{
+					"name" : "exp_gpio[31]",
+					"strict" : false
+				},
+				{
+					"name" : "exp_gpio[32]",
+					"strict" : false
+				},
+				{
+					"name" : "c4_tx_clock",
+					"strict" : false
+				},
+				{
+					"name" : "c4_clock",
+					"strict" : false
+				},
+				{
+					"name" : "lms_sdo",
+					"strict" : false
+				},
+				{
+					"name" : "lms_rx_clock_out",
+					"strict" : false
+				},
+				{
+					"name" : "exp_clock_in",
+					"strict" : false
+				},
+				{
+					"name" : "dac_sdo",
+					"strict" : false
+				},
+				{
+					"name" : "fx3_uart_txd",
+					"strict" : false
+				},
+				{
+					"name" : "ref_vctcxo_tune",
+					"strict" : false
+				},
+				{
+					"name" : "altera_reserved_tms",
+					"strict" : false
+				},
+				{
+					"name" : "altera_reserved_tck",
+					"strict" : false
+				},
+				{
+					"name" : "altera_reserved_tdi",
+					"strict" : false
+				},
+				{
+					"name" : "altera_reserved_tdo",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

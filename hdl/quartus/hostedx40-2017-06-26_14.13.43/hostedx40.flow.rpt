@@ -1,0 +1,157 @@
+Flow report for hosted
+Mon Jun 26 14:13:42 2017
+Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Flow Summary
+  3. Flow Settings
+  4. Flow Non-Default Global Settings
+  5. Flow Elapsed Time
+  6. Flow OS Summary
+  7. Flow Log
+  8. Flow Messages
+  9. Flow Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2017  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Intel and sold by Intel or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Flow Summary                                                                     ;
++------------------------------------+---------------------------------------------+
+; Flow Status                        ; Successful - Mon Jun 26 14:13:42 2017       ;
+; Quartus Prime Version              ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
+; Revision Name                      ; hosted                                      ;
+; Top-level Entity Name              ; bladerf                                     ;
+; Family                             ; Cyclone IV E                                ;
+; Device                             ; EP4CE40F23C8                                ;
+; Timing Models                      ; Final                                       ;
+; Total logic elements               ; 10,482 / 39,600 ( 26 % )                    ;
+;     Total combinational functions  ; 9,115 / 39,600 ( 23 % )                     ;
+;     Dedicated logic registers      ; 5,492 / 39,600 ( 14 % )                     ;
+; Total registers                    ; 5617                                        ;
+; Total pins                         ; 139 / 329 ( 42 % )                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 507,904 / 1,161,216 ( 44 % )                ;
+; Embedded Multiplier 9-bit elements ; 12 / 232 ( 5 % )                            ;
+; Total PLLs                         ; 2 / 4 ( 50 % )                              ;
++------------------------------------+---------------------------------------------+
+
+
++-----------------------------------------+
+; Flow Settings                           ;
++-------------------+---------------------+
+; Option            ; Setting             ;
++-------------------+---------------------+
+; Start date & time ; 06/26/2017 14:10:09 ;
+; Main task         ; Compilation         ;
+; Revision Name     ; hosted              ;
++-------------------+---------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                                                                                                                ;
++----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+--------------------+-------------+------------+
+; Assignment Name                              ; Value                                                                                                                            ; Default Value      ; Entity Name ; Section Id ;
++----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+--------------------+-------------+------------+
+; ADV_NETLIST_OPT_SYNTH_WYSIWYG_REMAP          ; On                                                                                                                               ; Off                ; --          ; --         ;
+; COMPILER_SIGNATURE_ID                        ; 147326257959.149850060906889                                                                                                     ; --                 ; --          ; --         ;
+; CYCLONEII_OPTIMIZATION_TECHNIQUE             ; Speed                                                                                                                            ; Balanced           ; --          ; --         ;
+; ENABLE_DRC_SETTINGS                          ; On                                                                                                                               ; Off                ; --          ; --         ;
+; ENABLE_SIGNALTAP                             ; Off                                                                                                                              ; --                 ; --          ; --         ;
+; FITTER_AUTO_EFFORT_DESIRED_SLACK_MARGIN      ; 1 ns                                                                                                                             ; 0 ns               ; --          ; --         ;
+; FITTER_EFFORT                                ; Standard Fit                                                                                                                     ; Auto Fit           ; --          ; --         ;
+; MISC_FILE                                    ; /home/spex/Downloads/adams_work/IntegrationWork/bladeRF_withDVB/hdl/fpga/ip/altera/pll/pll.cmp                                   ; --                 ; --          ; --         ;
+; MISC_FILE                                    ; /home/spex/Downloads/adams_work/IntegrationWork/bladeRF_withDVB/hdl/fpga/ip/altera/pll/pll.ppf                                   ; --                 ; --          ; --         ;
+; MISC_FILE                                    ; /home/spex/Downloads/adams_work/IntegrationWork/bladeRF_withDVB/hdl/fpga/ip/altera/fx3_pll/fx3_pll.ppf                           ; --                 ; --          ; --         ;
+; MISC_FILE                                    ; /home/spex/Downloads/adams_work/IntegrationWork/bladeRF_withDVB/hdl/fpga/ip/altera/nios_system/synthesis/../nios_system.cmp      ; --                 ; --          ; --         ;
+; MISC_FILE                                    ; /home/spex/Downloads/adams_work/IntegrationWork/bladeRF_withDVB/hdl/fpga/ip/altera/nios_system/synthesis/../nios_system.qsys     ; --                 ; --          ; --         ;
+; MISC_FILE                                    ; /home/spex/Downloads/adams_work/IntegrationWork/bladeRF_withDVB/hdl/fpga/ip/altera/rx_fifo/rx_fifo_inst.vhd                      ; --                 ; --          ; --         ;
+; MISC_FILE                                    ; /home/spex/Downloads/adams_work/IntegrationWork/bladeRF_withDVB/hdl/fpga/ip/altera/rx_fifo/rx_fifo.cmp                           ; --                 ; --          ; --         ;
+; MISC_FILE                                    ; /home/spex/Downloads/adams_work/IntegrationWork/bladeRF_withDVB/hdl/fpga/ip/altera/tx_fifo/tx_fifo_inst.vhd                      ; --                 ; --          ; --         ;
+; MISC_FILE                                    ; /home/spex/Downloads/adams_work/IntegrationWork/bladeRF_withDVB/hdl/fpga/ip/altera/tx_fifo/tx_fifo.cmp                           ; --                 ; --          ; --         ;
+; MISC_FILE                                    ; /home/spex/Downloads/adams_work/IntegrationWork/bladeRF_withDVB/hdl/fpga/ip/altera/tx_meta_fifo/tx_meta_fifo.bsf                 ; --                 ; --          ; --         ;
+; MISC_FILE                                    ; /home/spex/Downloads/adams_work/IntegrationWork/bladeRF_withDVB/hdl/fpga/ip/altera/tx_meta_fifo/tx_meta_fifo_inst.vhd            ; --                 ; --          ; --         ;
+; MISC_FILE                                    ; /home/spex/Downloads/adams_work/IntegrationWork/bladeRF_withDVB/hdl/fpga/ip/altera/tx_meta_fifo/tx_meta_fifo.inc                 ; --                 ; --          ; --         ;
+; MISC_FILE                                    ; /home/spex/Downloads/adams_work/IntegrationWork/bladeRF_withDVB/hdl/fpga/ip/altera/tx_meta_fifo/tx_meta_fifo.cmp                 ; --                 ; --          ; --         ;
+; MISC_FILE                                    ; /home/spex/Downloads/adams_work/IntegrationWork/bladeRF_withDVB/hdl/fpga/ip/altera/rx_meta_fifo/rx_meta_fifo_inst.vhd            ; --                 ; --          ; --         ;
+; MISC_FILE                                    ; /home/spex/Downloads/adams_work/IntegrationWork/bladeRF_withDVB/hdl/fpga/ip/altera/rx_meta_fifo/rx_meta_fifo.cmp                 ; --                 ; --          ; --         ;
+; OPTIMIZE_POWER_DURING_FITTING                ; Extra effort                                                                                                                     ; Normal compilation ; --          ; --         ;
+; OUTPUT_IO_TIMING_FAR_END_VMEAS               ; Half Signal Swing                                                                                                                ; --                 ; --          ; --         ;
+; OUTPUT_IO_TIMING_FAR_END_VMEAS               ; Half Signal Swing                                                                                                                ; --                 ; --          ; --         ;
+; OUTPUT_IO_TIMING_NEAR_END_VMEAS              ; Half Vccio                                                                                                                       ; --                 ; --          ; --         ;
+; OUTPUT_IO_TIMING_NEAR_END_VMEAS              ; Half Vccio                                                                                                                       ; --                 ; --          ; --         ;
+; PHYSICAL_SYNTHESIS_COMBO_LOGIC               ; On                                                                                                                               ; Off                ; --          ; --         ;
+; PHYSICAL_SYNTHESIS_REGISTER_DUPLICATION      ; On                                                                                                                               ; Off                ; --          ; --         ;
+; PHYSICAL_SYNTHESIS_REGISTER_RETIMING         ; On                                                                                                                               ; Off                ; --          ; --         ;
+; PROJECT_OUTPUT_DIRECTORY                     ; output_files                                                                                                                     ; --                 ; --          ; --         ;
+; QII_AUTO_PACKED_REGISTERS                    ; Normal                                                                                                                           ; Auto               ; --          ; --         ;
+; ROUTER_CLOCKING_TOPOLOGY_ANALYSIS            ; On                                                                                                                               ; Off                ; --          ; --         ;
+; ROUTER_LCELL_INSERTION_AND_LOGIC_DUPLICATION ; On                                                                                                                               ; Auto               ; --          ; --         ;
+; ROUTER_TIMING_OPTIMIZATION_LEVEL             ; MAXIMUM                                                                                                                          ; Normal             ; --          ; --         ;
+; SEARCH_PATH                                  ; /home/spex/Downloads/adams_work/IntegrationWork/bladeRF_withDVB/hdl/fpga/ip/altera/nios_system/software/bladeRF_nios/mem_init/   ; --                 ; --          ; --         ;
+; SLD_INFO                                     ; QSYS_NAME nios_system HAS_SOPCINFO 1 GENERATION_ID 1498500579                                                                    ; --                 ; nios_system ; --         ;
+; SOPCINFO_FILE                                ; /home/spex/Downloads/adams_work/IntegrationWork/bladeRF_withDVB/hdl/fpga/ip/altera/nios_system/synthesis/../nios_system.sopcinfo ; --                 ; --          ; --         ;
+; SYNTHESIS_ONLY_QIP                           ; On                                                                                                                               ; --                 ; --          ; --         ;
+; TOP_LEVEL_ENTITY                             ; bladerf                                                                                                                          ; hosted             ; --          ; --         ;
+; VHDL_INPUT_VERSION                           ; VHDL_2008                                                                                                                        ; VHDL_1993          ; --          ; --         ;
++----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+--------------------+-------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                             ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis      ; 00:01:32     ; 1.0                     ; 1336 MB             ; 00:02:01                           ;
+; Fitter                    ; 00:01:36     ; 1.1                     ; 1461 MB             ; 00:02:49                           ;
+; TimeQuest Timing Analyzer ; 00:00:09     ; 1.3                     ; 1043 MB             ; 00:00:10                           ;
+; Assembler                 ; 00:00:05     ; 1.0                     ; 1000 MB             ; 00:00:05                           ;
+; Total                     ; 00:03:22     ; --                      ; --                  ; 00:05:05                           ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+
+
++---------------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                             ;
++---------------------------+------------------+----------------+------------+----------------+
+; Module Name               ; Machine Hostname ; OS Name        ; OS Version ; Processor type ;
++---------------------------+------------------+----------------+------------+----------------+
+; Analysis & Synthesis      ; eng-4100-nix01   ; Ubuntu 14.04.5 ; 14         ; x86_64         ;
+; Fitter                    ; eng-4100-nix01   ; Ubuntu 14.04.5 ; 14         ; x86_64         ;
+; TimeQuest Timing Analyzer ; eng-4100-nix01   ; Ubuntu 14.04.5 ; 14         ; x86_64         ;
+; Assembler                 ; eng-4100-nix01   ; Ubuntu 14.04.5 ; 14         ; x86_64         ;
++---------------------------+------------------+----------------+------------+----------------+
+
+
+------------
+; Flow Log ;
+------------
+quartus_map --read_settings_files=on --write_settings_files=off bladerf -c hosted
+quartus_fit --read_settings_files=on --write_settings_files=off bladerf -c hosted
+quartus_sta bladerf -c hosted
+quartus_asm --read_settings_files=on --write_settings_files=off bladerf -c hosted
+
+
+

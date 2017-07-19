@@ -1,0 +1,16 @@
+Fitter Status : Successful - Mon Jun 26 14:13:23 2017
+Quartus Prime Version : 17.0.0 Build 595 04/25/2017 SJ Lite Edition
+Revision Name : hosted
+Top-level Entity Name : bladerf
+Family : Cyclone IV E
+Device : EP4CE40F23C8
+Timing Models : Final
+Total logic elements : 10,482 / 39,600 ( 26 % )
+    Total combinational functions : 9,115 / 39,600 ( 23 % )
+    Dedicated logic registers : 5,492 / 39,600 ( 14 % )
+Total registers : 5617
+Total pins : 139 / 329 ( 42 % )
+Total virtual pins : 0
+Total memory bits : 507,904 / 1,161,216 ( 44 % )
+Embedded Multiplier 9-bit elements : 12 / 232 ( 5 % )
+Total PLLs : 2 / 4 ( 50 % )

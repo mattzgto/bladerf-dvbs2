@@ -1,0 +1,136 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 2017  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Intel and sold by Intel or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+*/
+(header "symbol" (version "1.2"))
+(symbol
+	(rect 0 0 176 248)
+	(text "tx_meta_fifo" (rect 52 0 139 16)(font "Arial" (font_size 10)))
+	(text "inst" (rect 8 233 26 244)(font "Arial" ))
+	(port
+		(pt 0 48)
+		(input)
+		(text "data[31..0]" (rect 0 0 61 13)(font "Arial" (font_size 8)))
+		(text "data[31..0]" (rect 20 42 72 54)(font "Arial" (font_size 8)))
+		(line (pt 0 48)(pt 16 48)(line_width 3))
+	)
+	(port
+		(pt 0 72)
+		(input)
+		(text "wrreq" (rect 0 0 33 13)(font "Arial" (font_size 8)))
+		(text "wrreq" (rect 20 66 50 78)(font "Arial" (font_size 8)))
+		(line (pt 0 72)(pt 16 72))
+	)
+	(port
+		(pt 0 88)
+		(input)
+		(text "wrclk" (rect 0 0 31 13)(font "Arial" (font_size 8)))
+		(text "wrclk" (rect 20 82 47 94)(font "Arial" (font_size 8)))
+		(line (pt 0 88)(pt 16 88))
+	)
+	(port
+		(pt 0 120)
+		(input)
+		(text "rdreq" (rect 0 0 30 13)(font "Arial" (font_size 8)))
+		(text "rdreq" (rect 20 114 47 126)(font "Arial" (font_size 8)))
+		(line (pt 0 120)(pt 16 120))
+	)
+	(port
+		(pt 0 136)
+		(input)
+		(text "rdclk" (rect 0 0 29 13)(font "Arial" (font_size 8)))
+		(text "rdclk" (rect 20 130 44 142)(font "Arial" (font_size 8)))
+		(line (pt 0 136)(pt 16 136))
+	)
+	(port
+		(pt 0 192)
+		(input)
+		(text "aclr" (rect 0 0 22 13)(font "Arial" (font_size 8)))
+		(text "aclr" (rect 20 186 38 198)(font "Arial" (font_size 8)))
+		(line (pt 0 192)(pt 16 192))
+	)
+	(port
+		(pt 176 56)
+		(output)
+		(text "wrfull" (rect 0 0 30 13)(font "Arial" (font_size 8)))
+		(text "wrfull" (rect 132 50 159 62)(font "Arial" (font_size 8)))
+		(line (pt 176 56)(pt 160 56))
+	)
+	(port
+		(pt 176 72)
+		(output)
+		(text "wrempty" (rect 0 0 50 13)(font "Arial" (font_size 8)))
+		(text "wrempty" (rect 117 66 161 78)(font "Arial" (font_size 8)))
+		(line (pt 176 72)(pt 160 72))
+	)
+	(port
+		(pt 176 88)
+		(output)
+		(text "wrusedw[4..0]" (rect 0 0 79 13)(font "Arial" (font_size 8)))
+		(text "wrusedw[4..0]" (rect 91 82 160 94)(font "Arial" (font_size 8)))
+		(line (pt 176 88)(pt 160 88)(line_width 3))
+	)
+	(port
+		(pt 176 112)
+		(output)
+		(text "q[127..0]" (rect 0 0 50 13)(font "Arial" (font_size 8)))
+		(text "q[127..0]" (rect 116 106 159 118)(font "Arial" (font_size 8)))
+		(line (pt 176 112)(pt 160 112)(line_width 3))
+	)
+	(port
+		(pt 176 136)
+		(output)
+		(text "rdfull" (rect 0 0 29 13)(font "Arial" (font_size 8)))
+		(text "rdfull" (rect 134 130 158 142)(font "Arial" (font_size 8)))
+		(line (pt 176 136)(pt 160 136))
+	)
+	(port
+		(pt 176 152)
+		(output)
+		(text "rdempty" (rect 0 0 48 13)(font "Arial" (font_size 8)))
+		(text "rdempty" (rect 119 146 160 158)(font "Arial" (font_size 8)))
+		(line (pt 176 152)(pt 160 152))
+	)
+	(port
+		(pt 176 168)
+		(output)
+		(text "rdusedw[2..0]" (rect 0 0 76 13)(font "Arial" (font_size 8)))
+		(text "rdusedw[2..0]" (rect 93 162 159 174)(font "Arial" (font_size 8)))
+		(line (pt 176 168)(pt 160 168)(line_width 3))
+	)
+	(drawing
+		(text "(ack)" (rect 50 116 122 242)(font "Arial" ))
+		(text "32 bits x 32 words" (rect 84 190 246 390)(font "Arial" ))
+		(line (pt 16 100)(pt 160 100))
+		(line (pt 16 180)(pt 160 180))
+		(line (pt 16 32)(pt 160 32))
+		(line (pt 160 32)(pt 160 234))
+		(line (pt 160 234)(pt 16 234))
+		(line (pt 16 234)(pt 16 32))
+		(line (pt 0 0)(pt 177 0))
+		(line (pt 177 0)(pt 177 252))
+		(line (pt 0 252)(pt 177 252))
+		(line (pt 0 0)(pt 0 252))
+		(line (pt 0 0)(pt 0 0))
+		(line (pt 0 0)(pt 0 0))
+		(line (pt 0 0)(pt 0 0))
+		(line (pt 0 0)(pt 0 0))
+	)
+)

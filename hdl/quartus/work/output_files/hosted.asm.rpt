@@ -1,0 +1,270 @@
+Assembler report for hosted
+Wed Jul 19 17:12:14 2017
+Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Assembler Summary
+  3. Assembler Settings
+  4. Parallel Compilation
+  5. Assembler Encrypted IP Cores Summary
+  6. Assembler Generated Files
+  7. Assembler Device Options: hosted.sof
+  8. Assembler Device Options: hosted.ttf
+  9. Assembler Device Options: hosted.rbf
+ 10. Assembler Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2017  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Intel and sold by Intel or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++---------------------------------------------------------------+
+; Assembler Summary                                             ;
++-----------------------+---------------------------------------+
+; Assembler Status      ; Successful - Wed Jul 19 17:12:14 2017 ;
+; Revision Name         ; hosted                                ;
+; Top-level Entity Name ; bladerf                               ;
+; Family                ; Cyclone IV E                          ;
+; Device                ; EP4CE40F23C8                          ;
++-----------------------+---------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Assembler Settings                                                                                            ;
++-----------------------------------------------------------------------------+----------------+----------------+
+; Option                                                                      ; Setting        ; Default Value  ;
++-----------------------------------------------------------------------------+----------------+----------------+
+; Use smart compilation                                                       ; Off            ; Off            ;
+; Generate compressed bitstreams                                              ; Off            ; On             ;
+; Enable compact report table                                                 ; Off            ; Off            ;
+; Generate Tabular Text File (.ttf) For Target Device                         ; On             ; Off            ;
+; Generate Raw Binary File (.rbf) For Target Device                           ; On             ; Off            ;
+; Compression mode                                                            ; Off            ; Off            ;
+; Clock source for configuration device                                       ; Internal       ; Internal       ;
+; Clock frequency of the configuration device                                 ; 10 MHZ         ; 10 MHz         ;
+; Divide clock frequency by                                                   ; 1              ; 1              ;
+; Auto user code                                                              ; On             ; On             ;
+; Use configuration device                                                    ; Off            ; Off            ;
+; Configuration device                                                        ; Auto           ; Auto           ;
+; Voltage output format                                                       ; Auto discovery ; Auto discovery ;
+; Configuration device auto user code                                         ; Off            ; Off            ;
+; Generate Hexadecimal (Intel-Format) Output File (.hexout) for Target Device ; Off            ; Off            ;
+; Hexadecimal Output File start address                                       ; 0              ; 0              ;
+; Hexadecimal Output File count direction                                     ; Up             ; Up             ;
+; Release clears before tri-states                                            ; Off            ; Off            ;
+; Auto-restart configuration after error                                      ; On             ; On             ;
+; Enable OCT_DONE                                                             ; Off            ; Off            ;
+; Generate Serial Vector Format File (.svf) for Target Device                 ; Off            ; Off            ;
+; Generate a JEDEC STAPL Format File (.jam) for Target Device                 ; Off            ; Off            ;
+; Generate a compressed Jam STAPL Byte Code 2.0 File (.jbc) for Target Device ; Off            ; Off            ;
+; Generate a compressed Jam STAPL Byte Code 2.0 File (.jbc) for Target Device ; On             ; On             ;
++-----------------------------------------------------------------------------+----------------+----------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.02        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;   0.7%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------+
+; Assembler Encrypted IP Cores Summary           ;
++--------+------------------------+--------------+
+; Vendor ; IP Core Name           ; License Type ;
++--------+------------------------+--------------+
+; Altera ; Signal Tap (6AF7 BCE1) ; Licensed     ;
+; Altera ; Signal Tap (6AF7 BCEC) ; Licensed     ;
++--------+------------------------+--------------+
+
+
++-----------------------------------------------------------------------------------------------+
+; Assembler Generated Files                                                                     ;
++-----------------------------------------------------------------------------------------------+
+; File Name                                                                                     ;
++-----------------------------------------------------------------------------------------------+
+; /home/spex/Downloads/IntegrationWork/bladeRF_withDVB/hdl/quartus/work/output_files/hosted.sof ;
+; /home/spex/Downloads/IntegrationWork/bladeRF_withDVB/hdl/quartus/work/output_files/hosted.ttf ;
+; /home/spex/Downloads/IntegrationWork/bladeRF_withDVB/hdl/quartus/work/output_files/hosted.rbf ;
++-----------------------------------------------------------------------------------------------+
+
+
++--------------------------------------+
+; Assembler Device Options: hosted.sof ;
++----------------+---------------------+
+; Option         ; Setting             ;
++----------------+---------------------+
+; JTAG usercode  ; 0x009BBB86          ;
+; Checksum       ; 0x009BBB86          ;
++----------------+---------------------+
+
+
++--------------------------------------+
+; Assembler Device Options: hosted.ttf ;
++--------------------+-----------------+
+; Option             ; Setting         ;
++--------------------+-----------------+
+; Tabular Text File  ;                 ;
++--------------------+-----------------+
+
+
++--------------------------------------+
+; Assembler Device Options: hosted.rbf ;
++---------------------+----------------+
+; Option              ; Setting        ;
++---------------------+----------------+
+; Raw Binary File     ;                ;
+;  Compression Ratio  ; 1              ;
++---------------------+----------------+
+
+
++--------------------+
+; Assembler Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Assembler
+    Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
+    Info: Processing started: Wed Jul 19 17:12:09 2017
+Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off bladerf -c hosted
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (332164): Evaluating HDL-embedded SDC commands
+    Info (332165): Entity alt_jtag_atlantic
+        Info (332166): set_false_path -from [get_registers {*|alt_jtag_atlantic:*|jupdate}] -to [get_registers {*|alt_jtag_atlantic:*|jupdate1*}] 
+        Info (332166): set_false_path -from [get_registers {*|alt_jtag_atlantic:*|rdata[*]}] -to [get_registers {*|alt_jtag_atlantic*|td_shift[*]}]
+        Info (332166): set_false_path -from [get_registers {*|alt_jtag_atlantic:*|rdata[*]}] -to [get_registers {*|alt_jtag_atlantic*|td_shift[*]}]
+        Info (332166): set_false_path -from [get_registers {*|alt_jtag_atlantic:*|rdata[*]}] -to [get_registers {*|alt_jtag_atlantic*|td_shift[*]}]
+        Info (332166): set_false_path -from [get_registers {*|alt_jtag_atlantic:*|rdata[*]}] -to [get_registers {*|alt_jtag_atlantic*|td_shift[*]}]
+        Info (332166): set_false_path -from [get_registers {*|alt_jtag_atlantic:*|rdata[*]}] -to [get_registers {*|alt_jtag_atlantic*|td_shift[*]}]
+        Info (332166): set_false_path -from [get_registers {*|alt_jtag_atlantic:*|rdata[*]}] -to [get_registers {*|alt_jtag_atlantic*|td_shift[*]}]
+        Info (332166): set_false_path -from [get_registers {*|alt_jtag_atlantic:*|rdata[*]}] -to [get_registers {*|alt_jtag_atlantic*|td_shift[*]}]
+        Info (332166): set_false_path -from [get_registers {*|alt_jtag_atlantic:*|rdata[*]}] -to [get_registers {*|alt_jtag_atlantic*|td_shift[*]}]
+        Info (332166): set_false_path -from [get_registers {*|alt_jtag_atlantic:*|read}] -to [get_registers {*|alt_jtag_atlantic:*|read1*}] 
+        Info (332166): set_false_path -from [get_registers {*|alt_jtag_atlantic:*|read_req}]
+        Info (332166): set_false_path -from [get_registers {*|alt_jtag_atlantic:*|rvalid}] -to [get_registers {*|alt_jtag_atlantic*|td_shift[*]}]
+        Info (332166): set_false_path -from [get_registers {*|t_dav}] -to [get_registers {*|alt_jtag_atlantic:*|tck_t_dav}]
+        Info (332166): set_false_path -from [get_registers {*|alt_jtag_atlantic:*|user_saw_rvalid}] -to [get_registers {*|alt_jtag_atlantic:*|rvalid0*}]
+        Info (332166): set_false_path -from [get_registers {*|alt_jtag_atlantic:*|wdata[*]}] -to [get_registers {*}]
+        Info (332166): set_false_path -from [get_registers {*|alt_jtag_atlantic:*|wdata[*]}] -to [get_registers {*}]
+        Info (332166): set_false_path -from [get_registers {*|alt_jtag_atlantic:*|wdata[*]}] -to [get_registers {*}]
+        Info (332166): set_false_path -from [get_registers {*|alt_jtag_atlantic:*|wdata[*]}] -to [get_registers {*}]
+        Info (332166): set_false_path -from [get_registers {*|alt_jtag_atlantic:*|wdata[*]}] -to [get_registers {*}]
+        Info (332166): set_false_path -from [get_registers {*|alt_jtag_atlantic:*|wdata[*]}] -to [get_registers {*}]
+        Info (332166): set_false_path -from [get_registers {*|alt_jtag_atlantic:*|wdata[*]}] -to [get_registers {*}]
+        Info (332166): set_false_path -from [get_registers {*|alt_jtag_atlantic:*|wdata[*]}] -to [get_registers {*}]
+        Info (332166): set_false_path -from [get_registers {*|alt_jtag_atlantic:*|write}] -to [get_registers {*|alt_jtag_atlantic:*|write1*}] 
+        Info (332166): set_false_path -from [get_registers {*|alt_jtag_atlantic:*|write_stalled}] -to [get_registers {*|alt_jtag_atlantic:*|t_ena*}]
+        Info (332166): set_false_path -from [get_registers {*|alt_jtag_atlantic:*|write_stalled}] -to [get_registers {*|alt_jtag_atlantic:*|t_pause*}]
+        Info (332166): set_false_path -from [get_registers {*|alt_jtag_atlantic:*|write_valid}]
+    Info (332165): Entity altera_std_synchronizer
+        Info (332166): set_false_path -to [get_keepers {*altera_std_synchronizer:*|din_s1}]
+    Info (332165): Entity dcfifo_3if1
+        Info (332166): set_false_path -from *rdptr_g* -to *ws_dgrp|dffpipe_d09:dffpipe15|dffe16a* 
+        Info (332166): set_false_path -from *delayed_wrptr_g* -to *rs_dgwp|dffpipe_c09:dffpipe12|dffe13a* 
+    Info (332165): Entity dcfifo_50n1
+        Info (332166): set_false_path -from *rdptr_g* -to *ws_dgrp|dffpipe_ed9:dffpipe15|dffe16a* 
+        Info (332166): set_false_path -from *delayed_wrptr_g* -to *rs_dgwp|dffpipe_cd9:dffpipe11|dffe12a* 
+    Info (332165): Entity dcfifo_5ff1
+        Info (332166): set_false_path -from *rdptr_g* -to *ws_dgrp|dffpipe_f09:dffpipe15|dffe16a* 
+        Info (332166): set_false_path -from *delayed_wrptr_g* -to *rs_dgwp|dffpipe_e09:dffpipe12|dffe13a* 
+    Info (332165): Entity dcfifo_iaf1
+        Info (332166): set_false_path -from *rdptr_g* -to *ws_dgrp|dffpipe_2v8:dffpipe15|dffe16a* 
+        Info (332166): set_false_path -from *delayed_wrptr_g* -to *rs_dgwp|dffpipe_1v8:dffpipe12|dffe13a* 
+    Info (332165): Entity dcfifo_maf1
+        Info (332166): set_false_path -from *rdptr_g* -to *ws_dgrp|dffpipe_4v8:dffpipe15|dffe16a* 
+        Info (332166): set_false_path -from *delayed_wrptr_g* -to *rs_dgwp|dffpipe_3v8:dffpipe12|dffe13a* 
+    Info (332165): Entity dcfifo_nan1
+        Info (332166): set_false_path -from *rdptr_g* -to *ws_dgrp|dffpipe_ve9:dffpipe8|dffe9a* 
+        Info (332166): set_false_path -from *delayed_wrptr_g* -to *rs_dgwp|dffpipe_ue9:dffpipe5|dffe6a* 
+    Info (332165): Entity dcfifo_rof1
+        Info (332166): set_false_path -from *rdptr_g* -to *ws_dgrp|dffpipe_h09:dffpipe17|dffe18a* 
+        Info (332166): set_false_path -from *delayed_wrptr_g* -to *rs_dgwp|dffpipe_g09:dffpipe14|dffe15a* 
+    Info (332165): Entity sld_hub
+        Info (332166): create_clock -name altera_reserved_tck [get_ports {altera_reserved_tck}] -period 10MHz   
+        Info (332166): set_clock_groups -asynchronous -group {altera_reserved_tck}
+Warning (332173): Ignored filter: *ws_dgrp|dffpipe_ed9:dffpipe15|dffe16a* could not be matched with a clock or keeper or register or port or pin or cell or partition
+Warning (332048): Ignored set_false_path: Argument <to> is not an object ID
+Warning (332173): Ignored filter: *rs_dgwp|dffpipe_cd9:dffpipe11|dffe12a* could not be matched with a clock or keeper or register or port or pin or cell or partition
+Warning (332048): Ignored set_false_path: Argument <to> is not an object ID
+Info (332104): Reading SDC File: '../../fpga/platforms/bladerf/constraints/bladerf.sdc'
+Info (332110): Deriving PLL clocks
+    Info (332110): create_generated_clock -source {U_fx3_pll|altpll_component|auto_generated|pll1|inclk[0]} -phase -18.00 -duty_cycle 50.00 -name {U_fx3_pll|altpll_component|auto_generated|pll1|clk[0]} {U_fx3_pll|altpll_component|auto_generated|pll1|clk[0]}
+    Info (332110): create_generated_clock -source {U_pll|altpll_component|auto_generated|pll1|inclk[0]} -divide_by 12 -multiply_by 25 -duty_cycle 50.00 -name {U_pll|altpll_component|auto_generated|pll1|clk[0]} {U_pll|altpll_component|auto_generated|pll1|clk[0]}
+    Info (332110): create_generated_clock -source {U_pll|altpll_component|auto_generated|pll1|inclk[0]} -divide_by 2 -multiply_by 5 -duty_cycle 50.00 -name {U_pll|altpll_component|auto_generated|pll1|clk[1]} {U_pll|altpll_component|auto_generated|pll1|clk[1]}
+    Info (332110): create_generated_clock -source {U_pll|altpll_component|auto_generated|pll1|inclk[0]} -divide_by 12 -multiply_by 5 -duty_cycle 50.00 -name {U_pll|altpll_component|auto_generated|pll1|clk[2]} {U_pll|altpll_component|auto_generated|pll1|clk[2]}
+    Info (332110): create_generated_clock -source {U_pll|altpll_component|auto_generated|pll1|inclk[0]} -divide_by 48 -multiply_by 5 -duty_cycle 50.00 -name {U_pll|altpll_component|auto_generated|pll1|clk[4]} {U_pll|altpll_component|auto_generated|pll1|clk[4]}
+Info (332151): Clock uncertainty is not calculated until you update the timing netlist.
+Warning (332174): Ignored filter at bladerf.sdc(115): fx3_gpif*rx_enable could not be matched with a clock or keeper or register or port or pin or cell or partition File: /home/spex/Downloads/IntegrationWork/bladeRF_withDVB/hdl/fpga/platforms/bladerf/constraints/bladerf.sdc Line: 115
+Warning (332174): Ignored filter at bladerf.sdc(115): rx_meta_fifo*:wraclr|* could not be matched with a clock or keeper or register or port or pin or cell or partition File: /home/spex/Downloads/IntegrationWork/bladeRF_withDVB/hdl/fpga/platforms/bladerf/constraints/bladerf.sdc Line: 115
+Warning (332049): Ignored set_false_path at bladerf.sdc(115): Argument <from> is not an object ID File: /home/spex/Downloads/IntegrationWork/bladeRF_withDVB/hdl/fpga/platforms/bladerf/constraints/bladerf.sdc Line: 115
+    Info (332050): set_false_path -from {fx3_gpif*rx_enable} -to {rx_meta_fifo*:wraclr|*} File: /home/spex/Downloads/IntegrationWork/bladeRF_withDVB/hdl/fpga/platforms/bladerf/constraints/bladerf.sdc Line: 115
+Warning (332049): Ignored set_false_path at bladerf.sdc(115): Argument <to> is not an object ID File: /home/spex/Downloads/IntegrationWork/bladeRF_withDVB/hdl/fpga/platforms/bladerf/constraints/bladerf.sdc Line: 115
+Warning (332174): Ignored filter at bladerf.sdc(116): rx_fifo*:wraclr|* could not be matched with a clock or keeper or register or port or pin or cell or partition File: /home/spex/Downloads/IntegrationWork/bladeRF_withDVB/hdl/fpga/platforms/bladerf/constraints/bladerf.sdc Line: 116
+Warning (332049): Ignored set_false_path at bladerf.sdc(116): Argument <from> is not an object ID File: /home/spex/Downloads/IntegrationWork/bladeRF_withDVB/hdl/fpga/platforms/bladerf/constraints/bladerf.sdc Line: 116
+    Info (332050): set_false_path -from {fx3_gpif*rx_enable} -to {rx_fifo*:wraclr|*} File: /home/spex/Downloads/IntegrationWork/bladeRF_withDVB/hdl/fpga/platforms/bladerf/constraints/bladerf.sdc Line: 116
+Warning (332049): Ignored set_false_path at bladerf.sdc(116): Argument <to> is not an object ID File: /home/spex/Downloads/IntegrationWork/bladeRF_withDVB/hdl/fpga/platforms/bladerf/constraints/bladerf.sdc Line: 116
+Info (332104): Reading SDC File: '../../fpga/ip/altera/nios_system/synthesis/submodules/altera_reset_controller.sdc'
+Info (332104): Reading SDC File: '../../fpga/ip/altera/nios_system/synthesis/submodules/nios_system_nios2_cpu.sdc'
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
+Info (332129): Detected timing requirements -- optimizing circuit to achieve only the specified requirements
+Info (332111): Found 17 clocks
+    Info (332111):   Period   Clock Name
+    Info (332111): ======== ============
+    Info (332111):  100.000 altera_reserved_tck
+    Info (332111):   26.041     c4_clock
+    Info (332111):   12.500  c4_tx_clock
+    Info (332111):   12.500 c4_tx_virtual
+    Info (332111):   10.000     fx3_pclk
+    Info (332111):   10.000  fx3_virtual
+    Info (332111):   26.041  lms_pll_out
+    Info (332111):   31.250 lms_rx_clock_out
+    Info (332111):   31.250 lms_rx_virtual
+    Info (332111):   49.998 lms_sclk_pin
+    Info (332111):   49.998 lms_sclk_reg
+    Info (332111):  100.000 ref_vctcxo_tune
+    Info (332111):   10.000 U_fx3_pll|altpll_component|auto_generated|pll1|clk[0]
+    Info (332111):   12.499 U_pll|altpll_component|auto_generated|pll1|clk[0]
+    Info (332111):   10.416 U_pll|altpll_component|auto_generated|pll1|clk[1]
+    Info (332111):   62.498 U_pll|altpll_component|auto_generated|pll1|clk[2]
+    Info (332111):  249.993 U_pll|altpll_component|auto_generated|pll1|clk[4]
+Info (223000): Starting Vectorless Power Activity Estimation
+Info (223001): Completed Vectorless Power Activity Estimation
+Info (115031): Writing out detailed assembly data for power analysis
+Info (115030): Assembler is generating device programming files
+Info: Quartus Prime Assembler was successful. 0 errors, 12 warnings
+    Info: Peak virtual memory: 1012 megabytes
+    Info: Processing ended: Wed Jul 19 17:12:14 2017
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:06
+
+

@@ -1,0 +1,653 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'c4_tx_clock'
+Slack : -3.665
+TNS   : -3.665
+
+Type  : Slow 1200mV 85C Model Setup 'U_pll|altpll_component|auto_generated|pll1|clk[1]'
+Slack : -0.588
+TNS   : -1.113
+
+Type  : Slow 1200mV 85C Model Setup 'fx3_virtual'
+Slack : 0.231
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Setup 'U_fx3_pll|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 0.456
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Setup 'U_pll|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 0.888
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Setup 'c4_tx_virtual'
+Slack : 1.443
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Setup 'U_pll|altpll_component|auto_generated|pll1|clk[2]'
+Slack : 5.134
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Setup 'U_pll|altpll_component|auto_generated|pll1|clk[4]'
+Slack : 5.366
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Setup 'altera_reserved_tck'
+Slack : 15.056
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Setup 'c4_clock'
+Slack : 15.856
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Setup 'lms_sclk_pin'
+Slack : 21.516
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Setup 'lms_rx_clock_out'
+Slack : 22.833
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Setup 'ref_vctcxo_tune'
+Slack : 93.268
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'U_pll|altpll_component|auto_generated|pll1|clk[1]'
+Slack : 0.432
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'c4_tx_clock'
+Slack : 0.434
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'U_pll|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 0.450
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'U_pll|altpll_component|auto_generated|pll1|clk[2]'
+Slack : 0.450
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'c4_clock'
+Slack : 0.450
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'U_fx3_pll|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 0.451
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'U_pll|altpll_component|auto_generated|pll1|clk[4]'
+Slack : 0.451
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'altera_reserved_tck'
+Slack : 0.451
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'lms_rx_clock_out'
+Slack : 0.451
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'ref_vctcxo_tune'
+Slack : 0.464
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'fx3_virtual'
+Slack : 6.382
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'c4_tx_virtual'
+Slack : 7.576
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'lms_sclk_pin'
+Slack : 13.278
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Recovery 'U_fx3_pll|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 3.911
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Recovery 'U_pll|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 6.264
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Recovery 'c4_tx_clock'
+Slack : 7.127
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Recovery 'c4_clock'
+Slack : 22.601
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Recovery 'lms_rx_clock_out'
+Slack : 25.453
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Recovery 'altera_reserved_tck'
+Slack : 47.936
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Recovery 'ref_vctcxo_tune'
+Slack : 97.389
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Removal 'c4_clock'
+Slack : 1.147
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Removal 'lms_rx_clock_out'
+Slack : 1.160
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Removal 'U_fx3_pll|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 1.182
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Removal 'ref_vctcxo_tune'
+Slack : 1.186
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Removal 'altera_reserved_tck'
+Slack : 1.337
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Removal 'c4_tx_clock'
+Slack : 1.427
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Removal 'U_pll|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 2.809
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'U_fx3_pll|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 4.688
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'fx3_pclk'
+Slack : 4.807
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'U_pll|altpll_component|auto_generated|pll1|clk[1]'
+Slack : 4.875
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'c4_tx_clock'
+Slack : 5.729
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'U_pll|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 5.910
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'c4_clock'
+Slack : 12.566
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'lms_rx_clock_out'
+Slack : 15.174
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'lms_pll_out'
+Slack : 22.041
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'lms_sclk_reg'
+Slack : 24.857
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'U_pll|altpll_component|auto_generated|pll1|clk[2]'
+Slack : 30.933
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'lms_sclk_pin'
+Slack : 46.295
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'ref_vctcxo_tune'
+Slack : 49.548
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'altera_reserved_tck'
+Slack : 49.694
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'U_pll|altpll_component|auto_generated|pll1|clk[4]'
+Slack : 124.682
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'c4_tx_clock'
+Slack : -3.763
+TNS   : -3.763
+
+Type  : Slow 1200mV 0C Model Setup 'U_pll|altpll_component|auto_generated|pll1|clk[1]'
+Slack : -0.142
+TNS   : -0.142
+
+Type  : Slow 1200mV 0C Model Setup 'U_fx3_pll|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 0.534
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'fx3_virtual'
+Slack : 0.913
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'U_pll|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 1.958
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'c4_tx_virtual'
+Slack : 2.239
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'U_pll|altpll_component|auto_generated|pll1|clk[2]'
+Slack : 5.422
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'U_pll|altpll_component|auto_generated|pll1|clk[4]'
+Slack : 5.610
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'altera_reserved_tck'
+Slack : 15.891
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'c4_clock'
+Slack : 16.961
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'lms_sclk_pin'
+Slack : 21.563
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'lms_rx_clock_out'
+Slack : 23.699
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'ref_vctcxo_tune'
+Slack : 93.839
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'U_pll|altpll_component|auto_generated|pll1|clk[1]'
+Slack : 0.382
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'c4_tx_clock'
+Slack : 0.383
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'U_fx3_pll|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 0.399
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'U_pll|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 0.399
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'U_pll|altpll_component|auto_generated|pll1|clk[2]'
+Slack : 0.399
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'c4_clock'
+Slack : 0.399
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'U_pll|altpll_component|auto_generated|pll1|clk[4]'
+Slack : 0.400
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'altera_reserved_tck'
+Slack : 0.400
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'lms_rx_clock_out'
+Slack : 0.400
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'ref_vctcxo_tune'
+Slack : 0.415
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'fx3_virtual'
+Slack : 5.880
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'c4_tx_virtual'
+Slack : 6.862
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'lms_sclk_pin'
+Slack : 13.127
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Recovery 'U_fx3_pll|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 4.302
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Recovery 'U_pll|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 6.699
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Recovery 'c4_tx_clock'
+Slack : 7.534
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Recovery 'c4_clock'
+Slack : 22.806
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Recovery 'lms_rx_clock_out'
+Slack : 25.837
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Recovery 'altera_reserved_tck'
+Slack : 48.226
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Recovery 'ref_vctcxo_tune'
+Slack : 97.538
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Removal 'c4_clock'
+Slack : 1.051
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Removal 'lms_rx_clock_out'
+Slack : 1.072
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Removal 'U_fx3_pll|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 1.087
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Removal 'ref_vctcxo_tune'
+Slack : 1.094
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Removal 'altera_reserved_tck'
+Slack : 1.222
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Removal 'c4_tx_clock'
+Slack : 1.290
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Removal 'U_pll|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 2.524
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'U_fx3_pll|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 4.694
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'fx3_pclk'
+Slack : 4.811
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'U_pll|altpll_component|auto_generated|pll1|clk[1]'
+Slack : 4.856
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'c4_tx_clock'
+Slack : 5.766
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'U_pll|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 5.901
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'c4_clock'
+Slack : 12.574
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'lms_rx_clock_out'
+Slack : 15.180
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'lms_pll_out'
+Slack : 22.041
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'lms_sclk_reg'
+Slack : 24.735
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'U_pll|altpll_component|auto_generated|pll1|clk[2]'
+Slack : 30.942
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'lms_sclk_pin'
+Slack : 46.295
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'altera_reserved_tck'
+Slack : 49.534
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'ref_vctcxo_tune'
+Slack : 49.556
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'U_pll|altpll_component|auto_generated|pll1|clk[4]'
+Slack : 124.688
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'c4_tx_clock'
+Slack : -1.626
+TNS   : -1.626
+
+Type  : Fast 1200mV 0C Model Setup 'U_fx3_pll|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 1.180
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'U_pll|altpll_component|auto_generated|pll1|clk[1]'
+Slack : 2.873
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'fx3_virtual'
+Slack : 3.820
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'c4_tx_virtual'
+Slack : 6.314
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'U_pll|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 6.360
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'U_pll|altpll_component|auto_generated|pll1|clk[2]'
+Slack : 7.920
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'U_pll|altpll_component|auto_generated|pll1|clk[4]'
+Slack : 8.082
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'c4_clock'
+Slack : 21.453
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'lms_sclk_pin'
+Slack : 22.147
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'altera_reserved_tck'
+Slack : 22.927
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'lms_rx_clock_out'
+Slack : 27.482
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'ref_vctcxo_tune'
+Slack : 97.067
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'U_pll|altpll_component|auto_generated|pll1|clk[1]'
+Slack : 0.178
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'c4_tx_clock'
+Slack : 0.178
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'U_pll|altpll_component|auto_generated|pll1|clk[2]'
+Slack : 0.183
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'U_fx3_pll|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 0.185
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'U_pll|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 0.185
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'U_pll|altpll_component|auto_generated|pll1|clk[4]'
+Slack : 0.185
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'c4_clock'
+Slack : 0.185
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'lms_rx_clock_out'
+Slack : 0.185
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'altera_reserved_tck'
+Slack : 0.187
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'ref_vctcxo_tune'
+Slack : 0.193
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'fx3_virtual'
+Slack : 3.568
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'c4_tx_virtual'
+Slack : 3.916
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'lms_sclk_pin'
+Slack : 13.401
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Recovery 'U_fx3_pll|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 7.177
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Recovery 'U_pll|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 9.528
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Recovery 'c4_tx_clock'
+Slack : 9.975
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Recovery 'c4_clock'
+Slack : 24.426
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Recovery 'lms_rx_clock_out'
+Slack : 28.571
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Recovery 'altera_reserved_tck'
+Slack : 48.994
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Recovery 'ref_vctcxo_tune'
+Slack : 98.825
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Removal 'c4_clock'
+Slack : 0.487
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Removal 'lms_rx_clock_out'
+Slack : 0.490
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Removal 'U_fx3_pll|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 0.502
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Removal 'ref_vctcxo_tune'
+Slack : 0.502
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Removal 'altera_reserved_tck'
+Slack : 0.562
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Removal 'c4_tx_clock'
+Slack : 0.587
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Removal 'U_pll|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 1.161
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'U_fx3_pll|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 4.783
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'fx3_pclk'
+Slack : 4.950
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'U_pll|altpll_component|auto_generated|pll1|clk[1]'
+Slack : 4.969
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'c4_tx_clock'
+Slack : 5.990
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'U_pll|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 6.000
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'c4_clock'
+Slack : 12.810
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'lms_rx_clock_out'
+Slack : 15.415
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'lms_pll_out'
+Slack : 22.041
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'lms_sclk_reg'
+Slack : 24.875
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'U_pll|altpll_component|auto_generated|pll1|clk[2]'
+Slack : 30.999
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'lms_sclk_pin'
+Slack : 46.665
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'altera_reserved_tck'
+Slack : 49.714
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'ref_vctcxo_tune'
+Slack : 49.791
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'U_pll|altpll_component|auto_generated|pll1|clk[4]'
+Slack : 124.751
+TNS   : 0.000
+
+------------------------------------------------------------
