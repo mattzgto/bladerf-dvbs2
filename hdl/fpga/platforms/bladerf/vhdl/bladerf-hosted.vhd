@@ -946,9 +946,12 @@ begin
 
 	 -- Debugging header
 	 -- Outputs samples 'bit serially' and valid samples
-    mini_exp1    				 <= walking_i_sample;
-    mini_exp2               <= tx_sample_raw_valid;
+    --mini_exp1    				 <= walking_i_sample;
+    --mini_exp2               <= tx_sample_raw_valid;
 
+	 mini_exp1    				 <= tx_sample_fifo.rempty;
+    mini_exp2               <= tx_sample_fifo.rfull;
+	 
     set_tx_ts_reset : process(tx_clock, tx_reset)
     begin
         if( tx_reset = '1' ) then

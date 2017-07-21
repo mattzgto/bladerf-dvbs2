@@ -1,4 +1,4 @@
-//altpll bandwidth_type="AUTO" CBX_DECLARE_ALL_CONNECTED_PORTS="OFF" clk0_divide_by=12 clk0_duty_cycle=50 clk0_multiply_by=25 clk0_phase_shift="0" clk1_divide_by=2 clk1_duty_cycle=50 clk1_multiply_by=5 clk1_phase_shift="0" clk2_divide_by=12 clk2_duty_cycle=50 clk2_multiply_by=5 clk2_phase_shift="0" clk4_divide_by=48 clk4_duty_cycle=50 clk4_multiply_by=5 clk4_phase_shift="0" compensate_clock="CLK0" device_family="Cyclone IV E" inclk0_input_frequency=26041 intended_device_family="Cyclone IV E" lpm_hint="CBX_MODULE_PREFIX=pll" operation_mode="normal" pll_type="AUTO" port_clk0="PORT_USED" port_clk1="PORT_USED" port_clk2="PORT_USED" port_clk3="PORT_UNUSED" port_clk4="PORT_USED" port_clk5="PORT_UNUSED" port_extclk0="PORT_UNUSED" port_extclk1="PORT_UNUSED" port_extclk2="PORT_UNUSED" port_extclk3="PORT_UNUSED" port_inclk1="PORT_UNUSED" port_phasecounterselect="PORT_UNUSED" port_phasedone="PORT_UNUSED" port_scandata="PORT_UNUSED" port_scandataout="PORT_UNUSED" self_reset_on_loss_lock="ON" width_clock=5 clk inclk locked CARRY_CHAIN="MANUAL" CARRY_CHAIN_LENGTH=48
+//altpll bandwidth_type="AUTO" CBX_DECLARE_ALL_CONNECTED_PORTS="OFF" clk0_divide_by=12 clk0_duty_cycle=50 clk0_multiply_by=25 clk0_phase_shift="0" clk1_divide_by=4 clk1_duty_cycle=50 clk1_multiply_by=5 clk1_phase_shift="0" clk2_divide_by=24 clk2_duty_cycle=50 clk2_multiply_by=5 clk2_phase_shift="0" clk4_divide_by=96 clk4_duty_cycle=50 clk4_multiply_by=5 clk4_phase_shift="0" compensate_clock="CLK0" device_family="Cyclone IV E" inclk0_input_frequency=26041 intended_device_family="Cyclone IV E" lpm_hint="CBX_MODULE_PREFIX=pll" operation_mode="normal" pll_type="AUTO" port_clk0="PORT_USED" port_clk1="PORT_USED" port_clk2="PORT_USED" port_clk3="PORT_UNUSED" port_clk4="PORT_USED" port_clk5="PORT_UNUSED" port_extclk0="PORT_UNUSED" port_extclk1="PORT_UNUSED" port_extclk2="PORT_UNUSED" port_extclk3="PORT_UNUSED" port_inclk1="PORT_UNUSED" port_phasecounterselect="PORT_UNUSED" port_phasedone="PORT_UNUSED" port_scandata="PORT_UNUSED" port_scandataout="PORT_UNUSED" self_reset_on_loss_lock="ON" width_clock=5 clk inclk locked CARRY_CHAIN="MANUAL" CARRY_CHAIN_LENGTH=48
 //VERSION_BEGIN 17.0 cbx_altclkbuf 2017:04:19:09:17:27:SJ cbx_altiobuf_bidir 2017:04:19:09:17:27:SJ cbx_altiobuf_in 2017:04:19:09:17:27:SJ cbx_altiobuf_out 2017:04:19:09:17:27:SJ cbx_altpll 2017:04:19:09:17:27:SJ cbx_cycloneii 2017:04:19:09:17:27:SJ cbx_lpm_add_sub 2017:04:19:09:17:27:SJ cbx_lpm_compare 2017:04:19:09:17:27:SJ cbx_lpm_counter 2017:04:19:09:17:27:SJ cbx_lpm_decode 2017:04:19:09:17:27:SJ cbx_lpm_mux 2017:04:19:09:17:27:SJ cbx_mgl 2017:04:19:10:26:36:SJ cbx_nadder 2017:04:19:09:17:27:SJ cbx_stratix 2017:04:19:09:17:27:SJ cbx_stratixii 2017:04:19:09:17:27:SJ cbx_stratixiii 2017:04:19:09:17:27:SJ cbx_stratixv 2017:04:19:09:17:27:SJ cbx_util_mgl 2017:04:19:09:17:27:SJ  VERSION_END
 //CBXI_INSTANCE_NAME="bladerf_pll_U_pll_altpll_altpll_component"
 // synthesis VERILOG_INPUT_VERSION VERILOG_2001
@@ -85,15 +85,15 @@ module  pll_altpll
 		pll1.clk0_duty_cycle = 50,
 		pll1.clk0_multiply_by = 25,
 		pll1.clk0_phase_shift = "0",
-		pll1.clk1_divide_by = 2,
+		pll1.clk1_divide_by = 4,
 		pll1.clk1_duty_cycle = 50,
 		pll1.clk1_multiply_by = 5,
 		pll1.clk1_phase_shift = "0",
-		pll1.clk2_divide_by = 12,
+		pll1.clk2_divide_by = 24,
 		pll1.clk2_duty_cycle = 50,
 		pll1.clk2_multiply_by = 5,
 		pll1.clk2_phase_shift = "0",
-		pll1.clk4_divide_by = 48,
+		pll1.clk4_divide_by = 96,
 		pll1.clk4_duty_cycle = 50,
 		pll1.clk4_multiply_by = 5,
 		pll1.clk4_phase_shift = "0",

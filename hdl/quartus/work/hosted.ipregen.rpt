@@ -1,5 +1,5 @@
 IP Upgrade report for hosted
-Wed Jul 19 13:27:08 2017
+Thu Jul 20 12:59:48 2017
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -35,7 +35,7 @@ agreement for further details.
 +----------------------------------------------------------------------------+
 ; IP Upgrade Summary                                                         ;
 +------------------------------+---------------------------------------------+
-; IP Components Upgrade Status ; Failed - Wed Jul 19 13:27:08 2017           ;
+; IP Components Upgrade Status ; Failed - Thu Jul 20 12:59:48 2017           ;
 ; Quartus Prime Version        ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
 ; Revision Name                ; hosted                                      ;
 ; Top-level Entity Name        ; bladerf                                     ;
@@ -48,9 +48,9 @@ agreement for further details.
 +---------------------+
 Info (23030): Evaluation of Tcl script /home/spex/intelFPGA_lite/17.0/quartus/common/tcl/internal/ip_regen/ip_regen.tcl was successful
 Info: Quartus Prime Shell was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 1090 megabytes
-    Info: Processing ended: Wed Jul 19 13:27:09 2017
-    Info: Elapsed time: 00:00:12
+    Info: Peak virtual memory: 1094 megabytes
+    Info: Processing ended: Thu Jul 20 12:59:49 2017
+    Info: Elapsed time: 00:00:13
     Info: Total CPU time (on all processors): 00:00:28
 
 

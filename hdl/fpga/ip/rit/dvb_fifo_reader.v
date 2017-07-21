@@ -1,6 +1,6 @@
 // dvb_fifo_reader.v
-// Reads a Transport Stream, 32 bits at a time
-// Packetizes, inserts null packets when data is unavailable
+// 	Reads a Transport Stream, 32 bits at a time
+// 	Packetizes, inserts null packets when data is unavailable
 // Rochester Institute of Technology
 // Electrical Engineering Department
 // Graduate Paper
@@ -33,12 +33,13 @@ module dvb_fifo_reader (clock_data_in, enable, in_reset, empty_in, data_in, read
 	reg [10:0] tx_counter;
 	reg [31:0] output_fifo;
 	reg fifo_emptied;
+	reg first_data;
 	reg valid_bit;
 	
 	// Holds the received packets - make sure we have 47 for a full TS frame
-	reg [31:0] packet [46:0];
-	reg [5:0] packet_rcvd_cnt;
-	reg [5:0] packet_send_cnt;
+	reg [15:0] packet [93:0];
+	reg [6:0] packet_rcvd_cnt;
+	reg [6:0] packet_send_cnt;
 
 	// Meta flip-flops
 	reg [31:0] send_fifo_mff1;
@@ -59,12 +60,13 @@ module dvb_fifo_reader (clock_data_in, enable, in_reset, empty_in, data_in, read
 
 			// Internal signals
 			fifo_empty <= 1'b1;
-			for (i=0; i<47; i=i+1) begin
-				packet[i] <= {32{1'b1}};
+			for (i=0; i<94; i=i+1) begin
+				packet[i] <= {16{1'b1}};
 			end
-			packet[0] <= 32'h471fff10;
-			packet_rcvd_cnt <= 6'b0;
-			packet_send_cnt <= 6'd0;
+			packet[0] <= 16'h471f;
+			packet[1] <= 16'hff10;
+			packet_rcvd_cnt <= 7'b0;
+			packet_send_cnt <= 7'd0;
 
 			// Inter-clock domain
 			send_fifo <= 32'hdeadbeea;
@@ -94,18 +96,18 @@ module dvb_fifo_reader (clock_data_in, enable, in_reset, empty_in, data_in, read
 			// Only if enable and if the send fifo is currently empty
 			if ((enable == 1'b1) & (fifo_empty == 1'b1)) begin
 				// Ready to send some data packets, we have enough
-				if (packet_rcvd_cnt == 6'd47) begin
+				if (packet_rcvd_cnt == 7'd94) begin
 					// Send TS packets
-					send_fifo <= packet[packet_send_cnt];
+					send_fifo <= {packet[packet_send_cnt], packet[packet_send_cnt + 1'b1]};
 
 					// Done (check for 46, upcount takes a clock cycle)
-					if (packet_send_cnt == 6'd46) begin
-						packet_send_cnt <= 6'b0;
-						packet_rcvd_cnt <= 6'b0;
+					if (packet_send_cnt == 7'd92) begin
+						packet_send_cnt <= 7'b0;
+						packet_rcvd_cnt <= 7'b0;
 					end
 					// Not done: upcount
 					else begin
-						packet_send_cnt <= packet_send_cnt + 1'b1;
+						packet_send_cnt <= packet_send_cnt + 2'd2;
 					end
 
 					fifo_filled <= 1'b1;
@@ -116,16 +118,12 @@ module dvb_fifo_reader (clock_data_in, enable, in_reset, empty_in, data_in, read
 					// If there's data available (not empty)
 					if (empty_in == 1'b0) begin
 						// Read available packets
-						packet[packet_rcvd_cnt] <= data_in;
-			  //mbz  packet_rcvd_cnt <= packet_rcvd_cnt + 6'b1;
+						packet[packet_rcvd_cnt] <= {data_in[7:0], data_in[23:16]};
+						packet_rcvd_cnt <= packet_rcvd_cnt + 7'b1;
 
 						// Response to input fifo
 						read_in_ret <= 1'b1;
 					end
-				end
-				// Hold the read_in_ret signal for only 1 clock cycle
-				else begin
-					read_in_ret <= 1'b0;
 				end
 			end
 		end // if reset
@@ -141,6 +139,7 @@ module dvb_fifo_reader (clock_data_in, enable, in_reset, empty_in, data_in, read
 			// Internal signals
 			tx_counter <= 11'b0;
 			output_fifo <= 32'hdeadbeef;
+			first_data <= 1'b0;
 			valid_bit <= 1'b0;
 
 			// Inter-clock domain
@@ -177,6 +176,9 @@ module dvb_fifo_reader (clock_data_in, enable, in_reset, empty_in, data_in, read
 
 						// Signal back that we emptied the send_fifo
 						fifo_emptied <= 1'b1;
+
+						// We received the first data packet
+						first_data <= 1'b1;
 					end
 					else begin
 						// Null packet: 1504 bits long

@@ -38,26 +38,26 @@ module dvbs2_transmitter (clock_96MHz, clock_16MHz, clock_4MHz, reset, enable, b
    wire [11:0] phyframer_sym_q_out;
    wire        phyframer_valid_out;
    wire        phyframer_error;
-	wire [31:0] output_sync_sym_i_out;
-   wire [31:0] output_sync_sym_q_out;
+	wire [11:0] output_sync_sym_i_out;
+   wire [11:0] output_sync_sym_q_out;
    wire        output_sync_valid_out;
    wire        output_sync_error;
 	wire			fifo_switch_performed;
 	wire			fifo_wr_sel;
 	wire			done_out;
-	wire [31:0] filter_sym_i_out;
-	wire [31:0] filter_sym_q_out;
-	wire filter_i_valid;
-	wire filter_q_valid;
-	wire [11:0] fixed_sym_i_out;
-	wire [11:0] fixed_sym_q_out;
+//	wire [31:0] filter_sym_i_out;
+//	wire [31:0] filter_sym_q_out;
+//	wire filter_i_valid;
+//	wire filter_q_valid;
+//	wire [11:0] fixed_sym_i_out;
+//	wire [11:0] fixed_sym_q_out;
 	
    // Create output error based on individual block error signals
    assign error = bbheader_error | bchencoder_error | ldpcencoder_error | phyframer_error | output_sync_error;
 
    // Final data output
-   assign sym_i_out = {{4{fixed_sym_i_out[11]}}, fixed_sym_i_out};
-   assign sym_q_out = {{4{fixed_sym_q_out[11]}}, fixed_sym_q_out};
+   assign sym_i_out = {{4{output_sync_sym_i_out[11]}}, output_sync_sym_i_out};
+   assign sym_q_out = {{4{output_sync_sym_q_out[11]}}, output_sync_sym_q_out};
    assign valid_out = output_sync_valid_out;
 
    // Instantiate BBHeader
@@ -188,18 +188,18 @@ module dvbs2_transmitter (clock_96MHz, clock_16MHz, clock_4MHz, reset, enable, b
 //			output_sync_sym_q_out_mff1 <= output_sync_sym_q_out;
 //		end
 //	end
-	
-	fp_to_fixed i_fp_to_fixed (
-		.clock (output_clock),
-		.dataa (output_sync_sym_i_out),
-		.result (fixed_sym_i_out)
-	);
-	
-	fp_to_fixed q_fp_to_fixed (
-		.clock (output_clock),
-		.dataa (output_sync_sym_q_out),
-		.result (fixed_sym_q_out)
-	);
+//	
+//	fp_to_fixed i_fp_to_fixed (
+//		.clock (output_clock),
+//		.dataa (output_sync_sym_i_out),
+//		.result (fixed_sym_i_out)
+//	);
+//	
+//	fp_to_fixed q_fp_to_fixed (
+//		.clock (output_clock),
+//		.dataa (output_sync_sym_q_out),
+//		.result (fixed_sym_q_out)
+//	);
 //	
 //	reg [11:0] fixed_sym_i_out_mff1
 //	reg [11:0] fixed_sym_q_out_mff1

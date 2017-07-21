@@ -370,6 +370,7 @@ set_instance_assignment -name CURRENT_STRENGTH_NEW 4MA -to fx3_uart_rxd
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
 set_global_assignment -name VERILOG_FILE ../../fpga/ip/rit/dvb_fifo_reader.v
 set_global_assignment -name VERILOG_FILE ../../fpga/ip/rit/ram_16bits.v
 set_global_assignment -name VERILOG_FILE ../../fpga/ip/rit/parity_mem4.v
@@ -393,7 +394,3 @@ set_global_assignment -name VERILOG_FILE ../../fpga/ip/rit/dvbs2_bbscrambler.v
 set_global_assignment -name VERILOG_FILE ../../fpga/ip/rit/dvbs2_bbheader.v
 set_global_assignment -name QIP_FILE ../../fpga/platforms/bladerf/bladerf.qip
 set_global_assignment -name QIP_FILE "../../fpga/platforms/bladerf/bladerf-hosted.qip"
-set_global_assignment -name QIP_FILE ../../fpga/ip/altera/dvb_filter/dvb_filter.qip
-set_global_assignment -name SIP_FILE ../../fpga/ip/altera/dvb_filter/dvb_filter.sip
-set_global_assignment -name QIP_FILE ../../fpga/ip/altera/fp_to_fixed/fp_to_fixed.qip
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

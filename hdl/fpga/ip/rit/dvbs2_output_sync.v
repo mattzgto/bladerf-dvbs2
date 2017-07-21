@@ -29,15 +29,15 @@ module dvbs2_output_sync (clock_in, reset, enable, sym_i_in, sym_q_in, valid_in,
    input 		  output_reset;
 	input			  done_out;
 	input			  fifo_wr_sel;
-   output [31:0] sym_i_out; // I portion of output symbol
-   output [31:0] sym_q_out; // Q portion of output symbol
+   output [11:0] sym_i_out; // I portion of output symbol
+   output [11:0] sym_q_out; // Q portion of output symbol
    output        valid_out; // Raised if output symbol is valid
    output        error; // Raised if there is a FIFO error
    output        actual_out;
 	output		  fifo_switch_performed;
 	
-   reg [31:0]    sym_i_out; // Register the I portion of the output symbol
-   reg [31:0]    sym_q_out; // Register the Q portion of the output symbol
+   reg [11:0]    sym_i_out; // Register the I portion of the output symbol
+   reg [11:0]    sym_q_out; // Register the Q portion of the output symbol
 
    // Related to the new output timing code
    // Signals that cross clock domains
@@ -125,34 +125,34 @@ module dvbs2_output_sync (clock_in, reset, enable, sym_i_in, sym_q_in, valid_in,
    always @* begin
       case(src_sym_i_out)
 			0: begin
-				sym_i_out = 32'h0;
+				sym_i_out = 12'h0;
 			end
          1: begin
-            sym_i_out = 32'h3f3504f3;
+            sym_i_out = 12'h586; //32'h3f3504f3;
          end
          2: begin
-            sym_i_out = 32'h3f7746ea;
+            sym_i_out = 12'h78b; //32'h3f7746ea;
          end
          3: begin
-            sym_i_out = 32'h3e8483ee;
+            sym_i_out = 12'h205; //32'h3e8483ee;
          end
          4: begin
-            sym_i_out = 32'h3e8cdeff;
+            sym_i_out = 12'h226; //32'h3e8cdeff;
          end
          12: begin
-            sym_i_out = 32'hbe8cdeff;
+            sym_i_out = 12'hdda; //32'hbe8cdeff;
          end
          13: begin
-            sym_i_out = 32'hbe8483ee;
+            sym_i_out = 12'hdfb; //32'hbe8483ee;
          end
          14: begin
-            sym_i_out = 32'hbf7746ea;
+            sym_i_out = 12'h875; //32'hbf7746ea;
          end
          15: begin
-            sym_i_out = 32'hbf3504f3;
+            sym_i_out = 12'ha7a; //32'hbf3504f3;
          end
          default: begin
-            sym_i_out = 32'hDEADBEEF;
+            sym_i_out = 12'hBEF;
          end
       endcase // dummy_sym_i_out
    end
@@ -161,35 +161,35 @@ module dvbs2_output_sync (clock_in, reset, enable, sym_i_in, sym_q_in, valid_in,
    always @* begin
       case(src_sym_q_out)
 			0: begin
-				sym_q_out = 32'h0;
+				sym_q_out = 12'h0;
 			end
          1: begin
-            sym_q_out = 32'h3f3504f3;
+            sym_q_out = 12'h586; //32'h3f3504f3;
          end
          2: begin
-            sym_q_out = 32'h3f7746ea;
+            sym_q_out = 12'h78b; //32'h3f7746ea;
          end
          3: begin
-            sym_q_out = 32'h3e8483ee;
+            sym_q_out = 12'h205; //32'h3e8483ee;
          end
          4: begin
-            sym_q_out = 32'h3e8cdeff;
+            sym_q_out = 12'h226; //32'h3e8cdeff;
          end
          12: begin
-            sym_q_out = 32'hbe8cdeff;
+            sym_q_out = 12'hdda; //32'hbe8cdeff;
          end
          13: begin
-            sym_q_out = 32'hbe8483ee;
+            sym_q_out = 12'hdfb; //32'hbe8483ee;
          end
          14: begin
-            sym_q_out = 32'hbf7746ea;
+            sym_q_out = 12'h875; //32'hbf7746ea;
          end
          15: begin
-            sym_q_out = 32'hbf3504f3;
+            sym_q_out = 12'ha7a; //32'hbf3504f3;
          end
          default: begin
-            sym_q_out = 32'hDEADBEEF;
-         end
+            sym_q_out = 12'hBEF;
+			end
       endcase // dummy_sym_q_out
 	end
 	
