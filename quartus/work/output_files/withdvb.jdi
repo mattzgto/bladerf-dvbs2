@@ -1,0 +1,242 @@
+<sld_project_info>
+  <project>
+    <hash md5_digest_80b="39bfc964195a772d0b7c"/>
+  </project>
+  <file_info>
+    <file device="EP4CE40F23C8" path="withdvb.sof" usercode="0xFFFFFFFF"/>
+  </file_info>
+  <hub_info hub_ir_width="8" ir_width="8" node_addr_width="2" node_count="2"/>
+  <node_info>
+    <node hpath="nios_system:U_nios_system|nios_system_nios2:nios2|nios_system_nios2_cpu:cpu|nios_system_nios2_cpu_nios2_oci:the_nios_system_nios2_cpu_nios2_oci|nios_system_nios2_cpu_debug_slave_wrapper:the_nios_system_nios2_cpu_debug_slave_wrapper|sld_virtual_jtag_basic:nios_system_nios2_cpu_debug_slave_phy|sld_virtual_jtag_impl:sld_virtual_jtag_impl_inst" instance_id="0" mfg_id="70" node_id="34" sld_node_info="0x19104600" version="3">
+      <parameters>
+        <parameter name="sld_mfg_id" type="dec" value="70"/>
+        <parameter name="sld_type_id" type="dec" value="34"/>
+        <parameter name="sld_version" type="dec" value="3"/>
+        <parameter name="sld_instance_index" type="dec" value="0"/>
+        <parameter name="sld_auto_instance_index" type="string" value="YES"/>
+        <parameter name="sld_ir_width" type="dec" value="2"/>
+        <parameter name="SLD_NODE_INFO" type="dec" value="420496896"/>
+      </parameters>
+      <inputs>
+        <port name="usr_tdo" source="nios_system:U_nios_system|nios_system_nios2:nios2|nios_system_nios2_cpu:cpu|nios_system_nios2_cpu_nios2_oci:the_nios_system_nios2_cpu_nios2_oci|nios_system_nios2_cpu_debug_slave_wrapper:the_nios_system_nios2_cpu_debug_slave_wrapper|sld_virtual_jtag_basic:nios_system_nios2_cpu_debug_slave_phy|tdo"/>
+        <port name="usr_ir_out[0]" source="nios_system:U_nios_system|nios_system_nios2:nios2|nios_system_nios2_cpu:cpu|nios_system_nios2_cpu_nios2_oci:the_nios_system_nios2_cpu_nios2_oci|nios_system_nios2_cpu_debug_slave_wrapper:the_nios_system_nios2_cpu_debug_slave_wrapper|sld_virtual_jtag_basic:nios_system_nios2_cpu_debug_slave_phy|ir_out[0]"/>
+        <port name="usr_ir_out[1]" source="nios_system:U_nios_system|nios_system_nios2:nios2|nios_system_nios2_cpu:cpu|nios_system_nios2_cpu_nios2_oci:the_nios_system_nios2_cpu_nios2_oci|nios_system_nios2_cpu_debug_slave_wrapper:the_nios_system_nios2_cpu_debug_slave_wrapper|sld_virtual_jtag_basic:nios_system_nios2_cpu_debug_slave_phy|ir_out[1]"/>
+        <port name="jtag.bp.U_nios_system_nios2_cpu_the_nios_system_nios2_cpu_nios2_oci_the_nios_system_nios2_cpu_debug_slave_wrapper_nios_system_nios2_cpu_debug_slave_phy_sld_virtual_jtag_impl_inst_raw_tck" source="jtag.bp.U_nios_system_nios2_cpu_the_nios_system_nios2_cpu_nios2_oci_the_nios_system_nios2_cpu_debug_slave_wrapper_nios_system_nios2_cpu_debug_slave_phy_sld_virtual_jtag_impl_inst_raw_tck"/>
+        <port name="jtag.bp.U_nios_system_nios2_cpu_the_nios_system_nios2_cpu_nios2_oci_the_nios_system_nios2_cpu_debug_slave_wrapper_nios_system_nios2_cpu_debug_slave_phy_sld_virtual_jtag_impl_inst_raw_tms" source="jtag.bp.U_nios_system_nios2_cpu_the_nios_system_nios2_cpu_nios2_oci_the_nios_system_nios2_cpu_debug_slave_wrapper_nios_system_nios2_cpu_debug_slave_phy_sld_virtual_jtag_impl_inst_raw_tms"/>
+        <port name="jtag.bp.U_nios_system_nios2_cpu_the_nios_system_nios2_cpu_nios2_oci_the_nios_system_nios2_cpu_debug_slave_wrapper_nios_system_nios2_cpu_debug_slave_phy_sld_virtual_jtag_impl_inst_tdi" source="jtag.bp.U_nios_system_nios2_cpu_the_nios_system_nios2_cpu_nios2_oci_the_nios_system_nios2_cpu_debug_slave_wrapper_nios_system_nios2_cpu_debug_slave_phy_sld_virtual_jtag_impl_inst_tdi"/>
+        <port name="jtag.bp.U_nios_system_nios2_cpu_the_nios_system_nios2_cpu_nios2_oci_the_nios_system_nios2_cpu_debug_slave_wrapper_nios_system_nios2_cpu_debug_slave_phy_sld_virtual_jtag_impl_inst_jtag_state_tlr" source="jtag.bp.U_nios_system_nios2_cpu_the_nios_system_nios2_cpu_nios2_oci_the_nios_system_nios2_cpu_debug_slave_wrapper_nios_system_nios2_cpu_debug_slave_phy_sld_virtual_jtag_impl_inst_jtag_state_tlr"/>
+        <port name="jtag.bp.U_nios_system_nios2_cpu_the_nios_system_nios2_cpu_nios2_oci_the_nios_system_nios2_cpu_debug_slave_wrapper_nios_system_nios2_cpu_debug_slave_phy_sld_virtual_jtag_impl_inst_jtag_state_rti" source="jtag.bp.U_nios_system_nios2_cpu_the_nios_system_nios2_cpu_nios2_oci_the_nios_system_nios2_cpu_debug_slave_wrapper_nios_system_nios2_cpu_debug_slave_phy_sld_virtual_jtag_impl_inst_jtag_state_rti"/>
+        <port name="jtag.bp.U_nios_system_nios2_cpu_the_nios_system_nios2_cpu_nios2_oci_the_nios_system_nios2_cpu_debug_slave_wrapper_nios_system_nios2_cpu_debug_slave_phy_sld_virtual_jtag_impl_inst_jtag_state_sdrs" source="jtag.bp.U_nios_system_nios2_cpu_the_nios_system_nios2_cpu_nios2_oci_the_nios_system_nios2_cpu_debug_slave_wrapper_nios_system_nios2_cpu_debug_slave_phy_sld_virtual_jtag_impl_inst_jtag_state_sdrs"/>
+        <port name="jtag.bp.U_nios_system_nios2_cpu_the_nios_system_nios2_cpu_nios2_oci_the_nios_system_nios2_cpu_debug_slave_wrapper_nios_system_nios2_cpu_debug_slave_phy_sld_virtual_jtag_impl_inst_jtag_state_cdr" source="jtag.bp.U_nios_system_nios2_cpu_the_nios_system_nios2_cpu_nios2_oci_the_nios_system_nios2_cpu_debug_slave_wrapper_nios_system_nios2_cpu_debug_slave_phy_sld_virtual_jtag_impl_inst_jtag_state_cdr"/>
+        <port name="jtag.bp.U_nios_system_nios2_cpu_the_nios_system_nios2_cpu_nios2_oci_the_nios_system_nios2_cpu_debug_slave_wrapper_nios_system_nios2_cpu_debug_slave_phy_sld_virtual_jtag_impl_inst_jtag_state_sdr" source="jtag.bp.U_nios_system_nios2_cpu_the_nios_system_nios2_cpu_nios2_oci_the_nios_system_nios2_cpu_debug_slave_wrapper_nios_system_nios2_cpu_debug_slave_phy_sld_virtual_jtag_impl_inst_jtag_state_sdr"/>
+        <port name="jtag.bp.U_nios_system_nios2_cpu_the_nios_system_nios2_cpu_nios2_oci_the_nios_system_nios2_cpu_debug_slave_wrapper_nios_system_nios2_cpu_debug_slave_phy_sld_virtual_jtag_impl_inst_jtag_state_e1dr" source="jtag.bp.U_nios_system_nios2_cpu_the_nios_system_nios2_cpu_nios2_oci_the_nios_system_nios2_cpu_debug_slave_wrapper_nios_system_nios2_cpu_debug_slave_phy_sld_virtual_jtag_impl_inst_jtag_state_e1dr"/>
+        <port name="jtag.bp.U_nios_system_nios2_cpu_the_nios_system_nios2_cpu_nios2_oci_the_nios_system_nios2_cpu_debug_slave_wrapper_nios_system_nios2_cpu_debug_slave_phy_sld_virtual_jtag_impl_inst_jtag_state_pdr" source="jtag.bp.U_nios_system_nios2_cpu_the_nios_system_nios2_cpu_nios2_oci_the_nios_system_nios2_cpu_debug_slave_wrapper_nios_system_nios2_cpu_debug_slave_phy_sld_virtual_jtag_impl_inst_jtag_state_pdr"/>
+        <port name="jtag.bp.U_nios_system_nios2_cpu_the_nios_system_nios2_cpu_nios2_oci_the_nios_system_nios2_cpu_debug_slave_wrapper_nios_system_nios2_cpu_debug_slave_phy_sld_virtual_jtag_impl_inst_jtag_state_e2dr" source="jtag.bp.U_nios_system_nios2_cpu_the_nios_system_nios2_cpu_nios2_oci_the_nios_system_nios2_cpu_debug_slave_wrapper_nios_system_nios2_cpu_debug_slave_phy_sld_virtual_jtag_impl_inst_jtag_state_e2dr"/>
+        <port name="jtag.bp.U_nios_system_nios2_cpu_the_nios_system_nios2_cpu_nios2_oci_the_nios_system_nios2_cpu_debug_slave_wrapper_nios_system_nios2_cpu_debug_slave_phy_sld_virtual_jtag_impl_inst_jtag_state_udr" source="jtag.bp.U_nios_system_nios2_cpu_the_nios_system_nios2_cpu_nios2_oci_the_nios_system_nios2_cpu_debug_slave_wrapper_nios_system_nios2_cpu_debug_slave_phy_sld_virtual_jtag_impl_inst_jtag_state_udr"/>
+        <port name="jtag.bp.U_nios_system_nios2_cpu_the_nios_system_nios2_cpu_nios2_oci_the_nios_system_nios2_cpu_debug_slave_wrapper_nios_system_nios2_cpu_debug_slave_phy_sld_virtual_jtag_impl_inst_jtag_state_sirs" source="jtag.bp.U_nios_system_nios2_cpu_the_nios_system_nios2_cpu_nios2_oci_the_nios_system_nios2_cpu_debug_slave_wrapper_nios_system_nios2_cpu_debug_slave_phy_sld_virtual_jtag_impl_inst_jtag_state_sirs"/>
+        <port name="jtag.bp.U_nios_system_nios2_cpu_the_nios_system_nios2_cpu_nios2_oci_the_nios_system_nios2_cpu_debug_slave_wrapper_nios_system_nios2_cpu_debug_slave_phy_sld_virtual_jtag_impl_inst_jtag_state_cir" source="jtag.bp.U_nios_system_nios2_cpu_the_nios_system_nios2_cpu_nios2_oci_the_nios_system_nios2_cpu_debug_slave_wrapper_nios_system_nios2_cpu_debug_slave_phy_sld_virtual_jtag_impl_inst_jtag_state_cir"/>
+        <port name="jtag.bp.U_nios_system_nios2_cpu_the_nios_system_nios2_cpu_nios2_oci_the_nios_system_nios2_cpu_debug_slave_wrapper_nios_system_nios2_cpu_debug_slave_phy_sld_virtual_jtag_impl_inst_jtag_state_sir" source="jtag.bp.U_nios_system_nios2_cpu_the_nios_system_nios2_cpu_nios2_oci_the_nios_system_nios2_cpu_debug_slave_wrapper_nios_system_nios2_cpu_debug_slave_phy_sld_virtual_jtag_impl_inst_jtag_state_sir"/>
+        <port name="jtag.bp.U_nios_system_nios2_cpu_the_nios_system_nios2_cpu_nios2_oci_the_nios_system_nios2_cpu_debug_slave_wrapper_nios_system_nios2_cpu_debug_slave_phy_sld_virtual_jtag_impl_inst_jtag_state_e1ir" source="jtag.bp.U_nios_system_nios2_cpu_the_nios_system_nios2_cpu_nios2_oci_the_nios_system_nios2_cpu_debug_slave_wrapper_nios_system_nios2_cpu_debug_slave_phy_sld_virtual_jtag_impl_inst_jtag_state_e1ir"/>
+        <port name="jtag.bp.U_nios_system_nios2_cpu_the_nios_system_nios2_cpu_nios2_oci_the_nios_system_nios2_cpu_debug_slave_wrapper_nios_system_nios2_cpu_debug_slave_phy_sld_virtual_jtag_impl_inst_jtag_state_pir" source="jtag.bp.U_nios_system_nios2_cpu_the_nios_system_nios2_cpu_nios2_oci_the_nios_system_nios2_cpu_debug_slave_wrapper_nios_system_nios2_cpu_debug_slave_phy_sld_virtual_jtag_impl_inst_jtag_state_pir"/>
+        <port name="jtag.bp.U_nios_system_nios2_cpu_the_nios_system_nios2_cpu_nios2_oci_the_nios_system_nios2_cpu_debug_slave_wrapper_nios_system_nios2_cpu_debug_slave_phy_sld_virtual_jtag_impl_inst_jtag_state_e2ir" source="jtag.bp.U_nios_system_nios2_cpu_the_nios_system_nios2_cpu_nios2_oci_the_nios_system_nios2_cpu_debug_slave_wrapper_nios_system_nios2_cpu_debug_slave_phy_sld_virtual_jtag_impl_inst_jtag_state_e2ir"/>
+        <port name="jtag.bp.U_nios_system_nios2_cpu_the_nios_system_nios2_cpu_nios2_oci_the_nios_system_nios2_cpu_debug_slave_wrapper_nios_system_nios2_cpu_debug_slave_phy_sld_virtual_jtag_impl_inst_jtag_state_uir" source="jtag.bp.U_nios_system_nios2_cpu_the_nios_system_nios2_cpu_nios2_oci_the_nios_system_nios2_cpu_debug_slave_wrapper_nios_system_nios2_cpu_debug_slave_phy_sld_virtual_jtag_impl_inst_jtag_state_uir"/>
+        <port name="jtag.bp.U_nios_system_nios2_cpu_the_nios_system_nios2_cpu_nios2_oci_the_nios_system_nios2_cpu_debug_slave_wrapper_nios_system_nios2_cpu_debug_slave_phy_sld_virtual_jtag_impl_inst_usr1" source="jtag.bp.U_nios_system_nios2_cpu_the_nios_system_nios2_cpu_nios2_oci_the_nios_system_nios2_cpu_debug_slave_wrapper_nios_system_nios2_cpu_debug_slave_phy_sld_virtual_jtag_impl_inst_usr1"/>
+        <port name="jtag.bp.U_nios_system_nios2_cpu_the_nios_system_nios2_cpu_nios2_oci_the_nios_system_nios2_cpu_debug_slave_wrapper_nios_system_nios2_cpu_debug_slave_phy_sld_virtual_jtag_impl_inst_clr" source="jtag.bp.U_nios_system_nios2_cpu_the_nios_system_nios2_cpu_nios2_oci_the_nios_system_nios2_cpu_debug_slave_wrapper_nios_system_nios2_cpu_debug_slave_phy_sld_virtual_jtag_impl_inst_clr"/>
+        <port name="jtag.bp.U_nios_system_nios2_cpu_the_nios_system_nios2_cpu_nios2_oci_the_nios_system_nios2_cpu_debug_slave_wrapper_nios_system_nios2_cpu_debug_slave_phy_sld_virtual_jtag_impl_inst_ena" source="jtag.bp.U_nios_system_nios2_cpu_the_nios_system_nios2_cpu_nios2_oci_the_nios_system_nios2_cpu_debug_slave_wrapper_nios_system_nios2_cpu_debug_slave_phy_sld_virtual_jtag_impl_inst_ena"/>
+        <port name="jtag.bp.U_nios_system_nios2_cpu_the_nios_system_nios2_cpu_nios2_oci_the_nios_system_nios2_cpu_debug_slave_wrapper_nios_system_nios2_cpu_debug_slave_phy_sld_virtual_jtag_impl_inst_ir_in_0_" source="jtag.bp.U_nios_system_nios2_cpu_the_nios_system_nios2_cpu_nios2_oci_the_nios_system_nios2_cpu_debug_slave_wrapper_nios_system_nios2_cpu_debug_slave_phy_sld_virtual_jtag_impl_inst_ir_in_0_"/>
+        <port name="jtag.bp.U_nios_system_nios2_cpu_the_nios_system_nios2_cpu_nios2_oci_the_nios_system_nios2_cpu_debug_slave_wrapper_nios_system_nios2_cpu_debug_slave_phy_sld_virtual_jtag_impl_inst_ir_in_1_" source="jtag.bp.U_nios_system_nios2_cpu_the_nios_system_nios2_cpu_nios2_oci_the_nios_system_nios2_cpu_debug_slave_wrapper_nios_system_nios2_cpu_debug_slave_phy_sld_virtual_jtag_impl_inst_ir_in_1_"/>
+      </inputs>
+      <outputs>
+        <port name="usr_tck"/>
+        <port name="usr_tdi"/>
+        <port name="usr_ir_in[0]"/>
+        <port name="usr_ir_in[1]"/>
+        <port name="usr_virtual_state_cdr"/>
+        <port name="usr_virtual_state_sdr"/>
+        <port name="usr_virtual_state_e1dr"/>
+        <port name="usr_virtual_state_pdr"/>
+        <port name="usr_virtual_state_e2dr"/>
+        <port name="usr_virtual_state_udr"/>
+        <port name="usr_virtual_state_cir"/>
+        <port name="usr_virtual_state_uir"/>
+        <port name="usr_tms"/>
+        <port name="usr_jtag_state_tlr"/>
+        <port name="usr_jtag_state_rti"/>
+        <port name="usr_jtag_state_sdrs"/>
+        <port name="usr_jtag_state_cdr"/>
+        <port name="usr_jtag_state_sdr"/>
+        <port name="usr_jtag_state_e1dr"/>
+        <port name="usr_jtag_state_pdr"/>
+        <port name="usr_jtag_state_e2dr"/>
+        <port name="usr_jtag_state_udr"/>
+        <port name="usr_jtag_state_sirs"/>
+        <port name="usr_jtag_state_cir"/>
+        <port name="usr_jtag_state_sir"/>
+        <port name="usr_jtag_state_e1ir"/>
+        <port name="usr_jtag_state_pir"/>
+        <port name="usr_jtag_state_e2ir"/>
+        <port name="usr_jtag_state_uir"/>
+        <port name="jtag.bp.U_nios_system_nios2_cpu_the_nios_system_nios2_cpu_nios2_oci_the_nios_system_nios2_cpu_debug_slave_wrapper_nios_system_nios2_cpu_debug_slave_phy_sld_virtual_jtag_impl_inst_tdo"/>
+        <port name="jtag.bp.U_nios_system_nios2_cpu_the_nios_system_nios2_cpu_nios2_oci_the_nios_system_nios2_cpu_debug_slave_wrapper_nios_system_nios2_cpu_debug_slave_phy_sld_virtual_jtag_impl_inst_ir_out_0_"/>
+        <port name="jtag.bp.U_nios_system_nios2_cpu_the_nios_system_nios2_cpu_nios2_oci_the_nios_system_nios2_cpu_debug_slave_wrapper_nios_system_nios2_cpu_debug_slave_phy_sld_virtual_jtag_impl_inst_ir_out_1_"/>
+      </outputs>
+    </node>
+    <node hpath="nios_system:U_nios_system|nios_system_ram:ram|altsyncram:the_altsyncram|altsyncram_agk1:auto_generated|sld_mod_ram_rom:mgl_prim2" instance_id="0" mfg_id="110" node_id="3" sld_node_info="0x10186E00" version="2">
+      <parameters>
+        <parameter name="SLD_NODE_INFO" type="dec" value="270036480"/>
+        <parameter name="SLD_AUTO_INSTANCE_INDEX" type="string" value="yes"/>
+        <parameter name="SLD_IP_VERSION" type="dec" value="1"/>
+        <parameter name="SLD_IP_MINOR_VERSION" type="dec" value="3"/>
+        <parameter name="SLD_COMMON_IP_VERSION" type="dec" value="0"/>
+        <parameter name="width_word" type="unknown" value="32"/>
+        <parameter name="numwords" type="unknown" value="4096"/>
+        <parameter name="widthad" type="unknown" value="12"/>
+        <parameter name="shift_count_bits" type="unknown" value="6"/>
+        <parameter name="cvalue" type="unknown" value="00000000000000000000000000000000"/>
+        <parameter name="is_data_in_ram" type="unknown" value="1"/>
+        <parameter name="is_readable" type="unknown" value="1"/>
+        <parameter name="BACKPRESSURE_ENABLED" type="dec" value="0"/>
+        <parameter name="FIFO_SIZE" type="dec" value="16"/>
+        <parameter name="FIFO_SIZE_WIDTH" type="dec" value="5"/>
+        <parameter name="node_name" type="unknown" value="1296385024"/>
+      </parameters>
+      <inputs>
+        <port name="data_read[0]" source="nios_system:U_nios_system|nios_system_ram:ram|altsyncram:the_altsyncram|altsyncram_agk1:auto_generated|altsyncram_k0f2:altsyncram1|q_b[0]"/>
+        <port name="data_read[1]" source="nios_system:U_nios_system|nios_system_ram:ram|altsyncram:the_altsyncram|altsyncram_agk1:auto_generated|altsyncram_k0f2:altsyncram1|q_b[1]"/>
+        <port name="data_read[2]" source="nios_system:U_nios_system|nios_system_ram:ram|altsyncram:the_altsyncram|altsyncram_agk1:auto_generated|altsyncram_k0f2:altsyncram1|q_b[2]"/>
+        <port name="data_read[3]" source="nios_system:U_nios_system|nios_system_ram:ram|altsyncram:the_altsyncram|altsyncram_agk1:auto_generated|altsyncram_k0f2:altsyncram1|q_b[3]"/>
+        <port name="data_read[4]" source="nios_system:U_nios_system|nios_system_ram:ram|altsyncram:the_altsyncram|altsyncram_agk1:auto_generated|altsyncram_k0f2:altsyncram1|q_b[4]"/>
+        <port name="data_read[5]" source="nios_system:U_nios_system|nios_system_ram:ram|altsyncram:the_altsyncram|altsyncram_agk1:auto_generated|altsyncram_k0f2:altsyncram1|q_b[5]"/>
+        <port name="data_read[6]" source="nios_system:U_nios_system|nios_system_ram:ram|altsyncram:the_altsyncram|altsyncram_agk1:auto_generated|altsyncram_k0f2:altsyncram1|q_b[6]"/>
+        <port name="data_read[7]" source="nios_system:U_nios_system|nios_system_ram:ram|altsyncram:the_altsyncram|altsyncram_agk1:auto_generated|altsyncram_k0f2:altsyncram1|q_b[7]"/>
+        <port name="data_read[8]" source="nios_system:U_nios_system|nios_system_ram:ram|altsyncram:the_altsyncram|altsyncram_agk1:auto_generated|altsyncram_k0f2:altsyncram1|q_b[8]"/>
+        <port name="data_read[9]" source="nios_system:U_nios_system|nios_system_ram:ram|altsyncram:the_altsyncram|altsyncram_agk1:auto_generated|altsyncram_k0f2:altsyncram1|q_b[9]"/>
+        <port name="data_read[10]" source="nios_system:U_nios_system|nios_system_ram:ram|altsyncram:the_altsyncram|altsyncram_agk1:auto_generated|altsyncram_k0f2:altsyncram1|q_b[10]"/>
+        <port name="data_read[11]" source="nios_system:U_nios_system|nios_system_ram:ram|altsyncram:the_altsyncram|altsyncram_agk1:auto_generated|altsyncram_k0f2:altsyncram1|q_b[11]"/>
+        <port name="data_read[12]" source="nios_system:U_nios_system|nios_system_ram:ram|altsyncram:the_altsyncram|altsyncram_agk1:auto_generated|altsyncram_k0f2:altsyncram1|q_b[12]"/>
+        <port name="data_read[13]" source="nios_system:U_nios_system|nios_system_ram:ram|altsyncram:the_altsyncram|altsyncram_agk1:auto_generated|altsyncram_k0f2:altsyncram1|q_b[13]"/>
+        <port name="data_read[14]" source="nios_system:U_nios_system|nios_system_ram:ram|altsyncram:the_altsyncram|altsyncram_agk1:auto_generated|altsyncram_k0f2:altsyncram1|q_b[14]"/>
+        <port name="data_read[15]" source="nios_system:U_nios_system|nios_system_ram:ram|altsyncram:the_altsyncram|altsyncram_agk1:auto_generated|altsyncram_k0f2:altsyncram1|q_b[15]"/>
+        <port name="data_read[16]" source="nios_system:U_nios_system|nios_system_ram:ram|altsyncram:the_altsyncram|altsyncram_agk1:auto_generated|altsyncram_k0f2:altsyncram1|q_b[16]"/>
+        <port name="data_read[17]" source="nios_system:U_nios_system|nios_system_ram:ram|altsyncram:the_altsyncram|altsyncram_agk1:auto_generated|altsyncram_k0f2:altsyncram1|q_b[17]"/>
+        <port name="data_read[18]" source="nios_system:U_nios_system|nios_system_ram:ram|altsyncram:the_altsyncram|altsyncram_agk1:auto_generated|altsyncram_k0f2:altsyncram1|q_b[18]"/>
+        <port name="data_read[19]" source="nios_system:U_nios_system|nios_system_ram:ram|altsyncram:the_altsyncram|altsyncram_agk1:auto_generated|altsyncram_k0f2:altsyncram1|q_b[19]"/>
+        <port name="data_read[20]" source="nios_system:U_nios_system|nios_system_ram:ram|altsyncram:the_altsyncram|altsyncram_agk1:auto_generated|altsyncram_k0f2:altsyncram1|q_b[20]"/>
+        <port name="data_read[21]" source="nios_system:U_nios_system|nios_system_ram:ram|altsyncram:the_altsyncram|altsyncram_agk1:auto_generated|altsyncram_k0f2:altsyncram1|q_b[21]"/>
+        <port name="data_read[22]" source="nios_system:U_nios_system|nios_system_ram:ram|altsyncram:the_altsyncram|altsyncram_agk1:auto_generated|altsyncram_k0f2:altsyncram1|q_b[22]"/>
+        <port name="data_read[23]" source="nios_system:U_nios_system|nios_system_ram:ram|altsyncram:the_altsyncram|altsyncram_agk1:auto_generated|altsyncram_k0f2:altsyncram1|q_b[23]"/>
+        <port name="data_read[24]" source="nios_system:U_nios_system|nios_system_ram:ram|altsyncram:the_altsyncram|altsyncram_agk1:auto_generated|altsyncram_k0f2:altsyncram1|q_b[24]"/>
+        <port name="data_read[25]" source="nios_system:U_nios_system|nios_system_ram:ram|altsyncram:the_altsyncram|altsyncram_agk1:auto_generated|altsyncram_k0f2:altsyncram1|q_b[25]"/>
+        <port name="data_read[26]" source="nios_system:U_nios_system|nios_system_ram:ram|altsyncram:the_altsyncram|altsyncram_agk1:auto_generated|altsyncram_k0f2:altsyncram1|q_b[26]"/>
+        <port name="data_read[27]" source="nios_system:U_nios_system|nios_system_ram:ram|altsyncram:the_altsyncram|altsyncram_agk1:auto_generated|altsyncram_k0f2:altsyncram1|q_b[27]"/>
+        <port name="data_read[28]" source="nios_system:U_nios_system|nios_system_ram:ram|altsyncram:the_altsyncram|altsyncram_agk1:auto_generated|altsyncram_k0f2:altsyncram1|q_b[28]"/>
+        <port name="data_read[29]" source="nios_system:U_nios_system|nios_system_ram:ram|altsyncram:the_altsyncram|altsyncram_agk1:auto_generated|altsyncram_k0f2:altsyncram1|q_b[29]"/>
+        <port name="data_read[30]" source="nios_system:U_nios_system|nios_system_ram:ram|altsyncram:the_altsyncram|altsyncram_agk1:auto_generated|altsyncram_k0f2:altsyncram1|q_b[30]"/>
+        <port name="data_read[31]" source="nios_system:U_nios_system|nios_system_ram:ram|altsyncram:the_altsyncram|altsyncram_agk1:auto_generated|altsyncram_k0f2:altsyncram1|q_b[31]"/>
+        <port name="jtag.bp.U_nios_system_ram_the_altsyncram_auto_generated_mgl_prim2_raw_tck" source="jtag.bp.U_nios_system_ram_the_altsyncram_auto_generated_mgl_prim2_raw_tck"/>
+        <port name="jtag.bp.U_nios_system_ram_the_altsyncram_auto_generated_mgl_prim2_tdi" source="jtag.bp.U_nios_system_ram_the_altsyncram_auto_generated_mgl_prim2_tdi"/>
+        <port name="jtag.bp.U_nios_system_ram_the_altsyncram_auto_generated_mgl_prim2_usr1" source="jtag.bp.U_nios_system_ram_the_altsyncram_auto_generated_mgl_prim2_usr1"/>
+        <port name="jtag.bp.U_nios_system_ram_the_altsyncram_auto_generated_mgl_prim2_jtag_state_cdr" source="jtag.bp.U_nios_system_ram_the_altsyncram_auto_generated_mgl_prim2_jtag_state_cdr"/>
+        <port name="jtag.bp.U_nios_system_ram_the_altsyncram_auto_generated_mgl_prim2_jtag_state_sdr" source="jtag.bp.U_nios_system_ram_the_altsyncram_auto_generated_mgl_prim2_jtag_state_sdr"/>
+        <port name="jtag.bp.U_nios_system_ram_the_altsyncram_auto_generated_mgl_prim2_jtag_state_e1dr" source="jtag.bp.U_nios_system_ram_the_altsyncram_auto_generated_mgl_prim2_jtag_state_e1dr"/>
+        <port name="jtag.bp.U_nios_system_ram_the_altsyncram_auto_generated_mgl_prim2_jtag_state_udr" source="jtag.bp.U_nios_system_ram_the_altsyncram_auto_generated_mgl_prim2_jtag_state_udr"/>
+        <port name="jtag.bp.U_nios_system_ram_the_altsyncram_auto_generated_mgl_prim2_jtag_state_uir" source="jtag.bp.U_nios_system_ram_the_altsyncram_auto_generated_mgl_prim2_jtag_state_uir"/>
+        <port name="jtag.bp.U_nios_system_ram_the_altsyncram_auto_generated_mgl_prim2_clr" source="jtag.bp.U_nios_system_ram_the_altsyncram_auto_generated_mgl_prim2_clr"/>
+        <port name="jtag.bp.U_nios_system_ram_the_altsyncram_auto_generated_mgl_prim2_ena" source="jtag.bp.U_nios_system_ram_the_altsyncram_auto_generated_mgl_prim2_ena"/>
+        <port name="jtag.bp.U_nios_system_ram_the_altsyncram_auto_generated_mgl_prim2_ir_in_0_" source="jtag.bp.U_nios_system_ram_the_altsyncram_auto_generated_mgl_prim2_ir_in_0_"/>
+        <port name="jtag.bp.U_nios_system_ram_the_altsyncram_auto_generated_mgl_prim2_ir_in_1_" source="jtag.bp.U_nios_system_ram_the_altsyncram_auto_generated_mgl_prim2_ir_in_1_"/>
+        <port name="jtag.bp.U_nios_system_ram_the_altsyncram_auto_generated_mgl_prim2_ir_in_2_" source="jtag.bp.U_nios_system_ram_the_altsyncram_auto_generated_mgl_prim2_ir_in_2_"/>
+        <port name="jtag.bp.U_nios_system_ram_the_altsyncram_auto_generated_mgl_prim2_ir_in_3_" source="jtag.bp.U_nios_system_ram_the_altsyncram_auto_generated_mgl_prim2_ir_in_3_"/>
+        <port name="jtag.bp.U_nios_system_ram_the_altsyncram_auto_generated_mgl_prim2_ir_in_4_" source="jtag.bp.U_nios_system_ram_the_altsyncram_auto_generated_mgl_prim2_ir_in_4_"/>
+        <port name="jtag.bp.U_nios_system_ram_the_altsyncram_auto_generated_mgl_prim2_ir_in_5_" source="jtag.bp.U_nios_system_ram_the_altsyncram_auto_generated_mgl_prim2_ir_in_5_"/>
+        <port name="jtag.bp.U_nios_system_ram_the_altsyncram_auto_generated_mgl_prim2_ir_in_6_" source="jtag.bp.U_nios_system_ram_the_altsyncram_auto_generated_mgl_prim2_ir_in_6_"/>
+        <port name="jtag.bp.U_nios_system_ram_the_altsyncram_auto_generated_mgl_prim2_ir_in_7_" source="jtag.bp.U_nios_system_ram_the_altsyncram_auto_generated_mgl_prim2_ir_in_7_"/>
+      </inputs>
+      <outputs>
+        <port name="tck_usr"/>
+        <port name="address[0]"/>
+        <port name="address[1]"/>
+        <port name="address[2]"/>
+        <port name="address[3]"/>
+        <port name="address[4]"/>
+        <port name="address[5]"/>
+        <port name="address[6]"/>
+        <port name="address[7]"/>
+        <port name="address[8]"/>
+        <port name="address[9]"/>
+        <port name="address[10]"/>
+        <port name="address[11]"/>
+        <port name="enable_write"/>
+        <port name="data_write[0]"/>
+        <port name="data_write[1]"/>
+        <port name="data_write[2]"/>
+        <port name="data_write[3]"/>
+        <port name="data_write[4]"/>
+        <port name="data_write[5]"/>
+        <port name="data_write[6]"/>
+        <port name="data_write[7]"/>
+        <port name="data_write[8]"/>
+        <port name="data_write[9]"/>
+        <port name="data_write[10]"/>
+        <port name="data_write[11]"/>
+        <port name="data_write[12]"/>
+        <port name="data_write[13]"/>
+        <port name="data_write[14]"/>
+        <port name="data_write[15]"/>
+        <port name="data_write[16]"/>
+        <port name="data_write[17]"/>
+        <port name="data_write[18]"/>
+        <port name="data_write[19]"/>
+        <port name="data_write[20]"/>
+        <port name="data_write[21]"/>
+        <port name="data_write[22]"/>
+        <port name="data_write[23]"/>
+        <port name="data_write[24]"/>
+        <port name="data_write[25]"/>
+        <port name="data_write[26]"/>
+        <port name="data_write[27]"/>
+        <port name="data_write[28]"/>
+        <port name="data_write[29]"/>
+        <port name="data_write[30]"/>
+        <port name="data_write[31]"/>
+        <port name="jtag.bp.U_nios_system_ram_the_altsyncram_auto_generated_mgl_prim2_ir_out_0_"/>
+        <port name="jtag.bp.U_nios_system_ram_the_altsyncram_auto_generated_mgl_prim2_ir_out_1_"/>
+        <port name="jtag.bp.U_nios_system_ram_the_altsyncram_auto_generated_mgl_prim2_ir_out_2_"/>
+        <port name="jtag.bp.U_nios_system_ram_the_altsyncram_auto_generated_mgl_prim2_ir_out_3_"/>
+        <port name="jtag.bp.U_nios_system_ram_the_altsyncram_auto_generated_mgl_prim2_ir_out_4_"/>
+        <port name="jtag.bp.U_nios_system_ram_the_altsyncram_auto_generated_mgl_prim2_ir_out_5_"/>
+        <port name="jtag.bp.U_nios_system_ram_the_altsyncram_auto_generated_mgl_prim2_ir_out_6_"/>
+        <port name="jtag.bp.U_nios_system_ram_the_altsyncram_auto_generated_mgl_prim2_ir_out_7_"/>
+        <port name="jtag.bp.U_nios_system_ram_the_altsyncram_auto_generated_mgl_prim2_tdo"/>
+      </outputs>
+    </node>
+  </node_info>
+  <sld_infos>
+    <sld_info hpath="nios_system:U_nios_system|nios_system_jtag_uart:jtag_uart|alt_jtag_atlantic:nios_system_jtag_uart_alt_jtag_atlantic|altera_sld_agent_endpoint:inst|altera_fabric_endpoint:ep" library="work" name="ep">
+      <assignment_values/>
+      <parameters>
+        <assignment name="SLD_NODE_INFO" type="dec" value="0"/>
+        <assignment name="sld_endpoint_type" type="dec" value="0"/>
+        <assignment name="send_width" type="dec" value="3"/>
+        <assignment name="receive_width" type="dec" value="24"/>
+        <assignment name="num_clocks" type="dec" value="0"/>
+        <assignment name="settings" type="string" value="{fabric sld dir agent mfr_code 110 type_code 128 version 1 instance -1 ir_width 1 bridge_agent 0 prefer_host { } psig 9b67919e}"/>
+        <assignment name=" constraint(settings)" type="string" value="1 to 127"/>
+        <assignment name=" constraint(send)" type="string" value="2 downto 0"/>
+        <assignment name=" constraint(receive)" type="string" value="23 downto 0"/>
+      </parameters>
+    </sld_info>
+    <sld_info hpath="nios_system:U_nios_system" name="U_nios_system">
+      <assignment_values>
+        <assignment_value text="QSYS_NAME nios_system HAS_SOPCINFO 1 GENERATION_ID 1498500579"/>
+      </assignment_values>
+      <parameters/>
+    </sld_info>
+    <sld_info hpath="sld_hub:auto_hub|alt_sld_fab:\instrumentation_fabric_with_node_gen:instrumentation_fabric" library="alt_sld_fab" name="instrumentation_fabric">
+      <assignment_values>
+        <assignment_value text="QSYS_NAME alt_sld_fab HAS_SOPCINFO 1"/>
+      </assignment_values>
+      <parameters/>
+    </sld_info>
+  </sld_infos>
+</sld_project_info>
