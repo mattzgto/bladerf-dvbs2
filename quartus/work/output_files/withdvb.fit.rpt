@@ -1,5 +1,5 @@
 Fitter report for withdvb
-Fri Jul 21 15:47:34 2017
+Fri Jul 21 16:04:38 2017
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -82,7 +82,7 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Fri Jul 21 15:47:34 2017       ;
+; Fitter Status                      ; Successful - Fri Jul 21 16:04:38 2017       ;
 ; Quartus Prime Version              ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; withdvb                                     ;
 ; Top-level Entity Name              ; bladerf                                     ;
@@ -173,9 +173,9 @@ agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   3.8%      ;
-;     Processor 3            ;   3.3%      ;
-;     Processor 4            ;   3.1%      ;
+;     Processor 2            ;   3.9%      ;
+;     Processor 3            ;   3.4%      ;
+;     Processor 4            ;   3.2%      ;
 +----------------------------+-------------+
 
 
@@ -465,7 +465,7 @@ agreement for further details.
 +--------------+
 ; Pin-Out File ;
 +--------------+
-The pin-out file can be found in /home/spex/Downloads/hdl/quartus/work/output_files/withdvb.pin.
+The pin-out file can be found in /home/spex/Downloads/bladerf-dvbs2/quartus/work/output_files/withdvb.pin.
 
 
 +------------------------------------------------------------------------------+
@@ -5079,48 +5079,48 @@ Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors
 Info (119006): Selected device EP4CE40F23C8 for design "withdvb"
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
-Info (15535): Implemented PLL "pll:U_pll|altpll:altpll_component|pll_altpll:auto_generated|pll1" as Cyclone IV E PLL type File: /home/spex/Downloads/hdl/quartus/work/db/pll_altpll.v Line: 46
-    Info (15099): Implementing clock multiplication of 25, clock division of 12, and phase shift of 0 degrees (0 ps) for pll:U_pll|altpll:altpll_component|pll_altpll:auto_generated|wire_pll1_clk[0] port File: /home/spex/Downloads/hdl/quartus/work/db/pll_altpll.v Line: 46
-    Info (15099): Implementing clock multiplication of 5, clock division of 2, and phase shift of 0 degrees (0 ps) for pll:U_pll|altpll:altpll_component|pll_altpll:auto_generated|wire_pll1_clk[1] port File: /home/spex/Downloads/hdl/quartus/work/db/pll_altpll.v Line: 46
-    Info (15099): Implementing clock multiplication of 5, clock division of 12, and phase shift of 0 degrees (0 ps) for pll:U_pll|altpll:altpll_component|pll_altpll:auto_generated|wire_pll1_clk[2] port File: /home/spex/Downloads/hdl/quartus/work/db/pll_altpll.v Line: 46
-    Info (15099): Implementing clock multiplication of 5, clock division of 48, and phase shift of 0 degrees (0 ps) for pll:U_pll|altpll:altpll_component|pll_altpll:auto_generated|wire_pll1_clk[4] port File: /home/spex/Downloads/hdl/quartus/work/db/pll_altpll.v Line: 46
-Info (15575): None of the inputs fed by the compensated output clock of PLL "fx3_pll:U_fx3_pll|altpll:altpll_component|fx3_pll_altpll:auto_generated|pll1" in Source Synchronous mode are set as the compensated input File: /home/spex/Downloads/hdl/quartus/work/db/fx3_pll_altpll.v Line: 46
-    Info (15574): Input "fx3_ctl[6]" that is fed by the compensated output clock of PLL "fx3_pll:U_fx3_pll|altpll:altpll_component|fx3_pll_altpll:auto_generated|pll1" in Source Synchronous mode has been set as a compensated input File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/bladerf.vhd Line: 72
-    Info (15574): Input "fx3_ctl[5]" that is fed by the compensated output clock of PLL "fx3_pll:U_fx3_pll|altpll:altpll_component|fx3_pll_altpll:auto_generated|pll1" in Source Synchronous mode has been set as a compensated input File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/bladerf.vhd Line: 72
-    Info (15574): Input "fx3_gpif[31]" that is fed by the compensated output clock of PLL "fx3_pll:U_fx3_pll|altpll:altpll_component|fx3_pll_altpll:auto_generated|pll1" in Source Synchronous mode has been set as a compensated input File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
-    Info (15574): Input "fx3_gpif[30]" that is fed by the compensated output clock of PLL "fx3_pll:U_fx3_pll|altpll:altpll_component|fx3_pll_altpll:auto_generated|pll1" in Source Synchronous mode has been set as a compensated input File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
-    Info (15574): Input "fx3_gpif[22]" that is fed by the compensated output clock of PLL "fx3_pll:U_fx3_pll|altpll:altpll_component|fx3_pll_altpll:auto_generated|pll1" in Source Synchronous mode has been set as a compensated input File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
-    Info (15574): Input "fx3_gpif[20]" that is fed by the compensated output clock of PLL "fx3_pll:U_fx3_pll|altpll:altpll_component|fx3_pll_altpll:auto_generated|pll1" in Source Synchronous mode has been set as a compensated input File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
-    Info (15574): Input "fx3_gpif[29]" that is fed by the compensated output clock of PLL "fx3_pll:U_fx3_pll|altpll:altpll_component|fx3_pll_altpll:auto_generated|pll1" in Source Synchronous mode has been set as a compensated input File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
-    Info (15574): Input "fx3_gpif[28]" that is fed by the compensated output clock of PLL "fx3_pll:U_fx3_pll|altpll:altpll_component|fx3_pll_altpll:auto_generated|pll1" in Source Synchronous mode has been set as a compensated input File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
-    Info (15574): Input "fx3_gpif[27]" that is fed by the compensated output clock of PLL "fx3_pll:U_fx3_pll|altpll:altpll_component|fx3_pll_altpll:auto_generated|pll1" in Source Synchronous mode has been set as a compensated input File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
-    Info (15574): Input "fx3_gpif[19]" that is fed by the compensated output clock of PLL "fx3_pll:U_fx3_pll|altpll:altpll_component|fx3_pll_altpll:auto_generated|pll1" in Source Synchronous mode has been set as a compensated input File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
-    Info (15574): Input "fx3_gpif[26]" that is fed by the compensated output clock of PLL "fx3_pll:U_fx3_pll|altpll:altpll_component|fx3_pll_altpll:auto_generated|pll1" in Source Synchronous mode has been set as a compensated input File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
-    Info (15574): Input "fx3_gpif[25]" that is fed by the compensated output clock of PLL "fx3_pll:U_fx3_pll|altpll:altpll_component|fx3_pll_altpll:auto_generated|pll1" in Source Synchronous mode has been set as a compensated input File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
-    Info (15574): Input "fx3_gpif[24]" that is fed by the compensated output clock of PLL "fx3_pll:U_fx3_pll|altpll:altpll_component|fx3_pll_altpll:auto_generated|pll1" in Source Synchronous mode has been set as a compensated input File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
-    Info (15574): Input "fx3_gpif[23]" that is fed by the compensated output clock of PLL "fx3_pll:U_fx3_pll|altpll:altpll_component|fx3_pll_altpll:auto_generated|pll1" in Source Synchronous mode has been set as a compensated input File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
-    Info (15574): Input "fx3_gpif[21]" that is fed by the compensated output clock of PLL "fx3_pll:U_fx3_pll|altpll:altpll_component|fx3_pll_altpll:auto_generated|pll1" in Source Synchronous mode has been set as a compensated input File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
-    Info (15574): Input "fx3_gpif[17]" that is fed by the compensated output clock of PLL "fx3_pll:U_fx3_pll|altpll:altpll_component|fx3_pll_altpll:auto_generated|pll1" in Source Synchronous mode has been set as a compensated input File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
-    Info (15574): Input "fx3_gpif[1]" that is fed by the compensated output clock of PLL "fx3_pll:U_fx3_pll|altpll:altpll_component|fx3_pll_altpll:auto_generated|pll1" in Source Synchronous mode has been set as a compensated input File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
-    Info (15574): Input "fx3_gpif[0]" that is fed by the compensated output clock of PLL "fx3_pll:U_fx3_pll|altpll:altpll_component|fx3_pll_altpll:auto_generated|pll1" in Source Synchronous mode has been set as a compensated input File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
-    Info (15574): Input "fx3_gpif[5]" that is fed by the compensated output clock of PLL "fx3_pll:U_fx3_pll|altpll:altpll_component|fx3_pll_altpll:auto_generated|pll1" in Source Synchronous mode has been set as a compensated input File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
-    Info (15574): Input "fx3_gpif[4]" that is fed by the compensated output clock of PLL "fx3_pll:U_fx3_pll|altpll:altpll_component|fx3_pll_altpll:auto_generated|pll1" in Source Synchronous mode has been set as a compensated input File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
-    Info (15574): Input "fx3_gpif[3]" that is fed by the compensated output clock of PLL "fx3_pll:U_fx3_pll|altpll:altpll_component|fx3_pll_altpll:auto_generated|pll1" in Source Synchronous mode has been set as a compensated input File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
-    Info (15574): Input "fx3_gpif[2]" that is fed by the compensated output clock of PLL "fx3_pll:U_fx3_pll|altpll:altpll_component|fx3_pll_altpll:auto_generated|pll1" in Source Synchronous mode has been set as a compensated input File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
-    Info (15574): Input "fx3_gpif[9]" that is fed by the compensated output clock of PLL "fx3_pll:U_fx3_pll|altpll:altpll_component|fx3_pll_altpll:auto_generated|pll1" in Source Synchronous mode has been set as a compensated input File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
-    Info (15574): Input "fx3_gpif[8]" that is fed by the compensated output clock of PLL "fx3_pll:U_fx3_pll|altpll:altpll_component|fx3_pll_altpll:auto_generated|pll1" in Source Synchronous mode has been set as a compensated input File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
-    Info (15574): Input "fx3_gpif[7]" that is fed by the compensated output clock of PLL "fx3_pll:U_fx3_pll|altpll:altpll_component|fx3_pll_altpll:auto_generated|pll1" in Source Synchronous mode has been set as a compensated input File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
-    Info (15574): Input "fx3_gpif[6]" that is fed by the compensated output clock of PLL "fx3_pll:U_fx3_pll|altpll:altpll_component|fx3_pll_altpll:auto_generated|pll1" in Source Synchronous mode has been set as a compensated input File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
-    Info (15574): Input "fx3_gpif[13]" that is fed by the compensated output clock of PLL "fx3_pll:U_fx3_pll|altpll:altpll_component|fx3_pll_altpll:auto_generated|pll1" in Source Synchronous mode has been set as a compensated input File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
-    Info (15574): Input "fx3_gpif[12]" that is fed by the compensated output clock of PLL "fx3_pll:U_fx3_pll|altpll:altpll_component|fx3_pll_altpll:auto_generated|pll1" in Source Synchronous mode has been set as a compensated input File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
-    Info (15574): Input "fx3_gpif[11]" that is fed by the compensated output clock of PLL "fx3_pll:U_fx3_pll|altpll:altpll_component|fx3_pll_altpll:auto_generated|pll1" in Source Synchronous mode has been set as a compensated input File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
-    Info (15574): Input "fx3_gpif[10]" that is fed by the compensated output clock of PLL "fx3_pll:U_fx3_pll|altpll:altpll_component|fx3_pll_altpll:auto_generated|pll1" in Source Synchronous mode has been set as a compensated input File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
-    Info (15574): Input "fx3_gpif[18]" that is fed by the compensated output clock of PLL "fx3_pll:U_fx3_pll|altpll:altpll_component|fx3_pll_altpll:auto_generated|pll1" in Source Synchronous mode has been set as a compensated input File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
-    Info (15574): Input "fx3_gpif[16]" that is fed by the compensated output clock of PLL "fx3_pll:U_fx3_pll|altpll:altpll_component|fx3_pll_altpll:auto_generated|pll1" in Source Synchronous mode has been set as a compensated input File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
-    Info (15574): Input "fx3_gpif[15]" that is fed by the compensated output clock of PLL "fx3_pll:U_fx3_pll|altpll:altpll_component|fx3_pll_altpll:auto_generated|pll1" in Source Synchronous mode has been set as a compensated input File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
-    Info (15574): Input "fx3_gpif[14]" that is fed by the compensated output clock of PLL "fx3_pll:U_fx3_pll|altpll:altpll_component|fx3_pll_altpll:auto_generated|pll1" in Source Synchronous mode has been set as a compensated input File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
-Info (15535): Implemented PLL "fx3_pll:U_fx3_pll|altpll:altpll_component|fx3_pll_altpll:auto_generated|pll1" as Cyclone IV E PLL type File: /home/spex/Downloads/hdl/quartus/work/db/fx3_pll_altpll.v Line: 46
-    Info (15099): Implementing clock multiplication of 1, clock division of 1, and phase shift of -18 degrees (-500 ps) for fx3_pll:U_fx3_pll|altpll:altpll_component|fx3_pll_altpll:auto_generated|wire_pll1_clk[0] port File: /home/spex/Downloads/hdl/quartus/work/db/fx3_pll_altpll.v Line: 46
+Info (15535): Implemented PLL "pll:U_pll|altpll:altpll_component|pll_altpll:auto_generated|pll1" as Cyclone IV E PLL type File: /home/spex/Downloads/bladerf-dvbs2/quartus/work/db/pll_altpll.v Line: 46
+    Info (15099): Implementing clock multiplication of 25, clock division of 12, and phase shift of 0 degrees (0 ps) for pll:U_pll|altpll:altpll_component|pll_altpll:auto_generated|wire_pll1_clk[0] port File: /home/spex/Downloads/bladerf-dvbs2/quartus/work/db/pll_altpll.v Line: 46
+    Info (15099): Implementing clock multiplication of 5, clock division of 2, and phase shift of 0 degrees (0 ps) for pll:U_pll|altpll:altpll_component|pll_altpll:auto_generated|wire_pll1_clk[1] port File: /home/spex/Downloads/bladerf-dvbs2/quartus/work/db/pll_altpll.v Line: 46
+    Info (15099): Implementing clock multiplication of 5, clock division of 12, and phase shift of 0 degrees (0 ps) for pll:U_pll|altpll:altpll_component|pll_altpll:auto_generated|wire_pll1_clk[2] port File: /home/spex/Downloads/bladerf-dvbs2/quartus/work/db/pll_altpll.v Line: 46
+    Info (15099): Implementing clock multiplication of 5, clock division of 48, and phase shift of 0 degrees (0 ps) for pll:U_pll|altpll:altpll_component|pll_altpll:auto_generated|wire_pll1_clk[4] port File: /home/spex/Downloads/bladerf-dvbs2/quartus/work/db/pll_altpll.v Line: 46
+Info (15575): None of the inputs fed by the compensated output clock of PLL "fx3_pll:U_fx3_pll|altpll:altpll_component|fx3_pll_altpll:auto_generated|pll1" in Source Synchronous mode are set as the compensated input File: /home/spex/Downloads/bladerf-dvbs2/quartus/work/db/fx3_pll_altpll.v Line: 46
+    Info (15574): Input "fx3_ctl[6]" that is fed by the compensated output clock of PLL "fx3_pll:U_fx3_pll|altpll:altpll_component|fx3_pll_altpll:auto_generated|pll1" in Source Synchronous mode has been set as a compensated input File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/bladerf.vhd Line: 72
+    Info (15574): Input "fx3_ctl[5]" that is fed by the compensated output clock of PLL "fx3_pll:U_fx3_pll|altpll:altpll_component|fx3_pll_altpll:auto_generated|pll1" in Source Synchronous mode has been set as a compensated input File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/bladerf.vhd Line: 72
+    Info (15574): Input "fx3_gpif[31]" that is fed by the compensated output clock of PLL "fx3_pll:U_fx3_pll|altpll:altpll_component|fx3_pll_altpll:auto_generated|pll1" in Source Synchronous mode has been set as a compensated input File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
+    Info (15574): Input "fx3_gpif[30]" that is fed by the compensated output clock of PLL "fx3_pll:U_fx3_pll|altpll:altpll_component|fx3_pll_altpll:auto_generated|pll1" in Source Synchronous mode has been set as a compensated input File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
+    Info (15574): Input "fx3_gpif[22]" that is fed by the compensated output clock of PLL "fx3_pll:U_fx3_pll|altpll:altpll_component|fx3_pll_altpll:auto_generated|pll1" in Source Synchronous mode has been set as a compensated input File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
+    Info (15574): Input "fx3_gpif[20]" that is fed by the compensated output clock of PLL "fx3_pll:U_fx3_pll|altpll:altpll_component|fx3_pll_altpll:auto_generated|pll1" in Source Synchronous mode has been set as a compensated input File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
+    Info (15574): Input "fx3_gpif[29]" that is fed by the compensated output clock of PLL "fx3_pll:U_fx3_pll|altpll:altpll_component|fx3_pll_altpll:auto_generated|pll1" in Source Synchronous mode has been set as a compensated input File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
+    Info (15574): Input "fx3_gpif[28]" that is fed by the compensated output clock of PLL "fx3_pll:U_fx3_pll|altpll:altpll_component|fx3_pll_altpll:auto_generated|pll1" in Source Synchronous mode has been set as a compensated input File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
+    Info (15574): Input "fx3_gpif[27]" that is fed by the compensated output clock of PLL "fx3_pll:U_fx3_pll|altpll:altpll_component|fx3_pll_altpll:auto_generated|pll1" in Source Synchronous mode has been set as a compensated input File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
+    Info (15574): Input "fx3_gpif[19]" that is fed by the compensated output clock of PLL "fx3_pll:U_fx3_pll|altpll:altpll_component|fx3_pll_altpll:auto_generated|pll1" in Source Synchronous mode has been set as a compensated input File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
+    Info (15574): Input "fx3_gpif[26]" that is fed by the compensated output clock of PLL "fx3_pll:U_fx3_pll|altpll:altpll_component|fx3_pll_altpll:auto_generated|pll1" in Source Synchronous mode has been set as a compensated input File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
+    Info (15574): Input "fx3_gpif[25]" that is fed by the compensated output clock of PLL "fx3_pll:U_fx3_pll|altpll:altpll_component|fx3_pll_altpll:auto_generated|pll1" in Source Synchronous mode has been set as a compensated input File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
+    Info (15574): Input "fx3_gpif[24]" that is fed by the compensated output clock of PLL "fx3_pll:U_fx3_pll|altpll:altpll_component|fx3_pll_altpll:auto_generated|pll1" in Source Synchronous mode has been set as a compensated input File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
+    Info (15574): Input "fx3_gpif[23]" that is fed by the compensated output clock of PLL "fx3_pll:U_fx3_pll|altpll:altpll_component|fx3_pll_altpll:auto_generated|pll1" in Source Synchronous mode has been set as a compensated input File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
+    Info (15574): Input "fx3_gpif[21]" that is fed by the compensated output clock of PLL "fx3_pll:U_fx3_pll|altpll:altpll_component|fx3_pll_altpll:auto_generated|pll1" in Source Synchronous mode has been set as a compensated input File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
+    Info (15574): Input "fx3_gpif[17]" that is fed by the compensated output clock of PLL "fx3_pll:U_fx3_pll|altpll:altpll_component|fx3_pll_altpll:auto_generated|pll1" in Source Synchronous mode has been set as a compensated input File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
+    Info (15574): Input "fx3_gpif[1]" that is fed by the compensated output clock of PLL "fx3_pll:U_fx3_pll|altpll:altpll_component|fx3_pll_altpll:auto_generated|pll1" in Source Synchronous mode has been set as a compensated input File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
+    Info (15574): Input "fx3_gpif[0]" that is fed by the compensated output clock of PLL "fx3_pll:U_fx3_pll|altpll:altpll_component|fx3_pll_altpll:auto_generated|pll1" in Source Synchronous mode has been set as a compensated input File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
+    Info (15574): Input "fx3_gpif[5]" that is fed by the compensated output clock of PLL "fx3_pll:U_fx3_pll|altpll:altpll_component|fx3_pll_altpll:auto_generated|pll1" in Source Synchronous mode has been set as a compensated input File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
+    Info (15574): Input "fx3_gpif[4]" that is fed by the compensated output clock of PLL "fx3_pll:U_fx3_pll|altpll:altpll_component|fx3_pll_altpll:auto_generated|pll1" in Source Synchronous mode has been set as a compensated input File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
+    Info (15574): Input "fx3_gpif[3]" that is fed by the compensated output clock of PLL "fx3_pll:U_fx3_pll|altpll:altpll_component|fx3_pll_altpll:auto_generated|pll1" in Source Synchronous mode has been set as a compensated input File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
+    Info (15574): Input "fx3_gpif[2]" that is fed by the compensated output clock of PLL "fx3_pll:U_fx3_pll|altpll:altpll_component|fx3_pll_altpll:auto_generated|pll1" in Source Synchronous mode has been set as a compensated input File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
+    Info (15574): Input "fx3_gpif[9]" that is fed by the compensated output clock of PLL "fx3_pll:U_fx3_pll|altpll:altpll_component|fx3_pll_altpll:auto_generated|pll1" in Source Synchronous mode has been set as a compensated input File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
+    Info (15574): Input "fx3_gpif[8]" that is fed by the compensated output clock of PLL "fx3_pll:U_fx3_pll|altpll:altpll_component|fx3_pll_altpll:auto_generated|pll1" in Source Synchronous mode has been set as a compensated input File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
+    Info (15574): Input "fx3_gpif[7]" that is fed by the compensated output clock of PLL "fx3_pll:U_fx3_pll|altpll:altpll_component|fx3_pll_altpll:auto_generated|pll1" in Source Synchronous mode has been set as a compensated input File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
+    Info (15574): Input "fx3_gpif[6]" that is fed by the compensated output clock of PLL "fx3_pll:U_fx3_pll|altpll:altpll_component|fx3_pll_altpll:auto_generated|pll1" in Source Synchronous mode has been set as a compensated input File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
+    Info (15574): Input "fx3_gpif[13]" that is fed by the compensated output clock of PLL "fx3_pll:U_fx3_pll|altpll:altpll_component|fx3_pll_altpll:auto_generated|pll1" in Source Synchronous mode has been set as a compensated input File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
+    Info (15574): Input "fx3_gpif[12]" that is fed by the compensated output clock of PLL "fx3_pll:U_fx3_pll|altpll:altpll_component|fx3_pll_altpll:auto_generated|pll1" in Source Synchronous mode has been set as a compensated input File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
+    Info (15574): Input "fx3_gpif[11]" that is fed by the compensated output clock of PLL "fx3_pll:U_fx3_pll|altpll:altpll_component|fx3_pll_altpll:auto_generated|pll1" in Source Synchronous mode has been set as a compensated input File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
+    Info (15574): Input "fx3_gpif[10]" that is fed by the compensated output clock of PLL "fx3_pll:U_fx3_pll|altpll:altpll_component|fx3_pll_altpll:auto_generated|pll1" in Source Synchronous mode has been set as a compensated input File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
+    Info (15574): Input "fx3_gpif[18]" that is fed by the compensated output clock of PLL "fx3_pll:U_fx3_pll|altpll:altpll_component|fx3_pll_altpll:auto_generated|pll1" in Source Synchronous mode has been set as a compensated input File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
+    Info (15574): Input "fx3_gpif[16]" that is fed by the compensated output clock of PLL "fx3_pll:U_fx3_pll|altpll:altpll_component|fx3_pll_altpll:auto_generated|pll1" in Source Synchronous mode has been set as a compensated input File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
+    Info (15574): Input "fx3_gpif[15]" that is fed by the compensated output clock of PLL "fx3_pll:U_fx3_pll|altpll:altpll_component|fx3_pll_altpll:auto_generated|pll1" in Source Synchronous mode has been set as a compensated input File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
+    Info (15574): Input "fx3_gpif[14]" that is fed by the compensated output clock of PLL "fx3_pll:U_fx3_pll|altpll:altpll_component|fx3_pll_altpll:auto_generated|pll1" in Source Synchronous mode has been set as a compensated input File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
+Info (15535): Implemented PLL "fx3_pll:U_fx3_pll|altpll:altpll_component|fx3_pll_altpll:auto_generated|pll1" as Cyclone IV E PLL type File: /home/spex/Downloads/bladerf-dvbs2/quartus/work/db/fx3_pll_altpll.v Line: 46
+    Info (15099): Implementing clock multiplication of 1, clock division of 1, and phase shift of -18 degrees (-500 ps) for fx3_pll:U_fx3_pll|altpll:altpll_component|fx3_pll_altpll:auto_generated|wire_pll1_clk[0] port File: /home/spex/Downloads/bladerf-dvbs2/quartus/work/db/fx3_pll_altpll.v Line: 46
 Info (171004): Fitter is performing a Standard Fit compilation using maximum Fitter effort to optimize design performance
 Warning (292013): Feature LogicLock is only available with a valid subscription license. You can purchase a software subscription to gain full access to this feature.
 Info (176444): Device migration not selected. If you intend to use device migration later, you may need to change the pin assignments as they may be incompatible with other devices
@@ -5204,15 +5204,15 @@ Info (332110): Deriving PLL clocks
     Info (332110): create_generated_clock -source {U_pll|altpll_component|auto_generated|pll1|inclk[0]} -divide_by 12 -multiply_by 5 -duty_cycle 50.00 -name {U_pll|altpll_component|auto_generated|pll1|clk[2]} {U_pll|altpll_component|auto_generated|pll1|clk[2]}
     Info (332110): create_generated_clock -source {U_pll|altpll_component|auto_generated|pll1|inclk[0]} -divide_by 48 -multiply_by 5 -duty_cycle 50.00 -name {U_pll|altpll_component|auto_generated|pll1|clk[4]} {U_pll|altpll_component|auto_generated|pll1|clk[4]}
 Info (332151): Clock uncertainty is not calculated until you update the timing netlist.
-Warning (332174): Ignored filter at bladerf.sdc(115): fx3_gpif*rx_enable could not be matched with a clock or keeper or register or port or pin or cell or partition File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/constraints/bladerf.sdc Line: 115
-Warning (332174): Ignored filter at bladerf.sdc(115): rx_meta_fifo*:wraclr|* could not be matched with a clock or keeper or register or port or pin or cell or partition File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/constraints/bladerf.sdc Line: 115
-Warning (332049): Ignored set_false_path at bladerf.sdc(115): Argument <from> is not an object ID File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/constraints/bladerf.sdc Line: 115
-    Info (332050): set_false_path -from {fx3_gpif*rx_enable} -to {rx_meta_fifo*:wraclr|*} File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/constraints/bladerf.sdc Line: 115
-Warning (332049): Ignored set_false_path at bladerf.sdc(115): Argument <to> is not an object ID File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/constraints/bladerf.sdc Line: 115
-Warning (332174): Ignored filter at bladerf.sdc(116): rx_fifo*:wraclr|* could not be matched with a clock or keeper or register or port or pin or cell or partition File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/constraints/bladerf.sdc Line: 116
-Warning (332049): Ignored set_false_path at bladerf.sdc(116): Argument <from> is not an object ID File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/constraints/bladerf.sdc Line: 116
-    Info (332050): set_false_path -from {fx3_gpif*rx_enable} -to {rx_fifo*:wraclr|*} File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/constraints/bladerf.sdc Line: 116
-Warning (332049): Ignored set_false_path at bladerf.sdc(116): Argument <to> is not an object ID File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/constraints/bladerf.sdc Line: 116
+Warning (332174): Ignored filter at bladerf.sdc(115): fx3_gpif*rx_enable could not be matched with a clock or keeper or register or port or pin or cell or partition File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/constraints/bladerf.sdc Line: 115
+Warning (332174): Ignored filter at bladerf.sdc(115): rx_meta_fifo*:wraclr|* could not be matched with a clock or keeper or register or port or pin or cell or partition File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/constraints/bladerf.sdc Line: 115
+Warning (332049): Ignored set_false_path at bladerf.sdc(115): Argument <from> is not an object ID File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/constraints/bladerf.sdc Line: 115
+    Info (332050): set_false_path -from {fx3_gpif*rx_enable} -to {rx_meta_fifo*:wraclr|*} File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/constraints/bladerf.sdc Line: 115
+Warning (332049): Ignored set_false_path at bladerf.sdc(115): Argument <to> is not an object ID File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/constraints/bladerf.sdc Line: 115
+Warning (332174): Ignored filter at bladerf.sdc(116): rx_fifo*:wraclr|* could not be matched with a clock or keeper or register or port or pin or cell or partition File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/constraints/bladerf.sdc Line: 116
+Warning (332049): Ignored set_false_path at bladerf.sdc(116): Argument <from> is not an object ID File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/constraints/bladerf.sdc Line: 116
+    Info (332050): set_false_path -from {fx3_gpif*rx_enable} -to {rx_fifo*:wraclr|*} File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/constraints/bladerf.sdc Line: 116
+Warning (332049): Ignored set_false_path at bladerf.sdc(116): Argument <to> is not an object ID File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/constraints/bladerf.sdc Line: 116
 Info (332104): Reading SDC File: '../../fpga/ip/altera/nios_system/synthesis/submodules/altera_reset_controller.sdc'
 Info (332104): Reading SDC File: '../../fpga/ip/altera/nios_system/synthesis/submodules/nios_system_nios2_cpu.sdc'
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
@@ -5237,85 +5237,85 @@ Info (332111): Found 17 clocks
     Info (332111):   10.416 U_pll|altpll_component|auto_generated|pll1|clk[1]
     Info (332111):   62.498 U_pll|altpll_component|auto_generated|pll1|clk[2]
     Info (332111):  249.993 U_pll|altpll_component|auto_generated|pll1|clk[4]
-Info (176353): Automatically promoted node c4_clock~input (placed in PIN A11 (CLK10, DIFFCLK_4n)) File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/bladerf.vhd Line: 30
+Info (176353): Automatically promoted node c4_clock~input (placed in PIN A11 (CLK10, DIFFCLK_4n)) File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/bladerf.vhd Line: 30
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock CLKCTRL_G14
-Info (176353): Automatically promoted node fx3_pll:U_fx3_pll|altpll:altpll_component|fx3_pll_altpll:auto_generated|wire_pll1_clk[0] (placed in counter C0 of PLL_1) File: /home/spex/Downloads/hdl/quartus/work/db/fx3_pll_altpll.v Line: 81
+Info (176353): Automatically promoted node fx3_pll:U_fx3_pll|altpll:altpll_component|fx3_pll_altpll:auto_generated|wire_pll1_clk[0] (placed in counter C0 of PLL_1) File: /home/spex/Downloads/bladerf-dvbs2/quartus/work/db/fx3_pll_altpll.v Line: 81
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock CLKCTRL_G3
-Info (176353): Automatically promoted node pll:U_pll|altpll:altpll_component|pll_altpll:auto_generated|wire_pll1_clk[0] (placed in counter C3 of PLL_3) File: /home/spex/Downloads/hdl/quartus/work/db/pll_altpll.v Line: 81
+Info (176353): Automatically promoted node pll:U_pll|altpll:altpll_component|pll_altpll:auto_generated|wire_pll1_clk[0] (placed in counter C3 of PLL_3) File: /home/spex/Downloads/bladerf-dvbs2/quartus/work/db/pll_altpll.v Line: 81
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock CLKCTRL_G13
-Info (176353): Automatically promoted node pll:U_pll|altpll:altpll_component|pll_altpll:auto_generated|wire_pll1_clk[1] (placed in counter C0 of PLL_3) File: /home/spex/Downloads/hdl/quartus/work/db/pll_altpll.v Line: 81
+Info (176353): Automatically promoted node pll:U_pll|altpll:altpll_component|pll_altpll:auto_generated|wire_pll1_clk[1] (placed in counter C0 of PLL_3) File: /home/spex/Downloads/bladerf-dvbs2/quartus/work/db/pll_altpll.v Line: 81
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock CLKCTRL_G10
-Info (176353): Automatically promoted node pll:U_pll|altpll:altpll_component|pll_altpll:auto_generated|wire_pll1_clk[2] (placed in counter C2 of PLL_3) File: /home/spex/Downloads/hdl/quartus/work/db/pll_altpll.v Line: 81
+Info (176353): Automatically promoted node pll:U_pll|altpll:altpll_component|pll_altpll:auto_generated|wire_pll1_clk[2] (placed in counter C2 of PLL_3) File: /home/spex/Downloads/bladerf-dvbs2/quartus/work/db/pll_altpll.v Line: 81
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock CLKCTRL_G12
-Info (176353): Automatically promoted node pll:U_pll|altpll:altpll_component|pll_altpll:auto_generated|wire_pll1_clk[4] (placed in counter C1 of PLL_3) File: /home/spex/Downloads/hdl/quartus/work/db/pll_altpll.v Line: 81
+Info (176353): Automatically promoted node pll:U_pll|altpll:altpll_component|pll_altpll:auto_generated|wire_pll1_clk[4] (placed in counter C1 of PLL_3) File: /home/spex/Downloads/bladerf-dvbs2/quartus/work/db/pll_altpll.v Line: 81
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock CLKCTRL_G11
-Info (176353): Automatically promoted node c4_tx_clock~input (placed in PIN G22 (CLK5, DIFFCLK_2n)) File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/bladerf.vhd Line: 49
+Info (176353): Automatically promoted node c4_tx_clock~input (placed in PIN G22 (CLK5, DIFFCLK_2n)) File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/bladerf.vhd Line: 49
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock CLKCTRL_G7
-Info (176353): Automatically promoted node lms_rx_clock_out~input (placed in PIN T22 (CLK7, DIFFCLK_3n)) File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/bladerf.vhd Line: 42
+Info (176353): Automatically promoted node lms_rx_clock_out~input (placed in PIN T22 (CLK7, DIFFCLK_3n)) File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/bladerf.vhd Line: 42
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock CLKCTRL_G8
-Info (176353): Automatically promoted node ref_vctcxo_tune~input (placed in PIN AB11 (CLK14, DIFFCLK_6n)) File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/bladerf.vhd Line: 78
+Info (176353): Automatically promoted node ref_vctcxo_tune~input (placed in PIN AB11 (CLK14, DIFFCLK_6n)) File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/bladerf.vhd Line: 78
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock CLKCTRL_G19
     Info (176356): Following destination nodes may be non-global or may not use global or regional clocks
-        Info (176357): Destination node nios_system:U_nios_system|vctcxo_tamer:vctcxo_tamer_0|ref_1pps~0 File: /home/spex/Downloads/hdl/fpga/ip/altera/nios_system/synthesis/submodules/vctcxo_tamer.vhd Line: 132
+        Info (176357): Destination node nios_system:U_nios_system|vctcxo_tamer:vctcxo_tamer_0|ref_1pps~0 File: /home/spex/Downloads/bladerf-dvbs2/fpga/ip/altera/nios_system/synthesis/submodules/vctcxo_tamer.vhd Line: 132
 Info (176353): Automatically promoted node altera_internal_jtag~TCKUTAP 
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
-Info (176353): Automatically promoted node nios_system:U_nios_system|altera_reset_controller:rst_controller|r_sync_rst  File: /home/spex/Downloads/hdl/fpga/ip/altera/nios_system/synthesis/submodules/altera_reset_controller.v Line: 288
+Info (176353): Automatically promoted node nios_system:U_nios_system|altera_reset_controller:rst_controller|r_sync_rst  File: /home/spex/Downloads/bladerf-dvbs2/fpga/ip/altera/nios_system/synthesis/submodules/altera_reset_controller.v Line: 288
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
     Info (176356): Following destination nodes may be non-global or may not use global or regional clocks
-        Info (176357): Destination node nios_system:U_nios_system|i2c_master_top:opencores_i2c|cr[5] File: /home/spex/Downloads/hdl/fpga/ip/altera/nios_system/synthesis/submodules/i2c_master_top.v Line: 204
-        Info (176357): Destination node nios_system:U_nios_system|i2c_master_top:opencores_i2c|cr[4] File: /home/spex/Downloads/hdl/fpga/ip/altera/nios_system/synthesis/submodules/i2c_master_top.v Line: 204
-        Info (176357): Destination node nios_system:U_nios_system|i2c_master_top:opencores_i2c|cr[6] File: /home/spex/Downloads/hdl/fpga/ip/altera/nios_system/synthesis/submodules/i2c_master_top.v Line: 204
-        Info (176357): Destination node nios_system:U_nios_system|i2c_master_top:opencores_i2c|i2c_master_byte_ctrl:byte_controller|i2c_master_bit_ctrl:bit_controller|al File: /home/spex/Downloads/hdl/fpga/ip/altera/nios_system/synthesis/submodules/i2c_master_bit_ctrl.v Line: 154
-        Info (176357): Destination node nios_system:U_nios_system|i2c_master_top:opencores_i2c|cr[7] File: /home/spex/Downloads/hdl/fpga/ip/altera/nios_system/synthesis/submodules/i2c_master_top.v Line: 204
-        Info (176357): Destination node nios_system:U_nios_system|i2c_master_top:opencores_i2c|i2c_master_byte_ctrl:byte_controller|i2c_master_bit_ctrl:bit_controller|sSDA File: /home/spex/Downloads/hdl/fpga/ip/altera/nios_system/synthesis/submodules/i2c_master_bit_ctrl.v Line: 174
-        Info (176357): Destination node nios_system:U_nios_system|i2c_master_top:opencores_i2c|i2c_master_byte_ctrl:byte_controller|i2c_master_bit_ctrl:bit_controller|sto_condition File: /home/spex/Downloads/hdl/fpga/ip/altera/nios_system/synthesis/submodules/i2c_master_bit_ctrl.v Line: 309
-        Info (176357): Destination node nios_system:U_nios_system|i2c_master_top:opencores_i2c|i2c_master_byte_ctrl:byte_controller|i2c_master_bit_ctrl:bit_controller|cmd_stop File: /home/spex/Downloads/hdl/fpga/ip/altera/nios_system/synthesis/submodules/i2c_master_bit_ctrl.v Line: 339
-        Info (176357): Destination node nios_system:U_nios_system|i2c_master_top:opencores_i2c|i2c_master_byte_ctrl:byte_controller|i2c_master_bit_ctrl:bit_controller|sSCL File: /home/spex/Downloads/hdl/fpga/ip/altera/nios_system/synthesis/submodules/i2c_master_bit_ctrl.v Line: 174
-        Info (176357): Destination node nios_system:U_nios_system|i2c_master_top:opencores_i2c|i2c_master_byte_ctrl:byte_controller|sr[7] File: /home/spex/Downloads/hdl/fpga/ip/altera/nios_system/synthesis/submodules/i2c_master_byte_ctrl.v Line: 176
+        Info (176357): Destination node nios_system:U_nios_system|i2c_master_top:opencores_i2c|cr[5] File: /home/spex/Downloads/bladerf-dvbs2/fpga/ip/altera/nios_system/synthesis/submodules/i2c_master_top.v Line: 204
+        Info (176357): Destination node nios_system:U_nios_system|i2c_master_top:opencores_i2c|cr[4] File: /home/spex/Downloads/bladerf-dvbs2/fpga/ip/altera/nios_system/synthesis/submodules/i2c_master_top.v Line: 204
+        Info (176357): Destination node nios_system:U_nios_system|i2c_master_top:opencores_i2c|cr[6] File: /home/spex/Downloads/bladerf-dvbs2/fpga/ip/altera/nios_system/synthesis/submodules/i2c_master_top.v Line: 204
+        Info (176357): Destination node nios_system:U_nios_system|i2c_master_top:opencores_i2c|i2c_master_byte_ctrl:byte_controller|i2c_master_bit_ctrl:bit_controller|al File: /home/spex/Downloads/bladerf-dvbs2/fpga/ip/altera/nios_system/synthesis/submodules/i2c_master_bit_ctrl.v Line: 154
+        Info (176357): Destination node nios_system:U_nios_system|i2c_master_top:opencores_i2c|cr[7] File: /home/spex/Downloads/bladerf-dvbs2/fpga/ip/altera/nios_system/synthesis/submodules/i2c_master_top.v Line: 204
+        Info (176357): Destination node nios_system:U_nios_system|i2c_master_top:opencores_i2c|i2c_master_byte_ctrl:byte_controller|i2c_master_bit_ctrl:bit_controller|sSDA File: /home/spex/Downloads/bladerf-dvbs2/fpga/ip/altera/nios_system/synthesis/submodules/i2c_master_bit_ctrl.v Line: 174
+        Info (176357): Destination node nios_system:U_nios_system|i2c_master_top:opencores_i2c|i2c_master_byte_ctrl:byte_controller|i2c_master_bit_ctrl:bit_controller|sto_condition File: /home/spex/Downloads/bladerf-dvbs2/fpga/ip/altera/nios_system/synthesis/submodules/i2c_master_bit_ctrl.v Line: 309
+        Info (176357): Destination node nios_system:U_nios_system|i2c_master_top:opencores_i2c|i2c_master_byte_ctrl:byte_controller|i2c_master_bit_ctrl:bit_controller|cmd_stop File: /home/spex/Downloads/bladerf-dvbs2/fpga/ip/altera/nios_system/synthesis/submodules/i2c_master_bit_ctrl.v Line: 339
+        Info (176357): Destination node nios_system:U_nios_system|i2c_master_top:opencores_i2c|i2c_master_byte_ctrl:byte_controller|i2c_master_bit_ctrl:bit_controller|sSCL File: /home/spex/Downloads/bladerf-dvbs2/fpga/ip/altera/nios_system/synthesis/submodules/i2c_master_bit_ctrl.v Line: 174
+        Info (176357): Destination node nios_system:U_nios_system|i2c_master_top:opencores_i2c|i2c_master_byte_ctrl:byte_controller|sr[7] File: /home/spex/Downloads/bladerf-dvbs2/fpga/ip/altera/nios_system/synthesis/submodules/i2c_master_byte_ctrl.v Line: 176
         Info (176358): Non-global destination nodes limited to 10 nodes
-Info (176353): Automatically promoted node reset_synchronizer:U_tx_reset|sync  File: /home/spex/Downloads/hdl/fpga/ip/nuand/synthesis/reset_synchronizer.vhd Line: 12
+Info (176353): Automatically promoted node reset_synchronizer:U_tx_reset|sync  File: /home/spex/Downloads/bladerf-dvbs2/fpga/ip/nuand/synthesis/reset_synchronizer.vhd Line: 12
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
     Info (176356): Following destination nodes may be non-global or may not use global or regional clocks
-        Info (176357): Destination node dvbs2_transmitter:my_dvb_tx|dvbs2_output_sync:output_sync|done_with_dummies File: /home/spex/Downloads/hdl/fpga/ip/rit/dvbs2_output_sync.v Line: 56
-        Info (176357): Destination node dvbs2_transmitter:my_dvb_tx|dvbs2_output_sync:output_sync|done_while_sending File: /home/spex/Downloads/hdl/fpga/ip/rit/dvbs2_output_sync.v Line: 57
-        Info (176357): Destination node dvbs2_transmitter:my_dvb_tx|dvbs2_output_sync:output_sync|fifo_switch_performed File: /home/spex/Downloads/hdl/fpga/ip/rit/dvbs2_output_sync.v Line: 37
-        Info (176357): Destination node dvbs2_transmitter:my_dvb_tx|dvbs2_output_sync:output_sync|fifo_read_rq File: /home/spex/Downloads/hdl/fpga/ip/rit/dvbs2_output_sync.v Line: 59
-        Info (176357): Destination node dvbs2_transmitter:my_dvb_tx|dvbs2_output_sync:output_sync|fifo_rd_sel File: /home/spex/Downloads/hdl/fpga/ip/rit/dvbs2_output_sync.v Line: 51
-        Info (176357): Destination node dvb_fifo_reader:fifo_reader|read_in_ret File: /home/spex/Downloads/hdl/fpga/ip/rit/dvb_fifo_reader.v Line: 19
-        Info (176357): Destination node dvb_fifo_reader:fifo_reader|send_fifo[31] File: /home/spex/Downloads/hdl/fpga/ip/rit/dvb_fifo_reader.v Line: 56
-        Info (176357): Destination node dvb_fifo_reader:fifo_reader|fifo_filled File: /home/spex/Downloads/hdl/fpga/ip/rit/dvb_fifo_reader.v Line: 30
-        Info (176357): Destination node dvbs2_transmitter:my_dvb_tx|dvbs2_output_sync:output_sync|fifo_new_rd_sel File: /home/spex/Downloads/hdl/fpga/ip/rit/dvbs2_output_sync.v Line: 58
-        Info (176357): Destination node dvb_fifo_reader:fifo_reader|packet_rcvd_cnt[2] File: /home/spex/Downloads/hdl/fpga/ip/rit/dvb_fifo_reader.v Line: 56
+        Info (176357): Destination node dvbs2_transmitter:my_dvb_tx|dvbs2_output_sync:output_sync|done_with_dummies File: /home/spex/Downloads/bladerf-dvbs2/fpga/ip/rit/dvbs2_output_sync.v Line: 56
+        Info (176357): Destination node dvbs2_transmitter:my_dvb_tx|dvbs2_output_sync:output_sync|done_while_sending File: /home/spex/Downloads/bladerf-dvbs2/fpga/ip/rit/dvbs2_output_sync.v Line: 57
+        Info (176357): Destination node dvbs2_transmitter:my_dvb_tx|dvbs2_output_sync:output_sync|fifo_switch_performed File: /home/spex/Downloads/bladerf-dvbs2/fpga/ip/rit/dvbs2_output_sync.v Line: 37
+        Info (176357): Destination node dvbs2_transmitter:my_dvb_tx|dvbs2_output_sync:output_sync|fifo_read_rq File: /home/spex/Downloads/bladerf-dvbs2/fpga/ip/rit/dvbs2_output_sync.v Line: 59
+        Info (176357): Destination node dvbs2_transmitter:my_dvb_tx|dvbs2_output_sync:output_sync|fifo_rd_sel File: /home/spex/Downloads/bladerf-dvbs2/fpga/ip/rit/dvbs2_output_sync.v Line: 51
+        Info (176357): Destination node dvb_fifo_reader:fifo_reader|read_in_ret File: /home/spex/Downloads/bladerf-dvbs2/fpga/ip/rit/dvb_fifo_reader.v Line: 19
+        Info (176357): Destination node dvb_fifo_reader:fifo_reader|send_fifo[31] File: /home/spex/Downloads/bladerf-dvbs2/fpga/ip/rit/dvb_fifo_reader.v Line: 56
+        Info (176357): Destination node dvb_fifo_reader:fifo_reader|fifo_filled File: /home/spex/Downloads/bladerf-dvbs2/fpga/ip/rit/dvb_fifo_reader.v Line: 30
+        Info (176357): Destination node dvbs2_transmitter:my_dvb_tx|dvbs2_output_sync:output_sync|fifo_new_rd_sel File: /home/spex/Downloads/bladerf-dvbs2/fpga/ip/rit/dvbs2_output_sync.v Line: 58
+        Info (176357): Destination node dvb_fifo_reader:fifo_reader|packet_rcvd_cnt[2] File: /home/spex/Downloads/bladerf-dvbs2/fpga/ip/rit/dvb_fifo_reader.v Line: 56
         Info (176358): Non-global destination nodes limited to 10 nodes
-Info (176353): Automatically promoted node rx_ts_reset  File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 287
+Info (176353): Automatically promoted node rx_ts_reset  File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 287
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
     Info (176356): Following destination nodes may be non-global or may not use global or regional clocks
         Info (176357): Destination node nios_system:U_nios_system|time_tamer:rx_tamer|synchronizer:U_sync_ts_reset|\synchronize:reg0
-        Info (176357): Destination node nios_system:U_nios_system|time_tamer:rx_tamer|compare_time[63]~1 File: /home/spex/Downloads/hdl/fpga/ip/altera/nios_system/synthesis/submodules/time_tamer.vhd Line: 290
-Info (176353): Automatically promoted node tx_ts_reset  File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 288
+        Info (176357): Destination node nios_system:U_nios_system|time_tamer:rx_tamer|compare_time[63]~1 File: /home/spex/Downloads/bladerf-dvbs2/fpga/ip/altera/nios_system/synthesis/submodules/time_tamer.vhd Line: 290
+Info (176353): Automatically promoted node tx_ts_reset  File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 288
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
     Info (176356): Following destination nodes may be non-global or may not use global or regional clocks
         Info (176357): Destination node nios_system:U_nios_system|time_tamer:tx_tamer|synchronizer:U_sync_ts_reset|\synchronize:reg0
-        Info (176357): Destination node nios_system:U_nios_system|time_tamer:tx_tamer|compare_time[63]~1 File: /home/spex/Downloads/hdl/fpga/ip/altera/nios_system/synthesis/submodules/time_tamer.vhd Line: 290
-Info (176353): Automatically promoted node reset_synchronizer:U_sys_reset_sync|sync  File: /home/spex/Downloads/hdl/fpga/ip/nuand/synthesis/reset_synchronizer.vhd Line: 12
+        Info (176357): Destination node nios_system:U_nios_system|time_tamer:tx_tamer|compare_time[63]~1 File: /home/spex/Downloads/bladerf-dvbs2/fpga/ip/altera/nios_system/synthesis/submodules/time_tamer.vhd Line: 290
+Info (176353): Automatically promoted node reset_synchronizer:U_sys_reset_sync|sync  File: /home/spex/Downloads/bladerf-dvbs2/fpga/ip/nuand/synthesis/reset_synchronizer.vhd Line: 12
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
     Info (176356): Following destination nodes may be non-global or may not use global or regional clocks
-        Info (176357): Destination node fx3_uart_cts~output File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/bladerf.vhd Line: 75
-        Info (176357): Destination node fx3_gpif:U_fx3_gpif|meta_buffer[31] File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/fx3_gpif.vhd Line: 269
-        Info (176357): Destination node fx3_gpif:U_fx3_gpif|meta_buffer[30] File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/fx3_gpif.vhd Line: 269
-        Info (176357): Destination node fx3_gpif:U_fx3_gpif|meta_buffer[22] File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/fx3_gpif.vhd Line: 269
-        Info (176357): Destination node fx3_gpif:U_fx3_gpif|meta_buffer[20] File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/fx3_gpif.vhd Line: 269
-        Info (176357): Destination node fx3_gpif:U_fx3_gpif|meta_buffer[29] File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/fx3_gpif.vhd Line: 269
-        Info (176357): Destination node fx3_gpif:U_fx3_gpif|meta_buffer[28] File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/fx3_gpif.vhd Line: 269
-        Info (176357): Destination node fx3_gpif:U_fx3_gpif|meta_buffer[27] File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/fx3_gpif.vhd Line: 269
-        Info (176357): Destination node fx3_gpif:U_fx3_gpif|meta_buffer[19] File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/fx3_gpif.vhd Line: 269
-        Info (176357): Destination node fx3_gpif:U_fx3_gpif|meta_buffer[26] File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/fx3_gpif.vhd Line: 269
+        Info (176357): Destination node fx3_uart_cts~output File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/bladerf.vhd Line: 75
+        Info (176357): Destination node fx3_gpif:U_fx3_gpif|meta_buffer[31] File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/fx3_gpif.vhd Line: 269
+        Info (176357): Destination node fx3_gpif:U_fx3_gpif|meta_buffer[30] File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/fx3_gpif.vhd Line: 269
+        Info (176357): Destination node fx3_gpif:U_fx3_gpif|meta_buffer[22] File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/fx3_gpif.vhd Line: 269
+        Info (176357): Destination node fx3_gpif:U_fx3_gpif|meta_buffer[20] File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/fx3_gpif.vhd Line: 269
+        Info (176357): Destination node fx3_gpif:U_fx3_gpif|meta_buffer[29] File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/fx3_gpif.vhd Line: 269
+        Info (176357): Destination node fx3_gpif:U_fx3_gpif|meta_buffer[28] File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/fx3_gpif.vhd Line: 269
+        Info (176357): Destination node fx3_gpif:U_fx3_gpif|meta_buffer[27] File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/fx3_gpif.vhd Line: 269
+        Info (176357): Destination node fx3_gpif:U_fx3_gpif|meta_buffer[19] File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/fx3_gpif.vhd Line: 269
+        Info (176357): Destination node fx3_gpif:U_fx3_gpif|meta_buffer[26] File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/fx3_gpif.vhd Line: 269
         Info (176358): Non-global destination nodes limited to 10 nodes
-Info (176353): Automatically promoted node nios_system:U_nios_system|nios_system_rx_trigger_ctl:tx_trigger_ctl|data_out[0]  File: /home/spex/Downloads/hdl/fpga/ip/altera/nios_system/synthesis/submodules/nios_system_rx_trigger_ctl.v Line: 72
+Info (176353): Automatically promoted node nios_system:U_nios_system|nios_system_rx_trigger_ctl:tx_trigger_ctl|data_out[0]  File: /home/spex/Downloads/bladerf-dvbs2/fpga/ip/altera/nios_system/synthesis/submodules/nios_system_rx_trigger_ctl.v Line: 72
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
     Info (176356): Following destination nodes may be non-global or may not use global or regional clocks
-        Info (176357): Destination node nios_system:U_nios_system|nios_system_rx_trigger_ctl:tx_trigger_ctl|data_out~7 File: /home/spex/Downloads/hdl/fpga/ip/altera/nios_system/synthesis/submodules/nios_system_rx_trigger_ctl.v Line: 50
-        Info (176357): Destination node nios_system:U_nios_system|nios_system_rx_trigger_ctl:tx_trigger_ctl|read_mux_out[0] File: /home/spex/Downloads/hdl/fpga/ip/altera/nios_system/synthesis/submodules/nios_system_rx_trigger_ctl.v Line: 52
+        Info (176357): Destination node nios_system:U_nios_system|nios_system_rx_trigger_ctl:tx_trigger_ctl|data_out~7 File: /home/spex/Downloads/bladerf-dvbs2/fpga/ip/altera/nios_system/synthesis/submodules/nios_system_rx_trigger_ctl.v Line: 50
+        Info (176357): Destination node nios_system:U_nios_system|nios_system_rx_trigger_ctl:tx_trigger_ctl|read_mux_out[0] File: /home/spex/Downloads/bladerf-dvbs2/fpga/ip/altera/nios_system/synthesis/submodules/nios_system_rx_trigger_ctl.v Line: 52
 Info (176233): Starting register packing
 Warning (176250): Ignoring invalid fast I/O register assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
 Warning (176251): Ignoring some wildcard destinations of fast I/O register assignments
@@ -5331,7 +5331,7 @@ Info (223000): Starting Vectorless Power Activity Estimation
 Info (223001): Completed Vectorless Power Activity Estimation
 Info (128000): Starting physical synthesis optimizations for speed
 Info (128001): Physical synthesis optimizations for speed complete: elapsed time is 00:00:04
-Info (171121): Fitter preparation operations ending: elapsed time is 00:00:24
+Info (171121): Fitter preparation operations ending: elapsed time is 00:00:23
 Info (14896): Fitter has disabled Advanced Physical Optimization because it is not supported for the current family.
 Info (170189): Fitter placement preparation operations beginning
 Info (223000): Starting Vectorless Power Activity Estimation
@@ -5339,14 +5339,14 @@ Info (223001): Completed Vectorless Power Activity Estimation
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:04
 Info (170191): Fitter placement operations beginning
 Info (170137): Fitter placement was successful
-Info (170192): Fitter placement operations ending: elapsed time is 00:00:42
+Info (170192): Fitter placement operations ending: elapsed time is 00:00:43
 Info (170193): Fitter routing operations beginning
 Info (223000): Starting Vectorless Power Activity Estimation
 Info (223001): Completed Vectorless Power Activity Estimation
 Info (170195): Router estimated average interconnect usage is 9% of the available device resources
     Info (170196): Router estimated peak interconnect usage is 32% of the available device resources in the region that extends from location X34_Y33 to location X44_Y43
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:39
-Info (11888): Total time spent on timing analysis during the Fitter is 18.96 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 19.21 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
@@ -5422,70 +5422,70 @@ Info (176440): Auto delay chain can't change the delay chain setting on I/O pin 
 Info (176440): Auto delay chain can't change the delay chain setting on I/O pin fx3_gpif[22] since it's a PLL compensated pin
 Info (176440): Auto delay chain can't change the delay chain setting on I/O pin fx3_gpif[20] since it's a PLL compensated pin
 Info (176440): Auto delay chain can't change the delay chain setting on I/O pin fx3_gpif[0] since it's a PLL compensated pin
-Warning (176678): Input pins that are compensated by the source-synchronous PLL "fx3_pll:U_fx3_pll|altpll:altpll_component|fx3_pll_altpll:auto_generated|pll1" are spread across multiple edges File: /home/spex/Downloads/hdl/quartus/work/db/fx3_pll_altpll.v Line: 81
-    Info (176679): Input pin "fx3_gpif[14]" is on the top edge File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
-    Info (176679): Input pin "fx3_gpif[15]" is on the left edge File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
-    Info (176679): Input pin "fx3_gpif[16]" is on the left edge File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
-    Info (176679): Input pin "fx3_gpif[18]" is on the left edge File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
-    Info (176679): Input pin "fx3_gpif[10]" is on the top edge File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
-    Info (176679): Input pin "fx3_gpif[11]" is on the top edge File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
-    Info (176679): Input pin "fx3_gpif[12]" is on the top edge File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
-    Info (176679): Input pin "fx3_gpif[13]" is on the top edge File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
-    Info (176679): Input pin "fx3_gpif[6]" is on the top edge File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
-    Info (176679): Input pin "fx3_gpif[7]" is on the left edge File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
-    Info (176679): Input pin "fx3_gpif[8]" is on the top edge File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
-    Info (176679): Input pin "fx3_gpif[9]" is on the top edge File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
-    Info (176679): Input pin "fx3_gpif[2]" is on the top edge File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
-    Info (176679): Input pin "fx3_gpif[3]" is on the top edge File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
-    Info (176679): Input pin "fx3_gpif[4]" is on the top edge File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
-    Info (176679): Input pin "fx3_gpif[5]" is on the top edge File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
-    Info (176679): Input pin "fx3_gpif[0]" is on the top edge File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
-    Info (176679): Input pin "fx3_gpif[1]" is on the top edge File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
-    Info (176679): Input pin "fx3_gpif[17]" is on the left edge File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
-    Info (176679): Input pin "fx3_gpif[21]" is on the left edge File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
-    Info (176679): Input pin "fx3_gpif[23]" is on the left edge File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
-    Info (176679): Input pin "fx3_gpif[24]" is on the left edge File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
-    Info (176679): Input pin "fx3_gpif[25]" is on the bottom edge File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
-    Info (176679): Input pin "fx3_gpif[26]" is on the left edge File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
-    Info (176679): Input pin "fx3_gpif[19]" is on the left edge File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
-    Info (176679): Input pin "fx3_gpif[27]" is on the bottom edge File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
-    Info (176679): Input pin "fx3_gpif[28]" is on the left edge File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
-    Info (176679): Input pin "fx3_gpif[29]" is on the bottom edge File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
-    Info (176679): Input pin "fx3_gpif[20]" is on the left edge File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
-    Info (176679): Input pin "fx3_gpif[22]" is on the bottom edge File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
-    Info (176679): Input pin "fx3_gpif[30]" is on the left edge File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
-    Info (176679): Input pin "fx3_gpif[31]" is on the left edge File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
-    Info (176679): Input pin "fx3_ctl[5]" is on the left edge File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/bladerf.vhd Line: 72
-    Info (176679): Input pin "fx3_ctl[6]" is on the top edge File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/bladerf.vhd Line: 72
+Warning (176678): Input pins that are compensated by the source-synchronous PLL "fx3_pll:U_fx3_pll|altpll:altpll_component|fx3_pll_altpll:auto_generated|pll1" are spread across multiple edges File: /home/spex/Downloads/bladerf-dvbs2/quartus/work/db/fx3_pll_altpll.v Line: 81
+    Info (176679): Input pin "fx3_ctl[6]" is on the top edge File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/bladerf.vhd Line: 72
+    Info (176679): Input pin "fx3_ctl[5]" is on the left edge File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/bladerf.vhd Line: 72
+    Info (176679): Input pin "fx3_gpif[14]" is on the top edge File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
+    Info (176679): Input pin "fx3_gpif[15]" is on the left edge File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
+    Info (176679): Input pin "fx3_gpif[16]" is on the left edge File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
+    Info (176679): Input pin "fx3_gpif[18]" is on the left edge File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
+    Info (176679): Input pin "fx3_gpif[10]" is on the top edge File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
+    Info (176679): Input pin "fx3_gpif[11]" is on the top edge File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
+    Info (176679): Input pin "fx3_gpif[12]" is on the top edge File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
+    Info (176679): Input pin "fx3_gpif[13]" is on the top edge File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
+    Info (176679): Input pin "fx3_gpif[6]" is on the top edge File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
+    Info (176679): Input pin "fx3_gpif[7]" is on the left edge File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
+    Info (176679): Input pin "fx3_gpif[8]" is on the top edge File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
+    Info (176679): Input pin "fx3_gpif[9]" is on the top edge File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
+    Info (176679): Input pin "fx3_gpif[2]" is on the top edge File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
+    Info (176679): Input pin "fx3_gpif[3]" is on the top edge File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
+    Info (176679): Input pin "fx3_gpif[4]" is on the top edge File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
+    Info (176679): Input pin "fx3_gpif[5]" is on the top edge File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
+    Info (176679): Input pin "fx3_gpif[0]" is on the top edge File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
+    Info (176679): Input pin "fx3_gpif[1]" is on the top edge File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
+    Info (176679): Input pin "fx3_gpif[17]" is on the left edge File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
+    Info (176679): Input pin "fx3_gpif[21]" is on the left edge File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
+    Info (176679): Input pin "fx3_gpif[23]" is on the left edge File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
+    Info (176679): Input pin "fx3_gpif[24]" is on the left edge File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
+    Info (176679): Input pin "fx3_gpif[25]" is on the bottom edge File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
+    Info (176679): Input pin "fx3_gpif[26]" is on the left edge File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
+    Info (176679): Input pin "fx3_gpif[19]" is on the left edge File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
+    Info (176679): Input pin "fx3_gpif[27]" is on the bottom edge File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
+    Info (176679): Input pin "fx3_gpif[28]" is on the left edge File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
+    Info (176679): Input pin "fx3_gpif[29]" is on the bottom edge File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
+    Info (176679): Input pin "fx3_gpif[20]" is on the left edge File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
+    Info (176679): Input pin "fx3_gpif[22]" is on the bottom edge File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
+    Info (176679): Input pin "fx3_gpif[30]" is on the left edge File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
+    Info (176679): Input pin "fx3_gpif[31]" is on the left edge File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/bladerf-hosted.vhd Line: 763
 Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:08
 Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
 Warning (169064): Following 15 pins have no output enable or a GND or VCC output enable - later changes to this connectivity may change fitting results
-    Info (169065): Pin fx3_ctl[0] has a permanently enabled output enable File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/bladerf.vhd Line: 72
-    Info (169065): Pin fx3_ctl[1] has a permanently enabled output enable File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/bladerf.vhd Line: 72
-    Info (169065): Pin fx3_ctl[2] has a permanently enabled output enable File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/bladerf.vhd Line: 72
-    Info (169065): Pin fx3_ctl[3] has a permanently enabled output enable File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/bladerf.vhd Line: 72
-    Info (169065): Pin fx3_ctl[4] has a permanently disabled output enable File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/bladerf.vhd Line: 72
-    Info (169065): Pin fx3_ctl[5] has a permanently disabled output enable File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/bladerf.vhd Line: 72
-    Info (169065): Pin fx3_ctl[6] has a permanently disabled output enable File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/bladerf.vhd Line: 72
-    Info (169065): Pin fx3_ctl[7] has a permanently disabled output enable File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/bladerf.vhd Line: 72
-    Info (169065): Pin fx3_ctl[8] has a permanently disabled output enable File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/bladerf.vhd Line: 72
-    Info (169065): Pin fx3_ctl[9] has a permanently disabled output enable File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/bladerf.vhd Line: 72
-    Info (169065): Pin fx3_ctl[10] has a permanently disabled output enable File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/bladerf.vhd Line: 72
-    Info (169065): Pin fx3_ctl[11] has a permanently disabled output enable File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/bladerf.vhd Line: 72
-    Info (169065): Pin fx3_ctl[12] has a permanently disabled output enable File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/bladerf.vhd Line: 72
-    Info (169065): Pin mini_exp1 has a permanently enabled output enable File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/bladerf.vhd Line: 82
-    Info (169065): Pin mini_exp2 has a permanently enabled output enable File: /home/spex/Downloads/hdl/fpga/platforms/bladerf/vhdl/bladerf.vhd Line: 83
-Info (144001): Generated suppressed messages file /home/spex/Downloads/hdl/quartus/work/output_files/withdvb.fit.smsg
+    Info (169065): Pin fx3_ctl[0] has a permanently enabled output enable File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/bladerf.vhd Line: 72
+    Info (169065): Pin fx3_ctl[1] has a permanently enabled output enable File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/bladerf.vhd Line: 72
+    Info (169065): Pin fx3_ctl[2] has a permanently enabled output enable File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/bladerf.vhd Line: 72
+    Info (169065): Pin fx3_ctl[3] has a permanently enabled output enable File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/bladerf.vhd Line: 72
+    Info (169065): Pin fx3_ctl[4] has a permanently disabled output enable File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/bladerf.vhd Line: 72
+    Info (169065): Pin fx3_ctl[5] has a permanently disabled output enable File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/bladerf.vhd Line: 72
+    Info (169065): Pin fx3_ctl[6] has a permanently disabled output enable File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/bladerf.vhd Line: 72
+    Info (169065): Pin fx3_ctl[7] has a permanently disabled output enable File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/bladerf.vhd Line: 72
+    Info (169065): Pin fx3_ctl[8] has a permanently disabled output enable File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/bladerf.vhd Line: 72
+    Info (169065): Pin fx3_ctl[9] has a permanently disabled output enable File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/bladerf.vhd Line: 72
+    Info (169065): Pin fx3_ctl[10] has a permanently disabled output enable File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/bladerf.vhd Line: 72
+    Info (169065): Pin fx3_ctl[11] has a permanently disabled output enable File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/bladerf.vhd Line: 72
+    Info (169065): Pin fx3_ctl[12] has a permanently disabled output enable File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/bladerf.vhd Line: 72
+    Info (169065): Pin mini_exp1 has a permanently enabled output enable File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/bladerf.vhd Line: 82
+    Info (169065): Pin mini_exp2 has a permanently enabled output enable File: /home/spex/Downloads/bladerf-dvbs2/fpga/platforms/bladerf/vhdl/bladerf.vhd Line: 83
+Info (144001): Generated suppressed messages file /home/spex/Downloads/bladerf-dvbs2/quartus/work/output_files/withdvb.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 19 warnings
-    Info: Peak virtual memory: 1524 megabytes
-    Info: Processing ended: Fri Jul 21 15:47:37 2017
+    Info: Peak virtual memory: 1522 megabytes
+    Info: Processing ended: Fri Jul 21 16:04:41 2017
     Info: Elapsed time: 00:02:14
-    Info: Total CPU time (on all processors): 00:03:53
+    Info: Total CPU time (on all processors): 00:03:52
 
 
 +----------------------------+
 ; Fitter Suppressed Messages ;
 +----------------------------+
-The suppressed messages can be found in /home/spex/Downloads/hdl/quartus/work/output_files/withdvb.fit.smsg.
+The suppressed messages can be found in /home/spex/Downloads/bladerf-dvbs2/quartus/work/output_files/withdvb.fit.smsg.
 
 

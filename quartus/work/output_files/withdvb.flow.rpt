@@ -1,5 +1,5 @@
 Flow report for withdvb
-Fri Jul 21 15:48:05 2017
+Fri Jul 21 16:05:06 2017
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -41,7 +41,7 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Analyzed - Fri Jul 21 15:48:05 2017         ;
+; Flow Status                        ; Analyzed - Fri Jul 21 16:05:06 2017         ;
 ; Quartus Prime Version              ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; withdvb                                     ;
 ; Top-level Entity Name              ; bladerf                                     ;
@@ -65,67 +65,67 @@ agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 07/21/2017 15:43:11 ;
+; Start date & time ; 07/21/2017 16:00:40 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; withdvb             ;
 +-------------------+---------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                                                                                     ;
-+----------------------------------------------+---------------------------------------------------------------------------------------+--------------------+-------------+------------+
-; Assignment Name                              ; Value                                                                                 ; Default Value      ; Entity Name ; Section Id ;
-+----------------------------------------------+---------------------------------------------------------------------------------------+--------------------+-------------+------------+
-; ADV_NETLIST_OPT_SYNTH_WYSIWYG_REMAP          ; On                                                                                    ; Off                ; --          ; --         ;
-; COMPILER_SIGNATURE_ID                        ; 147326257959.150066619005830                                                          ; --                 ; --          ; --         ;
-; CYCLONEII_OPTIMIZATION_TECHNIQUE             ; Speed                                                                                 ; Balanced           ; --          ; --         ;
-; ENABLE_DRC_SETTINGS                          ; On                                                                                    ; Off                ; --          ; --         ;
-; ENABLE_SIGNALTAP                             ; Off                                                                                   ; --                 ; --          ; --         ;
-; FITTER_AUTO_EFFORT_DESIRED_SLACK_MARGIN      ; 1 ns                                                                                  ; 0 ns               ; --          ; --         ;
-; FITTER_EFFORT                                ; Standard Fit                                                                          ; Auto Fit           ; --          ; --         ;
-; MAX_CORE_JUNCTION_TEMP                       ; 85                                                                                    ; --                 ; --          ; --         ;
-; MIN_CORE_JUNCTION_TEMP                       ; 0                                                                                     ; --                 ; --          ; --         ;
-; MISC_FILE                                    ; /home/spex/Downloads/hdl/fpga/ip/altera/pll/pll_inst.vhd                              ; --                 ; --          ; --         ;
-; MISC_FILE                                    ; /home/spex/Downloads/hdl/fpga/ip/altera/pll/pll.cmp                                   ; --                 ; --          ; --         ;
-; MISC_FILE                                    ; /home/spex/Downloads/hdl/fpga/ip/altera/pll/pll.ppf                                   ; --                 ; --          ; --         ;
-; MISC_FILE                                    ; /home/spex/Downloads/hdl/fpga/ip/altera/fx3_pll/fx3_pll.ppf                           ; --                 ; --          ; --         ;
-; MISC_FILE                                    ; /home/spex/Downloads/hdl/fpga/ip/altera/nios_system/synthesis/../nios_system.cmp      ; --                 ; --          ; --         ;
-; MISC_FILE                                    ; /home/spex/Downloads/hdl/fpga/ip/altera/nios_system/synthesis/../nios_system.qsys     ; --                 ; --          ; --         ;
-; MISC_FILE                                    ; /home/spex/Downloads/hdl/fpga/ip/altera/rx_fifo/rx_fifo_inst.vhd                      ; --                 ; --          ; --         ;
-; MISC_FILE                                    ; /home/spex/Downloads/hdl/fpga/ip/altera/rx_fifo/rx_fifo.cmp                           ; --                 ; --          ; --         ;
-; MISC_FILE                                    ; /home/spex/Downloads/hdl/fpga/ip/altera/tx_fifo/tx_fifo_inst.vhd                      ; --                 ; --          ; --         ;
-; MISC_FILE                                    ; /home/spex/Downloads/hdl/fpga/ip/altera/tx_fifo/tx_fifo.cmp                           ; --                 ; --          ; --         ;
-; MISC_FILE                                    ; /home/spex/Downloads/hdl/fpga/ip/altera/tx_meta_fifo/tx_meta_fifo.bsf                 ; --                 ; --          ; --         ;
-; MISC_FILE                                    ; /home/spex/Downloads/hdl/fpga/ip/altera/tx_meta_fifo/tx_meta_fifo_inst.vhd            ; --                 ; --          ; --         ;
-; MISC_FILE                                    ; /home/spex/Downloads/hdl/fpga/ip/altera/tx_meta_fifo/tx_meta_fifo.inc                 ; --                 ; --          ; --         ;
-; MISC_FILE                                    ; /home/spex/Downloads/hdl/fpga/ip/altera/tx_meta_fifo/tx_meta_fifo.cmp                 ; --                 ; --          ; --         ;
-; MISC_FILE                                    ; /home/spex/Downloads/hdl/fpga/ip/altera/rx_meta_fifo/rx_meta_fifo_inst.vhd            ; --                 ; --          ; --         ;
-; MISC_FILE                                    ; /home/spex/Downloads/hdl/fpga/ip/altera/rx_meta_fifo/rx_meta_fifo.cmp                 ; --                 ; --          ; --         ;
-; OPTIMIZE_POWER_DURING_FITTING                ; Extra effort                                                                          ; Normal compilation ; --          ; --         ;
-; OUTPUT_IO_TIMING_FAR_END_VMEAS               ; Half Signal Swing                                                                     ; --                 ; --          ; --         ;
-; OUTPUT_IO_TIMING_FAR_END_VMEAS               ; Half Signal Swing                                                                     ; --                 ; --          ; --         ;
-; OUTPUT_IO_TIMING_NEAR_END_VMEAS              ; Half Vccio                                                                            ; --                 ; --          ; --         ;
-; OUTPUT_IO_TIMING_NEAR_END_VMEAS              ; Half Vccio                                                                            ; --                 ; --          ; --         ;
-; PARTITION_COLOR                              ; -- (Not supported for targeted family)                                                ; --                 ; bladerf     ; Top        ;
-; PARTITION_FITTER_PRESERVATION_LEVEL          ; -- (Not supported for targeted family)                                                ; --                 ; bladerf     ; Top        ;
-; PARTITION_NETLIST_TYPE                       ; -- (Not supported for targeted family)                                                ; --                 ; bladerf     ; Top        ;
-; PHYSICAL_SYNTHESIS_COMBO_LOGIC               ; On                                                                                    ; Off                ; --          ; --         ;
-; PHYSICAL_SYNTHESIS_REGISTER_DUPLICATION      ; On                                                                                    ; Off                ; --          ; --         ;
-; PHYSICAL_SYNTHESIS_REGISTER_RETIMING         ; On                                                                                    ; Off                ; --          ; --         ;
-; POWER_BOARD_THERMAL_MODEL                    ; None (CONSERVATIVE)                                                                   ; --                 ; --          ; --         ;
-; POWER_PRESET_COOLING_SOLUTION                ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW                                                 ; --                 ; --          ; --         ;
-; PROJECT_OUTPUT_DIRECTORY                     ; output_files                                                                          ; --                 ; --          ; --         ;
-; QII_AUTO_PACKED_REGISTERS                    ; Normal                                                                                ; Auto               ; --          ; --         ;
-; ROUTER_CLOCKING_TOPOLOGY_ANALYSIS            ; On                                                                                    ; Off                ; --          ; --         ;
-; ROUTER_LCELL_INSERTION_AND_LOGIC_DUPLICATION ; On                                                                                    ; Auto               ; --          ; --         ;
-; ROUTER_TIMING_OPTIMIZATION_LEVEL             ; MAXIMUM                                                                               ; Normal             ; --          ; --         ;
-; SEARCH_PATH                                  ; /home/spex/Downloads/hdl/fpga/ip/altera/nios_system/software/bladeRF_nios/mem_init/   ; --                 ; --          ; --         ;
-; SLD_INFO                                     ; QSYS_NAME nios_system HAS_SOPCINFO 1 GENERATION_ID 1498500579                         ; --                 ; nios_system ; --         ;
-; SOPCINFO_FILE                                ; /home/spex/Downloads/hdl/fpga/ip/altera/nios_system/synthesis/../nios_system.sopcinfo ; --                 ; --          ; --         ;
-; SYNTHESIS_ONLY_QIP                           ; On                                                                                    ; --                 ; --          ; --         ;
-; TOP_LEVEL_ENTITY                             ; bladerf                                                                               ; withdvb            ; --          ; --         ;
-; VHDL_INPUT_VERSION                           ; VHDL_2008                                                                             ; VHDL_1993          ; --          ; --         ;
-+----------------------------------------------+---------------------------------------------------------------------------------------+--------------------+-------------+------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                                                                               ;
++----------------------------------------------+-------------------------------------------------------------------------------------------------+--------------------+-------------+------------+
+; Assignment Name                              ; Value                                                                                           ; Default Value      ; Entity Name ; Section Id ;
++----------------------------------------------+-------------------------------------------------------------------------------------------------+--------------------+-------------+------------+
+; ADV_NETLIST_OPT_SYNTH_WYSIWYG_REMAP          ; On                                                                                              ; Off                ; --          ; --         ;
+; COMPILER_SIGNATURE_ID                        ; 147326257959.150066724008238                                                                    ; --                 ; --          ; --         ;
+; CYCLONEII_OPTIMIZATION_TECHNIQUE             ; Speed                                                                                           ; Balanced           ; --          ; --         ;
+; ENABLE_DRC_SETTINGS                          ; On                                                                                              ; Off                ; --          ; --         ;
+; ENABLE_SIGNALTAP                             ; Off                                                                                             ; --                 ; --          ; --         ;
+; FITTER_AUTO_EFFORT_DESIRED_SLACK_MARGIN      ; 1 ns                                                                                            ; 0 ns               ; --          ; --         ;
+; FITTER_EFFORT                                ; Standard Fit                                                                                    ; Auto Fit           ; --          ; --         ;
+; MAX_CORE_JUNCTION_TEMP                       ; 85                                                                                              ; --                 ; --          ; --         ;
+; MIN_CORE_JUNCTION_TEMP                       ; 0                                                                                               ; --                 ; --          ; --         ;
+; MISC_FILE                                    ; /home/spex/Downloads/bladerf-dvbs2/fpga/ip/altera/pll/pll_inst.vhd                              ; --                 ; --          ; --         ;
+; MISC_FILE                                    ; /home/spex/Downloads/bladerf-dvbs2/fpga/ip/altera/pll/pll.cmp                                   ; --                 ; --          ; --         ;
+; MISC_FILE                                    ; /home/spex/Downloads/bladerf-dvbs2/fpga/ip/altera/pll/pll.ppf                                   ; --                 ; --          ; --         ;
+; MISC_FILE                                    ; /home/spex/Downloads/bladerf-dvbs2/fpga/ip/altera/fx3_pll/fx3_pll.ppf                           ; --                 ; --          ; --         ;
+; MISC_FILE                                    ; /home/spex/Downloads/bladerf-dvbs2/fpga/ip/altera/nios_system/synthesis/../nios_system.cmp      ; --                 ; --          ; --         ;
+; MISC_FILE                                    ; /home/spex/Downloads/bladerf-dvbs2/fpga/ip/altera/nios_system/synthesis/../nios_system.qsys     ; --                 ; --          ; --         ;
+; MISC_FILE                                    ; /home/spex/Downloads/bladerf-dvbs2/fpga/ip/altera/rx_fifo/rx_fifo_inst.vhd                      ; --                 ; --          ; --         ;
+; MISC_FILE                                    ; /home/spex/Downloads/bladerf-dvbs2/fpga/ip/altera/rx_fifo/rx_fifo.cmp                           ; --                 ; --          ; --         ;
+; MISC_FILE                                    ; /home/spex/Downloads/bladerf-dvbs2/fpga/ip/altera/tx_fifo/tx_fifo_inst.vhd                      ; --                 ; --          ; --         ;
+; MISC_FILE                                    ; /home/spex/Downloads/bladerf-dvbs2/fpga/ip/altera/tx_fifo/tx_fifo.cmp                           ; --                 ; --          ; --         ;
+; MISC_FILE                                    ; /home/spex/Downloads/bladerf-dvbs2/fpga/ip/altera/tx_meta_fifo/tx_meta_fifo.bsf                 ; --                 ; --          ; --         ;
+; MISC_FILE                                    ; /home/spex/Downloads/bladerf-dvbs2/fpga/ip/altera/tx_meta_fifo/tx_meta_fifo_inst.vhd            ; --                 ; --          ; --         ;
+; MISC_FILE                                    ; /home/spex/Downloads/bladerf-dvbs2/fpga/ip/altera/tx_meta_fifo/tx_meta_fifo.inc                 ; --                 ; --          ; --         ;
+; MISC_FILE                                    ; /home/spex/Downloads/bladerf-dvbs2/fpga/ip/altera/tx_meta_fifo/tx_meta_fifo.cmp                 ; --                 ; --          ; --         ;
+; MISC_FILE                                    ; /home/spex/Downloads/bladerf-dvbs2/fpga/ip/altera/rx_meta_fifo/rx_meta_fifo_inst.vhd            ; --                 ; --          ; --         ;
+; MISC_FILE                                    ; /home/spex/Downloads/bladerf-dvbs2/fpga/ip/altera/rx_meta_fifo/rx_meta_fifo.cmp                 ; --                 ; --          ; --         ;
+; OPTIMIZE_POWER_DURING_FITTING                ; Extra effort                                                                                    ; Normal compilation ; --          ; --         ;
+; OUTPUT_IO_TIMING_FAR_END_VMEAS               ; Half Signal Swing                                                                               ; --                 ; --          ; --         ;
+; OUTPUT_IO_TIMING_FAR_END_VMEAS               ; Half Signal Swing                                                                               ; --                 ; --          ; --         ;
+; OUTPUT_IO_TIMING_NEAR_END_VMEAS              ; Half Vccio                                                                                      ; --                 ; --          ; --         ;
+; OUTPUT_IO_TIMING_NEAR_END_VMEAS              ; Half Vccio                                                                                      ; --                 ; --          ; --         ;
+; PARTITION_COLOR                              ; -- (Not supported for targeted family)                                                          ; --                 ; bladerf     ; Top        ;
+; PARTITION_FITTER_PRESERVATION_LEVEL          ; -- (Not supported for targeted family)                                                          ; --                 ; bladerf     ; Top        ;
+; PARTITION_NETLIST_TYPE                       ; -- (Not supported for targeted family)                                                          ; --                 ; bladerf     ; Top        ;
+; PHYSICAL_SYNTHESIS_COMBO_LOGIC               ; On                                                                                              ; Off                ; --          ; --         ;
+; PHYSICAL_SYNTHESIS_REGISTER_DUPLICATION      ; On                                                                                              ; Off                ; --          ; --         ;
+; PHYSICAL_SYNTHESIS_REGISTER_RETIMING         ; On                                                                                              ; Off                ; --          ; --         ;
+; POWER_BOARD_THERMAL_MODEL                    ; None (CONSERVATIVE)                                                                             ; --                 ; --          ; --         ;
+; POWER_PRESET_COOLING_SOLUTION                ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW                                                           ; --                 ; --          ; --         ;
+; PROJECT_OUTPUT_DIRECTORY                     ; output_files                                                                                    ; --                 ; --          ; --         ;
+; QII_AUTO_PACKED_REGISTERS                    ; Normal                                                                                          ; Auto               ; --          ; --         ;
+; ROUTER_CLOCKING_TOPOLOGY_ANALYSIS            ; On                                                                                              ; Off                ; --          ; --         ;
+; ROUTER_LCELL_INSERTION_AND_LOGIC_DUPLICATION ; On                                                                                              ; Auto               ; --          ; --         ;
+; ROUTER_TIMING_OPTIMIZATION_LEVEL             ; MAXIMUM                                                                                         ; Normal             ; --          ; --         ;
+; SEARCH_PATH                                  ; /home/spex/Downloads/bladerf-dvbs2/fpga/ip/altera/nios_system/software/bladeRF_nios/mem_init/   ; --                 ; --          ; --         ;
+; SLD_INFO                                     ; QSYS_NAME nios_system HAS_SOPCINFO 1 GENERATION_ID 1498500579                                   ; --                 ; nios_system ; --         ;
+; SOPCINFO_FILE                                ; /home/spex/Downloads/bladerf-dvbs2/fpga/ip/altera/nios_system/synthesis/../nios_system.sopcinfo ; --                 ; --          ; --         ;
+; SYNTHESIS_ONLY_QIP                           ; On                                                                                              ; --                 ; --          ; --         ;
+; TOP_LEVEL_ENTITY                             ; bladerf                                                                                         ; withdvb            ; --          ; --         ;
+; VHDL_INPUT_VERSION                           ; VHDL_2008                                                                                       ; VHDL_1993          ; --          ; --         ;
++----------------------------------------------+-------------------------------------------------------------------------------------------------+--------------------+-------------+------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------+
@@ -133,12 +133,12 @@ agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:02:07     ; 1.0                     ; 1394 MB             ; 00:02:11                           ;
-; Fitter                    ; 00:02:11     ; 1.1                     ; 1524 MB             ; 00:03:50                           ;
-; Assembler                 ; 00:00:06     ; 1.0                     ; 1020 MB             ; 00:00:06                           ;
-; TimeQuest Timing Analyzer ; 00:00:11     ; 1.3                     ; 1033 MB             ; 00:00:13                           ;
-; Design Assistant          ; 00:00:06     ; 1.0                     ; 1110 MB             ; 00:00:05                           ;
-; Total                     ; 00:04:41     ; --                      ; --                  ; 00:06:25                           ;
+; Analysis & Synthesis      ; 00:01:40     ; 1.0                     ; 1391 MB             ; 00:02:12                           ;
+; Fitter                    ; 00:02:11     ; 1.1                     ; 1522 MB             ; 00:03:49                           ;
+; Assembler                 ; 00:00:06     ; 1.0                     ; 1019 MB             ; 00:00:06                           ;
+; TimeQuest Timing Analyzer ; 00:00:10     ; 1.3                     ; 1026 MB             ; 00:00:13                           ;
+; Design Assistant          ; 00:00:06     ; 1.0                     ; 1108 MB             ; 00:00:05                           ;
+; Total                     ; 00:04:13     ; --                      ; --                  ; 00:06:25                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
