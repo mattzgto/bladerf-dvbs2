@@ -169,7 +169,7 @@ module dvbs2_ldpcencoder (clock_16MHz, clock_96MHz, reset, enable, bit_in, valid
    // Deal with input data
    //    Add input data to FIFO if it is valid (deal with write side of FIFO)
    //    Set inputs to FIFO at positive edge of clock and FIFO will grab them at the negative edge of clock
-   always @(posedge clock_16MHz) begin
+   always @(posedge clock_16MHz, posedge reset) begin
       if (reset) begin // if reset
          fifo_in <= 1'b0;
          fifo_wr <= 1'b0;
@@ -198,7 +198,7 @@ module dvbs2_ldpcencoder (clock_16MHz, clock_96MHz, reset, enable, bit_in, valid
    // Deal with the parity bit memory
    //    Need to modify 3-4 values of the memory every 8MHz clock cycle of input frame processing (so use a faster 48MHz clock)
    //    Need to double register values (like the addresses to modify) from the main state machine since the values corss clock domains
-   always @(posedge clock_96MHz) begin
+   always @(posedge clock_96MHz, posedge reset) begin
       if (reset) begin // if reset
          parity_bit_address_a       <= 13'h0000;
          parity_bit_address_b       <= 13'h0000;
@@ -401,7 +401,7 @@ module dvbs2_ldpcencoder (clock_16MHz, clock_96MHz, reset, enable, bit_in, valid
    end // parity bit memory always
 
    // Main Functionality
-   always @(posedge clock_16MHz) begin
+   always @(posedge clock_16MHz, posedge reset) begin
       if (reset) begin // if reset
          state                <= WAIT_TO_READ;
          bit_count            <= 16'h0000;

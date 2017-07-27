@@ -25,16 +25,16 @@ module dvbs2_output_sync (clock_in, reset, enable, sym_i_in, sym_q_in, valid_in,
    input  [11:0] sym_i_in; // I portion of input symbol
    input  [11:0] sym_q_in; // Q portion of input symbol
    input         valid_in; // Raised if input symbol is valid (see if data is present)
-   input 		  output_clock; // Output clock - based on symbol rate
-   input 		  output_reset;
-	input			  done_out;
-	input			  fifo_wr_sel;
+   input 		 output_clock; // Output clock - based on symbol rate
+   input 		 output_reset;
+   input	     done_out;
+   input		 fifo_wr_sel;
    output [11:0] sym_i_out; // I portion of output symbol
    output [11:0] sym_q_out; // Q portion of output symbol
    output        valid_out; // Raised if output symbol is valid
    output        error; // Raised if there is a FIFO error
    output        actual_out;
-	output		  fifo_switch_performed;
+   output		 fifo_switch_performed;
 	
    reg [11:0]    sym_i_out; // Register the I portion of the output symbol
    reg [11:0]    sym_q_out; // Register the Q portion of the output symbol
@@ -45,7 +45,7 @@ module dvbs2_output_sync (clock_in, reset, enable, sym_i_in, sym_q_in, valid_in,
    reg done_out_mff2;
    reg fifo_wr_sel_mff2;
    reg fifo_wr_sel_mff1;
-	reg fifo_switch_performed;
+   reg fifo_switch_performed;
 	
    // output_clock
    reg fifo_rd_sel;
@@ -56,7 +56,7 @@ module dvbs2_output_sync (clock_in, reset, enable, sym_i_in, sym_q_in, valid_in,
    reg done_with_dummies;
    reg done_while_sending;
    reg fifo_new_rd_sel;
-	reg fifo_read_rq;
+   reg fifo_read_rq;
    wire [7:0] sym_out_zero;
    wire [7:0] sym_out_one;
    wire fifo_zero_empty;
@@ -64,11 +64,11 @@ module dvbs2_output_sync (clock_in, reset, enable, sym_i_in, sym_q_in, valid_in,
    wire fifo_one_empty;
    wire fifo_one_full;
    reg actual_out;
-	reg [3:0] src_sym_i_out;
-	reg [3:0] src_sym_q_out;
-	reg [3:0] dummy_sym_i_out;
-	reg [3:0] dummy_sym_q_out;
-	reg [1:0] data_source;
+   reg [3:0] src_sym_i_out;
+   reg [3:0] src_sym_q_out;
+   reg [3:0] dummy_sym_i_out;
+   reg [3:0] dummy_sym_q_out;
+   reg [1:0] data_source;
 
 	// LFSR Signals
    reg [17:0] lfsr_x; // 18 bit LFSR for x sequence of PL scrambling
@@ -76,8 +76,8 @@ module dvbs2_output_sync (clock_in, reset, enable, sym_i_in, sym_q_in, valid_in,
    reg        lfsr_en; // 1 bit signal to enable LFSR operation for the current clock cycle
    reg        lfsr_rst; // 1 bit signal to re-initialize the LFSR
 
-	// Internal scrambling signals
-	reg [1:0]  scramble_bits; // scramble bits calculated from LFSR for scrambling sequence
+   // Internal scrambling signals
+   reg [1:0]  scramble_bits; // scramble bits calculated from LFSR for scrambling sequence
    reg        zna, znb; // 1 bit calculations from each LFSR to go toward calculating scramble_bits
 	
    // Output state machine
@@ -86,16 +86,16 @@ module dvbs2_output_sync (clock_in, reset, enable, sym_i_in, sym_q_in, valid_in,
    parameter [1:0] ACTUAL_DATA_ACTUAL 	= 2'b10;
    parameter [1:0] ACTUAL_DATA_ZERO   	= 2'b11;
 
-	// Data sources
-	parameter [1:0] ALL_ZERO = 2'b00;
-	parameter [1:0] DUMMY = 2'b01;
-	parameter [1:0] FIFO = 2'b10;
+   // Data sources
+   parameter [1:0] ALL_ZERO = 2'b00;
+   parameter [1:0] DUMMY = 2'b01;
+   parameter [1:0] FIFO = 2'b10;
 
    assign error = fifo_zero_full | fifo_one_full;
 	
-	// Select the data source
-	always @* begin
-		case (data_source)
+   // Select the data source
+   always @* begin
+      case (data_source)
 			ALL_ZERO: begin
 				src_sym_i_out = 4'b0;
 				src_sym_q_out = 4'b0;
@@ -124,9 +124,9 @@ module dvbs2_output_sync (clock_in, reset, enable, sym_i_in, sym_q_in, valid_in,
    // Convert our 4 digit code to full i/q samples
    always @* begin
       case(src_sym_i_out)
-			0: begin
-				sym_i_out = 12'h0;
-			end
+		 0: begin
+			sym_i_out = 12'h0;
+		 end
          1: begin
             sym_i_out = 12'h586; //32'h3f3504f3;
          end
@@ -160,9 +160,9 @@ module dvbs2_output_sync (clock_in, reset, enable, sym_i_in, sym_q_in, valid_in,
    // Convert our 4 digit code to full i/q samples
    always @* begin
       case(src_sym_q_out)
-			0: begin
-				sym_q_out = 12'h0;
-			end
+		 0: begin
+			sym_q_out = 12'h0;
+		 end
          1: begin
             sym_q_out = 12'h586; //32'h3f3504f3;
          end
@@ -189,12 +189,12 @@ module dvbs2_output_sync (clock_in, reset, enable, sym_i_in, sym_q_in, valid_in,
          end
          default: begin
             sym_q_out = 12'hBEF;
-			end
+		 end
       endcase // dummy_sym_q_out
-	end
+   end
 	
    // LFSR for PL scrambling
-   always @(negedge output_clock) begin
+   always @(negedge output_clock, posedge output_reset) begin
       if (output_reset) begin // if reset
          lfsr_x <= 18'h00001; // initialize x(0) = 1, x(1)=x(2)=...=x(17)=0
          lfsr_y <= 18'h3FFFF; // initialize y(0)=y(1)=...=y(17)=1
@@ -218,7 +218,7 @@ module dvbs2_output_sync (clock_in, reset, enable, sym_i_in, sym_q_in, valid_in,
    end // LFSR for PL scrambling
 	
    // Making sure we always output 
-   always @(posedge output_clock) begin
+   always @(posedge output_clock, posedge output_reset) begin
 		if (output_reset) begin
 			done_out_mff1 <= 1'b0;
 			done_out_mff2 <= 1'b0;
@@ -226,10 +226,10 @@ module dvbs2_output_sync (clock_in, reset, enable, sym_i_in, sym_q_in, valid_in,
 			fifo_wr_sel_mff2 <= 1'b0;
 
 			fifo_rd_sel <= 1'b1;
-         fifo_new_rd_sel <= 1'b0;
-         done_while_sending <= 1'b0;
+            fifo_new_rd_sel <= 1'b0;
+            done_while_sending <= 1'b0;
 			valid_out <= 1'b0;
-		   fifo_read_rq <= 1'b0;
+		    fifo_read_rq <= 1'b0;
 			dummy_sym_i_out <= 4'b0;
 			dummy_sym_q_out <= 4'b0;
 			data_source <= ALL_ZERO;
@@ -239,13 +239,13 @@ module dvbs2_output_sync (clock_in, reset, enable, sym_i_in, sym_q_in, valid_in,
 			frame_counter <= 15'b0;
 			done_with_dummies <= 1'b0;
 			output_state <= DUMMY_DATA_ACTUAL;
-         actual_out <= 1'b0;
+            actual_out <= 1'b0;
 			
 			lfsr_rst <= 1'b1;
 			lfsr_en <= 1'b0;
 			scramble_bits = 2'b00;
-         zna = 1'b0;
-         znb = 1'b0;
+            zna = 1'b0;
+            znb = 1'b0;
 		end
 		else begin
 			// Cross the clock domain
@@ -255,22 +255,22 @@ module dvbs2_output_sync (clock_in, reset, enable, sym_i_in, sym_q_in, valid_in,
 			fifo_wr_sel_mff1 <= fifo_wr_sel;
 
 			case (output_state)
-				// Dummy frame symbols
-				DUMMY_DATA_ACTUAL: begin
-               // If the done flag was thrown while we're doing a dummy frame
-               if ((done_out_mff2 == 1'b1) & (done_while_sending == 1'b0)) begin
-                  // Set flags
-                  done_while_sending <= 1'b1;
-                  fifo_switch_performed <= 1'b1;
+			    // Dummy frame symbols
+			    DUMMY_DATA_ACTUAL: begin
+               		// If the done flag was thrown while we're doing a dummy frame
+              		if ((done_out_mff2 == 1'b1) & (done_while_sending == 1'b0)) begin
+                  		// Set flags
+                 		done_while_sending <= 1'b1;
+                  		fifo_switch_performed <= 1'b1;
 
-                  // Store this for later
-                  fifo_new_rd_sel <= fifo_wr_sel_mff2;
-               end
+                  		// Store this for later
+                  		fifo_new_rd_sel <= fifo_wr_sel_mff2;
+               		end
 					
 					// Select the data source for the output
 					data_source <= DUMMY;
 					
-   				// look up header value to output
+   					// look up header value to output
 					case (dummy_counter)
 						// Start with your typical header
 						0: begin
@@ -690,7 +690,7 @@ module dvbs2_output_sync (clock_in, reset, enable, sym_i_in, sym_q_in, valid_in,
 						dummy_counter <= dummy_counter + 1'b1;
 					end
 					
-               actual_out <= 1'b0;
+               		actual_out <= 1'b0;
 				end // DUMMY_DATA_ACTUAL
 				// Zeroes in between dummy symbols
 				DUMMY_DATA_ZERO: begin
@@ -710,123 +710,123 @@ module dvbs2_output_sync (clock_in, reset, enable, sym_i_in, sym_q_in, valid_in,
 						
 						// Reset
 						if (done_with_dummies == 1'b1) begin
-	   					dummy_counter <= 12'b0;
-	   					done_with_dummies <= 1'b0;
+	   						dummy_counter <= 12'b0;
+	   						done_with_dummies <= 1'b0;
 						end 
 						
 						// If we're done with dummies and there's data available
-	   				if ((done_with_dummies == 1'b1) & ((done_out_mff2 == 1'b1) | (done_while_sending == 1'b1))) begin
-	   					// Indicate we switched FIFOs to read
-                     // Don't set the flag if it was already sent
-                     if (done_while_sending == 1'b0) begin
-	   					   fifo_switch_performed <= 1'b1;
+	   					if ((done_with_dummies == 1'b1) & ((done_out_mff2 == 1'b1) | (done_while_sending == 1'b1))) begin
+	   						// Indicate we switched FIFOs to read
+                     		// Don't set the flag if it was already sent
+                     		if (done_while_sending == 1'b0) begin
+	   					   		fifo_switch_performed <= 1'b1;
 
-                        // Read from the previously read FIFO
-                        fifo_rd_sel <= fifo_wr_sel_mff2;
-                     end
-                     else begin
-                        // Read from the previously read FIFO
-                        fifo_rd_sel <= fifo_new_rd_sel;
-                     end
+                        		// Read from the previously read FIFO
+                        		fifo_rd_sel <= fifo_wr_sel_mff2;
+                     		end
+	                     	else begin
+	                       		// Read from the previously read FIFO
+	                        	fifo_rd_sel <= fifo_new_rd_sel;
+	                     	end
 
-                     // On to actual data :)
-	   					output_state <= ACTUAL_DATA_ACTUAL;
-                     actual_out <= 1'b0;
+	                     	// On to actual data :)
+		   					output_state <= ACTUAL_DATA_ACTUAL;
+	                     	actual_out <= 1'b0;
 
-	   					// Prepare for data output
-	   					fifo_read_rq <= 1'b1;
+		   					// Prepare for data output
+		   					fifo_read_rq <= 1'b1;
 
-	   					// Reset
-                     done_while_sending <= 1'b0;
-   					end
-   					// Anoher dummy vector
-   					else begin
-   						output_state <= DUMMY_DATA_ACTUAL;
-	   				end // done
-               end // valid
-   			end // DUMMY_DATA_ZERO
+		   					// Reset
+	                     	done_while_sending <= 1'b0;
+	   					end
+	   					// Anoher dummy vector
+	   					else begin
+	   						output_state <= DUMMY_DATA_ACTUAL;
+		   				end // done
+                	end // valid
+   				end // DUMMY_DATA_ZERO
 				// Actual data
-   			ACTUAL_DATA_ACTUAL: begin
-   				//Reset the switch performed flag
-   				if (done_out_mff2 == 1'b0) begin
-   					fifo_switch_performed <= 1'b0;
-   				end
+				ACTUAL_DATA_ACTUAL: begin
+	   				//Reset the switch performed flag
+	   				if (done_out_mff2 == 1'b0) begin
+	   					fifo_switch_performed <= 1'b0;
+	   				end
 
 					// Select the data source
 					data_source <= FIFO;
 
 					// Reset
-	   			fifo_read_rq <= 1'b0;
+	   				fifo_read_rq <= 1'b0;
 
-	   			// Hold the output data for 2 clock cycles
-   				if (valid_out == 1'b0) begin
-   					valid_out <= 1'b1;
-                  actual_out <= 1'b1;
-   				end
-   				else begin
-   					valid_out <= 1'b0;
-   					output_state <= ACTUAL_DATA_ZERO;
-                  actual_out <= 1'b0;
-   				end
+		   			// Hold the output data for 2 clock cycles
+	   				if (valid_out == 1'b0) begin
+	   					valid_out <= 1'b1;
+	                  	actual_out <= 1'b1;
+	   				end
+	   				else begin
+	   					valid_out <= 1'b0;
+	   					output_state <= ACTUAL_DATA_ZERO;
+	                  	actual_out <= 1'b0;
+	   				end
 				end // ACTUAL_DATA_ACTUAL
 				// Zeroes in between actual data
 				ACTUAL_DATA_ZERO: begin					
 					//Reset the switch performed flag
-   				if (done_out_mff2 == 1'b0) begin
-   					fifo_switch_performed <= 1'b0;
-   				end
+   					if (done_out_mff2 == 1'b0) begin
+   						fifo_switch_performed <= 1'b0;
+   					end
 
 					// Select the data source
 					data_source <= ALL_ZERO;
 					
 					// Reset
 					fifo_read_rq <= 1'b0;
-               actual_out <= 1'b0;
+               		actual_out <= 1'b0;
 
-   				// Hold the output data for 2 clock cycles
-   				if (valid_out == 1'b0) begin
-   					valid_out <= 1'b1;
-   				end
-   				else begin
-   					valid_out <= 1'b0;
+	   				// Hold the output data for 2 clock cycles
+	   				if (valid_out == 1'b0) begin
+	   					valid_out <= 1'b1;
+	   				end
+	   				else begin
+	   					valid_out <= 1'b0;
 
-   					// See if we're done
-   					// Each Frame has 16686 symbols
-   					if (frame_counter == 16685) begin
-   						frame_counter <= 14'b0;
-   						
-   						// If there's data available
-	   					if (done_out_mff2 == 1'b1) begin
-	   						// Read from the previously read FIFO
-		   					fifo_rd_sel <= fifo_wr_sel_mff2;
+	   					// See if we're done
+	   					// Each Frame has 16686 symbols
+	   					if (frame_counter == 16685) begin
+	   						frame_counter <= 14'b0;
+	   						
+	   						// If there's data available
+		   					if (done_out_mff2 == 1'b1) begin
+		   						// Read from the previously read FIFO
+			   					fifo_rd_sel <= fifo_wr_sel_mff2;
 
-		   					// Indicate we switched FIFOs to read
-		   					fifo_switch_performed <= 1'b1;
-		   					output_state <= ACTUAL_DATA_ACTUAL;
+			   					// Indicate we switched FIFOs to read
+			   					fifo_switch_performed <= 1'b1;
+			   					output_state <= ACTUAL_DATA_ACTUAL;
 
-		   					// Prepare for data output
-		   					fifo_read_rq <= 1'b1;
+			   					// Prepare for data output
+			   					fifo_read_rq <= 1'b1;
+		   					end
+		   					// Anoher dummy vector
+		   					else begin
+		   						output_state <= DUMMY_DATA_ACTUAL;
+		   					end
 	   					end
-	   					// Anoher dummy vector
 	   					else begin
-	   						output_state <= DUMMY_DATA_ACTUAL;
-	   					end
-   					end
-   					else begin
-   						frame_counter <= frame_counter + 1'b1;
+	   						frame_counter <= frame_counter + 1'b1;
 
 							// Prepare for data output
-		   				fifo_read_rq <= 1'b1;
+			   				fifo_read_rq <= 1'b1;
 							output_state <= ACTUAL_DATA_ACTUAL;
-   					end
-   				end
+	   					end
+	   				end
 				end // ACTUAL_DATA_ZERO
 			endcase // Output state machine
 		end // if reset
    end // always loop
 
    // Store data in FIFO to account for irregular valid_out signals
-	fifo_8bit_dual_clk_15bit sym_out_fifo_zero (
+   fifo_8bit_dual_clk_15bit sym_out_fifo_zero (
 	   .data    ({sym_q_in[3:0], sym_i_in[3:0]}),
 	   .rdclk   (output_clock),
 	   .rdreq   (fifo_read_rq & ~fifo_rd_sel),
@@ -835,10 +835,10 @@ module dvbs2_output_sync (clock_in, reset, enable, sym_i_in, sym_q_in, valid_in,
 	   .q       (sym_out_zero),
 	   .rdempty (fifo_zero_empty), // Empty signal from the read side of the FIFO
 	   .wrfull  (fifo_zero_full) // Full signal from the write side of the FIFO
-	);
+   );
 	
-	// Store data in FIFO to account for irregular valid_out signals
-	fifo_8bit_dual_clk_15bit sym_out_fifo_one (
+   // Store data in FIFO to account for irregular valid_out signals
+   fifo_8bit_dual_clk_15bit sym_out_fifo_one (
       .data    ({sym_q_in[3:0], sym_i_in[3:0]}),
       .rdclk   (output_clock),
       .rdreq   (fifo_read_rq & fifo_rd_sel),
@@ -849,4 +849,4 @@ module dvbs2_output_sync (clock_in, reset, enable, sym_i_in, sym_q_in, valid_in,
       .wrfull  (fifo_one_full) // Full signal from the write side of the FIFO
    );
 
-endmodule // dvbs2_phyframer
+endmodule // dvbs2_output_sync

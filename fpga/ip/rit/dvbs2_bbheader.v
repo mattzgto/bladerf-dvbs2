@@ -116,7 +116,7 @@ module dvbs2_bbheader (clock, reset, enable, bit_in, valid_in, bit_out, valid_ou
 
 
    // Deal with intput data
-   always @(posedge clock) begin
+   always @(posedge clock, posedge reset) begin
       if (reset) begin // if reset
          fifo_in       <= 1'b0;
          fifo_wr       <= 1'b0;
@@ -174,7 +174,7 @@ module dvbs2_bbheader (clock, reset, enable, bit_in, valid_in, bit_out, valid_ou
    end // always loop for input data
 
    // LFSR for CRC-8 encoder implementation
-   always@(negedge clock) begin
+   always @(negedge clock, posedge reset) begin
       if (reset) begin // if reset
          crc8_lfsr <= 8'h00;
       end // if reset
@@ -197,7 +197,7 @@ module dvbs2_bbheader (clock, reset, enable, bit_in, valid_in, bit_out, valid_ou
    end // always
 
    // Main functionality
-   always@(posedge clock) begin
+   always @(posedge clock, posedge reset) begin
       if (reset) begin // if reset
          state          <= WAIT_TO_START;
          up_count       <= 8'h00;

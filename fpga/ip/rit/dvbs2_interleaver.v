@@ -76,7 +76,7 @@ module dvbs2_interleaver (clock, reset, enable, bit_in, valid_in, bit_out, valid
    assign mem2_wren = mem_num ? mem_wren_reg : 1'b0;
 
    // Write to memory functionality
-   always @ (posedge clock) begin
+   always @(posedge clock, posedge reset) begin
       if (reset) begin // if reset
          write_bit_count <= 16'h0000;
          write_address   <= 16'h0000;
@@ -123,7 +123,7 @@ module dvbs2_interleaver (clock, reset, enable, bit_in, valid_in, bit_out, valid
    end // write always block
 
    // Read from memory functionality
-   always @ (posedge clock) begin
+   always @(posedge clock, posedge reset) begin
       if (reset) begin // if reset
          read_bit_count    <= 16'h0000;
          read_address      <= 16'h0000;

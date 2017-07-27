@@ -68,7 +68,7 @@ module dvbs2_bchencoder (clock, reset, enable, bit_in, valid_in, bit_out, valid_
    );
 
    // Deal with input data
-   always @(posedge clock) begin
+   always @(posedge clock, posedge reset) begin
       if (reset) begin // if reset
          fifo_in <= 1'b0;
          fifo_wr <= 1'b0;
@@ -95,7 +95,7 @@ module dvbs2_bchencoder (clock, reset, enable, bit_in, valid_in, bit_out, valid_
    end // always loop for input data
 
    // LFSR
-   always @(negedge clock) begin
+   always @(negedge clock, posedge reset) begin
       if (reset) begin // if reset
          temp      = 128'h00000000000000000000000000000000;
          lfsr      <= 128'h00000000000000000000000000000000;
@@ -125,7 +125,7 @@ module dvbs2_bchencoder (clock, reset, enable, bit_in, valid_in, bit_out, valid_
    end // LFSR always
 
    // Main functionality
-   always @(posedge clock) begin
+   always @(posedge clock, posedge reset) begin
       if (reset) begin // if reset
          state          <= WAIT_TO_READ;//PROCESS_FRAME;
          bit_count      <= 16'h0000;

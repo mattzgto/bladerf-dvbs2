@@ -28,7 +28,7 @@ module dvbs2_bbscrambler (clock, reset, enable, bit_in, valid_in, bit_out, valid
    reg [15:0] bit_count; // need 2^16 to count up to kbch
 
    // Main functionality
-   always@(posedge clock) begin
+   always @(posedge clock, posedge reset) begin
       if (reset) begin // if reset
          shift_register <= init_value;
          bit_count      <= 16'h0000;

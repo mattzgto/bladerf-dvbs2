@@ -6,7 +6,7 @@
 // Graduate Paper
 
 module dvb_fifo_reader (clock_data_in, enable, in_reset, empty_in, data_in, read_in_ret, 
-								clock_data_out, out_reset, valid_out, data_out);
+						clock_data_out, out_reset, valid_out, data_out);
 								
 	// Data Input Interface
 	input clock_data_in;
@@ -53,7 +53,7 @@ module dvb_fifo_reader (clock_data_in, enable, in_reset, empty_in, data_in, read
 	integer i;
 	
 	// Input data clock, receiveshold_fifo data from previous fifo
-	always @(posedge clock_data_in) begin
+	always @(posedge clock_data_in, posedge in_reset) begin
 		if (in_reset) begin
 			// IO
 			read_in_ret <= 1'b0;
@@ -134,7 +134,7 @@ module dvb_fifo_reader (clock_data_in, enable, in_reset, empty_in, data_in, read
 	assign valid_out = valid_bit;
 
 	// Output data clock domain
-	always @(posedge clock_data_out) begin
+	always @(posedge clock_data_out, posedge out_reset) begin
 		if (out_reset) begin
 			// Internal signals
 			tx_counter <= 11'b0;

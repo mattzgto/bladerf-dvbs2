@@ -117,7 +117,7 @@ module dvbs2_phyframer_q11 (clock_in, reset, enable, sym_i_in, sym_q_in, valid_i
    );
 
    // LFSR for PL scrambling
-   always @(negedge clock_out) begin
+   always @(negedge clock_out, posedge reset) begin
       if (reset) begin // if reset
          lfsr_x <= 18'h00001; // initialize x(0) = 1, x(1)=x(2)=...=x(17)=0
          lfsr_y <= 18'h3FFFF; // initialize y(0)=y(1)=...=y(17)=1
@@ -143,7 +143,7 @@ module dvbs2_phyframer_q11 (clock_in, reset, enable, sym_i_in, sym_q_in, valid_i
    // Deal with input data
    //    Add input data (input symbols) to the FIFOs if they are valid (deal with write side of FIFOs)
    //    Should always get I and Q together, so always write to both FIFOs together
-   always @(posedge clock_in) begin
+   always @(posedge clock_in, posedge reset) begin
       if (reset) begin // if reset
          i_sym_fifo_in <= 32'h00000000;
          q_sym_fifo_in <= 32'h00000000;
@@ -176,7 +176,7 @@ module dvbs2_phyframer_q11 (clock_in, reset, enable, sym_i_in, sym_q_in, valid_i
    end // input data always block
 
    // Main Functionality
-   always @ (posedge clock_out) begin
+   always @ (posedge clock_out, posedge reset) begin
       if (reset) begin // if reset
          sym_i_out          <= 12'hB;
          sym_q_out          <= 12'hB;
@@ -778,7 +778,7 @@ module dvbs2_phyframer_q11 (clock_in, reset, enable, sym_i_in, sym_q_in, valid_i
 
 						// The output portion of the code acknowledged the fifo switch
 						if (fifo_switch_performed_mff2 == 1'b1) begin
-							state   <= ADD_HEADER;
+							state <= ADD_HEADER;
 							fifo_wr_sel <= ~fifo_wr_sel;
 						end
 						else begin

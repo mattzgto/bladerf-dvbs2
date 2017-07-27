@@ -49,7 +49,7 @@ module dvbs2_bitmapper_q11 (clock_in, reset, enable, bit_in, clock_out, valid_in
    reg [1:0] not_valid_count;
 
    // Collect every 4 input bits
-   always @ (posedge clock_in) begin
+   always @(posedge clock_in, posedge reset) begin
       if (reset) begin // if reset
          bit_cnt               <= 2'b00;
          collected_input       <= 4'h0;
@@ -61,7 +61,7 @@ module dvbs2_bitmapper_q11 (clock_in, reset, enable, bit_in, clock_out, valid_in
          final_collected_input <= final_collected_input; // by default
          final_collected_valid <= final_collected_valid; // by default
          if (valid_in) begin // only operate if have valid input bit
-            bit_cnt         <= bit_cnt + 2'b01; // increment counter (it rolls over when done)
+            bit_cnt <= bit_cnt + 2'b01; // increment counter (it rolls over when done)
 
             // Shift input bits through the 4 bit register to capture them
             if (bit_cnt == 2'b00) begin
@@ -89,7 +89,7 @@ module dvbs2_bitmapper_q11 (clock_in, reset, enable, bit_in, clock_out, valid_in
    end // collect input bits always
 
    // Main Functionality
-   always @ (posedge clock_out) begin
+   always @(posedge clock_out, posedge reset) begin
       if (reset) begin // if reset
          sym_i                <= 12'h0;
          sym_q                <= 12'h0;
@@ -111,7 +111,7 @@ module dvbs2_bitmapper_q11 (clock_in, reset, enable, bit_in, clock_out, valid_in
             if (collected_valid_reg2) begin
                valid_out     <= 1'b1;
                // Bit Mapper Look-up Values
-               //    For normal FECFRAME size (64800 bits), 16APSK modulation, 9/10 code rate
+               // For normal FECFRAME size (64800 bits), 16APSK modulation, 9/10 code rate
                case (collected_input_reg2)
                   4'h0: begin
                      sym_i <= 12'h1; //32'h3f3504f3, 1448
