@@ -324,8 +324,8 @@ architecture hosted_bladerf of bladerf is
     signal lms_rx_enable_qualified                  : std_logic;
     signal tx_sample_fifo_rempty_untriggered        : std_logic;
 
-	 signal walking_i_sample								 : std_logic;
-	 signal save_sample										 : std_logic_vector(15 downto 0);
+	 signal walking_i_sample					    : std_logic;
+	 signal save_sample								: std_logic_vector(15 downto 0);
 	 
 	 -- Component declaration for 16APSK DVB-S2 Transmitter
     COMPONENT dvbs2_transmitter
@@ -535,7 +535,7 @@ begin
         sync        =>  tx_enable
       ) ;
 
-		U_dvb_enable_sync : entity work.synchronizer
+	U_dvb_enable_sync : entity work.synchronizer
       generic map (
         RESET_LEVEL =>  '0'
       ) port map (
@@ -634,44 +634,44 @@ begin
         rx_meta_fifo_data   =>  rx_meta_fifo.rdata
       ) ;
 	 
-	 -- Custom FIFO reader than inserts NULL packets
-	 fifo_reader : dvb_fifo_reader
+	-- Custom FIFO reader than inserts NULL packets
+	fifo_reader : dvb_fifo_reader
       port map (
         clock_data_in        => tx_clock,
         enable               => tx_enable,
-		  in_reset				  => tx_reset,
+		in_reset			 => tx_reset,
 		  
-		  empty_in			     => tx_sample_fifo.rempty,
-		  data_in		        => tx_sample_fifo.rdata,
+		empty_in			 => tx_sample_fifo.rempty,
+		data_in		     	 => tx_sample_fifo.rdata,
 		  
-		  clock_data_out	     => dvb_16MHz_clock,
-		  out_reset			     => dvb_reset,
-		  valid_out			     => dvb_valid_in,
-		  data_out			     => dvb_data_in,
+		clock_data_out	     => dvb_16MHz_clock,
+		out_reset			 => dvb_reset,
+		valid_out			 => dvb_valid_in,
+		data_out		 	 => dvb_data_in,
 		  
-		  read_in_ret		     => tx_sample_fifo.rreq
+		read_in_ret		     => tx_sample_fifo.rreq
       );
 		
-	 -- DVB-S2 Transmitter
-	 -- Double the clock freq
-	 my_dvb_tx : dvbs2_transmitter
-	   port map (
+	-- DVB-S2 Transmitter
+	-- Double the clock freq
+	my_dvb_tx : dvbs2_transmitter
+	  port map (
         clock_96MHz      => dvb_96MHz_clock,
-        clock_16MHz       => dvb_16MHz_clock,
-		  clock_4MHz		 => dvb_4MHz_clock,
+        clock_16MHz      => dvb_16MHz_clock,
+		clock_4MHz		 => dvb_4MHz_clock,
 		  
-		  reset 			    => (dvb_reset or (not \80MHz locked\)),
-		  enable			    => dvb_enable,
+		reset 			 => (dvb_reset or (not \80MHz locked\)),
+		enable			 => dvb_enable,
 		  
-		  bit_in			    => dvb_data_in,
-		  valid_in	     	 => dvb_valid_in,
-		  output_clock	    => tx_clock,
-		  output_reset	    => tx_reset,
-		  sym_i_out			 => tx_sample_raw_i,
-		  sym_q_out			 => tx_sample_raw_q,
+		bit_in			 => dvb_data_in,
+		valid_in	     => dvb_valid_in,
+		output_clock	 => tx_clock,
+		output_reset	 => tx_reset,
+		sym_i_out		 => tx_sample_raw_i,
+		sym_q_out		 => tx_sample_raw_q,
 		  
-		  valid_out			 => tx_sample_raw_valid,
-		  error 				 => dvb_error
+		valid_out		 => tx_sample_raw_valid,
+		error 			 => dvb_error
       );
 		
     U_tx_iq_correction : entity work.iq_correction(tx)
@@ -944,13 +944,10 @@ begin
     exp_spi_clock           <= nios_sclk when ( nios_ss_n(1 downto 0) = "01" ) else '0' ;
     exp_spi_mosi            <= nios_sdio when ( nios_ss_n(1 downto 0) = "01" ) else '0' ;
 
-	 -- Debugging header
-	 -- Outputs samples 'bit serially' and valid samples
-    --mini_exp1    				 <= walking_i_sample;
-    --mini_exp2               <= tx_sample_raw_valid;
-
-	 mini_exp1    				 <= tx_sample_fifo.rempty;
-    mini_exp2               <= tx_sample_fifo.rfull;
+	-- Debugging header
+	-- Outputs samples 'bit serially' and valid samples
+    mini_exp1    			<= walking_i_sample;
+    mini_exp2               <= tx_sample_raw_valid;
 	 
     set_tx_ts_reset : process(tx_clock, tx_reset)
     begin
@@ -1011,4 +1008,3 @@ begin
       ) ;
 
 end architecture ; -- arch
-
