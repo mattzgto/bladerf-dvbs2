@@ -83,14 +83,14 @@ architecture hosted_bladerf of bladerf is
 
 	 -- DVB Transmitter signals
     signal dvb_data_in         : std_logic ;
-	 signal dvb_valid_in        : std_logic ;
-	 signal dvb_96MHz_clock     : std_logic ;
-	 signal dvb_16MHz_clock      : std_logic ;
-	 signal dvb_4MHz_clock      : std_logic ;
-	 signal dvb_error	          : std_logic ;
-	 signal dvb_enable		    : std_logic ;
-	 signal dvb_full				 : std_logic ;
-	 signal dvb_empty				 : std_logic ;
+	signal dvb_valid_in        : std_logic ;
+	signal dvb_96MHz_clock     : std_logic ;
+	signal dvb_16MHz_clock     : std_logic ;
+	signal dvb_4MHz_clock      : std_logic ;
+	signal dvb_error	       : std_logic ;
+	signal dvb_enable		   : std_logic ;
+	signal dvb_full			   : std_logic ;
+	signal dvb_empty		   : std_logic ;
 	 
     -- Can be set from libbladeRF using bladerf_set_rx_mux()
     type rx_mux_mode_t is (RX_MUX_NORMAL, RX_MUX_12BIT_COUNTER, RX_MUX_32BIT_COUNTER, RX_MUX_ENTROPY, RX_MUX_DIGITAL_LOOPBACK) ;
@@ -324,8 +324,8 @@ architecture hosted_bladerf of bladerf is
     signal lms_rx_enable_qualified                  : std_logic;
     signal tx_sample_fifo_rempty_untriggered        : std_logic;
 
-	 signal walking_i_sample					    : std_logic;
-	 signal save_sample								: std_logic_vector(15 downto 0);
+	signal walking_i_sample					    	: std_logic;
+    signal save_sample								: std_logic_vector(15 downto 0);
 	 
 	 -- Component declaration for 16APSK DVB-S2 Transmitter
     COMPONENT dvbs2_transmitter
@@ -337,12 +337,12 @@ architecture hosted_bladerf of bladerf is
         enable : IN STD_LOGIC;
         bit_in : IN STD_LOGIC;
         valid_in : IN STD_LOGIC;
-		  output_clock: IN STD_LOGIC;
-		  output_reset: IN STD_LOGIC;
+		output_clock: IN STD_LOGIC;
+		output_reset: IN STD_LOGIC;
         sym_i_out : OUT signed (15 DOWNTO 0);
         sym_q_out : OUT signed (15 DOWNTO 0);
         valid_out : OUT STD_LOGIC;
-		  error : OUT STD_LOGIC
+		error : OUT STD_LOGIC
      );
     END COMPONENT;
 
@@ -356,7 +356,7 @@ architecture hosted_bladerf of bladerf is
         empty_in : IN STD_LOGIC;
         data_in : IN STD_LOGIC_VECTOR (31 DOWNTO 0);
         clock_data_out : IN STD_LOGIC;
-		  out_reset : IN STD_LOGIC;
+		out_reset : IN STD_LOGIC;
         valid_out : OUT STD_LOGIC;
         data_out : OUT STD_LOGIC;
         read_in_ret : OUT STD_LOGIC
@@ -567,26 +567,26 @@ begin
         wrusedw             => tx_sample_fifo.wused
       );
 
-    -- TX meta fifo
-    tx_meta_fifo.aclr <= tx_reset ;
-    tx_meta_fifo.wclock <= fx3_pclk_pll ;
-    tx_meta_fifo.rclock <= tx_clock ;
-    U_tx_meta_fifo : entity work.tx_meta_fifo
-      port map (
-        aclr                => tx_meta_fifo.aclr,
-        data                => tx_meta_fifo.wdata,
-        rdclk               => tx_meta_fifo.rclock,
-        rdreq               => tx_meta_fifo.rreq,
-        wrclk               => tx_meta_fifo.wclock,
-        wrreq               => tx_meta_fifo.wreq,
-        q                   => tx_meta_fifo.rdata,
-        rdempty             => tx_meta_fifo.rempty,
-        rdfull              => tx_meta_fifo.rfull,
-        rdusedw             => tx_meta_fifo.rused,
-        wrempty             => tx_meta_fifo.wempty,
-        wrfull              => tx_meta_fifo.wfull,
-        wrusedw             => tx_meta_fifo.wused
-      );
+--    -- TX meta fifo
+--    tx_meta_fifo.aclr <= tx_reset ;
+--    tx_meta_fifo.wclock <= fx3_pclk_pll ;
+--    tx_meta_fifo.rclock <= tx_clock ;
+--    U_tx_meta_fifo : entity work.tx_meta_fifo
+--      port map (
+--        aclr                => tx_meta_fifo.aclr,
+--        data                => tx_meta_fifo.wdata,
+--        rdclk               => tx_meta_fifo.rclock,
+--        rdreq               => tx_meta_fifo.rreq,
+--        wrclk               => tx_meta_fifo.wclock,
+--        wrreq               => tx_meta_fifo.wreq,
+--        q                   => tx_meta_fifo.rdata,
+--        rdempty             => tx_meta_fifo.rempty,
+--        rdfull              => tx_meta_fifo.rfull,
+--        rdusedw             => tx_meta_fifo.rused,
+--        wrempty             => tx_meta_fifo.wempty,
+--        wrfull              => tx_meta_fifo.wfull,
+--        wrusedw             => tx_meta_fifo.wused
+--      );
 
     -- FX3 GPIF
     U_fx3_gpif : entity work.fx3_gpif
@@ -897,8 +897,8 @@ begin
         end if ;
     end process ;
 
-	 tx_view_data : process(tx_reset, dvb_16MHz_clock)
-		  variable number_sent : natural range 0 to 30 := 0; 
+	tx_view_data : process(tx_reset, dvb_16MHz_clock)
+		variable number_sent : natural range 0 to 30 := 0; 
     begin
         if( tx_reset = '1' ) then
             walking_i_sample <= '0';
@@ -946,7 +946,7 @@ begin
 
 	-- Debugging header
 	-- Outputs samples 'bit serially' and valid samples
-    mini_exp1    			<= walking_i_sample;
+    mini_exp1    			<= tx_sample_raw_i(5);
     mini_exp2               <= tx_sample_raw_valid;
 	 
     set_tx_ts_reset : process(tx_clock, tx_reset)

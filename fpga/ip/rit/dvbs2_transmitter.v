@@ -31,11 +31,11 @@ module dvbs2_transmitter (clock_96MHz, clock_16MHz, clock_4MHz, reset, enable, b
    wire        ldpcencoder_error;
    wire        interleaver_bit_out;
    wire        interleaver_valid_out;
-   wire [11:0] bitmapper_sym_i_out;
-   wire [11:0] bitmapper_sym_q_out;
+   wire [2:0]  bitmapper_sym_i_out;
+   wire [2:0]  bitmapper_sym_q_out;
    wire        bitmapper_valid_out;
-   wire [11:0] phyframer_sym_i_out;
-   wire [11:0] phyframer_sym_q_out;
+   wire [2:0]  phyframer_sym_i_out;
+   wire [2:0]  phyframer_sym_q_out;
    wire        phyframer_valid_out;
    wire        phyframer_error;
    wire [11:0] output_sync_sym_i_out;
@@ -45,14 +45,18 @@ module dvbs2_transmitter (clock_96MHz, clock_16MHz, clock_4MHz, reset, enable, b
    wire		   fifo_switch_performed;
    wire		   fifo_wr_sel;
    wire		   done_out;
-	
+   wire	[11:0] i_filter_sym_i_out;
+   wire	[11:0] q_filter_sym_q_out;
+   wire		   i_filter_valid_out;
+   wire		   q_filter_valid_out;
+   
    // Create output error based on individual block error signals
    assign error = bbheader_error | bchencoder_error | ldpcencoder_error | phyframer_error | output_sync_error;
 
    // Final data output
-   assign sym_i_out = {{4{output_sync_sym_i_out[11]}}, output_sync_sym_i_out};
-   assign sym_q_out = {{4{output_sync_sym_q_out[11]}}, output_sync_sym_q_out};
-   assign valid_out = output_sync_valid_out;
+   assign sym_i_out = {{4{i_filter_sym_i_out[11]}}, i_filter_sym_i_out};
+   assign sym_q_out = {{4{q_filter_sym_q_out[11]}}, q_filter_sym_q_out};
+   assign valid_out = i_filter_valid_out | q_filter_valid_out;
 
    // Instantiate BBHeader
    dvbs2_bbheader bbheader (
@@ -114,7 +118,7 @@ module dvbs2_transmitter (clock_96MHz, clock_16MHz, clock_4MHz, reset, enable, b
    );
 
    // Instantiate Bit Mapper
-   dvbs2_bitmapper_q11 bitmapper (
+   dvbs2_bitmapper bitmapper (
       .clock_in  (clock_16MHz),
       .reset     (reset),
       .enable    (enable),
@@ -127,7 +131,7 @@ module dvbs2_transmitter (clock_96MHz, clock_16MHz, clock_4MHz, reset, enable, b
    );
 
    // Instantiate the Physical Layer Framer & Scrambler
-   dvbs2_phyframer_q11 phyframer (
+   dvbs2_phyframer phyframer (
       .clock_in  			 (clock_4MHz),
       .reset    		     (reset),
       .enable    			 (enable),
@@ -161,6 +165,30 @@ module dvbs2_transmitter (clock_96MHz, clock_16MHz, clock_4MHz, reset, enable, b
 	  .valid_out 			 (output_sync_valid_out),
 	  .error 				 (output_sync_error),
 	  .fifo_switch_performed (fifo_switch_performed)
+   );
+   
+   // FIR Filter (Cosine filter)
+   // For I samples
+   fir_filter i_filter (
+	  .clk 					 (output_clock),
+	  .reset_n 				 (~output_reset),
+	  .ast_sink_data		 ({output_sync_sym_i_out}),
+	  .ast_sink_valid		 (output_sync_valid_out),
+	  .ast_sink_error		 (2'b00),
+	  .ast_source_data		 (i_filter_sym_i_out),
+	  .ast_source_valid		 (i_filter_valid_out)
+   );
+   
+   // FIR Filter (Cosine filter)
+   // For Q samples
+   fir_filter q_filter (
+	  .clk 					 (output_clock),
+	  .reset_n 				 (~output_reset),
+	  .ast_sink_data		 ({output_sync_sym_q_out}),
+	  .ast_sink_valid		 (output_sync_valid_out),
+	  .ast_sink_error		 (2'b00),
+	  .ast_source_data		 (q_filter_sym_q_out),
+	  .ast_source_valid		 (q_filter_valid_out)
    );
 	
 endmodule // dvbs2_transmitter

@@ -96,6 +96,22 @@ Name \send_command:state.WAITING_FOR_DONE \send_command:state.WAITING_FOR_START 
 \send_command:state.WAITING_FOR_START 0 1 0 1 
 \send_command:state.WAITING_FOR_DONE 1 0 0 1 
 
+State Machine - |bladerf|dvbs2_transmitter:my_dvb_tx|fir_filter:q_filter|fir_filter_0002:fir_filter_inst|fir_filter_0002_ast:fir_filter_0002_ast_inst|auk_dspip_avalon_streaming_sink_hpfir:sink|sink_state
+Name sink_state.end1 sink_state.st_err sink_state.run1 sink_state.stall sink_state.start 
+sink_state.start 0 0 0 0 0 
+sink_state.stall 0 0 0 1 1 
+sink_state.run1 0 0 1 0 1 
+sink_state.st_err 0 1 0 0 1 
+sink_state.end1 1 0 0 0 1 
+
+State Machine - |bladerf|dvbs2_transmitter:my_dvb_tx|fir_filter:i_filter|fir_filter_0002:fir_filter_inst|fir_filter_0002_ast:fir_filter_0002_ast_inst|auk_dspip_avalon_streaming_sink_hpfir:sink|sink_state
+Name sink_state.end1 sink_state.st_err sink_state.run1 sink_state.stall sink_state.start 
+sink_state.start 0 0 0 0 0 
+sink_state.stall 0 0 0 1 1 
+sink_state.run1 0 0 1 0 1 
+sink_state.st_err 0 1 0 0 1 
+sink_state.end1 1 0 0 0 1 
+
 State Machine - |bladerf|dvbs2_transmitter:my_dvb_tx|dvbs2_output_sync:output_sync|output_state
 Name output_state.ACTUAL_DATA_ZERO output_state.ACTUAL_DATA_ACTUAL output_state.DUMMY_DATA_ZERO output_state.DUMMY_DATA_ACTUAL 
 output_state.DUMMY_DATA_ACTUAL 0 0 0 0 
@@ -109,7 +125,7 @@ data_source.ALL_ZERO 0 0 0
 data_source.DUMMY 1 0 1 
 data_source.FIFO 1 1 0 
 
-State Machine - |bladerf|dvbs2_transmitter:my_dvb_tx|dvbs2_phyframer_q11:phyframer|state
+State Machine - |bladerf|dvbs2_transmitter:my_dvb_tx|dvbs2_phyframer:phyframer|state
 Name state.PROCESS_DONE state.WAIT_TO_READ state.OUTPUT_PILOTS state.PROCESS_SYMBOLS state.ADD_HEADER state.WAIT_TO_START 
 state.WAIT_TO_START 0 0 0 0 0 0 
 state.ADD_HEADER 0 0 0 0 1 1 

@@ -7,23 +7,34 @@
 // Output is a scrambled PLFRAME
 
 // The input and output clocks should be synchronized, with the output clock being twice as fast as the input clock
- 
-module dvbs2_phyframer_q11 (clock_in, reset, enable, sym_i_in, sym_q_in, valid_in, clock_out, fifo_switch_performed, sym_i_out, sym_q_out, valid_out, error, done_out, fifo_wr_sel);
+
+// For IQ samples, a 'lookup' table has been used to reduce the bits/symbol from 12 to 3 (for resource usage purposes)
+// 3'h0 = 0x586
+// 3'h7 = 0xa7a
+// 3'h1 = 0x78b
+// 3'h6 = 0x875
+// 3'h2 = 0x205
+// 3'h5 = 0xdfb
+// 3'h3 = 0x226
+// 3'h4 = 0xdda
+// Reconversion is done in the dvbs2_output_sync block
+
+module dvbs2_phyframer (clock_in, reset, enable, sym_i_in, sym_q_in, valid_in, clock_out, fifo_switch_performed, sym_i_out, sym_q_out, valid_out, error, done_out, fifo_wr_sel);
    // Inputs and Outputs
    input         clock_in; // Input clock. Write input data into FIFO at this rate.
    input         reset; // Synchronous reset
    input         enable; // Input enable
-   input  [11:0] sym_i_in; // I portion of input symbol
-   input  [11:0] sym_q_in; // Q portion of input symbol
+   input  [2:0]  sym_i_in; // I portion of input symbol
+   input  [2:0]  sym_q_in; // Q portion of input symbol
    input         valid_in; // Raised if input symbol is valid (see if data is present)
    input         clock_out; // Output clock. Internally processing done at this rate.
-	input			  fifo_switch_performed;
-   output [11:0] sym_i_out; // I portion of output symbol
-   output [11:0] sym_q_out; // Q portion of output symbol
+   input		 fifo_switch_performed;
+   output [2:0]  sym_i_out; // I portion of output symbol
+   output [2:0]  sym_q_out; // Q portion of output symbol
    output        valid_out; // Raised if output symbol is valid
    output        error; // Raised if there is a FIFO error
-	output		  done_out;
-	output		  fifo_wr_sel;
+   output		 done_out;
+   output		 fifo_wr_sel;
 	
    // Parameters
    parameter PILOT_SYMBOL_USE      = 1; // Set to 1 to use pilot symbols or 0 to not use pilot symbols // need more logic and different header values if didn't use pilots*&**************************
@@ -41,16 +52,15 @@ module dvbs2_phyframer_q11 (clock_in, reset, enable, sym_i_in, sym_q_in, valid_i
    parameter [2:0] PROCESS_SYMBOLS = 3'b010;
    parameter [2:0] OUTPUT_PILOTS   = 3'b011;
    parameter [2:0] WAIT_TO_READ    = 3'b100;
-	parameter [2:0] PROCESS_DONE	  = 3'b101;
+   parameter [2:0] PROCESS_DONE   = 3'b101;
 	
    // Internal Signals
-   reg [11:0] dummy_symbol; // Same symbol for I and Q of dummy symbol or pilot symbol
-	reg [11:0] dummy_symbol_not;
+   reg [2:0] dummy_symbol; // Same symbol for I and Q of dummy symbol or pilot symbol
    reg [2:0]  state; // Keep track of current state
    reg [6:0]  header_count; // Count to keep track of which symbol of the header the module is generating
    reg [13:0] symbol_count; // Count to keep track of input symbols (XFECFRAME symbols) being processed
-   reg [11:0] sym_i_out; // Register the I portion of the output symbol
-   reg [11:0] sym_q_out; // Register the Q portion of the output symbol
+   reg [2:0] sym_i_out; // Register the I portion of the output symbol
+   reg [2:0] sym_q_out; // Register the Q portion of the output symbol
    reg        valid_out; // Register valid_out output
    reg        error; // Register the error output
    wire       clock_not; // Inverted version of output clock to read from the FIFO on negative edge of clock
@@ -112,7 +122,7 @@ module dvbs2_phyframer_q11 (clock_in, reset, enable, sym_i_in, sym_q_in, valid_i
    );
 
    // LFSR for PL scrambling
-   always @(negedge clock_out) begin
+   always @(negedge clock_out, posedge reset) begin
       if (reset) begin // if reset
          lfsr_x <= 18'h00001; // initialize x(0) = 1, x(1)=x(2)=...=x(17)=0
          lfsr_y <= 18'h3FFFF; // initialize y(0)=y(1)=...=y(17)=1
@@ -138,7 +148,7 @@ module dvbs2_phyframer_q11 (clock_in, reset, enable, sym_i_in, sym_q_in, valid_i
    // Deal with input data
    //    Add input data (input symbols) to the FIFOs if they are valid (deal with write side of FIFOs)
    //    Should always get I and Q together, so always write to both FIFOs together
-   always @(posedge clock_in) begin
+   always @(posedge clock_in, posedge reset) begin
       if (reset) begin // if reset
          i_sym_fifo_in <= 32'h00000000;
          q_sym_fifo_in <= 32'h00000000;
@@ -148,8 +158,8 @@ module dvbs2_phyframer_q11 (clock_in, reset, enable, sym_i_in, sym_q_in, valid_i
       end // if reset
       else begin // else not reset
          if (valid_in) begin // only add input symbols to FIFOs if they are valid
-            i_sym_fifo_in <= {20'b0, sym_i_in};
-            q_sym_fifo_in <= {20'b0, sym_q_in};
+            i_sym_fifo_in <= {29'b0, sym_i_in};
+            q_sym_fifo_in <= {29'b0, sym_q_in};
             fifo_wr       <= 1'b1;
             start_flag    <= 1'b1;
 
@@ -171,12 +181,11 @@ module dvbs2_phyframer_q11 (clock_in, reset, enable, sym_i_in, sym_q_in, valid_i
    end // input data always block
 
    // Main Functionality
-   always @ (posedge clock_out) begin
+   always @ (posedge clock_out, posedge reset) begin
       if (reset) begin // if reset
-         sym_i_out          <= 12'hB;
-         sym_q_out          <= 12'hB;
-         dummy_symbol       <= 12'h1; //32'h3f3504f3
-			dummy_symbol_not	 <= 12'hfff; //32'hbf3504f3
+         sym_i_out          <= 3'h0;
+         sym_q_out          <= 3'h0;
+         dummy_symbol       <= 3'h0; //32'h3f3504f3
          state              <= WAIT_TO_START;// any cycle that doesn't have valid output should just sent out dummy signal. still have valid_out for TB checking, but always send out symbol*****
          header_count       <= 7'h00;
          symbol_count       <= 14'h0000;
@@ -190,21 +199,21 @@ module dvbs2_phyframer_q11 (clock_in, reset, enable, sym_i_in, sym_q_in, valid_i
          pilot_count        <= 11'h000;
          pilot_symbol_count <= 6'h00;
 			
-			done_out <= 1'b0;
+		 done_out <= 1'b0;
          fifo_wr_sel <= 1'b0;
          fifo_switch_performed_mff2 <= 1'b0;
          fifo_switch_performed_mff1 <= 1'b0;
       end // if reset
       else begin // else not reset
-         dummy_symbol   <= dummy_symbol; // never changes
-			fifo_switch_performed_mff2 <= fifo_switch_performed_mff1;
+         dummy_symbol <= dummy_symbol; // never changes
+		 fifo_switch_performed_mff2 <= fifo_switch_performed_mff1;
          fifo_switch_performed_mff1 <= fifo_switch_performed;
 			
          if (enable) begin // Only operate while enabled
             case (state)
                WAIT_TO_START: begin // Wait until data is received at input to start
-                  sym_i_out          <= 12'hB;
-                  sym_q_out          <= 12'hB;
+                  sym_i_out          <= 3'h0;
+                  sym_q_out          <= 3'h0;
                   header_count       <= 7'h00;
                   symbol_count       <= 14'h0000;
                   lfsr_en            <= 1'b0;
@@ -242,368 +251,368 @@ module dvbs2_phyframer_q11 (clock_in, reset, enable, sym_i_in, sym_q_in, valid_i
                   // look up header value to output
                   case (header_count)
                      0: begin
-                        sym_i_out <= 12'h1; //32'h3f3504f3 // these values are all specific for WITH pilots. Need to run C++ pgrm to calculate w/o pilot ones and have if statmeents in each case*********************
-                        sym_q_out <= 12'h1; //32'h3f3504f3
+                        sym_i_out <= 3'h0; //32'h3f3504f3 // these values are all specific for WITH pilots. Need to run C++ pgrm to calculate w/o pilot ones and have if statmeents in each case*********************
+                        sym_q_out <= 3'h0; //32'h3f3504f3
                      end
                      1: begin
-                        sym_i_out <= 12'h1; //32'h3f3504f3
-                        sym_q_out <= 12'hfff; //32'hbf3504f3
+                        sym_i_out <= 3'h0; //32'h3f3504f3
+                        sym_q_out <= 3'h7; //32'hbf3504f3
                      end
                      2: begin
-                        sym_i_out <= 12'hfff; //32'hbf3504f3
-                        sym_q_out <= 12'hfff; //32'hbf3504f3
+                        sym_i_out <= 3'h7; //32'hbf3504f3
+                        sym_q_out <= 3'h7; //32'hbf3504f3
                      end
                      3: begin
-                        sym_i_out <= 12'hfff; //32'hbf3504f3
-                        sym_q_out <= 12'h1; //32'h3f3504f3
+                        sym_i_out <= 3'h7; //32'hbf3504f3
+                        sym_q_out <= 3'h0; //32'h3f3504f3
                      end
                      4: begin
-                        sym_i_out <= 12'h1; //32'h3f3504f3
-                        sym_q_out <= 12'h1; //32'h3f3504f3
+                        sym_i_out <= 3'h0; //32'h3f3504f3
+                        sym_q_out <= 3'h0; //32'h3f3504f3
                      end
                      5: begin
-                        sym_i_out <= 12'hfff; //32'hbf3504f3
-                        sym_q_out <= 12'h1; //32'h3f3504f3
+                        sym_i_out <= 3'h7; //32'hbf3504f3
+                        sym_q_out <= 3'h0; //32'h3f3504f3
                      end
                      6: begin
-                        sym_i_out <= 12'hfff; //32'hbf3504f3
-                        sym_q_out <= 12'hfff; //32'hbf3504f3
+                        sym_i_out <= 3'h7; //32'hbf3504f3
+                        sym_q_out <= 3'h7; //32'hbf3504f3
                      end
                      7: begin
-                        sym_i_out <= 12'h1; //32'h3f3504f3
-                        sym_q_out <= 12'hfff; //32'hbf3504f3
+                        sym_i_out <= 3'h0; //32'h3f3504f3
+                        sym_q_out <= 3'h7; //32'hbf3504f3
                      end
                      8: begin
-                        sym_i_out <= 12'h1; //32'h3f3504f3
-                        sym_q_out <= 12'h1; //32'h3f3504f3
+                        sym_i_out <= 3'h0; //32'h3f3504f3
+                        sym_q_out <= 3'h0; //32'h3f3504f3
                      end
                      9: begin
-                        sym_i_out <= 12'h1; //32'h3f3504f3
-                        sym_q_out <= 12'hfff; //32'hbf3504f3
+                        sym_i_out <= 3'h0; //32'h3f3504f3
+                        sym_q_out <= 3'h7; //32'hbf3504f3
                      end
                      10: begin
-                        sym_i_out <= 12'h1; //32'h3f3504f3
-                        sym_q_out <= 12'h1; //32'h3f3504f3
+                        sym_i_out <= 3'h0; //32'h3f3504f3
+                        sym_q_out <= 3'h0; //32'h3f3504f3
                      end
                      11: begin
-                        sym_i_out <= 12'hfff; //32'hbf3504f3
-                        sym_q_out <= 12'h1; //32'h3f3504f3
+                        sym_i_out <= 3'h7; //32'hbf3504f3
+                        sym_q_out <= 3'h0; //32'h3f3504f3
                      end
                      12: begin
-                        sym_i_out <= 12'hfff; //32'hbf3504f3
-                        sym_q_out <= 12'hfff; //32'hbf3504f3
+                        sym_i_out <= 3'h7; //32'hbf3504f3
+                        sym_q_out <= 3'h7; //32'hbf3504f3
                      end
                      13: begin
-                        sym_i_out <= 12'hfff; //32'hbf3504f3
-                        sym_q_out <= 12'h1; //32'h3f3504f3
+                        sym_i_out <= 3'h7; //32'hbf3504f3
+                        sym_q_out <= 3'h0; //32'h3f3504f3
                      end
                      14: begin
-                        sym_i_out <= 12'hfff; //32'hbf3504f3
-                        sym_q_out <= 12'hfff; //32'hbf3504f3
+                        sym_i_out <= 3'h7; //32'hbf3504f3
+                        sym_q_out <= 3'h7; //32'hbf3504f3
                      end
                      15: begin
-                        sym_i_out <= 12'h1; //32'h3f3504f3
-                        sym_q_out <= 12'hfff; //32'hbf3504f3
+                        sym_i_out <= 3'h0; //32'h3f3504f3
+                        sym_q_out <= 3'h7; //32'hbf3504f3
                      end
                      16: begin
-                        sym_i_out <= 12'hfff; //32'hbf3504f3
-                        sym_q_out <= 12'hfff; //32'hbf3504f3
+                        sym_i_out <= 3'h7; //32'hbf3504f3
+                        sym_q_out <= 3'h7; //32'hbf3504f3
                      end
                      17: begin
-                        sym_i_out <= 12'hfff; //32'hbf3504f3
-                        sym_q_out <= 12'h1; //32'h3f3504f3
+                        sym_i_out <= 3'h7; //32'hbf3504f3
+                        sym_q_out <= 3'h0; //32'h3f3504f3
                      end
                      18: begin
-                        sym_i_out <= 12'hfff; //32'hbf3504f3
-                        sym_q_out <= 12'hfff; //32'hbf3504f3
+                        sym_i_out <= 3'h7; //32'hbf3504f3
+                        sym_q_out <= 3'h7; //32'hbf3504f3
                      end
                      19: begin
-                        sym_i_out <= 12'hfff; //32'hbf3504f3
-                        sym_q_out <= 12'h1; //32'h3f3504f3
+                        sym_i_out <= 3'h7; //32'hbf3504f3
+                        sym_q_out <= 3'h0; //32'h3f3504f3
                      end
                      20: begin
-                        sym_i_out <= 12'h1; //32'h3f3504f3
-                        sym_q_out <= 12'h1; //32'h3f3504f3
+                        sym_i_out <= 3'h0; //32'h3f3504f3
+                        sym_q_out <= 3'h0; //32'h3f3504f3
                      end
                      21: begin
-                        sym_i_out <= 12'hfff; //32'hbf3504f3
-                        sym_q_out <= 12'h1; //32'h3f3504f3
+                        sym_i_out <= 3'h7; //32'hbf3504f3
+                        sym_q_out <= 3'h0; //32'h3f3504f3
                      end
                      22: begin
-                        sym_i_out <= 12'h1; //32'h3f3504f3
-                        sym_q_out <= 12'h1; //32'h3f3504f3
+                        sym_i_out <= 3'h0; //32'h3f3504f3
+                        sym_q_out <= 3'h0; //32'h3f3504f3
                      end
                      23: begin
-                        sym_i_out <= 12'hfff; //32'hbf3504f3
-                        sym_q_out <= 12'h1; //32'h3f3504f3
+                        sym_i_out <= 3'h7; //32'hbf3504f3
+                        sym_q_out <= 3'h0; //32'h3f3504f3
                      end
                      24: begin
-                        sym_i_out <= 12'hfff; //32'hbf3504f3
-                        sym_q_out <= 12'hfff; //32'hbf3504f3
+                        sym_i_out <= 3'h7; //32'hbf3504f3
+                        sym_q_out <= 3'h7; //32'hbf3504f3
                      end
                      25: begin
-                        sym_i_out <= 12'hfff; //32'hbf3504f3
-                        sym_q_out <= 12'h1; //32'h3f3504f3
+                        sym_i_out <= 3'h7; //32'hbf3504f3
+                        sym_q_out <= 3'h0; //32'h3f3504f3
                      end
                      26: begin
-                        sym_i_out <= 12'h1; //32'h3f3504f3
-                        sym_q_out <= 12'h1; //32'h3f3504f3
+                        sym_i_out <= 3'h0; //32'h3f3504f3
+                        sym_q_out <= 3'h0; //32'h3f3504f3
                      end
                      27: begin
-                        sym_i_out <= 12'hfff; //32'hbf3504f3
-                        sym_q_out <= 12'h1; //32'h3f3504f3
+                        sym_i_out <= 3'h7; //32'hbf3504f3
+                        sym_q_out <= 3'h0; //32'h3f3504f3
                      end
                      28: begin
-                        sym_i_out <= 12'h1; //32'h3f3504f3
-                        sym_q_out <= 12'h1; //32'h3f3504f3
+                        sym_i_out <= 3'h0; //32'h3f3504f3
+                        sym_q_out <= 3'h0; //32'h3f3504f3
                      end
                      29: begin
-                        sym_i_out <= 12'h1; //32'h3f3504f3
-                        sym_q_out <= 12'hfff; //32'hbf3504f3
+                        sym_i_out <= 3'h0; //32'h3f3504f3
+                        sym_q_out <= 3'h7; //32'hbf3504f3
                      end
                      30: begin
-                        sym_i_out <= 12'h1; //32'h3f3504f3
-                        sym_q_out <= 12'h1; //32'h3f3504f3
+                        sym_i_out <= 3'h0; //32'h3f3504f3
+                        sym_q_out <= 3'h0; //32'h3f3504f3
                      end
                      31: begin
-                        sym_i_out <= 12'h1; //32'h3f3504f3
-                        sym_q_out <= 12'hfff; //32'hbf3504f3
+                        sym_i_out <= 3'h0; //32'h3f3504f3
+                        sym_q_out <= 3'h7; //32'hbf3504f3
                      end
                      32: begin
-                        sym_i_out <= 12'hfff; //32'hbf3504f3
-                        sym_q_out <= 12'hfff; //32'hbf3504f3
+                        sym_i_out <= 3'h7; //32'hbf3504f3
+                        sym_q_out <= 3'h7; //32'hbf3504f3
                      end
                      33: begin
-                        sym_i_out <= 12'h1; //32'h3f3504f3
-                        sym_q_out <= 12'hfff; //32'hbf3504f3
+                        sym_i_out <= 3'h0; //32'h3f3504f3
+                        sym_q_out <= 3'h7; //32'hbf3504f3
                      end
                      34: begin
-                        sym_i_out <= 12'h1; //32'h3f3504f3
-                        sym_q_out <= 12'h1; //32'h3f3504f3
+                        sym_i_out <= 3'h0; //32'h3f3504f3
+                        sym_q_out <= 3'h0; //32'h3f3504f3
                      end
                      35: begin
-                        sym_i_out <= 12'hfff; //32'hbf3504f3
-                        sym_q_out <= 12'h1; //32'h3f3504f3
+                        sym_i_out <= 3'h7; //32'hbf3504f3
+                        sym_q_out <= 3'h0; //32'h3f3504f3
                      end
                      36: begin
-                        sym_i_out <= 12'h1; //32'h3f3504f3
-                        sym_q_out <= 12'h1; //32'h3f3504f3
+                        sym_i_out <= 3'h0; //32'h3f3504f3
+                        sym_q_out <= 3'h0; //32'h3f3504f3
                      end
                      37: begin
-                        sym_i_out <= 12'hfff; //32'hbf3504f3
-                        sym_q_out <= 12'h1; //32'h3f3504f3
+                        sym_i_out <= 3'h7; //32'hbf3504f3
+                        sym_q_out <= 3'h0; //32'h3f3504f3
                      end
                      38: begin
-                        sym_i_out <= 12'h1; //32'h3f3504f3
-                        sym_q_out <= 12'h1; //32'h3f3504f3
+                        sym_i_out <= 3'h0; //32'h3f3504f3
+                        sym_q_out <= 3'h0; //32'h3f3504f3
                      end
                      39: begin
-                        sym_i_out <= 12'h1; //32'h3f3504f3
-                        sym_q_out <= 12'hfff; //32'hbf3504f3
+                        sym_i_out <= 3'h0; //32'h3f3504f3
+                        sym_q_out <= 3'h7; //32'hbf3504f3
                      end
                      40: begin
-                        sym_i_out <= 12'h1; //32'h3f3504f3
-                        sym_q_out <= 12'h1; //32'h3f3504f3
+                        sym_i_out <= 3'h0; //32'h3f3504f3
+                        sym_q_out <= 3'h0; //32'h3f3504f3
                      end
                      41: begin
-                        sym_i_out <= 12'hfff; //32'hbf3504f3
-                        sym_q_out <= 12'h1; //32'h3f3504f3
+                        sym_i_out <= 3'h7; //32'hbf3504f3
+                        sym_q_out <= 3'h0; //32'h3f3504f3
                      end
                      42: begin
-                        sym_i_out <= 12'h1; //32'h3f3504f3
-                        sym_q_out <= 12'h1; //32'h3f3504f3
+                        sym_i_out <= 3'h0; //32'h3f3504f3
+                        sym_q_out <= 3'h0; //32'h3f3504f3
                      end
                      43: begin
-                        sym_i_out <= 12'hfff; //32'hbf3504f3
-                        sym_q_out <= 12'h1; //32'h3f3504f3
+                        sym_i_out <= 3'h7; //32'hbf3504f3
+                        sym_q_out <= 3'h0; //32'h3f3504f3
                      end
                      44: begin
-                        sym_i_out <= 12'h1; //32'h3f3504f3
-                        sym_q_out <= 12'h1; //32'h3f3504f3
+                        sym_i_out <= 3'h0; //32'h3f3504f3
+                        sym_q_out <= 3'h0; //32'h3f3504f3
                      end
                      45: begin
-                        sym_i_out <= 12'h1; //32'h3f3504f3
-                        sym_q_out <= 12'hfff; //32'hbf3504f3
+                        sym_i_out <= 3'h0; //32'h3f3504f3
+                        sym_q_out <= 3'h7; //32'hbf3504f3
                      end
                      46: begin
-                        sym_i_out <= 12'hfff; //32'hbf3504f3
-                        sym_q_out <= 12'hfff; //32'hbf3504f3
+                        sym_i_out <= 3'h7; //32'hbf3504f3
+                        sym_q_out <= 3'h7; //32'hbf3504f3
                      end
                      47: begin
-                        sym_i_out <= 12'hfff; //32'hbf3504f3
-                        sym_q_out <= 12'h1; //32'h3f3504f3
+                        sym_i_out <= 3'h7; //32'hbf3504f3
+                        sym_q_out <= 3'h0; //32'h3f3504f3
                      end
                      48: begin
-                        sym_i_out <= 12'hfff; //32'hbf3504f3
-                        sym_q_out <= 12'hfff; //32'hbf3504f3
+                        sym_i_out <= 3'h7; //32'hbf3504f3
+                        sym_q_out <= 3'h7; //32'hbf3504f3
                      end
                     49: begin
-                        sym_i_out <= 12'hfff; //32'hbf3504f3
-                        sym_q_out <= 12'h1; //32'h3f3504f3
+                        sym_i_out <= 3'h7; //32'hbf3504f3
+                        sym_q_out <= 3'h0; //32'h3f3504f3
                      end
                     50: begin
-                        sym_i_out <= 12'hfff; //32'hbf3504f3
-                        sym_q_out <= 12'hfff; //32'hbf3504f3
+                        sym_i_out <= 3'h7; //32'hbf3504f3
+                        sym_q_out <= 3'h7; //32'hbf3504f3
                      end
                      51: begin
-                        sym_i_out <= 12'hfff; //32'hbf3504f3
-                        sym_q_out <= 12'h1; //32'h3f3504f3
+                        sym_i_out <= 3'h7; //32'hbf3504f3
+                        sym_q_out <= 3'h0; //32'h3f3504f3
                      end
                      52: begin
-                        sym_i_out <= 12'hfff; //32'hbf3504f3
-                        sym_q_out <= 12'hfff; //32'hbf3504f3
+                        sym_i_out <= 3'h7; //32'hbf3504f3
+                        sym_q_out <= 3'h7; //32'hbf3504f3
                      end
                      53: begin
-                        sym_i_out <= 12'hfff; //32'hbf3504f3
-                        sym_q_out <= 12'h1; //32'h3f3504f3
+                        sym_i_out <= 3'h7; //32'hbf3504f3
+                        sym_q_out <= 3'h0; //32'h3f3504f3
                      end
                      54: begin
-                        sym_i_out <= 12'hfff; //32'hbf3504f3
-                        sym_q_out <= 12'hfff; //32'hbf3504f3
+                        sym_i_out <= 3'h7; //32'hbf3504f3
+                        sym_q_out <= 3'h7; //32'hbf3504f3
                      end
                      55: begin
-                        sym_i_out <= 12'h1; //32'h3f3504f3
-                        sym_q_out <= 12'hfff; //32'hbf3504f3
+                        sym_i_out <= 3'h0; //32'h3f3504f3
+                        sym_q_out <= 3'h7; //32'hbf3504f3
                      end
                      56: begin
-                        sym_i_out <= 12'hfff; //32'hbf3504f3
-                        sym_q_out <= 12'hfff; //32'hbf3504f3
+                        sym_i_out <= 3'h7; //32'hbf3504f3
+                        sym_q_out <= 3'h7; //32'hbf3504f3
                      end
                      57: begin
-                        sym_i_out <= 12'h1; //32'h3f3504f3
-                        sym_q_out <= 12'hfff; //32'hbf3504f3
+                        sym_i_out <= 3'h0; //32'h3f3504f3
+                        sym_q_out <= 3'h7; //32'hbf3504f3
                      end
                      58: begin
-                        sym_i_out <= 12'hfff; //32'hbf3504f3
-                        sym_q_out <= 12'hfff; //32'hbf3504f3
+                        sym_i_out <= 3'h7; //32'hbf3504f3
+                        sym_q_out <= 3'h7; //32'hbf3504f3
                      end
                      59: begin
-                        sym_i_out <= 12'h1; //32'h3f3504f3
-                        sym_q_out <= 12'hfff; //32'hbf3504f3
+                        sym_i_out <= 3'h0; //32'h3f3504f3
+                        sym_q_out <= 3'h7; //32'hbf3504f3
                      end
                      60: begin
-                        sym_i_out <= 12'h1; //32'h3f3504f3
-                        sym_q_out <= 12'h1; //32'h3f3504f3
+                        sym_i_out <= 3'h0; //32'h3f3504f3
+                        sym_q_out <= 3'h0; //32'h3f3504f3
                      end
                      61: begin
-                        sym_i_out <= 12'hfff; //32'hbf3504f3
-                        sym_q_out <= 12'h1; //32'h3f3504f3
+                        sym_i_out <= 3'h7; //32'hbf3504f3
+                        sym_q_out <= 3'h0; //32'h3f3504f3
                      end
                      62: begin
-                        sym_i_out <= 12'hfff; //32'hbf3504f3
-                        sym_q_out <= 12'hfff; //32'hbf3504f3
+                        sym_i_out <= 3'h7; //32'hbf3504f3
+                        sym_q_out <= 3'h7; //32'hbf3504f3
                      end
                      63: begin
-                        sym_i_out <= 12'hfff; //32'hbf3504f3
-                        sym_q_out <= 12'h1; //32'h3f3504f3
+                        sym_i_out <= 3'h7; //32'hbf3504f3
+                        sym_q_out <= 3'h0; //32'h3f3504f3
                      end
                      64: begin
-                        sym_i_out <= 12'hfff; //32'hbf3504f3
-                        sym_q_out <= 12'hfff; //32'hbf3504f3
+                        sym_i_out <= 3'h7; //32'hbf3504f3
+                        sym_q_out <= 3'h7; //32'hbf3504f3
                      end
                      65: begin
-                        sym_i_out <= 12'hfff; //32'hbf3504f3
-                        sym_q_out <= 12'h1; //32'h3f3504f3
+                        sym_i_out <= 3'h7; //32'hbf3504f3
+                        sym_q_out <= 3'h0; //32'h3f3504f3
                      end
                      66: begin
-                        sym_i_out <= 12'h1; //32'h3f3504f3
-                        sym_q_out <= 12'h1; //32'h3f3504f3
+                        sym_i_out <= 3'h0; //32'h3f3504f3
+                        sym_q_out <= 3'h0; //32'h3f3504f3
                      end
                      67: begin
-                        sym_i_out <= 12'hfff; //32'hbf3504f3
-                        sym_q_out <= 12'h1; //32'h3f3504f3
+                        sym_i_out <= 3'h7; //32'hbf3504f3
+                        sym_q_out <= 3'h0; //32'h3f3504f3
                      end
                      68: begin
-                        sym_i_out <= 12'hfff; //32'hbf3504f3
-                        sym_q_out <= 12'hfff; //32'hbf3504f3
+                        sym_i_out <= 3'h7; //32'hbf3504f3
+                        sym_q_out <= 3'h7; //32'hbf3504f3
                      end
                      69: begin
-                        sym_i_out <= 12'hfff; //32'hbf3504f3
-                        sym_q_out <= 12'h1; //32'h3f3504f3
+                        sym_i_out <= 3'h7; //32'hbf3504f3
+                        sym_q_out <= 3'h0; //32'h3f3504f3
                      end
                      70: begin
-                        sym_i_out <= 12'h1; //32'h3f3504f3
-                        sym_q_out <= 12'h1; //32'h3f3504f3
+                        sym_i_out <= 3'h0; //32'h3f3504f3
+                        sym_q_out <= 3'h0; //32'h3f3504f3
                      end
                      71: begin
-                        sym_i_out <= 12'h1; //32'h3f3504f3
-                        sym_q_out <= 12'hfff; //32'hbf3504f3
+                        sym_i_out <= 3'h0; //32'h3f3504f3
+                        sym_q_out <= 3'h7; //32'hbf3504f3
                      end
                      72: begin
-                        sym_i_out <= 12'h1; //32'h3f3504f3
-                        sym_q_out <= 12'h1; //32'h3f3504f3
+                        sym_i_out <= 3'h0; //32'h3f3504f3
+                        sym_q_out <= 3'h0; //32'h3f3504f3
                      end
                      73: begin
-                        sym_i_out <= 12'hfff; //32'hbf3504f3
-                        sym_q_out <= 12'h1; //32'h3f3504f3
+                        sym_i_out <= 3'h7; //32'hbf3504f3
+                        sym_q_out <= 3'h0; //32'h3f3504f3
                      end
                      74: begin
-                        sym_i_out <= 12'h1; //32'h3f3504f3
-                        sym_q_out <= 12'h1; //32'h3f3504f3
+                        sym_i_out <= 3'h0; //32'h3f3504f3
+                        sym_q_out <= 3'h0; //32'h3f3504f3
                      end
                      75: begin
-                        sym_i_out <= 12'h1; //32'h3f3504f3
-                        sym_q_out <= 12'hfff; //32'hbf3504f3
+                        sym_i_out <= 3'h0; //32'h3f3504f3
+                        sym_q_out <= 3'h7; //32'hbf3504f3
                      end
                      76: begin
-                        sym_i_out <= 12'h1; //32'h3f3504f3
-                        sym_q_out <= 12'h1; //32'h3f3504f3
+                        sym_i_out <= 3'h0; //32'h3f3504f3
+                        sym_q_out <= 3'h0; //32'h3f3504f3
                      end
                      77: begin
-                        sym_i_out <= 12'hfff; //32'hbf3504f3
-                        sym_q_out <= 12'h1; //32'h3f3504f3
+                        sym_i_out <= 3'h7; //32'hbf3504f3
+                        sym_q_out <= 3'h0; //32'h3f3504f3
                      end
                      78: begin
-                        sym_i_out <= 12'hfff; //32'hbf3504f3
-                        sym_q_out <= 12'hfff; //32'hbf3504f3
+                        sym_i_out <= 3'h7; //32'hbf3504f3
+                        sym_q_out <= 3'h7; //32'hbf3504f3
                      end
                      79: begin
-                        sym_i_out <= 12'hfff; //32'hbf3504f3
-                        sym_q_out <= 12'h1; //32'h3f3504f3
+                        sym_i_out <= 3'h7; //32'hbf3504f3
+                        sym_q_out <= 3'h0; //32'h3f3504f3
                      end
                      80: begin
-                        sym_i_out <= 12'hfff; //32'hbf3504f3
-                        sym_q_out <= 12'hfff; //32'hbf3504f3
+                        sym_i_out <= 3'h7; //32'hbf3504f3
+                        sym_q_out <= 3'h7; //32'hbf3504f3
                      end
                      81: begin
-                        sym_i_out <= 12'h1; //32'h3f3504f3
-                        sym_q_out <= 12'hfff; //32'hbf3504f3
+                        sym_i_out <= 3'h0; //32'h3f3504f3
+                        sym_q_out <= 3'h7; //32'hbf3504f3
                      end
                      82: begin
-                        sym_i_out <= 12'h1; //32'h3f3504f3
-                        sym_q_out <= 12'h1; //32'h3f3504f3
+                        sym_i_out <= 3'h0; //32'h3f3504f3
+                        sym_q_out <= 3'h0; //32'h3f3504f3
                      end
                      83: begin
-                        sym_i_out <= 12'h1; //32'h3f3504f3
-                        sym_q_out <= 12'hfff; //32'hbf3504f3
+                        sym_i_out <= 3'h0; //32'h3f3504f3
+                        sym_q_out <= 3'h7; //32'hbf3504f3
                      end
                      84: begin
-                        sym_i_out <= 12'hfff; //32'hbf3504f3
-                        sym_q_out <= 12'hfff; //32'hbf3504f3
+                        sym_i_out <= 3'h7; //32'hbf3504f3
+                        sym_q_out <= 3'h7; //32'hbf3504f3
                      end
                      85: begin
-                        sym_i_out <= 12'hfff; //32'hbf3504f3
-                        sym_q_out <= 12'h1; //32'h3f3504f3
+                        sym_i_out <= 3'h7; //32'hbf3504f3
+                        sym_q_out <= 3'h0; //32'h3f3504f3
                      end
                      86: begin
-                        sym_i_out <= 12'h1; //32'h3f3504f3
-                        sym_q_out <= 12'h1; //32'h3f3504f3
+                        sym_i_out <= 3'h0; //32'h3f3504f3
+                        sym_q_out <= 3'h0; //32'h3f3504f3
                      end
                      87: begin
-                        sym_i_out <= 12'hfff; //32'hbf3504f3
-                        sym_q_out <= 12'h1; //32'h3f3504f3
+                        sym_i_out <= 3'h7; //32'hbf3504f3
+                        sym_q_out <= 3'h0; //32'h3f3504f3
                      end
                      88: begin
-                        sym_i_out <= 12'hfff; //32'hbf3504f3
-                        sym_q_out <= 12'hfff; //32'hbf3504f3
+                        sym_i_out <= 3'h7; //32'hbf3504f3
+                        sym_q_out <= 3'h7; //32'hbf3504f3
                      end
                      89: begin
-                        sym_i_out <= 12'h1; //32'h3f3504f3
-                        sym_q_out <= 12'hfff; //32'hbf3504f3
+                        sym_i_out <= 3'h0; //32'h3f3504f3
+                        sym_q_out <= 3'h7; //32'hbf3504f3
                      end
                      default: begin
-                        sym_i_out <= 12'hB;
-                        sym_q_out <= 12'hB;
+                        sym_i_out <= 3'h0;
+                        sym_q_out <= 3'h0;
                      end
                   endcase // header_index case
 
@@ -635,20 +644,20 @@ module dvbs2_phyframer_q11 (clock_in, reset, enable, sym_i_in, sym_q_in, valid_i
                   // Decide how to modify (scramble) input symbol based on scrambling sequence term from LFSR
                   case (scramble_bits)
                      2'b00: begin // No change to input symbol
-                        sym_i_out <= i_sym_fifo_out[11:0];
-                        sym_q_out <= q_sym_fifo_out[11:0];
+                        sym_i_out <= i_sym_fifo_out[2:0];
+                        sym_q_out <= q_sym_fifo_out[2:0];
                      end
                      2'b01: begin // Swap symbols and change the sign of the Q symbol
-                        sym_i_out <= (~q_sym_fifo_out[11:0])+1'b1;
-                        sym_q_out <= i_sym_fifo_out[11:0];
+                        sym_i_out <= (~q_sym_fifo_out[2:0]);
+                        sym_q_out <= i_sym_fifo_out[2:0];
                      end
                      2'b10: begin // Change the signs of both symbols
-                        sym_i_out <= (~i_sym_fifo_out[11:0])+1'b1;
-                        sym_q_out <= (~q_sym_fifo_out[11:0])+1'b1;
+                        sym_i_out <= (~i_sym_fifo_out[2:0]);
+                        sym_q_out <= (~q_sym_fifo_out[2:0]);
                      end
                      2'b11: begin // Swap symbols and change the sign of the I symbol
-                        sym_i_out <= q_sym_fifo_out[11:0];
-                        sym_q_out <= (~i_sym_fifo_out[11:0])+1'b1;
+                        sym_i_out <= q_sym_fifo_out[2:0];
+                        sym_q_out <= (~i_sym_fifo_out[2:0]);
                      end
                   endcase // scramble_bits case
 
@@ -707,16 +716,16 @@ module dvbs2_phyframer_q11 (clock_in, reset, enable, sym_i_in, sym_q_in, valid_i
                         sym_q_out <= dummy_symbol;
                      end
                      2'b01: begin // Swap symbols and change the sign of the Q symbol
-                        sym_i_out <= dummy_symbol_not;
+                        sym_i_out <= ~dummy_symbol;
                         sym_q_out <= dummy_symbol;
                      end
                      2'b10: begin // Change the signs of both symbols
-                        sym_i_out <= dummy_symbol_not;
-                        sym_q_out <= dummy_symbol_not;
+                        sym_i_out <= ~dummy_symbol;
+                        sym_q_out <= ~dummy_symbol;
                      end
                      2'b11: begin // Swap symbols and change the sign of the I symbol
                         sym_i_out <= dummy_symbol;
-                        sym_q_out <= dummy_symbol_not;
+                        sym_q_out <= ~dummy_symbol;
                      end
                   endcase // scramble_bits case
 
@@ -741,8 +750,8 @@ module dvbs2_phyframer_q11 (clock_in, reset, enable, sym_i_in, sym_q_in, valid_i
                   end
                end // OUTPUT_PILOTS state
                WAIT_TO_READ: begin // Come here if waiting until able to read from FIFO before going to PROCESS_SYMBOLS
-                  sym_i_out          <= 12'hB;
-                  sym_q_out          <= 12'hB;
+                  sym_i_out          <= 3'h0;
+                  sym_q_out          <= 3'h0;
                   header_count       <= 7'h00;
                   symbol_count       <= symbol_count;
                   lfsr_en            <= 1'b0;
@@ -764,22 +773,22 @@ module dvbs2_phyframer_q11 (clock_in, reset, enable, sym_i_in, sym_q_in, valid_i
                      state   <= WAIT_TO_READ;
                   end
                end // WAIT_TO_READ state
-					PROCESS_DONE: begin
-						done_out 		    <= 1'b1;
-						valid_out 	       <= 1'b0;
-						lfsr_en            <= 1'b0;
-						lfsr_rst           <= 1'b0;
-						valid_out          <= 1'b0;
+			   PROCESS_DONE: begin
+				  done_out 		     <= 1'b1;
+				  valid_out 	     <= 1'b0;
+				  lfsr_en            <= 1'b0;
+				  lfsr_rst           <= 1'b0;
+				  valid_out          <= 1'b0;
 
-						// The output portion of the code acknowledged the fifo switch
-						if (fifo_switch_performed_mff2 == 1'b1) begin
-							state   <= ADD_HEADER;
-							fifo_wr_sel <= ~fifo_wr_sel;
-						end
-						else begin
-							state <= PROCESS_DONE;
-						end
-					end
+				  // The output portion of the code acknowledged the fifo switch
+				  if (fifo_switch_performed_mff2 == 1'b1) begin
+				     state <= ADD_HEADER;
+					 fifo_wr_sel <= ~fifo_wr_sel;
+				  end
+				  else begin
+					 state <= PROCESS_DONE;
+				  end
+			   end // PROCESS_DONE state
                default: begin
                   // shouldn't get here
                end

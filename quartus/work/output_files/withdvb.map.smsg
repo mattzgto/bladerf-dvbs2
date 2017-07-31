@@ -1,5 +1,5 @@
-Warning (10268): Verilog HDL information at dvbs2_phyframer_q11.v(179): always construct contains both blocking and non-blocking assignments File: /home/spex/Downloads/bladerf-dvbs2/fpga/ip/rit/dvbs2_phyframer_q11.v Line: 179
-Warning (10268): Verilog HDL information at dvbs2_output_sync.v(221): always construct contains both blocking and non-blocking assignments File: /home/spex/Downloads/bladerf-dvbs2/fpga/ip/rit/dvbs2_output_sync.v Line: 221
+Warning (10268): Verilog HDL information at dvbs2_phyframer.v(184): always construct contains both blocking and non-blocking assignments File: /home/spex/Downloads/bladerf-dvbs2/fpga/ip/rit/dvbs2_phyframer.v Line: 184
+Warning (10268): Verilog HDL information at dvbs2_output_sync.v(220): always construct contains both blocking and non-blocking assignments File: /home/spex/Downloads/bladerf-dvbs2/fpga/ip/rit/dvbs2_output_sync.v Line: 220
 Warning (10268): Verilog HDL information at dvbs2_ldpcencoder.v(404): always construct contains both blocking and non-blocking assignments File: /home/spex/Downloads/bladerf-dvbs2/fpga/ip/rit/dvbs2_ldpcencoder.v Line: 404
 Warning (10268): Verilog HDL information at dvbs2_bchencoder.v(98): always construct contains both blocking and non-blocking assignments File: /home/spex/Downloads/bladerf-dvbs2/fpga/ip/rit/dvbs2_bchencoder.v Line: 98
 Warning (10268): Verilog HDL information at dvbs2_bbheader.v(200): always construct contains both blocking and non-blocking assignments File: /home/spex/Downloads/bladerf-dvbs2/fpga/ip/rit/dvbs2_bbheader.v Line: 200

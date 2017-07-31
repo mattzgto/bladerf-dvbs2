@@ -1,5 +1,5 @@
 Flow report for withdvb
-Sat Jul 29 11:03:10 2017
+Mon Jul 31 13:40:04 2017
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -41,21 +41,21 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Analyzed - Sat Jul 29 11:03:10 2017         ;
+; Flow Status                        ; Analyzed - Mon Jul 31 13:40:03 2017         ;
 ; Quartus Prime Version              ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; withdvb                                     ;
 ; Top-level Entity Name              ; bladerf                                     ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE40F23C8                                ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 13,508 / 39,600 ( 34 % )                    ;
-;     Total combinational functions  ; 11,821 / 39,600 ( 30 % )                    ;
-;     Dedicated logic registers      ; 7,966 / 39,600 ( 20 % )                     ;
-; Total registers                    ; 8050                                        ;
+; Total logic elements               ; 20,837 / 39,600 ( 53 % )                    ;
+;     Total combinational functions  ; 14,186 / 39,600 ( 36 % )                    ;
+;     Dedicated logic registers      ; 15,286 / 39,600 ( 39 % )                    ;
+; Total registers                    ; 15370                                       ;
 ; Total pins                         ; 139 / 329 ( 42 % )                          ;
 ; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 983,424 / 1,161,216 ( 85 % )                ;
-; Embedded Multiplier 9-bit elements ; 6 / 232 ( 3 % )                             ;
+; Total memory bits                  ; 848,424 / 1,161,216 ( 73 % )                ;
+; Embedded Multiplier 9-bit elements ; 110 / 232 ( 47 % )                          ;
 ; Total PLLs                         ; 2 / 4 ( 50 % )                              ;
 +------------------------------------+---------------------------------------------+
 
@@ -65,7 +65,7 @@ agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 07/29/2017 10:58:42 ;
+; Start date & time ; 07/31/2017 13:33:45 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; withdvb             ;
 +-------------------+---------------------+
@@ -77,7 +77,7 @@ agreement for further details.
 ; Assignment Name                              ; Value                                                                                           ; Default Value      ; Entity Name ; Section Id ;
 +----------------------------------------------+-------------------------------------------------------------------------------------------------+--------------------+-------------+------------+
 ; ADV_NETLIST_OPT_SYNTH_WYSIWYG_REMAP          ; On                                                                                              ; Off                ; --          ; --         ;
-; COMPILER_SIGNATURE_ID                        ; 147326257959.150134032207081                                                                    ; --                 ; --          ; --         ;
+; COMPILER_SIGNATURE_ID                        ; 147326257959.150152242512583                                                                    ; --                 ; --          ; --         ;
 ; CYCLONEII_OPTIMIZATION_TECHNIQUE             ; Speed                                                                                           ; Balanced           ; --          ; --         ;
 ; ENABLE_DRC_SETTINGS                          ; On                                                                                              ; Off                ; --          ; --         ;
 ; ENABLE_SIGNALTAP                             ; Off                                                                                             ; --                 ; --          ; --         ;
@@ -101,6 +101,28 @@ agreement for further details.
 ; MISC_FILE                                    ; /home/spex/Downloads/bladerf-dvbs2/fpga/ip/altera/tx_meta_fifo/tx_meta_fifo.cmp                 ; --                 ; --          ; --         ;
 ; MISC_FILE                                    ; /home/spex/Downloads/bladerf-dvbs2/fpga/ip/altera/rx_meta_fifo/rx_meta_fifo_inst.vhd            ; --                 ; --          ; --         ;
 ; MISC_FILE                                    ; /home/spex/Downloads/bladerf-dvbs2/fpga/ip/altera/rx_meta_fifo/rx_meta_fifo.cmp                 ; --                 ; --          ; --         ;
+; MISC_FILE                                    ; ../../fpga/ip/altera/fir_filter/fir_filter.cmp                                                  ; --                 ; --          ; --         ;
+; MISC_FILE                                    ; ../../fpga/ip/altera/fir_filter/fir_filter_sim/dspba_library_package.vhd                        ; --                 ; --          ; --         ;
+; MISC_FILE                                    ; ../../fpga/ip/altera/fir_filter/fir_filter_sim/dspba_library.vhd                                ; --                 ; --          ; --         ;
+; MISC_FILE                                    ; ../../fpga/ip/altera/fir_filter/fir_filter_sim/auk_dspip_math_pkg_hpfir.vhd                     ; --                 ; --          ; --         ;
+; MISC_FILE                                    ; ../../fpga/ip/altera/fir_filter/fir_filter_sim/auk_dspip_lib_pkg_hpfir.vhd                      ; --                 ; --          ; --         ;
+; MISC_FILE                                    ; ../../fpga/ip/altera/fir_filter/fir_filter_sim/auk_dspip_avalon_streaming_controller_hpfir.vhd  ; --                 ; --          ; --         ;
+; MISC_FILE                                    ; ../../fpga/ip/altera/fir_filter/fir_filter_sim/auk_dspip_avalon_streaming_sink_hpfir.vhd        ; --                 ; --          ; --         ;
+; MISC_FILE                                    ; ../../fpga/ip/altera/fir_filter/fir_filter_sim/auk_dspip_avalon_streaming_source_hpfir.vhd      ; --                 ; --          ; --         ;
+; MISC_FILE                                    ; ../../fpga/ip/altera/fir_filter/fir_filter_sim/auk_dspip_roundsat_hpfir.vhd                     ; --                 ; --          ; --         ;
+; MISC_FILE                                    ; ../../fpga/ip/altera/fir_filter/fir_filter_sim/altera_avalon_sc_fifo.v                          ; --                 ; --          ; --         ;
+; MISC_FILE                                    ; ../../fpga/ip/altera/fir_filter/fir_filter_sim/fir_filter_rtl_core.vhd                          ; --                 ; --          ; --         ;
+; MISC_FILE                                    ; ../../fpga/ip/altera/fir_filter/fir_filter_sim/fir_filter_ast.vhd                               ; --                 ; --          ; --         ;
+; MISC_FILE                                    ; ../../fpga/ip/altera/fir_filter/fir_filter_sim/fir_filter.vhd                                   ; --                 ; --          ; --         ;
+; MISC_FILE                                    ; ../../fpga/ip/altera/fir_filter/fir_filter_sim/fir_filter_nativelink.tcl                        ; --                 ; --          ; --         ;
+; MISC_FILE                                    ; ../../fpga/ip/altera/fir_filter/fir_filter_sim/fir_filter_msim.tcl                              ; --                 ; --          ; --         ;
+; MISC_FILE                                    ; ../../fpga/ip/altera/fir_filter/fir_filter_sim/fir_filter_tb.vhd                                ; --                 ; --          ; --         ;
+; MISC_FILE                                    ; ../../fpga/ip/altera/fir_filter/fir_filter_sim/fir_filter_mlab.m                                ; --                 ; --          ; --         ;
+; MISC_FILE                                    ; ../../fpga/ip/altera/fir_filter/fir_filter_sim/fir_filter_model.m                               ; --                 ; --          ; --         ;
+; MISC_FILE                                    ; ../../fpga/ip/altera/fir_filter/fir_filter_sim/fir_filter_coef_int.txt                          ; --                 ; --          ; --         ;
+; MISC_FILE                                    ; ../../fpga/ip/altera/fir_filter/fir_filter_sim/fir_filter_input.txt                             ; --                 ; --          ; --         ;
+; MISC_FILE                                    ; ../../fpga/ip/altera/fir_filter/fir_filter_sim/fir_filter_param.txt                             ; --                 ; --          ; --         ;
+; MISC_FILE                                    ; ../../fpga/ip/altera/output_fifo/output_fifo_6bit_dual_clk_15bit_bb.v                           ; --                 ; --          ; --         ;
 ; OPTIMIZE_POWER_DURING_FITTING                ; Extra effort                                                                                    ; Normal compilation ; --          ; --         ;
 ; OUTPUT_IO_TIMING_FAR_END_VMEAS               ; Half Signal Swing                                                                               ; --                 ; --          ; --         ;
 ; OUTPUT_IO_TIMING_FAR_END_VMEAS               ; Half Signal Swing                                                                               ; --                 ; --          ; --         ;
@@ -122,6 +144,8 @@ agreement for further details.
 ; SEARCH_PATH                                  ; /home/spex/Downloads/bladerf-dvbs2/fpga/ip/altera/nios_system/software/bladeRF_nios/mem_init/   ; --                 ; --          ; --         ;
 ; SLD_INFO                                     ; QSYS_NAME nios_system HAS_SOPCINFO 1 GENERATION_ID 1498500579                                   ; --                 ; nios_system ; --         ;
 ; SOPCINFO_FILE                                ; /home/spex/Downloads/bladerf-dvbs2/fpga/ip/altera/nios_system/synthesis/../nios_system.sopcinfo ; --                 ; --          ; --         ;
+; SPD_FILE                                     ; ../../fpga/ip/altera/fir_filter/fir_filter.spd                                                  ; --                 ; --          ; --         ;
+; SYNTHESIS_ONLY_QIP                           ; On                                                                                              ; --                 ; --          ; --         ;
 ; SYNTHESIS_ONLY_QIP                           ; On                                                                                              ; --                 ; --          ; --         ;
 ; TOP_LEVEL_ENTITY                             ; bladerf                                                                                         ; withdvb            ; --          ; --         ;
 ; VHDL_INPUT_VERSION                           ; VHDL_2008                                                                                       ; VHDL_1993          ; --          ; --         ;
@@ -133,12 +157,12 @@ agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:01:39     ; 1.0                     ; 1383 MB             ; 00:02:09                           ;
-; Fitter                    ; 00:02:14     ; 1.1                     ; 1530 MB             ; 00:03:57                           ;
-; Assembler                 ; 00:00:06     ; 1.0                     ; 1023 MB             ; 00:00:06                           ;
-; TimeQuest Timing Analyzer ; 00:00:12     ; 1.3                     ; 1037 MB             ; 00:00:13                           ;
-; Design Assistant          ; 00:00:06     ; 1.0                     ; 1114 MB             ; 00:00:06                           ;
-; Total                     ; 00:04:17     ; --                      ; --                  ; 00:06:31                           ;
+; Analysis & Synthesis      ; 00:01:56     ; 1.0                     ; 1463 MB             ; 00:02:27                           ;
+; Fitter                    ; 00:03:34     ; 1.1                     ; 1658 MB             ; 00:06:35                           ;
+; Assembler                 ; 00:00:08     ; 1.0                     ; 1086 MB             ; 00:00:09                           ;
+; TimeQuest Timing Analyzer ; 00:00:16     ; 1.3                     ; 1122 MB             ; 00:00:19                           ;
+; Design Assistant          ; 00:00:09     ; 1.0                     ; 1202 MB             ; 00:00:09                           ;
+; Total                     ; 00:06:03     ; --                      ; --                  ; 00:09:39                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

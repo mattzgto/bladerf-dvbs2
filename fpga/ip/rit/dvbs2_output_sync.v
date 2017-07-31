@@ -5,16 +5,15 @@
 // Synchronizes output of DVB transmitter system (after phyframer) to the output clock rate
 //   by inserting dummy PL frames when there isn't enough data
 
-// For IQ samples, a 'lookup' table has been used to reduce the bits/symbol from 12 (sc16q11 format) to 4 (for resource usage purposes)
-// 12'h1 = 0x586
-// 12'hfff = 0xa7a
-// 12'h2 = 0x78b
-// 12'hffe = 0x875
-// 12'h3 = 0x205
-// 12'hffd = 0xdfb
-// 12'h4 = 0x226
-// 12'hffc = 0xdda
-// 12'hb = ERROR symbol
+// For IQ samples, a 'lookup' table has been used to reduce the bits/symbol from 12 (sc16q11 format) to 3 (for resource usage purposes)
+// 12'h0 = 0x586
+// 12'h7 = 0xa7a
+// 12'h1 = 0x78b
+// 12'h6 = 0x875
+// 12'h2 = 0x205
+// 12'h5 = 0xdfb
+// 12'h3 = 0x226
+// 12'h4 = 0xdda
 // Reconversion is done in this block
 
 module dvbs2_output_sync (clock_in, reset, enable, sym_i_in, sym_q_in, valid_in, output_clock, output_reset, done_out, fifo_wr_sel, sym_i_out, sym_q_out, valid_out, error, actual_out, fifo_switch_performed);
@@ -22,8 +21,8 @@ module dvbs2_output_sync (clock_in, reset, enable, sym_i_in, sym_q_in, valid_in,
    input         clock_in; // Input clock. Write input data into FIFO at this rate.
    input         reset; // Synchronous reset
    input         enable; // Input enable
-   input  [11:0] sym_i_in; // I portion of input symbol
-   input  [11:0] sym_q_in; // Q portion of input symbol
+   input  [2:0]  sym_i_in; // I portion of input symbol
+   input  [2:0]  sym_q_in; // Q portion of input symbol
    input         valid_in; // Raised if input symbol is valid (see if data is present)
    input 		 output_clock; // Output clock - based on symbol rate
    input 		 output_reset;
@@ -57,8 +56,8 @@ module dvbs2_output_sync (clock_in, reset, enable, sym_i_in, sym_q_in, valid_in,
    reg done_while_sending;
    reg fifo_new_rd_sel;
    reg fifo_read_rq;
-   wire [7:0] sym_out_zero;
-   wire [7:0] sym_out_one;
+   wire [5:0] sym_out_zero;
+   wire [5:0] sym_out_one;
    wire fifo_zero_empty;
    wire fifo_zero_full;
    wire fifo_one_empty;
@@ -66,8 +65,8 @@ module dvbs2_output_sync (clock_in, reset, enable, sym_i_in, sym_q_in, valid_in,
    reg actual_out;
    reg [3:0] src_sym_i_out;
    reg [3:0] src_sym_q_out;
-   reg [3:0] dummy_sym_i_out;
-   reg [3:0] dummy_sym_q_out;
+   reg [2:0] dummy_sym_i_out;
+   reg [2:0] dummy_sym_q_out;
    reg [1:0] data_source;
 
 	// LFSR Signals
@@ -83,73 +82,73 @@ module dvbs2_output_sync (clock_in, reset, enable, sym_i_in, sym_q_in, valid_in,
    // Output state machine
    parameter [1:0] DUMMY_DATA_ACTUAL   = 2'b00;
    parameter [1:0] DUMMY_DATA_ZERO     = 2'b01;
-   parameter [1:0] ACTUAL_DATA_ACTUAL 	= 2'b10;
-   parameter [1:0] ACTUAL_DATA_ZERO   	= 2'b11;
+   parameter [1:0] ACTUAL_DATA_ACTUAL  = 2'b10;
+   parameter [1:0] ACTUAL_DATA_ZERO    = 2'b11;
 
    // Data sources
    parameter [1:0] ALL_ZERO = 2'b00;
-   parameter [1:0] DUMMY = 2'b01;
-   parameter [1:0] FIFO = 2'b10;
+   parameter [1:0] DUMMY 	= 2'b01;
+   parameter [1:0] FIFO 	= 2'b10;
 
    assign error = fifo_zero_full | fifo_one_full;
 	
    // Select the data source
    always @* begin
       case (data_source)
-			ALL_ZERO: begin
-				src_sym_i_out = 4'b0;
-				src_sym_q_out = 4'b0;
+		 ALL_ZERO: begin
+		    src_sym_i_out = 4'hf;
+			src_sym_q_out = 4'hf;
+		 end
+		 DUMMY: begin
+			src_sym_i_out = dummy_sym_i_out;
+			src_sym_q_out = dummy_sym_q_out;
+		 end
+		 FIFO: begin
+			if (fifo_rd_sel == 1'b1) begin
+				src_sym_i_out = {1'b0, sym_out_one[2:0]};
+				src_sym_q_out = {1'b0, sym_out_one[5:3]};
 			end
-			DUMMY: begin
-				src_sym_i_out = dummy_sym_i_out;
-				src_sym_q_out = dummy_sym_q_out;
+			else begin
+				src_sym_i_out = {1'b0, sym_out_zero[2:0]};
+				src_sym_q_out = {1'b0, sym_out_zero[5:3]};
 			end
-			FIFO: begin
-				if (fifo_rd_sel == 1'b1) begin
-					src_sym_i_out = sym_out_one[3:0];
-					src_sym_q_out = sym_out_one[7:4];
-				end
-				else begin
-					src_sym_i_out = sym_out_zero[3:0];
-					src_sym_q_out = sym_out_zero[7:4];
-				end
-			end
-			default: begin
-				src_sym_i_out = 4'hB;
-				src_sym_q_out = 4'hB;
-			end
-		endcase
-	end			
+		 end
+		 default: begin
+			src_sym_i_out = 4'hB;
+			src_sym_q_out = 4'hB;
+		 end
+	  endcase
+   end			
 
    // Convert our 4 digit code to full i/q samples
    always @* begin
       case(src_sym_i_out)
-		 0: begin
-			sym_i_out = 12'h0;
-		 end
-         1: begin
+         0: begin
             sym_i_out = 12'h586; //32'h3f3504f3;
          end
-         2: begin
+         1: begin
             sym_i_out = 12'h78b; //32'h3f7746ea;
          end
-         3: begin
+         2: begin
             sym_i_out = 12'h205; //32'h3e8483ee;
          end
-         4: begin
+         3: begin
             sym_i_out = 12'h226; //32'h3e8cdeff;
          end
-         12: begin
+         4: begin
             sym_i_out = 12'hdda; //32'hbe8cdeff;
          end
-         13: begin
+         5: begin
             sym_i_out = 12'hdfb; //32'hbe8483ee;
          end
-         14: begin
+         6: begin
             sym_i_out = 12'h875; //32'hbf7746ea;
          end
-         15: begin
+         7: begin
             sym_i_out = 12'ha7a; //32'hbf3504f3;
+         end
+		 15: begin
+            sym_i_out = 12'h000; //Zero;
          end
          default: begin
             sym_i_out = 12'hBEF;
@@ -160,32 +159,32 @@ module dvbs2_output_sync (clock_in, reset, enable, sym_i_in, sym_q_in, valid_in,
    // Convert our 4 digit code to full i/q samples
    always @* begin
       case(src_sym_q_out)
-		 0: begin
-			sym_q_out = 12'h0;
-		 end
-         1: begin
+         0: begin
             sym_q_out = 12'h586; //32'h3f3504f3;
          end
-         2: begin
+         1: begin
             sym_q_out = 12'h78b; //32'h3f7746ea;
          end
-         3: begin
+         2: begin
             sym_q_out = 12'h205; //32'h3e8483ee;
          end
-         4: begin
+         3: begin
             sym_q_out = 12'h226; //32'h3e8cdeff;
          end
-         12: begin
+         4: begin
             sym_q_out = 12'hdda; //32'hbe8cdeff;
          end
-         13: begin
+         5: begin
             sym_q_out = 12'hdfb; //32'hbe8483ee;
          end
-         14: begin
+         6: begin
             sym_q_out = 12'h875; //32'hbf7746ea;
          end
-         15: begin
+         7: begin
             sym_q_out = 12'ha7a; //32'hbf3504f3;
+         end
+		 15: begin
+            sym_q_out = 12'h000; //Zero;
          end
          default: begin
             sym_q_out = 12'hBEF;
@@ -230,8 +229,8 @@ module dvbs2_output_sync (clock_in, reset, enable, sym_i_in, sym_q_in, valid_in,
             done_while_sending <= 1'b0;
 			valid_out <= 1'b0;
 		    fifo_read_rq <= 1'b0;
-			dummy_sym_i_out <= 4'b0;
-			dummy_sym_q_out <= 4'b0;
+			dummy_sym_i_out <= 3'b0;
+			dummy_sym_q_out <= 3'b0;
 			data_source <= ALL_ZERO;
 			fifo_switch_performed <= 1'b0;
 			
@@ -274,364 +273,364 @@ module dvbs2_output_sync (clock_in, reset, enable, sym_i_in, sym_q_in, valid_in,
 					case (dummy_counter)
 						// Start with your typical header
 						0: begin
-							dummy_sym_i_out <= 4'h1; 
-							dummy_sym_q_out <= 4'h1; 
+							dummy_sym_i_out <= 3'h0; 
+							dummy_sym_q_out <= 3'h0; 
 						end
 						1: begin
-							dummy_sym_i_out <= 4'h1; 
-							dummy_sym_q_out <= 4'hf;
+							dummy_sym_i_out <= 3'h0; 
+							dummy_sym_q_out <= 3'h7;
 						end
 						2: begin
-							dummy_sym_i_out <= 4'hf;
-							dummy_sym_q_out <= 4'hf; 
+							dummy_sym_i_out <= 3'h7;
+							dummy_sym_q_out <= 3'h7; 
 						end
 						3: begin
-							dummy_sym_i_out <= 4'hf;
-							dummy_sym_q_out <= 4'h1;
+							dummy_sym_i_out <= 3'h7;
+							dummy_sym_q_out <= 3'h0;
 						end
 						4: begin
-							dummy_sym_i_out <= 4'h1;
-							dummy_sym_q_out <= 4'h1;
+							dummy_sym_i_out <= 3'h0;
+							dummy_sym_q_out <= 3'h0;
 						end
 						5: begin
-							dummy_sym_i_out <= 4'hf;
-							dummy_sym_q_out <= 4'h1;
+							dummy_sym_i_out <= 3'h7;
+							dummy_sym_q_out <= 3'h0;
 						end
 						6: begin
-							dummy_sym_i_out <= 4'hf;
-							dummy_sym_q_out <= 4'hf; 
+							dummy_sym_i_out <= 3'h7;
+							dummy_sym_q_out <= 3'h7; 
 						end
 						7: begin
-							dummy_sym_i_out <= 4'h1;
-							dummy_sym_q_out <= 4'hf; 
+							dummy_sym_i_out <= 3'h0;
+							dummy_sym_q_out <= 3'h7; 
 						end
 						8: begin
-							dummy_sym_i_out <= 4'h1; 
-							dummy_sym_q_out <= 4'h1; 
+							dummy_sym_i_out <= 3'h0; 
+							dummy_sym_q_out <= 3'h0; 
 						end
 						9: begin
-							dummy_sym_i_out <= 4'h1; 
-							dummy_sym_q_out <= 4'hf; 
+							dummy_sym_i_out <= 3'h0; 
+							dummy_sym_q_out <= 3'h7; 
 						end
 						10: begin
-							dummy_sym_i_out <= 4'h1; 
-							dummy_sym_q_out <= 4'h1; 
+							dummy_sym_i_out <= 3'h0; 
+							dummy_sym_q_out <= 3'h0; 
 						end
 						11: begin
-							dummy_sym_i_out <= 4'hf; 
-							dummy_sym_q_out <= 4'h1; 
+							dummy_sym_i_out <= 3'h7; 
+							dummy_sym_q_out <= 3'h0; 
 						end
 						12: begin
-							dummy_sym_i_out <= 4'hf; 
-							dummy_sym_q_out <= 4'hf; 
+							dummy_sym_i_out <= 3'h7; 
+							dummy_sym_q_out <= 3'h7; 
 						end
 						13: begin
-							dummy_sym_i_out <= 4'hf; 
-							dummy_sym_q_out <= 4'h1; 
+							dummy_sym_i_out <= 3'h7; 
+							dummy_sym_q_out <= 3'h0; 
 						end
 						14: begin
-							dummy_sym_i_out <= 4'hf; 
-							dummy_sym_q_out <= 4'hf; 
+							dummy_sym_i_out <= 3'h7; 
+							dummy_sym_q_out <= 3'h7; 
 						end
 						15: begin
-							dummy_sym_i_out <= 4'h1; 
-							dummy_sym_q_out <= 4'hf; 
+							dummy_sym_i_out <= 3'h0; 
+							dummy_sym_q_out <= 3'h7; 
 						end
 						16: begin
-							dummy_sym_i_out <= 4'hf; 
-							dummy_sym_q_out <= 4'hf; 
+							dummy_sym_i_out <= 3'h7; 
+							dummy_sym_q_out <= 3'h7; 
 						end
 						17: begin
-							dummy_sym_i_out <= 4'hf; 
-							dummy_sym_q_out <= 4'h1; 
+							dummy_sym_i_out <= 3'h7; 
+							dummy_sym_q_out <= 3'h0; 
 						end
 						18: begin
-							dummy_sym_i_out <= 4'hf; 
-							dummy_sym_q_out <= 4'hf; 
+							dummy_sym_i_out <= 3'h7; 
+							dummy_sym_q_out <= 3'h7; 
 						end
 						19: begin
-							dummy_sym_i_out <= 4'hf; 
-							dummy_sym_q_out <= 4'h1; 
+							dummy_sym_i_out <= 3'h7; 
+							dummy_sym_q_out <= 3'h0; 
 						end
 						20: begin
-							dummy_sym_i_out <= 4'h1; 
-							dummy_sym_q_out <= 4'h1; 
+							dummy_sym_i_out <= 3'h0; 
+							dummy_sym_q_out <= 3'h0; 
 						end
 						21: begin
-							dummy_sym_i_out <= 4'hf; 
-							dummy_sym_q_out <= 4'h1; 
+							dummy_sym_i_out <= 3'h7; 
+							dummy_sym_q_out <= 3'h0; 
 						end
 						22: begin
-							dummy_sym_i_out <= 4'h1; 
-							dummy_sym_q_out <= 4'h1; 
+							dummy_sym_i_out <= 3'h0; 
+							dummy_sym_q_out <= 3'h0; 
 						end
 						23: begin
-							dummy_sym_i_out <= 4'hf; 
-							dummy_sym_q_out <= 4'h1; 
+							dummy_sym_i_out <= 3'h7; 
+							dummy_sym_q_out <= 3'h0; 
 						end
 						24: begin
-							dummy_sym_i_out <= 4'hf; 
-							dummy_sym_q_out <= 4'hf; 
+							dummy_sym_i_out <= 3'h7; 
+							dummy_sym_q_out <= 3'h7; 
 						end
 						25: begin
-							dummy_sym_i_out <= 4'hf; 
-							dummy_sym_q_out <= 4'h1; 
+							dummy_sym_i_out <= 3'h7; 
+							dummy_sym_q_out <= 3'h0; 
 						end
 						26: begin
-							dummy_sym_i_out <= 4'h1;
-							dummy_sym_q_out <= 4'h1;
+							dummy_sym_i_out <= 3'h0;
+							dummy_sym_q_out <= 3'h0;
 						end
 						27: begin
-							dummy_sym_i_out <= 4'hf;
-							dummy_sym_q_out <= 4'h1;
+							dummy_sym_i_out <= 3'h7;
+							dummy_sym_q_out <= 3'h0;
 						end
 						28: begin
-							dummy_sym_i_out <= 4'hf;
-							dummy_sym_q_out <= 4'hf;
+							dummy_sym_i_out <= 3'h7;
+							dummy_sym_q_out <= 3'h7;
 						end
 						29: begin
-							dummy_sym_i_out <= 4'hf;
-							dummy_sym_q_out <= 4'h1;
+							dummy_sym_i_out <= 3'h7;
+							dummy_sym_q_out <= 3'h0;
 						end
 						30: begin
-							dummy_sym_i_out <= 4'h1;
-							dummy_sym_q_out <= 4'h1;
+							dummy_sym_i_out <= 3'h0;
+							dummy_sym_q_out <= 3'h0;
 						end
 						31: begin
-							dummy_sym_i_out <= 4'h1;
-							dummy_sym_q_out <= 4'hf;
+							dummy_sym_i_out <= 3'h0;
+							dummy_sym_q_out <= 3'h7;
 						end
 						32: begin
-							dummy_sym_i_out <= 4'h1;
-							dummy_sym_q_out <= 4'h1;
+							dummy_sym_i_out <= 3'h0;
+							dummy_sym_q_out <= 3'h0;
 						end
 						33: begin
-							dummy_sym_i_out <= 4'hf;
-							dummy_sym_q_out <= 4'h1;
+							dummy_sym_i_out <= 3'h7;
+							dummy_sym_q_out <= 3'h0;
 						end
 						34: begin
-							dummy_sym_i_out <= 4'hf;
-							dummy_sym_q_out <= 4'hf;
+							dummy_sym_i_out <= 3'h7;
+							dummy_sym_q_out <= 3'h7;
 						end
 						35: begin
-							dummy_sym_i_out <= 4'h1;
-							dummy_sym_q_out <= 4'hf;
+							dummy_sym_i_out <= 3'h0;
+							dummy_sym_q_out <= 3'h7;
 						end
 						36: begin
-							dummy_sym_i_out <= 4'h1;
-							dummy_sym_q_out <= 4'h1;
+							dummy_sym_i_out <= 3'h0;
+							dummy_sym_q_out <= 3'h0;
 						end
 						37: begin
-							dummy_sym_i_out <= 4'hf;
-							dummy_sym_q_out <= 4'h1;
+							dummy_sym_i_out <= 3'h7;
+							dummy_sym_q_out <= 3'h0;
 						end
 						38: begin
-							dummy_sym_i_out <= 4'hf;
-							dummy_sym_q_out <= 4'hf;
+							dummy_sym_i_out <= 3'h7;
+							dummy_sym_q_out <= 3'h7;
 						end
 						39: begin
-							dummy_sym_i_out <= 4'hf;
-							dummy_sym_q_out <= 4'h1;
+							dummy_sym_i_out <= 3'h7;
+							dummy_sym_q_out <= 3'h0;
 						end
 						40: begin
-							dummy_sym_i_out <= 4'h1;
-							dummy_sym_q_out <= 4'h1;
+							dummy_sym_i_out <= 3'h0;
+							dummy_sym_q_out <= 3'h0;
 						end
 						41: begin
-							dummy_sym_i_out <= 4'hf;
-							dummy_sym_q_out <= 4'h1;
+							dummy_sym_i_out <= 3'h7;
+							dummy_sym_q_out <= 3'h0;
 						end
 						42: begin
-							dummy_sym_i_out <= 4'hf;
-							dummy_sym_q_out <= 4'hf;
+							dummy_sym_i_out <= 3'h7;
+							dummy_sym_q_out <= 3'h7;
 						end
 						43: begin
-							dummy_sym_i_out <= 4'h1;
-							dummy_sym_q_out <= 4'hf;
+							dummy_sym_i_out <= 3'h0;
+							dummy_sym_q_out <= 3'h7;
 						end
 						44: begin
-							dummy_sym_i_out <= 4'h1;
-							dummy_sym_q_out <= 4'h1;
+							dummy_sym_i_out <= 3'h0;
+							dummy_sym_q_out <= 3'h0;
 						end
 						45: begin
-							dummy_sym_i_out <= 4'h1;
-							dummy_sym_q_out <= 4'hf;
+							dummy_sym_i_out <= 3'h0;
+							dummy_sym_q_out <= 3'h7;
 						end
 						46: begin
-							dummy_sym_i_out <= 4'h1;
-							dummy_sym_q_out <= 4'h1;
+							dummy_sym_i_out <= 3'h0;
+							dummy_sym_q_out <= 3'h0;
 						end
 						47: begin
-							dummy_sym_i_out <= 4'h1;
-							dummy_sym_q_out <= 4'hf;
+							dummy_sym_i_out <= 3'h0;
+							dummy_sym_q_out <= 3'h7;
 						end
 						48: begin
-							dummy_sym_i_out <= 4'hf;
-							dummy_sym_q_out <= 4'hf;
+							dummy_sym_i_out <= 3'h7;
+							dummy_sym_q_out <= 3'h7;
 						end
 						49: begin
-							dummy_sym_i_out <= 4'hf;
-							dummy_sym_q_out <= 4'h1;
+							dummy_sym_i_out <= 3'h7;
+							dummy_sym_q_out <= 3'h0;
 						end
 						50: begin
-							dummy_sym_i_out <= 4'hf;
-							dummy_sym_q_out <= 4'hf;
+							dummy_sym_i_out <= 3'h7;
+							dummy_sym_q_out <= 3'h7;
 						end
 						51: begin
-							dummy_sym_i_out <= 4'hf;
-							dummy_sym_q_out <= 4'h1;
+							dummy_sym_i_out <= 3'h7;
+							dummy_sym_q_out <= 3'h0;
 						end
 						52: begin
-							dummy_sym_i_out <= 4'h1;
-							dummy_sym_q_out <= 4'h1;
+							dummy_sym_i_out <= 3'h0;
+							dummy_sym_q_out <= 3'h0;
 						end
 						53: begin
-							dummy_sym_i_out <= 4'h1;
-							dummy_sym_q_out <= 4'hf;
+							dummy_sym_i_out <= 3'h0;
+							dummy_sym_q_out <= 3'h7;
 						end
 						54: begin
-							dummy_sym_i_out <= 4'hf;
-							dummy_sym_q_out <= 4'hf;
+							dummy_sym_i_out <= 3'h7;
+							dummy_sym_q_out <= 3'h7;
 						end
 						55: begin
-							dummy_sym_i_out <= 4'h1;
-							dummy_sym_q_out <= 4'hf;
+							dummy_sym_i_out <= 3'h0;
+							dummy_sym_q_out <= 3'h7;
 						end
 						56: begin
-							dummy_sym_i_out <= 4'h1;
-							dummy_sym_q_out <= 4'h1;
+							dummy_sym_i_out <= 3'h0;
+							dummy_sym_q_out <= 3'h0;
 						end
 						57: begin
-							dummy_sym_i_out <= 4'hf;
-							dummy_sym_q_out <= 4'h1;
+							dummy_sym_i_out <= 3'h7;
+							dummy_sym_q_out <= 3'h0;
 						end
 						58: begin
-							dummy_sym_i_out <= 4'h1;
-							dummy_sym_q_out <= 4'h1;
+							dummy_sym_i_out <= 3'h0;
+							dummy_sym_q_out <= 3'h0;
 						end
 						59: begin
-							dummy_sym_i_out <= 4'hf;
-							dummy_sym_q_out <= 4'h1;
+							dummy_sym_i_out <= 3'h7;
+							dummy_sym_q_out <= 3'h0;
 						end
 						60: begin
-							dummy_sym_i_out <= 4'h1;
-							dummy_sym_q_out <= 4'h1;
+							dummy_sym_i_out <= 3'h0;
+							dummy_sym_q_out <= 3'h0;
 						end
 						61: begin
-							dummy_sym_i_out <= 4'hf;
-							dummy_sym_q_out <= 4'h1;
+							dummy_sym_i_out <= 3'h7;
+							dummy_sym_q_out <= 3'h0;
 						end
 						62: begin
-							dummy_sym_i_out <= 4'h1;
-							dummy_sym_q_out <= 4'h1;
+							dummy_sym_i_out <= 3'h0;
+							dummy_sym_q_out <= 3'h0;
 						end
 						63: begin
-							dummy_sym_i_out <= 4'h1;
-							dummy_sym_q_out <= 4'hf;
+							dummy_sym_i_out <= 3'h0;
+							dummy_sym_q_out <= 3'h7;
 						end
 						64: begin
-							dummy_sym_i_out <= 4'hf;
-							dummy_sym_q_out <= 4'hf;
+							dummy_sym_i_out <= 3'h7;
+							dummy_sym_q_out <= 3'h7;
 						end
 						65: begin
-							dummy_sym_i_out <= 4'hf;
-							dummy_sym_q_out <= 4'h1;
+							dummy_sym_i_out <= 3'h7;
+							dummy_sym_q_out <= 3'h0;
 						end
 						66: begin
-							dummy_sym_i_out <= 4'h1;
-							dummy_sym_q_out <= 4'h1;
+							dummy_sym_i_out <= 3'h0;
+							dummy_sym_q_out <= 3'h0;
 						end
 						67: begin
-							dummy_sym_i_out <= 4'hf;
-							dummy_sym_q_out <= 4'h1;
+							dummy_sym_i_out <= 3'h7;
+							dummy_sym_q_out <= 3'h0;
 						end
 						68: begin
-							dummy_sym_i_out <= 4'h1;
-							dummy_sym_q_out <= 4'h1;
+							dummy_sym_i_out <= 3'h0;
+							dummy_sym_q_out <= 3'h0;
 						end
 						69: begin
-							dummy_sym_i_out <= 4'h1;
-							dummy_sym_q_out <= 4'hf;
+							dummy_sym_i_out <= 3'h0;
+							dummy_sym_q_out <= 3'h7;
 						end
 						70: begin
-							dummy_sym_i_out <= 4'h1;
-							dummy_sym_q_out <= 4'h1;
+							dummy_sym_i_out <= 3'h0;
+							dummy_sym_q_out <= 3'h0;
 						end
 						71: begin
-							dummy_sym_i_out <= 4'h1;
-							dummy_sym_q_out <= 4'hf;
+							dummy_sym_i_out <= 3'h0;
+							dummy_sym_q_out <= 3'h7;
 						end
 						72: begin
-							dummy_sym_i_out <= 4'hf;
-							dummy_sym_q_out <= 4'hf;
+							dummy_sym_i_out <= 3'h7;
+							dummy_sym_q_out <= 3'h7;
 						end
 						73: begin
-							dummy_sym_i_out <= 4'h1;
-							dummy_sym_q_out <= 4'hf;
+							dummy_sym_i_out <= 3'h0;
+							dummy_sym_q_out <= 3'h7;
 						end
 						74: begin
-							dummy_sym_i_out <= 4'h1;
-							dummy_sym_q_out <= 4'h1;
+							dummy_sym_i_out <= 3'h0;
+							dummy_sym_q_out <= 3'h0;
 						end
 						75: begin
-							dummy_sym_i_out <= 4'h1;
-							dummy_sym_q_out <= 4'hf;
+							dummy_sym_i_out <= 3'h0;
+							dummy_sym_q_out <= 3'h7;
 						end
 						76: begin
-							dummy_sym_i_out <= 4'hf;
-							dummy_sym_q_out <= 4'hf;
+							dummy_sym_i_out <= 3'h7;
+							dummy_sym_q_out <= 3'h7;
 						end
 						77: begin
-							dummy_sym_i_out <= 4'h1;
-							dummy_sym_q_out <= 4'hf;
+							dummy_sym_i_out <= 3'h0;
+							dummy_sym_q_out <= 3'h7;
 						end
 						78: begin
-							dummy_sym_i_out <= 4'hf;
-							dummy_sym_q_out <= 4'hf;
+							dummy_sym_i_out <= 3'h7;
+							dummy_sym_q_out <= 3'h7;
 						end
 						79: begin
-							dummy_sym_i_out <= 4'hf;
-							dummy_sym_q_out <= 4'h1;
+							dummy_sym_i_out <= 3'h7;
+							dummy_sym_q_out <= 3'h0;
 						end
 						80: begin
-							dummy_sym_i_out <= 4'h1;
-							dummy_sym_q_out <= 4'h1;
+							dummy_sym_i_out <= 3'h0;
+							dummy_sym_q_out <= 3'h0;
 						end
 						81: begin
-							dummy_sym_i_out <= 4'hf;
-							dummy_sym_q_out <= 4'h1;
+							dummy_sym_i_out <= 3'h7;
+							dummy_sym_q_out <= 3'h0;
 						end
 						82: begin
-							dummy_sym_i_out <= 4'hf;
-							dummy_sym_q_out <= 4'hf;
+							dummy_sym_i_out <= 3'h7;
+							dummy_sym_q_out <= 3'h7;
 						end
 						83: begin
-							dummy_sym_i_out <= 4'hf;
-							dummy_sym_q_out <= 4'h1;
+							dummy_sym_i_out <= 3'h7;
+							dummy_sym_q_out <= 3'h0;
 						end
 						84: begin
-							dummy_sym_i_out <= 4'hf;
-							dummy_sym_q_out <= 4'hf;
+							dummy_sym_i_out <= 3'h7;
+							dummy_sym_q_out <= 3'h7;
 						end
 						85: begin
-							dummy_sym_i_out <= 4'hf;
-							dummy_sym_q_out <= 4'h1;
+							dummy_sym_i_out <= 3'h7;
+							dummy_sym_q_out <= 3'h0;
 						end
 						86: begin
-							dummy_sym_i_out <= 4'hf;
-							dummy_sym_q_out <= 4'hf;
+							dummy_sym_i_out <= 3'h7;
+							dummy_sym_q_out <= 3'h7;
 						end
 						87: begin
-							dummy_sym_i_out <= 4'h1;
-							dummy_sym_q_out <= 4'hf;
+							dummy_sym_i_out <= 3'h0;
+							dummy_sym_q_out <= 3'h7;
 						end
 						88: begin
-							dummy_sym_i_out <= 4'hf;
-							dummy_sym_q_out <= 4'hf;
+							dummy_sym_i_out <= 3'h7;
+							dummy_sym_q_out <= 3'h7;
 						end
 						89: begin
-							dummy_sym_i_out <= 4'h1;
-							dummy_sym_q_out <= 4'hf;
+							dummy_sym_i_out <= 3'h0;
+							dummy_sym_q_out <= 3'h7;
 						end
 						default: begin
 							// Calculate scramble bits based on LFSR
@@ -642,20 +641,20 @@ module dvbs2_output_sync (clock_in, reset, enable, sym_i_in, sym_q_in, valid_in,
 							// Decide how to modify (scramble) pilot symbol based on scrambling sequence term from LFSR
 							case (scramble_bits)
 								2'b00: begin // No change to input symbol
-									dummy_sym_i_out <= 4'h1;
-									dummy_sym_q_out <= 4'h1;
+									dummy_sym_i_out <= 3'h0;
+									dummy_sym_q_out <= 3'h0;
 								end
 								2'b01: begin // Swap symbols and change the sign of the Q symbol
-									dummy_sym_i_out <= 4'hf; //not
-									dummy_sym_q_out <= 4'h1;
+									dummy_sym_i_out <= 3'h7; //not
+									dummy_sym_q_out <= 3'h0;
 								end
 								2'b10: begin // Change the signs of both symbols
-									dummy_sym_i_out <= 4'hf; //not
-									dummy_sym_q_out <= 4'hf; //not
+									dummy_sym_i_out <= 3'h7; //not
+									dummy_sym_q_out <= 3'h7; //not
 								end
 								2'b11: begin // Swap symbols and change the sign of the I symbol
-									dummy_sym_i_out <= 4'h1;
-									dummy_sym_q_out <= 4'hf; //not
+									dummy_sym_i_out <= 3'h0;
+									dummy_sym_q_out <= 3'h7; //not
 								end
 							endcase // scramble_bits case
 						end
@@ -826,8 +825,11 @@ module dvbs2_output_sync (clock_in, reset, enable, sym_i_in, sym_q_in, valid_in,
    end // always loop
 
    // Store data in FIFO to account for irregular valid_out signals
-   fifo_8bit_dual_clk_15bit sym_out_fifo_zero (
-	   .data    ({sym_q_in[3:0], sym_i_in[3:0]}),
+   // Store both I and Q samples in the same FIFO
+   // {q,i}
+   // FIFO zero - alternates between this and FIFO one
+   output_fifo_6bit_dual_clk_15bit sym_out_fifo_zero (
+	   .data    ({sym_q_in[2:0], sym_i_in[2:0]}),
 	   .rdclk   (output_clock),
 	   .rdreq   (fifo_read_rq & ~fifo_rd_sel),
 	   .wrclk   (clock_in),
@@ -838,8 +840,11 @@ module dvbs2_output_sync (clock_in, reset, enable, sym_i_in, sym_q_in, valid_in,
    );
 	
    // Store data in FIFO to account for irregular valid_out signals
-   fifo_8bit_dual_clk_15bit sym_out_fifo_one (
-      .data    ({sym_q_in[3:0], sym_i_in[3:0]}),
+   // Store both I and Q samples in the same FIFO
+   // {q,i}
+   // FIFO one - alternates between this and FIFO zero
+   output_fifo_6bit_dual_clk_15bit sym_out_fifo_one (
+      .data    ({sym_q_in[2:0], sym_i_in[2:0]}),
       .rdclk   (output_clock),
       .rdreq   (fifo_read_rq & fifo_rd_sel),
       .wrclk   (clock_in),

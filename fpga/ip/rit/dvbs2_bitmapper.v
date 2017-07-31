@@ -2,19 +2,18 @@
 // 64800 bits into this block in series, every 4 bits collected & mapped to IQ symbol, output 16200 symbols
 // output IQ symbol bits in parallel, so output is 1/4 rate of input
 
-// For IQ samples, a 'lookup' table has been used to reduce the bits/symbol from 12 (sc16q11 format) to 4 (for resource usage purposes)
-// 12'h1 = 0x586
-// 12'hfff = 0xa7a
-// 12'h2 = 0x78b
-// 12'hffe = 0x875
-// 12'h3 = 0x205
-// 12'hffd = 0xdfb
-// 12'h4 = 0x226
-// 12'hffc = 0xdda
-// 12'hb = ERROR symbol
+// For IQ samples, a 'lookup' table has been used to reduce the bits/symbol from 12 (sc16q11 format) to 3 (for resource usage purposes)
+// 3'h0 = 0x586
+// 3'h7 = 0xa7a
+// 3'h1 = 0x78b
+// 3'h6 = 0x875
+// 3'h2 = 0x205
+// 3'h5 = 0xdfb
+// 3'h3 = 0x226
+// 3'h4 = 0xdda
 // Reconversion is done in the dvbs2_output_sync block
 
-module dvbs2_bitmapper_q11 (clock_in, reset, enable, bit_in, clock_out, valid_in, sym_i, sym_q, valid_out);
+module dvbs2_bitmapper (clock_in, reset, enable, bit_in, clock_out, valid_in, sym_i, sym_q, valid_out);
    // Inputs and Outputs
    input         clock_in;
    input         reset;
@@ -22,13 +21,13 @@ module dvbs2_bitmapper_q11 (clock_in, reset, enable, bit_in, clock_out, valid_in
    input         bit_in;
    input         clock_out; // output clock of 1/4 the rate of input clock
    input         valid_in;
-   output [11:0] sym_i;
-   output [11:0] sym_q;
+   output [2:0] sym_i;
+   output [2:0] sym_q;
    output        valid_out;
 
    // Register outputs
-   reg [11:0] sym_i;
-   reg [11:0] sym_q;
+   reg [2:0] sym_i;
+   reg [2:0] sym_q;
    reg        valid_out;
 
    // Need to collect 4 input bits to output a symbol
@@ -91,8 +90,8 @@ module dvbs2_bitmapper_q11 (clock_in, reset, enable, bit_in, clock_out, valid_in
    // Main Functionality
    always @(posedge clock_out, posedge reset) begin
       if (reset) begin // if reset
-         sym_i                <= 12'h0;
-         sym_q                <= 12'h0;
+         sym_i                <= 3'h0;
+         sym_q                <= 3'h0;
          valid_out            <= 1'b0;
          collected_input_reg1 <= 4'h0;
          collected_input_reg2 <= 4'h0;
@@ -114,74 +113,74 @@ module dvbs2_bitmapper_q11 (clock_in, reset, enable, bit_in, clock_out, valid_in
                // For normal FECFRAME size (64800 bits), 16APSK modulation, 9/10 code rate
                case (collected_input_reg2)
                   4'h0: begin
-                     sym_i <= 12'h1; //32'h3f3504f3, 1448
-                     sym_q <= 12'h1; //32'h3f3504f3, 1448
+                     sym_i <= 3'h0; //32'h3f3504f3, 1448
+                     sym_q <= 3'h0; //32'h3f3504f3, 1448
                   end
                   4'h1: begin
-                     sym_i <= 12'h1; //32'h3f3504f3, 1448
-                     sym_q <= 12'hfff; //32'hbf3504f3, -1448
+                     sym_i <= 3'h0; //32'h3f3504f3, 1448
+                     sym_q <= 3'h7; //32'hbf3504f3, -1448
                   end
                   4'h2: begin
-                     sym_i <= 12'hfff; //32'hbf3504f3, -1448
-                     sym_q <= 12'h1; //32'h3f3504f3, 1448
+                     sym_i <= 3'h7; //32'hbf3504f3, -1448
+                     sym_q <= 3'h0; //32'h3f3504f3, 1448
                   end
                   4'h3: begin
-                     sym_i <= 12'hfff; //32'hbf3504f3, -1448
-                     sym_q <= 12'hfff; //32'hbf3504f3, -1448
+                     sym_i <= 3'h7; //32'hbf3504f3, -1448
+                     sym_q <= 3'h7; //32'hbf3504f3, -1448
                   end
                   4'h4: begin
-                     sym_i <= 12'h2; //32'h3f7746ea, 1978
-                     sym_q <= 12'h3; //32'h3e8483ee, 530
+                     sym_i <= 3'h1; //32'h3f7746ea, 1978
+                     sym_q <= 3'h2; //32'h3e8483ee, 530
                   end
                   4'h5: begin
-                     sym_i <= 12'h2; //32'h3f7746ea, 1978
-                     sym_q <= 12'hffd; //32'hbe8483ee, -530
+                     sym_i <= 3'h1; //32'h3f7746ea, 1978
+                     sym_q <= 3'h5; //32'hbe8483ee, -530
                   end
                   4'h6: begin
-                     sym_i <= 12'hffe; //32'hbf7746ea, -1978
-                     sym_q <= 12'h3; //32'h3e8483ee, 530
+                     sym_i <= 3'h6; //32'hbf7746ea, -1978
+                     sym_q <= 3'h2; //32'h3e8483ee, 530
                   end
                   4'h7: begin
-                     sym_i <= 12'hffe; //32'hbf7746ea, -1978
-                     sym_q <= 12'hffd; //32'hbe8483ee, -530
+                     sym_i <= 3'h6; //32'hbf7746ea, -1978
+                     sym_q <= 3'h5; //32'hbe8483ee, -530
                   end
                   4'h8: begin
-                     sym_i <= 12'h3; //32'h3e8483ee, 530
-                     sym_q <= 12'h2; //32'h3f7746ea, 1978
+                     sym_i <= 3'h2; //32'h3e8483ee, 530
+                     sym_q <= 3'h1; //32'h3f7746ea, 1978
                   end
                   4'h9: begin
-                     sym_i <= 12'h3; //32'h3e8483ee, 530
-                     sym_q <= 12'hffe; //32'hbf7746ea, -1978
+                     sym_i <= 3'h2; //32'h3e8483ee, 530
+                     sym_q <= 3'h6; //32'hbf7746ea, -1978
                   end
                   4'hA: begin
-                     sym_i <= 12'hffd; //32'hbe8483ee, -530
-                     sym_q <= 12'h2; //32'h3f7746ea, 1978
+                     sym_i <= 3'h5; //32'hbe8483ee, -530
+                     sym_q <= 3'h1; //32'h3f7746ea, 1978
                   end
                   4'hB: begin
-                     sym_i <= 12'hffd; //32'hbe8483ee, -530
-                     sym_q <= 12'hffe; //32'hbf7746ea, -1978
+                     sym_i <= 3'h5; //32'hbe8483ee, -530
+                     sym_q <= 3'h6; //32'hbf7746ea, -1978
                   end
                   4'hC: begin
-                     sym_i <= 12'h4; //32'h3e8cdeff, 563
-                     sym_q <= 12'h4; //32'h3e8cdeff, 563
+                     sym_i <= 3'h3; //32'h3e8cdeff, 563
+                     sym_q <= 3'h3; //32'h3e8cdeff, 563
                   end
                   4'hD: begin
-                     sym_i <= 12'h4; //32'h3e8cdeff, 563
-                     sym_q <= 12'hffc; //32'hbe8cdeff, -563
+                     sym_i <= 3'h3; //32'h3e8cdeff, 563
+                     sym_q <= 3'h4; //32'hbe8cdeff, -563
                   end
                   4'hE: begin
-                     sym_i <= 12'hffc; //32'hbe8cdeff, -563
-                     sym_q <= 12'h4; //32'h3e8cdeff, 563
+                     sym_i <= 3'h4; //32'hbe8cdeff, -563
+                     sym_q <= 3'h3; //32'h3e8cdeff, 563
                   end
                   4'hF: begin
-                     sym_i <= 12'hffc; //32'hbe8cdeff, -563
-                     sym_q <= 12'hffc; //32'hbe8cdeff, -563
+                     sym_i <= 3'h4; //32'hbe8cdeff, -563
+                     sym_q <= 3'h4; //32'hbe8cdeff, -563
                   end
                endcase // collected_input case
             end // if collected_valid_reg2
             else begin
-               sym_i         <= 12'hB;
-               sym_q         <= 12'hB;
+               sym_i         <= 3'h0;
+               sym_q         <= 3'h0;
                valid_out     <= 1'b0;
             end
          end // if enabled
