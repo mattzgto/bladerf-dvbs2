@@ -1,9 +1,9 @@
 # bladerf-dvbs2
-16-APSK DVB-S2 Transmitter for BladeRF
+##16-APSK DVB-S2 Transmitter for BladeRF
 
-DVB-S2 Transmitter written by Adam Steenkamer, Integration performed by Matthew Zachary
+###DVB-S2 Transmitter written by Adam Steenkamer, Integration performed by Matthew Zachary
 
-Developed for the bladeRF with 40kLE Cyclone IV FPGA
+###Developed for the bladeRF with 40kLE Cyclone IV FPGA
 
  
 
@@ -19,10 +19,12 @@ The input is buffered by inserting NULL TS packets, and the output is buffered b
 
 Specs:
 
-	Input bit rate: 8M bit/s, Output symbol rate: 5.2M samples/s
-	
-	FEC Frame Size = Normal (16200), Code Rate = 9/10, Roll-off factor = 0.2
-
+	Input bit rate: 8M bit/s  
+	Output symbol rate: 5.2M samples/s
+	  
+	FEC Frame Size = Normal (16200)  
+	Code Rate = 9/10   
+	Roll-off factor = 0.2
  
 
 Example command:
