@@ -3,7 +3,7 @@
 
 ### DVB-S2 Transmitter written by Adam Steenkamer, Integration performed by Matthew Zachary
 
-### Developed for the bladeRF with 40kLE Cyclone IV FPGA
+Developed for the bladeRF with 40kLE Cyclone IV FPGA
 
  
 
