@@ -5,6 +5,7 @@ DVB-S2 Transmitter written by Adam Steenkamer, Integration performed by Matthew 
 
 Developed for the bladeRF with 40kLE Cyclone IV FPGA
 
+ 
 
 Pre-compiled FPGA image is provided under quartus/work/output_files
 
@@ -12,13 +13,17 @@ The Nuand bladeRF-cli API can still be used. Leave the tx data format in binary 
 
 All receiving blocks have been removed from the FPGA, and therefore, all RX functionality has been removed
 
-
-Input bit rate: 8M bit/s, Output symbol rate: 5.2M samples/s
-
 The input is buffered by inserting NULL TS packets, and the output is buffered by inserting Dummy PLFrames
 
-FEC Frame Size = Normal (16200), Code Rate = 9/10, Roll-off factor = 0.2
+ 
 
+Specs:
+
+	Input bit rate: 8M bit/s, Output symbol rate: 5.2M samples/s
+	
+	FEC Frame Size = Normal (16200), Code Rate = 9/10, Roll-off factor = 0.2
+
+ 
 
 Example command:
 
