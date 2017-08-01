@@ -19,12 +19,13 @@ The input is buffered by inserting NULL TS packets, and the output is buffered b
 
 ### Specs:
 
-	Input bit rate: 8M bit/s  
-	Output symbol rate: 5.2M samples/s
-	  
-	FEC Frame Size = Normal (16200)  
-	Code Rate = 9/10   
-	Roll-off factor = 0.2
+| Input bit rate:     | 8M bit/s       |
+|---------------------|----------------|
+| Output symbol rate: | 5M samples/s   |
+|                     |                |
+| FEC Frame Size      | Normal (16200) |
+| Code Rate           | 9/10           |
+| Roll-off Factor     | 0.2            |
  
 
 ### Example command:
