@@ -1,6 +1,6 @@
 // dvb_fifo_reader.v
-// 	Reads a Transport Stream, 32 bits at a time
-// 	Packetizes, inserts null packets when data is unavailable
+// Reads a Transport Stream, 32 bits at a time
+// Packetizes, inserts null packets when data is unavailable
 // Rochester Institute of Technology
 // Electrical Engineering Department
 // Graduate Paper
@@ -98,7 +98,6 @@ module dvb_fifo_reader (clock_data_in, enable, in_reset, empty_in, data_in, read
 				// Ready to send some data packets, we have enough
 				if (packet_rcvd_cnt == 7'd47) begin
 					// Send TS packets
-					// , packet[packet_send_cnt + 1'b1]
 					send_fifo <= {packet[packet_send_cnt]};
 
 					// Done (check for 46, upcount takes a clock cycle)

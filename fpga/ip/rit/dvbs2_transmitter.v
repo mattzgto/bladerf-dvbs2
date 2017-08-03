@@ -10,8 +10,8 @@ module dvbs2_transmitter (clock_96MHz, clock_16MHz, clock_4MHz, reset, enable, b
    input         enable;
    input         bit_in;
    input         valid_in;
-   input		 output_clock;
-   input 		 output_reset;
+   input		     output_clock;
+   input 		  output_reset;
    output [15:0] sym_i_out;
    output [15:0] sym_q_out;
    output        valid_out;
@@ -45,8 +45,8 @@ module dvbs2_transmitter (clock_96MHz, clock_16MHz, clock_4MHz, reset, enable, b
    wire		   fifo_switch_performed;
    wire		   fifo_wr_sel;
    wire		   done_out;
-   wire	[11:0] i_filter_sym_i_out;
-   wire	[11:0] q_filter_sym_q_out;
+   wire [11:0] i_filter_sym_i_out;
+   wire [11:0] q_filter_sym_q_out;
    wire		   i_filter_valid_out;
    wire		   q_filter_valid_out;
    
