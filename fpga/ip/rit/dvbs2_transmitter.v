@@ -150,20 +150,20 @@ module dvbs2_transmitter (clock_96MHz, clock_16MHz, clock_4MHz, reset, enable, b
 		
    // Output sync block - inserts dummy PLFRAMES
    dvbs2_output_sync output_sync (	
-	  .clock_in 			 (clock_16MHz),
-      .reset 				 (reset),
-	  .enable 				 (enable),
-      .sym_i_in 			 (phyframer_sym_i_out),
-      .sym_q_in 			 (phyframer_sym_q_out),
-      .valid_in 			 (phyframer_valid_out),
-	  .output_clock 		 (output_clock),
-	  .output_reset 		 (output_reset),
-	  .done_out 			 (done_out),
-	  .fifo_wr_sel 			 (fifo_wr_sel),
-	  .sym_i_out 			 (output_sync_sym_i_out),
-	  .sym_q_out 			 (output_sync_sym_q_out),
-	  .valid_out 			 (output_sync_valid_out),
-	  .error 				 (output_sync_error),
+	  .clock_in 			    (clock_16MHz),
+     .reset 				    (reset),
+	  .enable 				    (enable),
+     .sym_i_in 		   	 (phyframer_sym_i_out),
+     .sym_q_in 		   	 (phyframer_sym_q_out),
+     .valid_in 			    (phyframer_valid_out),
+	  .output_clock 		    (output_clock),
+	  .output_reset 		    (output_reset),
+	  .done_out 			    (done_out),
+	  .fifo_wr_sel 		    (fifo_wr_sel),
+	  .sym_i_out 			    (output_sync_sym_i_out),
+	  .sym_q_out 			    (output_sync_sym_q_out),
+	  .valid_out 			    (output_sync_valid_out),
+	  .error 				    (output_sync_error),
 	  .fifo_switch_performed (fifo_switch_performed)
    );
    
@@ -175,8 +175,8 @@ module dvbs2_transmitter (clock_96MHz, clock_16MHz, clock_4MHz, reset, enable, b
 	  .ast_sink_data		 ({output_sync_sym_i_out}),
 	  .ast_sink_valid		 (output_sync_valid_out),
 	  .ast_sink_error		 (2'b00),
-	  .ast_source_data		 (i_filter_sym_i_out),
-	  .ast_source_valid		 (i_filter_valid_out)
+	  .ast_source_data	 (i_filter_sym_i_out),
+	  .ast_source_valid	 (i_filter_valid_out)
    );
    
    // FIR Filter (Cosine filter)
@@ -187,8 +187,8 @@ module dvbs2_transmitter (clock_96MHz, clock_16MHz, clock_4MHz, reset, enable, b
 	  .ast_sink_data		 ({output_sync_sym_q_out}),
 	  .ast_sink_valid		 (output_sync_valid_out),
 	  .ast_sink_error		 (2'b00),
-	  .ast_source_data		 (q_filter_sym_q_out),
-	  .ast_source_valid		 (q_filter_valid_out)
+	  .ast_source_data	 (q_filter_sym_q_out),
+	  .ast_source_valid	 (q_filter_valid_out)
    );
 	
 endmodule // dvbs2_transmitter
