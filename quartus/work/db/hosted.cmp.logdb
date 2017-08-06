@@ -1,2 +1,0 @@
-v1
-PLL_COMPENSATED_INPUTS_LIST,fx3_pll:U_fx3_pll|altpll:altpll_component|fx3_pll_altpll:auto_generated|pll1,fx3_ctl[6]; fx3_ctl[5]; fx3_gpif[31]; fx3_gpif[30]; fx3_gpif[22]; fx3_gpif[20]; fx3_gpif[29]; fx3_gpif[28]; fx3_gpif[27]; fx3_gpif[19]; fx3_gpif[26]; fx3_gpif[25]; fx3_gpif[24]; fx3_gpif[23]; fx3_gpif[21]; fx3_gpif[17]; fx3_gpif[1]; fx3_gpif[0]; fx3_gpif[5]; fx3_gpif[4]; fx3_gpif[3]; fx3_gpif[2]; fx3_gpif[9]; fx3_gpif[8]; fx3_gpif[7]; fx3_gpif[6]; fx3_gpif[13]; fx3_gpif[12]; fx3_gpif[11]; fx3_gpif[10]; fx3_gpif[18]; fx3_gpif[16]; fx3_gpif[15]; fx3_gpif[14],

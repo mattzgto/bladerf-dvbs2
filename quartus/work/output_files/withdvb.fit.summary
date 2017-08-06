@@ -1,12 +1,12 @@
-Fitter Status : Successful - Sun Aug  6 17:40:52 2017
+Fitter Status : Successful - Sun Aug  6 19:29:09 2017
 Quartus Prime Version : 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 Revision Name : withdvb
 Top-level Entity Name : bladerf
 Family : Cyclone IV E
 Device : EP4CE40F23C8
 Timing Models : Final
-Total logic elements : 20,888 / 39,600 ( 53 % )
-    Total combinational functions : 14,270 / 39,600 ( 36 % )
+Total logic elements : 20,985 / 39,600 ( 53 % )
+    Total combinational functions : 14,274 / 39,600 ( 36 % )
     Dedicated logic registers : 15,293 / 39,600 ( 39 % )
 Total registers : 15377
 Total pins : 139 / 329 ( 42 % )
