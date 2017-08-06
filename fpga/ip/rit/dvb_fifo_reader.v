@@ -39,6 +39,7 @@ module dvb_fifo_reader (clock_data_in, enable, in_reset, empty_in, data_in, read
 	// Holds the received packets - make sure we have 47 for a full TS frame
 	reg [31:0] packet [46:0];
 	reg [6:0] packet_rcvd_cnt;
+	reg [6:0] packet_rcvd_cnt_alt;
 	reg [6:0] packet_send_cnt;
 
 	// Meta flip-flops
@@ -66,6 +67,7 @@ module dvb_fifo_reader (clock_data_in, enable, in_reset, empty_in, data_in, read
 			packet[0] <= 32'h471fff10;
 			//packet[1] <= 16'hff10;
 			packet_rcvd_cnt <= 7'b0;
+			packet_rcvd_cnt_alt <= 7'b0;
 			packet_send_cnt <= 7'd0;
 
 			// Inter-clock domain
@@ -98,17 +100,28 @@ module dvb_fifo_reader (clock_data_in, enable, in_reset, empty_in, data_in, read
 				// Ready to send some data packets, we have enough
 				if (packet_rcvd_cnt == 7'd47) begin
 					// Send TS packets
-					// , packet[packet_send_cnt + 1'b1]
-					send_fifo <= {packet[packet_send_cnt]};
+					send_fifo <= packet[packet_send_cnt];
 
 					// Done (check for 46, upcount takes a clock cycle)
 					if (packet_send_cnt == 7'd46) begin
 						packet_send_cnt <= 7'b0;
-						packet_rcvd_cnt <= 7'b0;
+						packet_rcvd_cnt <= packet_rcvd_cnt_alt;
+						packet_rcvd_cnt_alt <= 7'b0;
 					end
 					// Not done: upcount
 					else begin
 						packet_send_cnt <= packet_send_cnt + 2'd1;
+						
+						// Continue to read in packets while we  transmit
+						if ((read_in_ret == 1'b0) & (empty_in == 1'b0) & (packet_rcvd_cnt_alt != 7'd47)) begin
+							// Read available packets
+							// Change endian-ness
+							packet[packet_rcvd_cnt_alt] <= {data_in[7:0], data_in[15:8], data_in[23:16], data_in[31:24]};
+							packet_rcvd_cnt_alt <= packet_rcvd_cnt_alt + 7'b1;
+
+							// Response to input fifo
+							read_in_ret <= 1'b1;
+						end
 					end
 
 					fifo_filled <= 1'b1;
