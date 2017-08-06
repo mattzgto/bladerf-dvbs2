@@ -6,14 +6,14 @@
 //   by inserting dummy PL frames when there isn't enough data
 
 // For IQ samples, a 'lookup' table has been used to reduce the bits/symbol from 12 (sc16q11 format) to 3 (for resource usage purposes)
-// 12'h0 = 0x586
-// 12'h7 = 0xa7a
-// 12'h1 = 0x78b
-// 12'h6 = 0x875
-// 12'h2 = 0x205
-// 12'h5 = 0xdfb
-// 12'h3 = 0x226
-// 12'h4 = 0xdda
+// 3'h0 = 0x5a8
+// 3'h7 = 0xa58
+// 3'h1 = 0x7ba
+// 3'h6 = 0x846
+// 3'h2 = 0x212
+// 3'h5 = 0xdee
+// 3'h3 = 0x233
+// 3'h4 = 0xdcd
 // Reconversion is done in this block
 
 module dvbs2_output_sync (clock_in, reset, enable, sym_i_in, sym_q_in, valid_in, output_clock, output_reset, done_out, fifo_wr_sel, sym_i_out, sym_q_out, valid_out, error, actual_out, fifo_switch_performed);
@@ -124,28 +124,28 @@ module dvbs2_output_sync (clock_in, reset, enable, sym_i_in, sym_q_in, valid_in,
    always @* begin
       case(src_sym_i_out)
          0: begin
-            sym_i_out = 12'h586; //32'h3f3504f3;
+            sym_i_out = 12'h5a8; //32'h3f3504f3;
          end
          1: begin
-            sym_i_out = 12'h78b; //32'h3f7746ea;
+            sym_i_out = 12'h7ba; //32'h3f7746ea;
          end
          2: begin
-            sym_i_out = 12'h205; //32'h3e8483ee;
+            sym_i_out = 12'h212; //32'h3e8483ee;
          end
          3: begin
-            sym_i_out = 12'h226; //32'h3e8cdeff;
+            sym_i_out = 12'h233; //32'h3e8cdeff;
          end
          4: begin
-            sym_i_out = 12'hdda; //32'hbe8cdeff;
+            sym_i_out = 12'hdcd; //32'hbe8cdeff;
          end
          5: begin
-            sym_i_out = 12'hdfb; //32'hbe8483ee;
+            sym_i_out = 12'hdee; //32'hbe8483ee;
          end
          6: begin
-            sym_i_out = 12'h875; //32'hbf7746ea;
+            sym_i_out = 12'h846; //32'hbf7746ea;
          end
          7: begin
-            sym_i_out = 12'ha7a; //32'hbf3504f3;
+            sym_i_out = 12'ha58; //32'hbf3504f3;
          end
 		 15: begin
             sym_i_out = 12'h000; //Zero;
@@ -160,28 +160,28 @@ module dvbs2_output_sync (clock_in, reset, enable, sym_i_in, sym_q_in, valid_in,
    always @* begin
       case(src_sym_q_out)
          0: begin
-            sym_q_out = 12'h586; //32'h3f3504f3;
+            sym_q_out = 12'h5a8; //32'h3f3504f3;
          end
          1: begin
-            sym_q_out = 12'h78b; //32'h3f7746ea;
+            sym_q_out = 12'h7ba; //32'h3f7746ea;
          end
          2: begin
-            sym_q_out = 12'h205; //32'h3e8483ee;
+            sym_q_out = 12'h212; //32'h3e8483ee;
          end
          3: begin
-            sym_q_out = 12'h226; //32'h3e8cdeff;
+            sym_q_out = 12'h233; //32'h3e8cdeff;
          end
          4: begin
-            sym_q_out = 12'hdda; //32'hbe8cdeff;
+            sym_q_out = 12'hdcd; //32'hbe8cdeff;
          end
          5: begin
-            sym_q_out = 12'hdfb; //32'hbe8483ee;
+            sym_q_out = 12'hdee; //32'hbe8483ee;
          end
          6: begin
-            sym_q_out = 12'h875; //32'hbf7746ea;
+            sym_q_out = 12'h846; //32'hbf7746ea;
          end
          7: begin
-            sym_q_out = 12'ha7a; //32'hbf3504f3;
+            sym_q_out = 12'ha58; //32'hbf3504f3;
          end
 		 15: begin
             sym_q_out = 12'h000; //Zero;

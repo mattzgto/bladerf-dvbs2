@@ -3,14 +3,14 @@
 // output IQ symbol bits in parallel, so output is 1/4 rate of input
 
 // For IQ samples, a 'lookup' table has been used to reduce the bits/symbol from 12 (sc16q11 format) to 3 (for resource usage purposes)
-// 3'h0 = 0x586
-// 3'h7 = 0xa7a
-// 3'h1 = 0x78b
-// 3'h6 = 0x875
-// 3'h2 = 0x205
-// 3'h5 = 0xdfb
-// 3'h3 = 0x226
-// 3'h4 = 0xdda
+// 3'h0 = 0x5a8
+// 3'h7 = 0xa58
+// 3'h1 = 0x7ba
+// 3'h6 = 0x846
+// 3'h2 = 0x212
+// 3'h5 = 0xdee
+// 3'h3 = 0x233
+// 3'h4 = 0xdcd
 // Reconversion is done in the dvbs2_output_sync block
 
 module dvbs2_bitmapper (clock_in, reset, enable, bit_in, clock_out, valid_in, sym_i, sym_q, valid_out);

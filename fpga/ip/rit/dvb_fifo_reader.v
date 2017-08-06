@@ -1,6 +1,6 @@
 // dvb_fifo_reader.v
-// 	Reads a Transport Stream, 32 bits at a time
-// 	Packetizes, inserts null packets when data is unavailable
+// Reads a Transport Stream, 32 bits at a time
+// Packetizes, inserts null packets when data is unavailable
 // Rochester Institute of Technology
 // Electrical Engineering Department
 // Graduate Paper
