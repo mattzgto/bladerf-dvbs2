@@ -16,7 +16,7 @@ MPEG2 transport streams (TS) can contain video, audio, and data, multiplexed tog
 
 Therefore, this transmitter will be used to provide a 8 Mbps multimedia downlink that uses DVB-S2 modulation. The intended application is for a high-altitude balloon, which transmits live telemetry data and HD video during flight to a receiving base station. The 23cm amateur radio band will be used (1.28 GHz).
 
-This setup has been tested with a Raspberry Pi 3. The Pi Camera 2, alongside H.264 encoder built into the Pi, are used to capture compressed video to transmit. FFMPEG was used to encapsulate the compressed video into a transport stream, which will be transmitted using DVB-S2 modulation using the bladeRF SDR.
+This setup has been tested with a Raspberry Pi 3. The Pi Camera 2, alongside the H.264 encoder built into the Pi, is used to capture compressed video. FFMPEG is used to encapsulate this compressed video into a transport stream, which is transmitted using DVB-S2 modulation within the bladeRF FPGA.
 
 
 ### Specs:
@@ -41,7 +41,7 @@ This setup has been tested with a Raspberry Pi 3. The Pi Camera 2, alongside H.2
 	
 	
 ### Example CLI command:
-(sends TS data on video.ts to the bladeRF SDR to be modulated using DVB-S2)
+(sends TS data from video.ts to the bladeRF SDR to be modulated using DVB-S2)
 
 	bladeRF-cli -e "load fpga quartus/work/output_files/withdvb.rbf; set frequency 1280000000; set bandwidth 3500000; set samplerate 5200000; tx config file=video.ts; tx config repeat=1; set txvga1 -4; set txvga2 25; tx start; tx wait;"
 
