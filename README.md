@@ -1,6 +1,6 @@
 # bladerf-dvbs2
 ## 16-APSK DVB-S2 Transmitter for the bladeRF SDR FPGA
-## The DVB-S2 modulation is written completely in Hardware, using Verilog
+### The DVB-S2 modulation is written completely in Hardware, using Verilog
 
 ### DVB-S2 Transmitter written by Adam Steenkamer, Integration performed by Matthew Zachary
 
@@ -9,6 +9,7 @@ Developed for the bladeRF with 40kLE Cyclone IV FPGA
 ### File Location:
 Pre-compiled FPGA image is provided under quartus/work/output_files
 
+### Description:
 The bladeRF-CLI is a command line interface to the BladeRF SDR, developed by Nuand, the maker of the BladeRF hardware.
 With the factory FPGA image loaded onto the SDR, the CLI accepts I/Q samples as an input, in order to generate output RF signals.
 
