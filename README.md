@@ -1,7 +1,7 @@
 # bladerf-dvbs2
 #### 16-APSK DVB-S2 Transmitter for the bladeRF SDR FPGA. 
 ####
-#### The DVB-S2 modulation is written completely in Hardware, using Verilog. The verilog transmitter was written by Adam Steenkamer, integration and test was performed by Matthew Zachary. Developed for the bladeRF with 40kLE Cyclone IV FPGA
+#### The DVB-S2 modulation is written completely in Hardware, using Verilog. The transmitter was written by Adam Steenkamer, integration and test was performed by Matthew Zachary. Developed for the bladeRF with 40kLE Cyclone IV FPGA
 
 ### File Location:
 Pre-compiled FPGA image is provided under quartus/work/output_files
