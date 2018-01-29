@@ -18,6 +18,7 @@ Therefore, this transmitter will be used to provide a 8 Mbps multimedia downlink
 
 This setup has been tested with a Raspberry Pi 3. The Pi Camera 2, alongside the H.264 encoder built into the Pi, is used to capture compressed video. FFMPEG is used to encapsulate this compressed video into a transport stream, which is transmitted using DVB-S2 modulation within the bladeRF FPGA.
 
+#### See research_paper.pdf for more details.
 
 ### Specs:
 
