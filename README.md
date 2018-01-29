@@ -1,10 +1,8 @@
 # bladerf-dvbs2
-## 16-APSK DVB-S2 Transmitter for the bladeRF SDR FPGA
+### 16-APSK DVB-S2 Transmitter for the bladeRF SDR FPGA
 ### The DVB-S2 modulation is written completely in Hardware, using Verilog
-
 ### DVB-S2 Transmitter written by Adam Steenkamer, Integration performed by Matthew Zachary
-
-Developed for the bladeRF with 40kLE Cyclone IV FPGA
+### Developed for the bladeRF with 40kLE Cyclone IV FPGA
 
 ### File Location:
 Pre-compiled FPGA image is provided under quartus/work/output_files
@@ -38,13 +36,13 @@ This setup has been tested with a Raspberry Pi 3. The Pi Camera 2, alongside H.2
 
 
 ### Example video capture command:
-### (captures HD video from the Raspberri Pi Camera 2 to video.ts)
+(captures HD video from the Raspberri Pi Camera 2 to video.ts)
 	
 	raspivid -n -t 0 -fps 25 -w 1280 -h 720 -pf high -vf -hf -b 1000000 -o - | ffmpeg -re -an -i - -vcodec copy -f mpegts -mpegts_flags system_b - > video.ts
 	
 	
 ### Example CLI command:
-### (sends TS data on video.ts to the bladeRF SDR to be modulated using DVB-S2)
+(sends TS data on video.ts to the bladeRF SDR to be modulated using DVB-S2)
 
 	bladeRF-cli -e "load fpga quartus/work/output_files/withdvb.rbf; set frequency 1280000000; set bandwidth 3500000; set samplerate 5200000; tx config file=video.ts; tx config repeat=1; set txvga1 -4; set txvga2 25; tx start; tx wait;"
 
@@ -57,3 +55,5 @@ The Nuand bladeRF-cli API can still be used. Leave the tx data format in binary 
 All receiving blocks have been removed from the FPGA, and therefore, all RX functionality has been removed
 
 The input is buffered by inserting NULL TS packets, and the output is buffered by inserting Dummy PLFrames
+
+Recompiling will be necessary for the bladeRF with 115kLE
